@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/08 12:54:23 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/09 22:44:54 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main(int argc, char **argv)
 		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
-		ft_printf("Mapa introducido --> %s \n", argv[1]);
+		ft_printf("Mapa introducido --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
-		read_map(fd);
+		read_map(fd, &map);
 	}
 	else if (argc < 2)
 		ft_printf("Eres un estupido, no vales ni para meter un fichero \n");

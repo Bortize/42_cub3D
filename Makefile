@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bortize <bortize@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/08 12:56:59 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/09 22:02:15 by bortize          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRCS		=	srcs/get_next_line.c \
 				srcs/file_validation.c \
 				srcs/read_map.c \
 				srcs/init_identifier.c \
+				srcs/find_identifier.c \
+				srcs/check_identifier.c \
 				srcs/main.c
 
 CC			= gcc
