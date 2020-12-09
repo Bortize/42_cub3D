@@ -14,7 +14,7 @@
 
 .SILENT:
 
-NAME 		= cub3d
+NAME 		= cub3D
 
 ###############################################################################
 
@@ -42,7 +42,7 @@ all:		$(NAME)
 $(NAME):	$(INCLUDE) $(OBJS)
 				make -C $(INCLUDE)
 				cp ./printf/libftprintf.a ./
-				@$(CC) $(CFLAGS) -L. libftprintf.a $(OBJS)
+				@$(CC) $(CFLAGS) -L. libftprintf.a $(OBJS) -o cub3D
 
 ###############################################################################
 
