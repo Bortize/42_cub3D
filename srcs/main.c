@@ -17,14 +17,12 @@ int	main(int argc, char **argv)
 	map_config	map;
 
 	int fd;
-	char	*long_argv;
 	init_identifier(&map);
 	if (argc > 2)
-		ft_printf("Error. Introduzca solo un fichero .map \n");
+		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
-		long_argv = argv[1];
-		ft_printf("Mapa introducido --> %s \n", long_argv);
+		ft_printf("Mapa introducido --> %s \n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
 		read_map(fd);
 	}

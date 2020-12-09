@@ -38,5 +38,5 @@ int	file_validation(char *str)
 		}
 	}
 	ft_printf("Map file extension ✅ \n");
-	return (0);
+	return (1);
 }

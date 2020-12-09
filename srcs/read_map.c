@@ -21,7 +21,7 @@ int	read_map(int fd)
 	while (get_next_line(fd, &line))
 	{
 		//printf("%d", i);
-		printf("%s\n", line);
+		ft_printf("%s\n", line);
 		free(line);
 		line = NULL;
 		i++;
