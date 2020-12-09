@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	int fd;
 	char	*long_argv;
-	initialize_params(&map);
+	init_identifier(&map);
 	if (argc > 2)
 		ft_printf("Error. Introduzca solo un fichero .map \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)

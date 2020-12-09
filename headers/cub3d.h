@@ -34,7 +34,8 @@ typedef struct	config
 	int			*c;
 }				map_config;
 
-int	file_validation(char *str);
-void	initialize_params(map_config *map);
-int read_map(int fd);
+int		file_validation(char *str);
+void	init_identifier(map_config *map);
+int 	read_map(int fd);
+
 #endif

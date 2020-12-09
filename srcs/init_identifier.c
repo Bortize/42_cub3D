@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_params.c                                :+:      :+:    :+:   */
+/*   init_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../headers/cub3d.h"
 
-void	initialize_params(map_config *map)
+void	init_identifier(map_config *map)
 {
 	map->i = 0;
 	map->width = 0;

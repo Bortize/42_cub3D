@@ -22,7 +22,7 @@ SRCS		=	srcs/get_next_line.c \
 				srcs/get_next_line_utils.c \
 				srcs/file_validation.c \
 				srcs/read_map.c \
-				srcs/initialize_params.c \
+				srcs/init_identifier.c \
 				srcs/main.c
 
 CC			= gcc
