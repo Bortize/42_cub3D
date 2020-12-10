@@ -6,7 +6,7 @@
 /*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/09 22:45:26 by bortize          ###   ########.fr       */
+/*   Updated: 2020/12/10 08:58:11 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,14 @@
 typedef struct	config
 {
 	int			i;
-	int			width;
-	int			height;
-	char		*no;
-	char		*so;
-	char		*ea;
-	char		*we;
-	char		*s;
-	int			*f;
-	int			*c;
+	int			r;
+	int			no;
+	int			so;
+	int			ea;
+	int			we;
+	int			s;
+	int			f;
+	int			c;
 }				map_config;
 
 int		file_validation(char *str);
