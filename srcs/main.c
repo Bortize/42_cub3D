@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/10 11:39:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/10 22:46:38 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	main(int argc, char **argv)
 	else if (argc < 2)
 		ft_printf("Eres un estupido, no vales ni para meter un fichero \n");
 		return (-1);
+	system("leaks cub3D");
 	return (0);
 }
