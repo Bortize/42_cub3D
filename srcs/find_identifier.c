@@ -6,7 +6,7 @@
 /*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/10 21:24:39 by bortize          ###   ########.fr       */
+/*   Updated: 2020/12/11 23:15:13 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int find_identifier(char *str, map_config *map)
             identifier = str[i];
             check_identifier(identifier, map);
             count_identifier++;
-        if (ft_strchr("nosoeawe", str[i]))
+        if (ft_strchr("NOSOEAWE", str[i]))
             identifier = str[i];
             check_identifier(identifier, map);
             count_identifier++;
@@ -34,6 +34,5 @@ int find_identifier(char *str, map_config *map)
     }
     if (count_identifier == 8)
         ft_printf("El mapa es Valido para su lectura");
-    ft_printf("El mapa NO es Valido para su lectura");
     return (0);
 }
