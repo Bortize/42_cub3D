@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:53:15 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 12:25:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:42:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
+char			*ft_strncpy(char *dst, const char *src, size_t n);
 
 #endif
