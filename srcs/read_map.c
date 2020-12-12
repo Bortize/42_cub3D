@@ -27,14 +27,5 @@ int	read_map(int fd, map_config *map)
 		line = NULL;
 		i++;
 	}
-	ft_printf("\nResolucion %i \n", map->r);
-	ft_printf("Resolucion %i \n", map->no);
-	ft_printf("Resolucion %i \n", map->so);
-	ft_printf("Resolucion %i \n", map->ea);
-	ft_printf("Resolucion %i \n", map->we);
-	ft_printf("Resolucion %i \n", map->s);
-	ft_printf("Resolucion %i \n", map->f);
-	ft_printf("Resolucion %i \n", map->c);
-	
 	return (0);
 }
