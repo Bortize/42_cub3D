@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_plus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/31 13:11:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/12 16:36:06 by bortize          ###   ########.fr       */
+/*   Created: 2020/12/12 19:03:24 by bortize           #+#    #+#             */
+/*   Updated: 2020/12/12 19:06:02 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-/*
-** Cuenta las palabras de la cadena para saber de cuantas cadenas se va a
-** componer nuestro nuevo array. Lo hacemos porque necesitamos saberlo para
-** reservar memoria para la nueva tabla.
-*/
-static int			ft_countword(char const *s, char c)
+static int			ft_countword(char const *s, char c, char t)
 {
 	unsigned int	i;
 	int				words;
@@ -27,11 +21,11 @@ static int			ft_countword(char const *s, char c)
 	words = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] == c || s[i] == t)
 			i++;
 		if (s[i] != '\0')
 			words++;
-		while (s[i] && (s[i] != c))
+		while (s[i] && ((s[i] != c) && (s[i] != t)))
 			i++;
 	}
 	return (words);
@@ -51,7 +45,7 @@ static char			*ft_wordcopy(const char *s, size_t n)
 }
 
 
-char				**ft_split(char const *s, char c)
+char				**ft_split_plus(char const *s, char c, char t)
 {
 	int		i;
 	int		j;
@@ -62,14 +56,14 @@ char				**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	k = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c)) + 1)))
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c, t)) + 1)))
 		return (NULL);
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] == c || s[i] == t)
 			i++;
 		j = i;
-		while (s[i] && s[i] != c)
+		while (s[i] && ((s[i] != c) && (s[i] != t)))
 			i++;
 		if (i > j)
 		{
@@ -79,4 +73,3 @@ char				**ft_split(char const *s, char c)
 	tab[k] = NULL;
 	return (tab);
 }
-

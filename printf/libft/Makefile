@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bortize <bortize@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/04 17:38:10 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/12 12:43:05 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/12 19:04:12 by bortize          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FUNCTIONS = ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_tol
 			ft_strchr.c ft_strrchr.c ft_strtrim.c ft_strmapi.c ft_split.c ft_isdigit.c \
 			ft_isalnum.c ft_isprint.c ft_calloc.c ft_substr.c ft_strcpy.c ft_putstr_fd.c \
 			ft_putchar_fd.c ft_putendl_fd.c ft_bzero.c ft_atoi.c ft_itoa.c ft_putnbr_fd.c \
-			ft_putchar.c ft_strncpy.c
+			ft_putchar.c ft_strncpy.c ft_split_plus.c
 
 FBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
