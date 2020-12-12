@@ -6,7 +6,7 @@
 /*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/11 23:15:13 by bortize          ###   ########.fr       */
+/*   Updated: 2020/12/11 23:54:20 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int find_identifier(char *str, map_config *map)
 {
-    int i;
+/*    int i;
     char identifier;
     static int count_identifier;
 
@@ -31,7 +31,14 @@ int find_identifier(char *str, map_config *map)
             check_identifier(identifier, map);
             count_identifier++;
         i++;
+    }*/
+
+    if (**ft_split(&str, ' '))
+    {
+        if(tab[0] == 'R' || tab[0] == 'S' || tab[0] == 'C' || tab[0] == 'F') 
+            || tab[0] == "NO" || tab[0] == "SO" || tab[0] == "EA" || tab[0] == "WE");
     }
+
     if (count_identifier == 8)
         ft_printf("El mapa es Valido para su lectura");
     return (0);
