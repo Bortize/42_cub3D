@@ -6,7 +6,7 @@
 /*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/11 23:54:20 by bortize          ###   ########.fr       */
+/*   Updated: 2020/12/12 01:38:42 by bortize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int find_identifier(char *str, map_config *map)
             || tab[0] == "NO" || tab[0] == "SO" || tab[0] == "EA" || tab[0] == "WE");
     }
 
-    if (count_identifier == 8)
-        ft_printf("El mapa es Valido para su lectura");
+    /*if (count_identifier == 8)
+        ft_printf("El mapa es Valido para su lectura");*/
     return (0);
 }
