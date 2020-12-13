@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_plus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 19:03:24 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/12 23:08:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 10:45:09 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ static int			ft_countword(char const *s, char c, char t, char b)
 			i++;
 		if (s[i] != '\0')
 			words++;
-		while (s[i] && ((s[i] != c) && (s[i] != t)))
-			i++;
-		while (s[i] &&  s[i] != b)
+		while (s[i] && (s[i] != c && s[i] != t && s[i] != b))
 			i++;
 	}
 	return (words);
@@ -65,7 +63,7 @@ char				**ft_split_plus(char const *s, char c, char t, char b)
 		while (s[i] == c || s[i] == t || s[i] == b)
 			i++;
 		j = i;
-		while (s[i] && ((s[i] != c) && (s[i] != t) && (s[i] != b)))
+		while (s[i] && (s[i] != c && s[i] != t && s[i] != b))
 			i++;
 		if (i > j)
 		{
