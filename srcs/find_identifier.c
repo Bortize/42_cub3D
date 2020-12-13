@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/13 12:19:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 14:36:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,20 @@ int find_identifier(char *str, map_config *map)
 	{
 		if (map->tab[2] == NULL)
 		{
-			if ()
+			if (ft_strcmp("NO", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("SO", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("EA", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("WE", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("S", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("C", map->tab[0]) == 0)
+				ft_printf("vamos \n");
+			if (ft_strcmp("F", map->tab[0]) == 0)
+				ft_printf("vamos \n");
 			ft_printf("Identifier found -->  %s \n", map->tab[0]);
 			ft_printf("Value found -->  %s \n\n", map->tab[1]);
 		}
@@ -33,4 +46,3 @@ int find_identifier(char *str, map_config *map)
 	}
 	return (0);
 }
-

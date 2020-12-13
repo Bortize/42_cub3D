@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 12:11:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 12:23:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	config
 	int			f;
 	int			c;
 	char		**tab;
-	char		**R;
+	//char		**R;
 }				map_config;
 
 int		file_validation(char *str);
