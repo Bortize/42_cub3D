@@ -12,6 +12,10 @@
 
 #include "../headers/cub3d.h"
 
+/*
+** Read the .map file line by line to identify if it contains the values to be
+** collected
+*/
 int	read_map(int fd, map_config *map)
 {
 	char *line;
@@ -21,7 +25,7 @@ int	read_map(int fd, map_config *map)
 	while (get_next_line(fd, &line))
 	{
 		//printf("%d", i);
-		ft_printf("%s\n", line);
+		ft_printf("GNL has read this line 📖 --> %s \n", line);
 		find_identifier(line, map);
 		free(line);
 		line = NULL;

@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 14:29:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 14:41:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 17:44:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** Check if 2 characters are the same by comparing their ASCII values. Returns
+** the difference of the subtraction of its ASCII value. If they are equal, it
+** returns 0
+*/
 int					ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	*str1;

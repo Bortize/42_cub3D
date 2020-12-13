@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 12:23:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 18:33:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int		file_validation(char *str);
 void	init_identifier(map_config *map);
 int 	read_map(int fd, map_config *map);
 int		find_identifier(char *str, map_config *map);
+int		assignment_identifiers(map_config *map);
 
 #endif
