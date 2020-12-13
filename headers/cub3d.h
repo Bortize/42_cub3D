@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 18:33:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 23:15:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ typedef struct	config
 	char		*ea;
 	char		*we;
 	char		*s;
-	int			f;
-	int			c;
+	int			floor[3];
+	int			ceilling[3];
 	char		**tab;
+	char		**tabcf;
 	//char		**R;
 }				map_config;
 
@@ -42,6 +43,8 @@ int		file_validation(char *str);
 void	init_identifier(map_config *map);
 int 	read_map(int fd, map_config *map);
 int		find_identifier(char *str, map_config *map);
-int		assignment_identifiers(map_config *map);
+void	assignment_identifiers(map_config *map);
+void	assignment_identifiers_colours(map_config *map);
+void	assignment_identifiers_resolution(map_config *map);
 
 #endif

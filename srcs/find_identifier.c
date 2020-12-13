@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/13 18:16:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 23:16:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int find_identifier(char *str, map_config *map)
 		}
 		else if (map->tab[3] == NULL)
 		{
-			ft_printf("Identifier found -->  %s \n", map->tab[0]);
-			ft_printf("Value found -->  %s \n", map->tab[1]);
-			ft_printf("Value found -->  %s \n\n", map->tab[2]);
+			assignment_identifiers_resolution(map);
 		}
 		else
 			ft_printf("HAY DEMASIDADOS VALORES EN LA MISMA LINEA \n");

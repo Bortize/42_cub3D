@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 12:24:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 21:16:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	init_identifier(map_config *map)
 	map->ea = 0;
 	map->we = 0;
 	map->s = 0;
-	map->f = 0;
-	map->c = 0;
+//	map->floor[3]= (0, 0, 0);
+//	map->ceilling[3] = (0, 0, 0);
 	map->tab = 0;
 	//map->R = 0;
 }
