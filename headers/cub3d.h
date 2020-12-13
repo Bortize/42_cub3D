@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/12 10:36:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/13 12:11:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@
 typedef struct	config
 {
 	int			i;
-	int			r;
-	int			no;
-	int			so;
-	int			ea;
-	int			we;
-	int			s;
+	int			width;
+	int			height;
+	char		*no;
+	char		*so;
+	char		*ea;
+	char		*we;
+	char		*s;
 	int			f;
 	int			c;
 	char		**tab;
@@ -41,6 +42,5 @@ int		file_validation(char *str);
 void	init_identifier(map_config *map);
 int 	read_map(int fd, map_config *map);
 int		find_identifier(char *str, map_config *map);
-int		check_identifier(char c, map_config	*map);
 
 #endif
