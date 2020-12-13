@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/12 22:39:29 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/12 22:57:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int find_identifier(char *str, map_config *map)
 {
 	map->tab = 0;
-	if ((map->tab = ft_split_plus(str, ' ', '\t')))
+	if ((map->tab = ft_split_plus(str, ' ', '\t', ',')))
 	{
 		if (map->tab[3] == NULL)
 		{
