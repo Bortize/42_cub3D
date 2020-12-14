@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/13 17:56:45 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/14 12:02:00 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS		=	srcs/get_next_line.c \
 				srcs/init_identifier.c \
 				srcs/find_identifier.c \
 				srcs/assignment_identifiers.c \
+				srcs/validation_identifiers.c \
 				srcs/main.c
 
 CC			= gcc

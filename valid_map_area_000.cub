@@ -1,10 +1,11 @@
+C 100,200,160
 R 1080  		  720
 NO ./wolftex,/textures/xpm/greystone.xpm
 SO ./wolftex/textures/xpm/redbrick.xpm
 EA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
 S ./wolftex/textures/xpm/barrel.xpm
-C 100,200,160
+C 100,2A00,160
 F 25,122,254
 
 11111111111111111

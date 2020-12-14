@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_identifier.c                                  :+:      :+:    :+:   */
+/*   validation_identifiers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/14 14:30:44 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/14 12:00:34 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/12/14 14:26:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include	"../headers/cub3d.h"
 
-void	init_identifier(map_config *map)
+/*
+** Validates if the values received in C and F are in the range 255
+** and if so transforms the type to integer. To do this, you must
+** cast the integers to (char *)
+*/
+void	validation_identifiers(map_config *map)
 {
-	map->i = 0;
-	map->width = 0;
-	map->height= 0;
-	map->no = 0;
-	map->so = 0;
-	map->ea = 0;
-	map->we = 0;
-	map->s = 0;
-//	map->floor[3]= (0, 0, 0);
-//	map->ceilling[3] = (0, 0, 0);
-	map->tab = 0;
-	//map->R = 0;
+	map->ptrcf[0] = ft_atoi(map->tabcf[0]);
+	map->ptrcf[1] = ft_atoi(map->tabcf[1]);
+	map->ptrcf[2] = ft_atoi(map->tabcf[2]);
 }
