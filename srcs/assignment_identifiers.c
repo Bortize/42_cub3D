@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 23:18:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:18:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	assignment_identifiers_colours(map_config *map)
 		map->ceilling[0] = ft_atoi(map->tabcf[0]);
 		map->ceilling[1] = ft_atoi(map->tabcf[1]);
 		map->ceilling[2] = ft_atoi(map->tabcf[2]);
-		ft_printf(" 🧪 -->  %s \n", map->tabcf[0]);
-		ft_printf(" 🧪 -->  %s \n", map->tabcf[1]);
+		ft_printf(" 🧪 -->  %i \n", map->ceilling[0]);
+		ft_printf(" 🧪 -->  %i \n", map->ceilling[1]);
 		ft_printf(" 🧪 -->  %i \n\n", map->ceilling[2]);
 	}
 	if (ft_strcmp("F", map->tab[0]) == 0)
@@ -40,9 +40,9 @@ void	assignment_identifiers_colours(map_config *map)
 		map->floor[0] = ft_atoi(map->tabcf[0]);
 		map->floor[1] = ft_atoi(map->tabcf[1]);
 		map->floor[2] = ft_atoi(map->tabcf[2]);
-		ft_printf(" 🧪 -->  %s \n", map->tabcf[0]);
-		ft_printf(" 🧪 -->  %s \n", map->tabcf[1]);
-		ft_printf(" 🧪 -->  %i \n\n", map->ceilling[2]);
+		ft_printf(" 🧪 -->  %i \n", map->floor[0]);
+		ft_printf(" 🧪 -->  %i \n", map->floor[1]);
+		ft_printf(" 🧪 -->  %i \n\n", map->floor[2]);
 	}
 }
 
