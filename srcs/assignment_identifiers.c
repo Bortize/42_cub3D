@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/14 17:27:27 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/14 22:05:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	assignment_identifiers_colours(map_config *map)
 	if (ft_strcmp("C", map->tab[0]) == 0)
 	{
 		map->tabcf = ft_split(map->tab[1], ',');
-		validation_identifiers(map);
+		validation_identifiers_ceilling(map);
 		ft_printf(" 🧪 -->  %i \n", map->ceilling[0]);
 		ft_printf(" 🧪 -->  %i \n", map->ceilling[1]);
 		ft_printf(" 🧪 -->  %i \n\n", map->ceilling[2]);
@@ -35,7 +35,7 @@ void	assignment_identifiers_colours(map_config *map)
 	if (ft_strcmp("F", map->tab[0]) == 0)
 	{
 		map->tabcf = ft_split(map->tab[1], ',');
-		validation_identifiers(map);
+		validation_identifiers_floor(map);
 		ft_printf(" 🧪 -->  %i \n", map->floor[0]);
 		ft_printf(" 🧪 -->  %i \n", map->floor[1]);
 		ft_printf(" 🧪 -->  %i \n\n", map->floor[2]);
