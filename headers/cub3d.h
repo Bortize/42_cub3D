@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/15 11:28:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/15 21:40:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ void	assignment_identifiers_colours(map_config *map);
 void	assignment_identifiers_resolution(map_config *map);
 void	validation_identifiers_ceilling(map_config *map);
 void	validation_identifiers_floor(map_config *map);
-void	integer_validation(map_config *map);
+int	integer_validation(map_config *map);
 
 #endif
