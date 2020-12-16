@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/15 14:15:27 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/16 12:17:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,19 @@ void	assignment_identifiers(map_config *map)
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);
 	if (ft_strcmp("NO", map->tab[0]) == 0)
+		map->flag_no++;
 		map->no = map->tab[1];
 	if (ft_strcmp("SO", map->tab[0]) == 0)
+		map->flag_so++;
 		map->so = map->tab[1];
 	if (ft_strcmp("EA", map->tab[0]) == 0)
+		map->flag_ea++;
 		map->ea = map->tab[1];
 	if (ft_strcmp("WE", map->tab[0]) == 0)
+		map->flag_we++;
 		map->we = map->tab[1];
 	if (ft_strcmp("S", map->tab[0]) == 0)
+		map->flag_s++;
 		map->s = map->tab[1];
 	assignment_identifiers_colours(map);
 }

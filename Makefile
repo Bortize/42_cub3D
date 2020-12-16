@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/15 11:28:12 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/16 11:54:19 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS		=	srcs/get_next_line.c \
 				srcs/assignment_identifiers.c \
 				srcs/validation_identifiers.c \
 				srcs/integer_validation.c \
+				srcs/print_error.c \
 				srcs/main.c
 
 CC			= gcc

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/15 21:40:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/16 11:36:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,23 @@ typedef struct	config
 {
 	int			i;
 	int			width;
+	int			flag_widht;
 	int			height;
+	int			flag_height;
 	char		*no;
+	int			flag_no;
 	char		*so;
+	int			flag_so;
 	char		*ea;
+	int			flag_ea;
 	char		*we;
+	int			flag_we;
 	char		*s;
+	int			flag_s;
 	int			floor[3];
+	int			flag_floor;
 	int			ceilling[3];
+	int			flag_ceilling;
 	char		**tab;
 	char		**tabcf;
 }				map_config;
@@ -47,6 +56,7 @@ void	assignment_identifiers_colours(map_config *map);
 void	assignment_identifiers_resolution(map_config *map);
 void	validation_identifiers_ceilling(map_config *map);
 void	validation_identifiers_floor(map_config *map);
-int	integer_validation(map_config *map);
+int		integer_validation(map_config *map);
+void	print_error(char *str);
 
 #endif
