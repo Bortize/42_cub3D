@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/16 11:36:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/16 12:43:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct	config
 	int			flag_s;
 	int			floor[3];
 	int			flag_floor;
-	int			ceilling[3];
+	int			ceilling[3];// Igual meter el color por separado tambien como la rsolucion map->r, map->g, map->b (RGB)
 	int			flag_ceilling;
 	char		**tab;
 	char		**tabcf;

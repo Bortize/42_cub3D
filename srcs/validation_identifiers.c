@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation_identifiers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 12:00:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/15 21:49:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/16 12:59:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,31 @@
 */
 void	validation_identifiers_ceilling(map_config *map)
 {
-	integer_validation(map);
-	map->ceilling[0] = ft_atoi(map->tabcf[0]);
-	map->ceilling[1] = ft_atoi(map->tabcf[1]);
-	map->ceilling[2] = ft_atoi(map->tabcf[2]);
+	if (map->tabcf[3] == NULL)
+	{
+		integer_validation(map);
+		map->ceilling[0] = ft_atoi(map->tabcf[0]);
+		map->ceilling[1] = ft_atoi(map->tabcf[1]);
+		map->ceilling[2] = ft_atoi(map->tabcf[2]);
+	}
+	else
+	{
+		print_error("Hay demasiados valores en el identificador");
+	}
 }
 
 void	validation_identifiers_floor(map_config *map)
 {
-	integer_validation(map);
-	map->floor[0] = ft_atoi(map->tabcf[0]);
-	map->floor[1] = ft_atoi(map->tabcf[1]);
-	map->floor[2] = ft_atoi(map->tabcf[2]);
+	if (map->tabcf[3] == NULL)
+	{
+		integer_validation(map);
+		map->floor[0] = ft_atoi(map->tabcf[0]);
+		map->floor[1] = ft_atoi(map->tabcf[1]);
+		map->floor[2] = ft_atoi(map->tabcf[2]);
+	}
+	else
+	{
+		print_error("Hay demasiados valores en el identificador");
+	}
+
 }
