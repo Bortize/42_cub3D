@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 10:22:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:52:58 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	assignment_identifiers_resolution(map_config *map)
 	if (ft_strcmp("R", map->tab[0]) == 0)
 		map->flag_widht++;
 		map->i++;
+		integer_validation(map);
 		map->width = ft_atoi(map->tab[1]);
 		map->height = ft_atoi(map->tab[2]);
 		ft_printf("🧪w --> %i \n", map->width);

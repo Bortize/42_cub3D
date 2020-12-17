@@ -6,13 +6,17 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 20:32:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 08:57:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:58:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 #include <stdio.h>
 
+/*	Call-Function --> main
+**	Gestiona el error en caso de que el fichero que le pase el usuario por
+**	linea de comandos no tenga extion ".cub"
+*/
 int	file_validation(char *str)
 {
 	char *extension;

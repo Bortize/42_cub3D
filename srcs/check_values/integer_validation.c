@@ -6,12 +6,18 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 09:01:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:58:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
+/*	Call-Function --> 	assignment_identifiers_resolution
+**						assignment_identifiers_colours
+**	Comprueba que todos los numeros que componen los valores de la resolucion
+**	y de los colores del cielo y el suelo sean numeros enteros y que no conte-
+**	gan letras de por medio
+*/
 int	integer_validation(map_config *map)
 {
 	int i;
