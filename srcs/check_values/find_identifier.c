@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   find_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/16 20:51:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:22:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include "../../headers/cub3d.h"
 
-/*
+/*	Call-Function --> read_map
 **	Elimina todos los espacios y tabulaciones que contiene la linea que recibe por
 **	parámetro para agrupar los string encontrados en un vector y poder identificar
 **	sus valores. Tambien comprueba si el mapa tiene identificadores iguales para
@@ -20,13 +20,13 @@
 */
 int find_identifier(char *str, map_config *map)
 {
-	int tamano;
+	int size;
 
-	tamano = 0;
+	size = 0;
 	if ((map->tab = ft_split_plus(str, ' ', '\t')))
 	{
-		tamano = sizeof(map->tab);
-		ft_printf("el tamaño es de %d  \n", tamano);
+		size = sizeof(map->tab);
+		ft_printf("el tamaño es de %d  \n", size);
 		if (map->tab[2] == NULL)
 			assignment_identifiers(map);
 		else if (map->tab[3] == NULL)
@@ -41,7 +41,7 @@ int find_identifier(char *str, map_config *map)
 		print_error("El mapa contiene identificadores repetidos.\
 		Introduzca una mapa válido");
 	}
-	if (map->i > 8 || map->i < 8)
+	if (map->i > 8)
 	{
 		print_error("Hay demasiados Identidicadores, revise su mapa");
 	}

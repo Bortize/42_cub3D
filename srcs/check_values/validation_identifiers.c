@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 12:00:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/16 12:59:01 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 09:01:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../headers/cub3d.h"
+#include "../../headers/cub3d.h"
 
 /*
 ** Validates if the values received in C and F are in the range 255

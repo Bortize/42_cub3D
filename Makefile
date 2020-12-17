@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/16 11:54:19 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/17 09:02:36 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,16 @@ NAME 		= cub3D
 
 ###############################################################################
 
-SRCS		=	srcs/get_next_line.c \
-				srcs/get_next_line_utils.c \
-				srcs/file_validation.c \
-				srcs/read_map.c \
-				srcs/init_identifier.c \
-				srcs/find_identifier.c \
-				srcs/assignment_identifiers.c \
-				srcs/validation_identifiers.c \
-				srcs/integer_validation.c \
-				srcs/print_error.c \
+SRCS		=	srcs/open_read/get_next_line.c \
+				srcs/open_read/get_next_line_utils.c \
+				srcs/open_read/file_validation.c \
+				srcs/open_read/read_map.c \
+				srcs/open_read/init_identifier.c \
+				srcs/check_values/find_identifier.c \
+				srcs/check_values/assignment_identifiers.c \
+				srcs/check_values/validation_identifiers.c \
+				srcs/check_values/integer_validation.c \
+				srcs/error/print_error.c \
 				srcs/main.c
 
 CC			= gcc

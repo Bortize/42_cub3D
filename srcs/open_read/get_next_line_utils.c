@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:14:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/10 12:25:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 08:56:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/get_next_line.h"
+#include "../../headers/get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {

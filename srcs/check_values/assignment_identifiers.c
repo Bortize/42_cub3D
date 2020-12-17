@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   assignment_identifiers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/16 20:46:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:22:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include "../../headers/cub3d.h"
 
-
+/*	Call-Function --> find_identifier
+**	Comprueba el valor del indicice [0] despues de que haya sido deparado por ft_split_plus
+** para saber que identificador es y poder asigar el valor de [1] y [2] a la variable que le
+** corresponde dentro de la estructura
+*/
 void	assignment_identifiers_resolution(map_config *map)
 {
 	if (ft_strcmp("R", map->tab[0]) == 0)
@@ -24,6 +28,11 @@ void	assignment_identifiers_resolution(map_config *map)
 		ft_printf("🧪h --> %i \n\n\n", map->height);
 }
 
+/*	Call-Function --> assignment_identifiers
+**	Comprueba el valor del indicice [0] despues de que haya sido deparado por ft_split_plus
+** para saber que identificador es y poder asigar el valor de [1] y [2] a la variable que le
+** corresponde dentro de la estructura
+*/
 void	assignment_identifiers_colours(map_config *map)
 {
 	if (ft_strcmp("C", map->tab[0]) == 0)
@@ -48,10 +57,10 @@ void	assignment_identifiers_colours(map_config *map)
 	}
 }
 
-/*
+/*	Call-Function --> find_identifier
 **	Comprueba el valor del indicice [0] despues de que haya sido deparado por ft_split_plus
-** para saber que identificador es y poder asigar el valor de [1] a la variable que le
-** corresponde dentro de la estructura
+**	para saber que identificador es y poder asigar el valor de [1] a la variable que le
+**	corresponde dentro de la estructura
 */
 void	assignment_identifiers(map_config *map)
 {

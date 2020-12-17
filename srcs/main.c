@@ -6,12 +6,18 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/15 12:20:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 10:22:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/*
+**	Devuelve error en caso de que el usuario le pase mas argumentos que el que
+**	se pide. Si todo esta correcto, abre el fichero con la funcion open pra po-
+**	der leer el fichero que contiene todos los valores del mapa que tiene que
+** interpretar
+*/
 int	main(int argc, char **argv)
 {
 	map_config	map;

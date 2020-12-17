@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include "../../headers/cub3d.h"
 
-/*
-** Read the .map file line by line to identify if it contains the values to be
-** collected
+/*	Call-Function --> main
+**	Read the .map file line by line to identify if it contains the values to be
+**	collected
 */
 int	read_map(int fd, map_config *map)
 {
@@ -31,5 +31,7 @@ int	read_map(int fd, map_config *map)
 		line = NULL;
 		i++;
 	}
+	if (map->i < 8)
+		print_error("Faltan identificadores, revise su mapa");
 	return (0);
 }

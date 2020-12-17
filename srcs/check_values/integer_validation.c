@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   integer_validation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/16 11:14:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/16 12:25:18 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/12/17 09:01:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include "../../headers/cub3d.h"
 
-void print_error(char *str)
+int	integer_validation(map_config *map)
 {
-	ft_printf("Error:\n");
-	ft_printf("%s \n", str);
-	exit (-1);
+	int i;
+	int j;
+
+	i = 0;
+	while(i < 3)
+	{
+		j = 0;
+		while(j < 3)
+		{
+			if (ft_isdigit(map->tabcf[i][j]))
+				ft_printf("el numero %i es un entero \n", map->tabcf[i][j]);
+			else
+			{
+				ft_printf("el numero %i NO es un entero \n", map->tabcf[i][j]);
+				exit (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
