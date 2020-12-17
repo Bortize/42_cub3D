@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/17 10:22:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 12:20:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@
 */
 int find_identifier(char *str, map_config *map)
 {
-	int size;
+	//int size;
 
-	size = 0;
+	//size = 0;
 	if ((map->tab = ft_split_plus(str, ' ', '\t')))
 	{
-		size = sizeof(map->tab);
-		ft_printf("el tamaño es de %d  \n", size);
+		//size = sizeof(map->tab);
+		//ft_printf("el tamaño es de %d \n", size);
 		if (map->tab[2] == NULL)
 			assignment_identifiers(map);
 		else if (map->tab[3] == NULL)
 			assignment_identifiers_resolution(map);
 		else
-			print_error("HAY DEMASIDADOS VALORES EN LA MISMA LINEA \n");
+			print_error("Hay demasiados valores en la misma linea \n");
 	}
 	if (map->flag_widht > 1 || map->flag_no > 1 || map->flag_so > 1 ||
 	map->flag_ea > 1 || map->flag_we > 1 || map->flag_s > 1 ||

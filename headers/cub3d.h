@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/16 12:43:22 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 13:45:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	validation_identifiers_ceilling(map_config *map);
 void	validation_identifiers_floor(map_config *map);
 int		integer_validation(map_config *map);
 void	print_error(char *str);
+int		integer_validation_resolution(map_config *map);
 
 #endif
