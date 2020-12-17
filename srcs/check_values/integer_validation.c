@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   integer_validation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 14:30:22 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 18:40:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,17 @@ int	integer_validation_resolution(map_config *map)
 	int j;
 
 	i = 1;
-	while(i < 3)
+	while(i <= 2)
 	{
 		j = 0;
-		while(map->tab[j] != NULL)
+		while(map->tab[i][j])
 		{
 			if (ft_isdigit(map->tab[i][j]))
 				ft_printf("el numero %i es un entero \n", map->tab[i][j]);
 			else
 			{
 				print_error("Algunos datos de la resolución contienen valores"
-					"no númericos. Arreglelo y vuelva a ejecutar el programa.");
+					" no númericos. Arreglelo y vuelva a ejecutar el programa.");
 			}
 			j++;
 		}

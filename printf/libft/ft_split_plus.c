@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_plus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 19:03:24 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/13 11:47:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/17 17:39:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** Devuelve el contador de los caracteres o strings que ha ido encontrando por el
+** camino. Cuenta como string todos aquellos caracteres que estan separados por
+** c y t
+*/
 static int			ft_countword(char const *s, char c, char t)
 {
 	unsigned int	i;
@@ -31,7 +36,9 @@ static int			ft_countword(char const *s, char c, char t)
 	return (words);
 }
 
-
+/*
+** Asigna a una matriz, los caractres o strings que ha encontrando en la linea.
+*/
 static char			*ft_wordcopy(const char *s, size_t n)
 {
 	char	*str;
@@ -44,7 +51,11 @@ static char			*ft_wordcopy(const char *s, size_t n)
 	return (str);
 }
 
-
+/*
+** Devuelve un array de strings de la linea que le pasa get_next_line.
+** Este array que devuelve esta compuesto por los strins que aparecen
+** en la cadena omitiendo los caracteres c y t
+*/
 char				**ft_split_plus(char const *s, char c, char t)
 {
 	int		i;
