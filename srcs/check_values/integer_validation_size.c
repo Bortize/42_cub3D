@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/18 09:50:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/18 11:00:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	integer_validation_size(map_config *map)
 		(ft_atoi(map->tabcf[2]) > 255))
 	{
 		print_error("El rango del color excede del permitido. Arreglelo");
-		return (0);
+		return (-1);
 	}
 	else
 	{
-		print_error("El rango de color es valido");
-		return (-1);
+		ft_printf("El rango de color es valido");
+		return (0);
 	}
 }
