@@ -4,5 +4,5 @@ SE ./wolftex/textures/xpm/redbrick.xpm
 NA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
 S ./wolftex/textures/xpm/barrel.xpm
-C 130,240,153
-F 212,121,121
+C 430,260,153
+F 412,421,121

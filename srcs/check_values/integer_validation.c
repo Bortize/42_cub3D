@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   integer_validation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/18 00:54:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/18 09:45:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
-
-/*
-**	Controla el error si le pasan un rango de color superior a '255' a cada 
-**	parametro del cielo y el suelo
-*/
-int	integer_validation_size(map_config *map)
-{
-	if (map->tabcf[0][0] > 2)
-	{
-		print_error("El rango del color excede del permitido. Arreglelo");
-		return (0);
-	}
-	print_error("El rango de color no es valido");
-	return (-1);
-}
 
 /*	Call-Function --> 	assignment_identifiers_colours
 **						assignment_identifiers_colours
@@ -33,7 +18,7 @@ int	integer_validation_size(map_config *map)
 **	y de los colores del cielo y el suelo sean numeros enteros y que no conte-
 **	gan letras de por medio
 */
-int	integer_validation(map_config *map)
+int	 integer_validation(map_config *map)
 {
 	int i;
 	int j;
