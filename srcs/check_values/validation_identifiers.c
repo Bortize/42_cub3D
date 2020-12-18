@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation_identifiers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 12:00:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 09:01:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/18 00:58:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	validation_identifiers_ceilling(map_config *map)
 	{
 		print_error("Hay demasiados valores en el identificador");
 	}
+	integer_validation_size(map);
 }
 
 void	validation_identifiers_floor(map_config *map)

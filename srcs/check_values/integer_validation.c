@@ -6,11 +6,26 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 18:40:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/18 00:54:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
+
+/*
+**	Controla el error si le pasan un rango de color superior a '255' a cada 
+**	parametro del cielo y el suelo
+*/
+int	integer_validation_size(map_config *map)
+{
+	if (map->tabcf[0][0] > 2)
+	{
+		print_error("El rango del color excede del permitido. Arreglelo");
+		return (0);
+	}
+	print_error("El rango de color no es valido");
+	return (-1);
+}
 
 /*	Call-Function --> 	assignment_identifiers_colours
 **						assignment_identifiers_colours
