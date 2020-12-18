@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/18 09:02:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/18 12:26:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,19 @@ void	assignment_identifiers(map_config *map)
 		map->i++;
 		map->no = map->tab[1];
 	}
+	else
+	{
+		print_error("El identificador no es valido");
+	}
 	if (ft_strcmp("SO", map->tab[0]) == 0)
 	{
 		map->flag_so++;
 		map->i++;
 		map->so = map->tab[1];
+	}
+	else
+	{
+		print_error("El identificador no es valido");
 	}
 	if (ft_strcmp("EA", map->tab[0]) == 0)
 	{
@@ -87,17 +95,29 @@ void	assignment_identifiers(map_config *map)
 		map->i++;
 		map->ea = map->tab[1];
 	}
+	else
+	{
+		print_error("El identificador no es valido");
+	}
 	if (ft_strcmp("WE", map->tab[0]) == 0)
 	{
 		map->flag_we++;
 		map->i++;
 		map->we = map->tab[1];
 	}
+	else
+	{
+		print_error("El identificador no es valido");
+	}
 	if (ft_strcmp("S", map->tab[0]) == 0)
 	{
 		map->flag_s++;
 		map->i++;
 		map->s = map->tab[1];
+	}
+	else
+	{
+		print_error("El identificador no es valido");
 	}
 	assignment_identifiers_colours(map);
 }
