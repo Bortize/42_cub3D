@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 11:02:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 19:29:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "../../../headers/cub3d.h"
 
 /*	Call-Function -->
 **	Inicializa todas las variables de la estructura para permitirnos poder

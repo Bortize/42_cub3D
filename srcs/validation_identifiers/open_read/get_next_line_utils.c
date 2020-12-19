@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:14:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 11:09:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 19:28:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "../../../headers/get_next_line.h"
 
 /*
 ** Calcula el número de caracteres que tiene la cadena apuntada por *str.

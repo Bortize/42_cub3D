@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:12:55 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 08:56:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 19:28:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "../../../headers/get_next_line.h"
 
 void	del_buff(char **s)
 {

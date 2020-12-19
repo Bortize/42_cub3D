@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   integer_validation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/18 09:45:47 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 19:41:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "../../../headers/cub3d.h"
 
 /*	Call-Function --> 	assignment_identifiers_colours
 **						assignment_identifiers_colours

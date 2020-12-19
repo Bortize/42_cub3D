@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "../../../headers/cub3d.h"
 
 /*	Call-Function --> main
 **	Read the .map file line by line to identify if it contains the values to be

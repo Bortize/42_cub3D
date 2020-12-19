@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 17:59:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 19:41:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "../../../headers/cub3d.h"
 
 /*
 **	Is called by --> find_identifier(char *str, map_config *map);
@@ -74,21 +74,24 @@ int	assignment_identifiers(map_config *map)
 {
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);
-	if ((ft_strcmp("NO", map->tab[0]) == 0) && (path_validation(map->tab[1])) == 1)
+	if ((ft_strcmp("NO", map->tab[0]) == 0))
 	{
 		if (map->flag_no == 0)
 		{
+			path_validation(map->tab[1]);
 			map->flag_no++;
 			map->i++;
 			map->no = map->tab[1];
 		}
 		else
 		{
-			print_error("El identificador no es valido");
+			print_error("El fichero '.cub' contiene identificadores "
+				"duplicados. \nPor favor, introduzca un fichero válido");
 		}	
 	}
 	if (ft_strcmp("SO", map->tab[0]) == 0)
 	{
+		path_validation(map->tab[1]);
 		if (map->flag_so == 0)
 		{
 			map->flag_so++;
@@ -97,11 +100,13 @@ int	assignment_identifiers(map_config *map)
 		}
 		else
 		{
-			print_error("El identificador no es valido");
+			print_error("El fichero '.cub' contiene identificadores "
+				"duplicados. \nPor favor, introduzca un fichero válido");
 		}	
 	}
 	if (ft_strcmp("EA", map->tab[0]) == 0)
 	{
+		path_validation(map->tab[1]);
 		if (map->flag_ea == 0)
 		{
 			map->flag_ea++;
@@ -110,11 +115,13 @@ int	assignment_identifiers(map_config *map)
 		}
 		else
 		{
-			print_error("El identificador no es valido");
+			print_error("El fichero '.cub' contiene identificadores "
+				"duplicados. \nPor favor, introduzca un fichero válido");
 		}	
 	}
 	if (ft_strcmp("WE", map->tab[0]) == 0)
 	{
+		path_validation(map->tab[1]);
 		if (map->flag_we == 0)
 		{
 			map->flag_we++;
@@ -123,11 +130,13 @@ int	assignment_identifiers(map_config *map)
 		}
 		else
 		{
-			print_error("El identificador no es valido");
+			print_error("El fichero '.cub' contiene identificadores "
+				"duplicados.\n Por favor, introduzca un fichero válido");
 		}	
 	}
 	if (ft_strcmp("S", map->tab[0]) == 0)
 	{
+		path_validation(map->tab[1]);
 		if (map->flag_s == 0)
 		{
 			map->flag_s++;
@@ -136,7 +145,8 @@ int	assignment_identifiers(map_config *map)
 		}
 		else
 		{
-			print_error("El identificador no es valido");
+			print_error("El fichero '.cub' contiene identificadores "
+				"duplicados. \nPor favor, introduzca un fichero válido");
 		}	
 	}
 	assignment_identifiers_colours(map);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/19 11:59:13 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/19 19:40:58 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,18 @@ NAME 		= cub3D
 
 ###############################################################################
 
-SRCS		=	srcs/open_read/get_next_line.c \
-				srcs/open_read/get_next_line_utils.c \
-				srcs/open_read/file_validation.c \
-				srcs/open_read/read_map.c \
-				srcs/open_read/init_identifier.c \
-				srcs/check_values/find_identifier.c \
-				srcs/check_values/assignment_identifiers.c \
-				srcs/check_values/validation_identifiers.c \
-				srcs/check_values/integer_validation.c \
+SRCS		=	srcs/validation_identifiers/open_read/get_next_line.c \
+				srcs/validation_identifiers/open_read/get_next_line_utils.c \
+				srcs/validation_identifiers/open_read/file_validation.c \
+				srcs/validation_identifiers/open_read/read_map.c \
+				srcs/validation_identifiers/open_read/init_identifier.c \
+				srcs/validation_identifiers/search_identifiers/find_identifier.c \
+				srcs/validation_identifiers/search_identifiers/assignment_identifiers.c \
+				srcs/validation_identifiers/search_identifiers/validation_identifiers.c \
+				srcs/validation_identifiers/search_identifiers/integer_validation.c \
 				srcs/error/print_error.c \
-				srcs/check_values/integer_validation_size.c \
-				srcs/check_values/path_validation.c \
+				srcs/validation_identifiers/search_identifiers/integer_validation_size.c \
+				srcs/validation_identifiers/search_identifiers/path_validation.c \
 				srcs/main.c
 
 CC			= gcc
