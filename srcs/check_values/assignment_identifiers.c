@@ -6,18 +6,20 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/18 12:26:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 14:34:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
-/*	Is called by --> find_identifier(char *str, map_config *map);
+/*
+**	Is called by --> find_identifier(char *str, map_config *map);
 **	Comprueba el valor del indicice [0] despues de que haya sido deparado por
 **	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
 **	y[2] a la variable que le corresponde dentro de la estructura
 **	Call to the function --> integer_validation_resolution(map);
 */
+
 void	assignment_identifiers_resolution(map_config *map)
 {
 	if (ft_strcmp("R", map->tab[0]) == 0)
@@ -36,6 +38,7 @@ void	assignment_identifiers_resolution(map_config *map)
 **	y [2] a la variable que le corresponde dentro de la estructura
 **	Call to the function --> validation_identifiers_ceilling(map);
 */
+
 void	assignment_identifiers_colours(map_config *map)
 {
 	if (ft_strcmp("C", map->tab[0]) == 0)
@@ -60,16 +63,18 @@ void	assignment_identifiers_colours(map_config *map)
 	}
 }
 
-/*	Call-Function --> find_identifier
+/*
+**	Call-Function --> find_identifier
 **	Comprueba el valor del indicice [0] despues de que haya sido deparado por
 **	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
 **	a la variable que le corresponde dentro de la estructura
 */
+
 void	assignment_identifiers(map_config *map)
 {
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);
-	if (ft_strcmp("NO", map->tab[0]) == 0)
+	if ((ft_strcmp("NO", map->tab[0]) == 0) && (path_validation(map->tab[1])) == 1)
 	{
 		map->flag_no++;
 		map->i++;

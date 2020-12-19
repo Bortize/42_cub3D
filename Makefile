@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/18 09:05:30 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/19 11:59:13 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS		=	srcs/open_read/get_next_line.c \
 				srcs/check_values/integer_validation.c \
 				srcs/error/print_error.c \
 				srcs/check_values/integer_validation_size.c \
+				srcs/check_values/path_validation.c \
 				srcs/main.c
 
 CC			= gcc

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 19:24:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 12:53:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int		integer_validation(map_config *map);
 void	print_error(char *str);
 int		integer_validation_resolution(map_config *map);
 int		integer_validation_size(map_config *map);
+int		path_validation(char *str);
 
 #endif
