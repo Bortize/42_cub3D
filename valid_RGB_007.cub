@@ -17,5 +17,5 @@ F 122,122,122
 11111111111111111
 EA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
-C 256,256,256,
+C 256,256,256
 S ./wolftex/textures/xpm/barrel.xpm

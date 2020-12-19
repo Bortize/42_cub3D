@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/18 11:56:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 17:54:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,8 @@
 */
 int find_identifier(char *str, map_config *map)
 {
-	//int size;
-
-	//size = 0;
 	if ((map->tab = ft_split_plus(str, ' ', '\t')))
 	{
-		//size = sizeof(map->tab);
-		//ft_printf("el tamaño es de %d \n", size);
 		if (map->tab[2] == NULL)
 			assignment_identifiers(map);
 		else if (map->tab[3] == NULL)

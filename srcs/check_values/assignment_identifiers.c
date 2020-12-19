@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assignment_identifiers.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 14:34:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 17:59:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,59 +70,75 @@ void	assignment_identifiers_colours(map_config *map)
 **	a la variable que le corresponde dentro de la estructura
 */
 
-void	assignment_identifiers(map_config *map)
+int	assignment_identifiers(map_config *map)
 {
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);
 	if ((ft_strcmp("NO", map->tab[0]) == 0) && (path_validation(map->tab[1])) == 1)
 	{
-		map->flag_no++;
-		map->i++;
-		map->no = map->tab[1];
-	}
-	else
-	{
-		print_error("El identificador no es valido");
+		if (map->flag_no == 0)
+		{
+			map->flag_no++;
+			map->i++;
+			map->no = map->tab[1];
+		}
+		else
+		{
+			print_error("El identificador no es valido");
+		}	
 	}
 	if (ft_strcmp("SO", map->tab[0]) == 0)
 	{
-		map->flag_so++;
-		map->i++;
-		map->so = map->tab[1];
-	}
-	else
-	{
-		print_error("El identificador no es valido");
+		if (map->flag_so == 0)
+		{
+			map->flag_so++;
+			map->i++;
+			map->so = map->tab[1];
+		}
+		else
+		{
+			print_error("El identificador no es valido");
+		}	
 	}
 	if (ft_strcmp("EA", map->tab[0]) == 0)
 	{
-		map->flag_ea++;
-		map->i++;
-		map->ea = map->tab[1];
-	}
-	else
-	{
-		print_error("El identificador no es valido");
+		if (map->flag_ea == 0)
+		{
+			map->flag_ea++;
+			map->i++;
+			map->ea = map->tab[1];
+		}
+		else
+		{
+			print_error("El identificador no es valido");
+		}	
 	}
 	if (ft_strcmp("WE", map->tab[0]) == 0)
 	{
-		map->flag_we++;
-		map->i++;
-		map->we = map->tab[1];
-	}
-	else
-	{
-		print_error("El identificador no es valido");
+		if (map->flag_we == 0)
+		{
+			map->flag_we++;
+			map->i++;
+			map->we = map->tab[1];
+		}
+		else
+		{
+			print_error("El identificador no es valido");
+		}	
 	}
 	if (ft_strcmp("S", map->tab[0]) == 0)
 	{
-		map->flag_s++;
-		map->i++;
-		map->s = map->tab[1];
-	}
-	else
-	{
-		print_error("El identificador no es valido");
+		if (map->flag_s == 0)
+		{
+			map->flag_s++;
+			map->i++;
+			map->s = map->tab[1];
+		}
+		else
+		{
+			print_error("El identificador no es valido");
+		}	
 	}
 	assignment_identifiers_colours(map);
+	return (0);
 }
