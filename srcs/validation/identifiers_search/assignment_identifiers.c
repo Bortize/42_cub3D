@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 19:41:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/19 20:33:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	assignment_identifiers_colours(map_config *map)
 **	a la variable que le corresponde dentro de la estructura
 */
 
-int	assignment_identifiers(map_config *map)
+int	assignment_identifiers_textures(map_config *map)
 {
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);

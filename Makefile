@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/19 19:40:58 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/19 20:41:40 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,19 +18,19 @@ NAME 		= cub3D
 
 ###############################################################################
 
-SRCS		=	srcs/validation_identifiers/open_read/get_next_line.c \
-				srcs/validation_identifiers/open_read/get_next_line_utils.c \
-				srcs/validation_identifiers/open_read/file_validation.c \
-				srcs/validation_identifiers/open_read/read_map.c \
-				srcs/validation_identifiers/open_read/init_identifier.c \
-				srcs/validation_identifiers/search_identifiers/find_identifier.c \
-				srcs/validation_identifiers/search_identifiers/assignment_identifiers.c \
-				srcs/validation_identifiers/search_identifiers/validation_identifiers.c \
-				srcs/validation_identifiers/search_identifiers/integer_validation.c \
-				srcs/error/print_error.c \
-				srcs/validation_identifiers/search_identifiers/integer_validation_size.c \
-				srcs/validation_identifiers/search_identifiers/path_validation.c \
-				srcs/main.c
+SRCS		=	srcs/main.c \
+				srcs/error/print_error.c \	
+				srcs/validation/read_file/read_map.c \
+				srcs/validation/read_file/init_identifier.c \
+				srcs/validation/read_file/get_next_line.c \
+				srcs/validation/read_file/get_next_line_utils.c \
+				srcs/validation/read_file/file_validation.c \
+				srcs/validation/identifiers_search/find_identifier.c \
+				srcs/validation/identifiers_search/assignment_identifiers.c \
+				srcs/validation/identifiers_validation/path_validation.c \
+				srcs/validation/identifiers_validation/validation_ceilling_floor.c \
+				srcs/validation/identifiers_validation/integer_validation.c \
+				srcs/validation/identifiers_validation/integer_validation_size.c \
 
 CC			= gcc
 
