@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/19 21:56:55 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/20 15:45:25 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,13 @@ SRCS		=	srcs/main.c \
 				srcs/validation/identifiers_validation/validation_ceilling_floor.c \
 				srcs/validation/identifiers_validation/integer_validation.c \
 				srcs/validation/identifiers_validation/integer_validation_size.c \
+				srcs/validation/identifiers_validation/texture_validation_no.c \
+				srcs/validation/identifiers_validation/texture_validation_so.c \
+				srcs/validation/identifiers_validation/texture_validation_ea.c \
+				srcs/validation/identifiers_validation/texture_validation_we.c \
+				srcs/validation/identifiers_validation/texture_validation_s.c \
+				srcs/validation/identifiers_validation/color_validation_ceilling.c \
+				srcs/validation/identifiers_validation/color_validation_floor.c \
 
 CC			= gcc
 

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 20:33:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/20 15:57:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,7 @@
 
 void	assignment_identifiers_resolution(map_config *map)
 {
-	if (ft_strcmp("R", map->tab[0]) == 0)
-		map->flag_widht++;
-		map->i++;
-		integer_validation_resolution(map);
-		map->width = ft_atoi(map->tab[1]);
-		map->height = ft_atoi(map->tab[2]);
-		ft_printf("🧪w --> %i \n", map->width);
-		ft_printf("🧪h --> %i \n\n\n", map->height);
+	screen_validation_r(map);
 }
 
 /*	Is called by --> assignment_identifiers(map_config *map)
@@ -41,26 +34,8 @@ void	assignment_identifiers_resolution(map_config *map)
 
 void	assignment_identifiers_colours(map_config *map)
 {
-	if (ft_strcmp("C", map->tab[0]) == 0)
-	{
-		map->flag_ceilling++;
-		map->i++;
-		map->tabcf = ft_split(map->tab[1], ',');
-		validation_identifiers_ceilling(map);
-		ft_printf(" 🧪 -->  %i \n", map->ceilling[0]);
-		ft_printf(" 🧪 -->  %i \n", map->ceilling[1]);
-		ft_printf(" 🧪 -->  %i \n\n", map->ceilling[2]);
-	}
-	if (ft_strcmp("F", map->tab[0]) == 0)
-	{
-		map->flag_floor++;
-		map->i++;
-		map->tabcf = ft_split(map->tab[1], ',');
-		validation_identifiers_floor(map);
-		ft_printf(" 🧪 -->  %i \n", map->floor[0]);
-		ft_printf(" 🧪 -->  %i \n", map->floor[1]);
-		ft_printf(" 🧪 -->  %i \n\n", map->floor[2]);
-	}
+	color_validation_ceilling(map);
+	color_validation_floor(map);
 }
 
 /*
@@ -75,80 +50,15 @@ int	assignment_identifiers_textures(map_config *map)
 	ft_printf("🧪 --> %s \n", map->tab[0]);
 	ft_printf("🧪 --> %s \n\n\n\n", map->tab[1]);
 	if ((ft_strcmp("NO", map->tab[0]) == 0))
-	{
-		if (map->flag_no == 0)
-		{
-			path_validation(map->tab[1]);
-			map->flag_no++;
-			map->i++;
-			map->no = map->tab[1];
-		}
-		else
-		{
-			print_error("El fichero '.cub' contiene identificadores "
-				"duplicados. \nPor favor, introduzca un fichero válido");
-		}	
-	}
+		texture_validation_no(map);
 	if (ft_strcmp("SO", map->tab[0]) == 0)
-	{
-		path_validation(map->tab[1]);
-		if (map->flag_so == 0)
-		{
-			map->flag_so++;
-			map->i++;
-			map->so = map->tab[1];
-		}
-		else
-		{
-			print_error("El fichero '.cub' contiene identificadores "
-				"duplicados. \nPor favor, introduzca un fichero válido");
-		}	
-	}
+		texture_validation_so(map);
 	if (ft_strcmp("EA", map->tab[0]) == 0)
-	{
-		path_validation(map->tab[1]);
-		if (map->flag_ea == 0)
-		{
-			map->flag_ea++;
-			map->i++;
-			map->ea = map->tab[1];
-		}
-		else
-		{
-			print_error("El fichero '.cub' contiene identificadores "
-				"duplicados. \nPor favor, introduzca un fichero válido");
-		}	
-	}
+		texture_validation_ea(map);
 	if (ft_strcmp("WE", map->tab[0]) == 0)
-	{
-		path_validation(map->tab[1]);
-		if (map->flag_we == 0)
-		{
-			map->flag_we++;
-			map->i++;
-			map->we = map->tab[1];
-		}
-		else
-		{
-			print_error("El fichero '.cub' contiene identificadores "
-				"duplicados.\n Por favor, introduzca un fichero válido");
-		}	
-	}
+		texture_validation_we(map);
 	if (ft_strcmp("S", map->tab[0]) == 0)
-	{
-		path_validation(map->tab[1]);
-		if (map->flag_s == 0)
-		{
-			map->flag_s++;
-			map->i++;
-			map->s = map->tab[1];
-		}
-		else
-		{
-			print_error("El fichero '.cub' contiene identificadores "
-				"duplicados. \nPor favor, introduzca un fichero válido");
-		}	
-	}
+		texture_validation_s(map);
 	assignment_identifiers_colours(map);
 	return (0);
 }

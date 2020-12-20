@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 21:54:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/20 15:45:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,12 @@ void	print_error(char *str);
 int		integer_validation_resolution(map_config *map);
 int		integer_validation_size(map_config *map);
 int		path_validation(char *str);
+void	texture_validation_no(map_config *map);
+void	texture_validation_so(map_config *map);
+void	texture_validation_ea(map_config *map);
+void	texture_validation_we(map_config *map);
+void	texture_validation_s(map_config *map);
+void	color_validation_ceilling(map_config *map);
+void	color_validation_floor(map_config *map);
 
 #endif
