@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/20 15:45:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/20 20:26:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ typedef struct	config
 
 int		file_validation(char *str);
 void	init_identifier(map_config *map);
-int 	read_map(int fd, map_config *map);
+int		file_reading(int fd, map_config *map);
 int		find_identifier(char *str, map_config *map);
-int		assignment_identifiers_textures(map_config *map);
+int		assignment_identifiers_text_colour(map_config *map);
 void	assignment_identifiers_colours(map_config *map);
 void	assignment_identifiers_resolution(map_config *map);
 void	validation_identifiers_ceilling(map_config *map);
@@ -61,6 +61,7 @@ void	print_error(char *str);
 int		integer_validation_resolution(map_config *map);
 int		integer_validation_size(map_config *map);
 int		path_validation(char *str);
+void	screen_validation_r(map_config *map);
 void	texture_validation_no(map_config *map);
 void	texture_validation_so(map_config *map);
 void	texture_validation_ea(map_config *map);

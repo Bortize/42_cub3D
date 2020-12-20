@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 19:41:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/20 21:03:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	integer_validation_size(map_config *map)
 	}
 	else
 	{
-		ft_printf("El rango de color es valido");
+		ft_printf("El rango de color es valido \n");
 		return (0);
 	}
 }

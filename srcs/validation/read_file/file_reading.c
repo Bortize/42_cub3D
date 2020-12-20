@@ -1,12 +1,12 @@
-     /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bortize <bortize@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 11:15:46 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/09 23:03:54 by bortize          ###   ########.fr       */
+/*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/12/20 20:16:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Read the .map file line by line to identify if it contains the values to be
 **	collected
 */
-int	read_map(int fd, map_config *map)
+int	file_reading(int fd, map_config *map)
 {
 	char *line;
 	int i;
@@ -24,7 +24,6 @@ int	read_map(int fd, map_config *map)
 	i = 0;
 	while (get_next_line(fd, &line))
 	{
-		//printf("%d", i);
 		ft_printf("GNL has read this line 📖 --> %s \n", line);
 		find_identifier(line, map);
 		free(line);

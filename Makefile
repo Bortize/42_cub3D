@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/20 15:45:25 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/20 19:05:53 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME 		= cub3D
 
 SRCS		=	srcs/main.c \
 				srcs/error/print_error.c \
-				srcs/validation/read_file/read_map.c \
+				srcs/validation/read_file/file_reading.c \
 				srcs/validation/read_file/init_identifier.c \
 				srcs/validation/read_file/get_next_line.c \
 				srcs/validation/read_file/get_next_line_utils.c \
@@ -31,6 +31,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/identifiers_validation/validation_ceilling_floor.c \
 				srcs/validation/identifiers_validation/integer_validation.c \
 				srcs/validation/identifiers_validation/integer_validation_size.c \
+				srcs/validation/identifiers_validation/screen_validation_r.c \
 				srcs/validation/identifiers_validation/texture_validation_no.c \
 				srcs/validation/identifiers_validation/texture_validation_so.c \
 				srcs/validation/identifiers_validation/texture_validation_ea.c \
