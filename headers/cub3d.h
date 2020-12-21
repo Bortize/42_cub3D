@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/20 20:26:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/21 18:17:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct	config
 	int			flag_ceilling;
 	char		**tab;
 	char		**tabcf;
+	char		*tmp1;// puntero temporal para trabajar los caoso de color con espacios
+	char		*tmp2;// puntero temporal para trabajar los caoso de color con espacios
 }				map_config;
 
 int		file_validation(char *str);
