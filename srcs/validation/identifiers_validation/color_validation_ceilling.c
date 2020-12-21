@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:42:41 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/21 19:47:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/21 21:13:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	color_validation_ceilling(map_config *map)
 			map->flag_ceilling++;
 			map->i++;
 			new = ft_strjoin(map->tab[0], map->tab[1]);
-			map->tabcf = ft_split(&map->tmp1[0], ',');
+			map->tabcf = ft_split(new, ',');
 			validation_identifiers_ceilling(map);
 			ft_printf(" 🧪 -->  %i \n", map->ceilling[0]);
 			ft_printf(" 🧪 -->  %i \n", map->ceilling[1]);
