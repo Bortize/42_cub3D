@@ -4,8 +4,8 @@ SO ./wolftex/textures/xpm/redbrick.xpm
 EA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
 S ./wolftex/textures/xpm/barrel.xpm
-C 100,200,160
-F 25,             122                                  ,254
+C 25,		      								       122                                  ,254
+F 100,200,160
 
 11111111111111111
 10000000000000001
