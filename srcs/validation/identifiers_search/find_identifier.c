@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/21 07:48:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/22 18:11:34 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int find_identifier(char *str, map_config *map)
 			assignment_identifiers_text_colour(map);
 		else if (ft_strchr(map->tab[0], '0') || ft_strchr(map->tab[0], '1'))
 			print_error("Ha introducido un fichero que no cumple las reglas."
-			 " Por favor, introduzca uno que contenga el PLANO DEL MAPA al"
-			 " final.");
+			 " Por favor, introduzca un fichero '.cub' que contenga el PLANO "
+			 " DEL MAPA al final.");
 		else
 			print_error("Hay demasiados valores en el identificador");
 

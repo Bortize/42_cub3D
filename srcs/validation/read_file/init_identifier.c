@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_identifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 19:29:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/22 20:59:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	init_identifier(map_config *map)
 	map->flag_s = 0;
 	map->flag_floor = 0;
 	map->flag_ceilling = 0;
+	map->flag_map_ready = 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/21 21:10:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/22 21:05:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,22 @@ typedef struct	config
 	int			flag_floor;
 	int			ceilling[3];// Igual meter el color por separado tambien como la rsolucion map->r, map->g, map->b (RGB)
 	int			flag_ceilling;
-	char		**tab;
-	char		**tabcf;
-	char		*tmp1;// puntero temporal para trabajar los caoso de color con espacios
-	char		*tmp2;// puntero temporal para trabajar los caoso de color con espacios
+	char		**tab;// lo uso para trabajar con los identificadores la primera vez que lee la liena
+	char		**tabcf;// lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
+	int			flag_map_ready;
 }				map_config;
+
+typedef	struct valid_map
+{
+	int			i;
+
+}				map_plan;
+
 
 int		file_validation(char *str);
 void	init_identifier(map_config *map);
-int		file_reading(int fd, map_config *map);
+int		file_reading_identifiers(int fd, map_config *map);
+int		file_reading_map(int fd, map_config *map, map_plan *plan);
 int		find_identifier(char *str, map_config *map);
 int		assignment_identifiers_text_colour(map_config *map);
 void	assignment_identifiers_colours(map_config *map);
@@ -71,5 +78,6 @@ void	texture_validation_we(map_config *map);
 void	texture_validation_s(map_config *map);
 int		color_validation_ceilling(map_config *map);
 int		color_validation_floor(map_config *map);
+int		validate_plan(int fd, map_plan *plan);
 
 #endif
