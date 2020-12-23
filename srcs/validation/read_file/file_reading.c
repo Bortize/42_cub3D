@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 16:45:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 18:40:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ int	file_reading(int fd, map_config *map, map_plan *plan)
 		ft_printf("GNL has read this line 📖 --> %s \n", line);
 		if (map->i < 8)
 			find_identifiers(line, map);
-		if (map->i == 8)
+		if (map->flag_map_ready == 1)
 			validate_plan(line, map, plan);
 		free(line);// Necesito liberarlo cada vez para dejar la linea libre
 	}
 	if (map->i < 8)
 		print_error("Faltan identificadores, revise su mapa");
-	map->flag_map_ready = 1;
 	return (0);
 }

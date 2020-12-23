@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:13:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/20 15:14:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 18:08:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	texture_validation_s(map_config *map)
 	{
 		print_error("El fichero '.cub' contiene identificadores "
 			"duplicados. \nPor favor, introduzca un fichero válido");
-	}	
+	}
 }
