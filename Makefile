@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/20 19:05:53 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/23 13:23:07 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/identifiers_validation/texture_validation_s.c \
 				srcs/validation/identifiers_validation/color_validation_ceilling.c \
 				srcs/validation/identifiers_validation/color_validation_floor.c \
+				srcs/validation/map/validate_plan.c
 
 CC			= gcc
 

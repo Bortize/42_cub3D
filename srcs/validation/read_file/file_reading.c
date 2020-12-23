@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/22 21:26:47 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 10:21:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Read the .map file line by line to identify if it contains the values to be
 **	collected
 */
-int	file_reading_identifiers(int fd, map_config *map)
+int	file_reading_identifiers(int fd, map_config *map, map_plan *plan)
 {
 	char *line;
 	int i;
@@ -28,9 +28,8 @@ int	file_reading_identifiers(int fd, map_config *map)
 		if (map->i < 8)
 			find_identifier(line, map);
 		if (map->i == 8)
-			ft_printf("congrats, estas leyendo el plano \n");
-		free(line);//puedo liberarlo al final del programa, asi podria pasarle la direccion de la ultima linea leida a file_reading_map y no tener que volver a leerlo todo desde el principio
-		line = NULL;
+			validate_plan(line, map, plan);
+		free(line);// Necesito liberarlo cada vez para dejar la linea libre
 		i++;
 	}
 	if (map->i < 8)

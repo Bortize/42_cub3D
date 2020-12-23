@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/22 21:05:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:58:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,16 @@ typedef struct	config
 typedef	struct valid_map
 {
 	int			i;
+	int			plan_row_size;
+	size_t			row_len;
+	char		**plan;
 
 }				map_plan;
 
 
 int		file_validation(char *str);
 void	init_identifier(map_config *map);
-int		file_reading_identifiers(int fd, map_config *map);
+int		file_reading_identifiers(int fd, map_config *map, map_plan *plan);
 int		file_reading_map(int fd, map_config *map, map_plan *plan);
 int		find_identifier(char *str, map_config *map);
 int		assignment_identifiers_text_colour(map_config *map);
@@ -78,6 +81,7 @@ void	texture_validation_we(map_config *map);
 void	texture_validation_s(map_config *map);
 int		color_validation_ceilling(map_config *map);
 int		color_validation_floor(map_config *map);
-int		validate_plan(int fd, map_plan *plan);
+int		validate_plan(char *str, map_config *map, map_plan *plan);
+void	plan_values(map_plan *plan);
 
 #endif
