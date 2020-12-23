@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/21 12:42:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 17:45:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	assignment_identifiers_colours(map_config *map)
 
 /*
 **	Call-Function --> find_identifier
-**	Comprueba el valor del indicice [0] despues de que haya sido deparado por
+**	Comprueba el valor del indicice [0] despues de que haya sido separado por
 **	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
 **	a la variable que le corresponde dentro de la estructura
 */

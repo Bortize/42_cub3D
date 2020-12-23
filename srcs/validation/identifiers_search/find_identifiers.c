@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_identifier.c                                  :+:      :+:    :+:   */
+/*   find_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/22 18:11:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 16:45:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	sus valores. Tambien comprueba si el mapa tiene identificadores iguales para
 **	devolver un error en ese caso
 */
-int find_identifier(char *str, map_config *map)
+int find_identifiers(char *str, map_config *map)
 {
 	if ((map->tab = ft_split_plus(str, ' ', '\t')))
 	{

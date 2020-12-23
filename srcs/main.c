@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 10:08:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 16:31:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ int	main(int argc, char **argv)
 	map_plan	plan;
 
 	int fd;
-	init_identifier(&map);
+	init_identifiers(&map);
+	init_plan_values(&plan);
 	if (argc > 2)
 		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
 		ft_printf("Mapa introducido --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
-		file_reading_identifiers(fd, &map, &plan);
+		file_reading(fd, &map, &plan);
 		//file_reading_map(fd, &map, &plan);
 	}
 	else if (argc < 2)
-		ft_printf("Eres un estupido, no vales ni para meter un fichero \n");
-		return (-1);
+		print_error("Eres un estupido, no vales ni para meter un fichero");
 	system("leaks cub3D");
 	return (0);
 }

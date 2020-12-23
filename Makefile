@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/23 13:23:07 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/23 16:46:13 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,11 @@ NAME 		= cub3D
 SRCS		=	srcs/main.c \
 				srcs/error/print_error.c \
 				srcs/validation/read_file/file_reading.c \
-				srcs/validation/read_file/init_identifier.c \
+				srcs/validation/read_file/init_identifiers.c \
 				srcs/validation/read_file/get_next_line.c \
 				srcs/validation/read_file/get_next_line_utils.c \
 				srcs/validation/read_file/file_validation.c \
-				srcs/validation/identifiers_search/find_identifier.c \
+				srcs/validation/identifiers_search/find_identifiers.c \
 				srcs/validation/identifiers_search/assignment_identifiers.c \
 				srcs/validation/identifiers_validation/path_validation.c \
 				srcs/validation/identifiers_validation/validation_ceilling_floor.c \

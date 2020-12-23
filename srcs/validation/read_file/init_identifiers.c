@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_identifier.c                                  :+:      :+:    :+:   */
+/*   init_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 13:57:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 16:30:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **	empezar a trabajar con ellas. Ademas elimina el valor basuara que pudieran
 **	contener a la hora de su declaración
 */
-void	init_identifier(map_config *map)
+void	init_identifiers(map_config *map)
 {
 	map->i = 0;
 	map->width = 0;
@@ -39,7 +39,7 @@ void	init_identifier(map_config *map)
 	map->flag_map_ready = 0;
 }
 
-void	plan_values(map_plan *plan)
+void	init_plan_values(map_plan *plan)
 {
 	plan->i = 0;
 	plan->plan_row_size = 0;
