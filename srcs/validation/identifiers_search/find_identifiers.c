@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/23 18:38:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 18:49:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,5 @@ int	find_identifiers(char *str, map_config *map)
 	}
 	if (map->i > 8)
 		print_error("Hay demasiados Identidicadores, revise su mapa");
-	if (map->i == 8)
-		map->flag_map_ready = 1;
 	return (0);
 }
