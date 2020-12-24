@@ -4,6 +4,8 @@ Creo una variable de tipo puntero llamada "line" donde voy guardando cada linea 
 
 Creo un bucle con la condicion de que mientras queden lineas por leer, se ejecute lo que hay dentro.
 
+Si la linea leida no es una linea vacía entonces no entra en el codigo y pasa en el bucle a la siguiente linea, porque las lineas vacioas no nos interesa contabilizarlas.
+
 Dentro llama a 2 funciones las cuales entrara en el buscador de intentificadores (find_identifier) siempre y cuando map->i que es un contador de los identificadores que ha ido encontrando y validando, sea menor de 8, que son los que tiene que haber.
 
 Si ha completado de encontrar y validar todos los identificadores, entonces entra en la siguiente funcion que lo que hace es validar el plano del mapa.

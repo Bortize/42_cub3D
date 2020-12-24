@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2020/12/23 18:49:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/24 18:38:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	find_identifiers(char *str, map_config *map)
 {
 	if ((map->tab = ft_split_plus(str, ' ', '\t')))
 	{
+		check_identifiers(map);
 		if (map->tab[2] == NULL)
 			assignment_identifiers_text_colour(map);
 		else if (map->tab[3] == NULL)
@@ -31,7 +32,7 @@ int	find_identifiers(char *str, map_config *map)
 		else if (map->tab[4] == NULL)
 			assignment_identifiers_text_colour(map);
 		else if (ft_strchr(map->tab[0], '0') || ft_strchr(map->tab[0], '1'))
-			print_error("El fichero .cub no contiene el plano del mapa al final");
+			print_error("El fichero .cub NO contiene el plano del mapa al final");
 		else
 			print_error("Hay demasiados valores en el identificador");
 	}

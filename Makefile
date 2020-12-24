@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/23 18:32:46 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/24 18:21:26 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/read_file/get_next_line_utils.c \
 				srcs/validation/read_file/file_validation.c \
 				srcs/validation/identifiers_search/find_identifiers.c \
+				srcs/validation/identifiers_search/check_identifiers.c \
 				srcs/validation/identifiers_search/assignment_identifiers.c \
 				srcs/validation/identifiers_validation/path_validation.c \
 				srcs/validation/identifiers_validation/validation_ceilling_floor.c \
