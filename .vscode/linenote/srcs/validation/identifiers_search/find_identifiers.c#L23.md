@@ -36,7 +36,7 @@ map->tab[1] = 255,
 map->tab[2] = 200
 map->tab[3] = ,200
 
-Lo primero que hace despued de gestionar esto es comprobar que el primer identificador entre solamente con las letras que son validas. En caso de aparecer la letra anidada en otra como por ejemplo "NORDICO" o "SORPRESA" devuelve error.
+Lo primero que hace despues de gestionar en cuantos vectores va a estar dividido la linea que le pasa, es comprobar que el primer identificador entre solamente con las letras que son validas y esto lo hace con la función check_identifers(map). En caso de aparecer la letra anidada en otra como por ejemplo "NORDICO" o "SORPRESA" devuelve error.
 
 Dependiendo de como haya aparecido la linea con mas o menos espacios, la funcion la alojara en una matriz de mas o menos dimension. Es por ello, que me fijo en la posicion del último valor para comprobar si es NULL, de esta menera, mi funcion tiene una forma de saber como ha sido seccionada la linea para poder trabajar con ella madnandola a la funcion pertinente para tratarla.
 

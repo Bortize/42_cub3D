@@ -1,7 +1,7 @@
-R 100 720
-SORPRESA ./wolftex/textures/xpm/greystone.xpm
+R 1080 720
+SO ./wolftex/textures/xpm/greystone.xpm
 NO ./wolftex/textures/xpm/redbrick.xpm
-EA ./wolftex/textures/xpm/wood.xpm
+EAA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
 S ./wolftex/textures/xpm/barrel.xpm
 C 255,200,160

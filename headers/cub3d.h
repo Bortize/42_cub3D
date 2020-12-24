@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/24 18:38:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/24 18:54:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,16 @@ typedef struct	config
 	char		**tab;// lo uso para trabajar con los identificadores la primera vez que lee la liena
 	char		**tabcf;// lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready;
-}				map_config;
+}									map_config;
 
 typedef	struct valid_map
 {
 	int			i;
 	int			plan_row_size;
-	size_t			row_len;
+	size_t	row_len;
 	char		**plan;
 
-}				map_plan;
+}								map_plan;
 
 
 int		file_validation(char *str);
