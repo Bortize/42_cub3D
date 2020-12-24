@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 18:32:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/23 19:57:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		validate_plan(char *str, map_config *map, map_plan *plan)
 {
-	map->flag_map_ready = 1;
+	map->flag_map_ready = 1;//provisional, porque necesita usarse algo de la estructura plan
 
-	if (str == NULL)
+	if (str[0] == '\0')
 		return (0);
 	ft_printf("congrats, estas leyendo el plano \n");
 	ft_printf("Linea leía --> 🗺️ %s \n", str);
