@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_plan.c                                    :+:      :+:    :+:   */
+/*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 14:49:47 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/12/26 14:51:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-int		validate_plan(char *str, map_plan *plan)
+void	assigning_plane_values(char *str, map_plan *plan)
 {
-	check_characters(str, plan);
-	if (plan->row_len < ft_strlen(str))
-		plan->row_len = ft_strlen(str);
-	return (0);
+	size_t **tpm_plan;
+
+	tmp_plan = (int **)malloc(plan->rows_size * (plan->row_len * sizeof(char *)));
 }

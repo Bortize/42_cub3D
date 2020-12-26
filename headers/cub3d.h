@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/24 20:00:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 14:46:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,15 @@ typedef struct	config
 	char		**tab;// lo uso para trabajar con los identificadores la primera vez que lee la liena
 	char		**tabcf;// lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready;
-}									map_config;
+}				map_config;
 
 typedef	struct valid_map
 {
 	int			i;
-	int			plan_row_size;
-	size_t	row_len;
-	char		**plan;
-
-}								map_plan;
+	int			rows_size;// guarda el número de filas que contiene el plano del mapa
+	size_t		row_len;//	guarda la linea mas larga que ha leido del plano del mapa
+	char		**plan;// guarda el plano del mapa
+}				map_plan;
 
 
 int		file_validation(char *str);
@@ -81,9 +80,11 @@ void	texture_validation_we(map_config *map);
 void	texture_validation_s(map_config *map);
 int		color_validation_ceilling(map_config *map);
 int		color_validation_floor(map_config *map);
-int		validate_plan(char *str, map_config *map, map_plan *plan);
+int		validate_plan(char *str, map_plan *plan);
 void	init_plan_values(map_plan *plan);
 int		check_identifiers(map_config *map);
-int	check_characters(char *str, map_config *map, map_plan *plan);
+void	check_characters(char *str, map_plan *plan);
+void	check_allowed_values(char *str, map_config *plan);
+void	assigning_plane_values(char *str, map_config *plan);
 
 #endif

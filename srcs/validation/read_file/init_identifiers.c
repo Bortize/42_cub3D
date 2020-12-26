@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 16:30:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 11:59:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	init_identifiers(map_config *map)
 void	init_plan_values(map_plan *plan)
 {
 	plan->i = 0;
-	plan->plan_row_size = 0;
+	plan->rows_size = 0;
 	plan->row_len = 0;
 }
