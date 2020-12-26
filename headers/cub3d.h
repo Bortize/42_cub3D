@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/24 18:54:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/24 20:00:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int		color_validation_floor(map_config *map);
 int		validate_plan(char *str, map_config *map, map_plan *plan);
 void	init_plan_values(map_plan *plan);
 int		check_identifiers(map_config *map);
+int	check_characters(char *str, map_config *map, map_plan *plan);
 
 #endif
