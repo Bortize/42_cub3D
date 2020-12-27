@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:15:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/14 22:06:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 22:24:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,10 @@ size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_substr(const char *s, unsigned int start, size_t end);
 char	*ft_strjoin(char const *s1, char const *s2);
+
+#endif
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 4032
 
 #endif

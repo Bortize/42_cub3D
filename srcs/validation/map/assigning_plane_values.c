@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 14:51:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 20:45:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	assigning_plane_values(char *str, map_plan *plan)
+void	assigning_plane_values(map_plan *plan)
 {
-	size_t **tpm_plan;
-
-	tmp_plan = (int **)malloc(plan->rows_size * (plan->row_len * sizeof(char *)));
+	plan->plan = (char **)calloc(plan->rows_size, sizeof(char *));
+	plan->values_ok = 1;
 }

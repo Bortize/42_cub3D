@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 14:46:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 23:26:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	file_reading(int fd, map_config *map, map_plan *plan)
 	}
 	if (map->i < 8)
 		print_error("Faltan identificadores, revise su mapa");
-	assigning_plane_values(str, plan);
+	if (plan->values_ok == 0)
+		assigning_plane_values(plan);
 	return (0);
 }

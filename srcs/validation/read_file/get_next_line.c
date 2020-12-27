@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:12:55 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 19:28:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/26 21:51:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		put_line(char **s, char **line)
 
 int		read_line(char **s, int fd, char **line)
 {
-	char	buff[4096 + 1];
+	char	buff[BUFFER_SIZE + 1];
 	char	*tmp;
 	int		dvl;
 
