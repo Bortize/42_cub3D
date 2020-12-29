@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 20:03:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/29 21:06:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	init_plan_values(map_plan *plan)
 	plan->rows_size = 0;
 	plan->row_len = 0;
 	plan->values_ok = 0;
+	plan->one_line_plan = "";
 }

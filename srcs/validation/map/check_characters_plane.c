@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_characters.c                                 :+:      :+:    :+:   */
+/*   check_characters_plane.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 12:31:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/29 20:15:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_values_allowed(char *str, map_plan *plan)
 	}
 }
 
-void	check_characters(char *str, map_plan *plan)
+void	check_characters_plane(char *str, map_plan *plan)
 {
 	ft_printf("congrats, estas leyendo el plano \n");
 	ft_printf("Se va a proceder a analizar la línea  🗺️--> %s \n", str);

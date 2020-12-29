@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 23:26:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/29 20:49:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	file_reading(int fd, map_config *map, map_plan *plan)
 				if (map->i < 8)
 					find_identifiers(line, map);
 				if (map->flag_map_ready == 1)
+				{
 					validate_plan(line, plan);
+					save_plane_lines(line, plan);
+				}
 				free(line);// Necesito liberarlo cada vez para dejar la linea libre
 				if (map->i == 8)
 					map->flag_map_ready = 1;

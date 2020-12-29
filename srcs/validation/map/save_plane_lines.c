@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_plan.c                                    :+:      :+:    :+:   */
+/*   save_plane_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/29 20:41:14 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/12/29 21:04:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-int		validate_plan(char *str, map_plan *plan)
+int	save_plane_lines(char *str, map_plan *plan)
 {
-	if (plan->values_ok != 1)
-	{
-		check_characters_plane(str, plan);
-		if (plan->row_len < ft_strlen(str))
-			plan->row_len = ft_strlen(str);
-		return (0);
-	}
-	else
-	{
-		plan->plan[plan->i] = str;
-		plan->i++;
-	}
+//	char *ptr;
+
+	//ptr = str;
+	plan->one_line_plan = ft_strjoin(plan->one_line_plan, str);
+	ft_printf("%s \n", plan->one_line_plan);
+	ft_printf("%s \n", ft_strjoin(plan->one_line_plan, str));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 20:36:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/29 20:39:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef	struct valid_map
 {
 	int			i;
 	int			rows_size;// guarda el número de filas que contiene el plano del mapa
+	char		*one_line_plan;// guarda la posicion de la linea que empieza a leer el mapa
 	size_t	row_len;//	guarda la linea mas larga que ha leido del plano del mapa
 	char		**plan;// guarda el plano del mapa
 	int			values_ok;
@@ -61,6 +62,7 @@ typedef	struct valid_map
 int		file_validation(char *str);
 void	init_identifiers(map_config *map);
 int		file_reading(int fd, map_config *map, map_plan *plan);
+int		save_plane_lines(char *str, map_plan *plan);
 int		file_reading_map(int fd, map_config *map, map_plan *plan);
 int		find_identifiers(char *str, map_config *map);
 int		assignment_identifiers_text_colour(map_config *map);
@@ -84,7 +86,7 @@ int		color_validation_floor(map_config *map);
 int		validate_plan(char *str, map_plan *plan);
 void	init_plan_values(map_plan *plan);
 int		check_identifiers(map_config *map);
-void	check_characters(char *str, map_plan *plan);
+void	check_characters_plane(char *str, map_plan *plan);
 void	check_allowed_values(char *str, map_plan *plan);
 void	assigning_plane_values(map_plan *plan);
 
