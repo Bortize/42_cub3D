@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 17:11:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/30 17:13:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,11 @@ typedef	struct	valid_map
 {
 	int			i;
 	int			rows_size;// guarda el número de filas que contiene el plano del mapa
-	char		*one_line_plan;// guarda la posicion de la linea que empieza a leer el mapa
-	size_t	row_len;//	guarda la linea mas larga que ha leido del plano del mapa
+	char		*one_line_plan;// guarda todas las líneas en un string
+	size_t		row_len;//	guarda la linea mas larga que ha leido del plano del mapa
 	char		**plan;// guarda el plano del mapa
 	int			values_ok;
 }								map_plan;
-
 
 int		file_validation(char *str);
 void	init_identifiers(map_config *map);
@@ -89,5 +88,7 @@ int		check_identifiers(map_config *map);
 void	check_characters_plane(char *str, map_plan *plan);
 void	check_allowed_values(char *str, map_plan *plan);
 void	assigning_plane_values(map_plan *plan);
+void	check_line_by_line(map_plan *plan);
+void	map_plane_walls(map_plan *plan);
 
 #endif

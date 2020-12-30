@@ -1,6 +1,6 @@
 Comprueba que los valores de la linea que recibe por parámetro sean válidos para representar el plano.
 
-Si la linea leida es mayor que la que tiene guardada, entonces le asigna el valor de la nueva a la variable donde la guarda, que es una variable de la estructura 'plan'. En caso contraio, se queda con la que estaba. Esto lo hago con el proposito de calcular cuál es la línea que tiene la mayor longitud para luego reservar memoria con (sizeof) porque voy a trabajar haciendo una matriz de un cuadrado como en el ejemplo que pongo  a continuación.
+Si la línea leida es mayor que la que tiene guardada, entonces le asigna el valor de la nueva a la variable donde la guarda, que es una variable de la estructura 'plan'. En caso contraio, se queda con la que estaba. Esto lo hago con el propósito de calcular cuál es la línea que tiene la mayor longitud para luego reservar memoria con (sizeof) porque voy a trabajar haciendo una matriz de un cuadrado como en el ejemplo que pongo  a continuación.
 
 
 11111111111111111
@@ -16,3 +16,6 @@ Si la linea leida es mayor que la que tiene guardada, entonces le asigna el valo
 10200000200002001
 10000000000000001
 11111011111111111
+
+
+En caso de que no se haya rervado memoria para la matriz
