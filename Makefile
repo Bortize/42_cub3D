@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/29 20:18:44 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/30 14:39:22 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/save_plane_lines.c \
 				srcs/validation/map/assigning_plane_values.c \
 				srcs/validation/map/check_characters_plane.c \
+				srcs/validation/map/map_plane_walls.c \
 				srcs/validation/map/validate_plan.c
 
 CC			= gcc

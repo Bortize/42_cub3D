@@ -28,6 +28,8 @@ Dentro llama a 2 funciones las cuales entrara en el buscador de intentificadores
 Si ha completado de encontrar y validar todos los identificadores, entonces entra en la siguiente funcion que lo que hace es validar (de una manera muy abstracta la primera vez) el plano del mapa.
 Pero mas adelante, cada linea necesitara una validacion mas exhaustiva.
 
+Si la validación de la línea ha sido correcta, devuelve un 1, que será el indicador que usaremos para entrar en la función "save_plane_lines" la cual, irá guardando las líneas en un array (siempre que esten validadas),para su correcta asignacion a las variables de la estructura.
+
 Cuando el contador de los identificadores haya llegado a 8, entonces levantamos un flag a modo de indicador que nos servira mas adelante para utilizarlo en otras funciones.
 
 Si ha terminado el bucle porque ya no hay mas lineas que leer por el GNL lo primero que hago es comprobar si el contador de identificadores es menor de 8, esto significaria que el mapa no es correcto por lo que tendría que gestionar el error.
