@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/29 20:39:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/30 17:11:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct	config
 	int			flag_map_ready;
 }								map_config;
 
-typedef	struct valid_map
+typedef	struct	valid_map
 {
 	int			i;
 	int			rows_size;// guarda el número de filas que contiene el plano del mapa
@@ -56,7 +56,7 @@ typedef	struct valid_map
 	size_t	row_len;//	guarda la linea mas larga que ha leido del plano del mapa
 	char		**plan;// guarda el plano del mapa
 	int			values_ok;
-}							map_plan;
+}								map_plan;
 
 
 int		file_validation(char *str);
