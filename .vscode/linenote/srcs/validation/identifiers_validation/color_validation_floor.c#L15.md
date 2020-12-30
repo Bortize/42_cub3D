@@ -1,0 +1,1 @@
+Lo que hace primero es comprobar si el primer valor es igual a 'F' y en caso de ser así, va entrando en las funciones viendo en que punto se encuentra el valor null para saber en cuantos pedazos se dividió la linea.

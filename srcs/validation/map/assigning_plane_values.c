@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 14:12:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/12/30 22:44:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	assigning_plane_values(map_plan *plan)
 	plan->values_ok = 1;// flag para entrar en esta funcion
 	plan->plan = ft_split(plan->one_line_plan, 'p');
 	i = 0;
-	while (plan->plan[i] != '\0')
+	while (plan->plan[i] != (void *)'\0')
 	{
 		ft_printf("Assigned to the structure 🧤 %s \n", plan->plan[i]);
 		i++;
