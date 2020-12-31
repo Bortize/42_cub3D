@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/30 22:44:39 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/31 11:39:55 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ clean:
 fclean:		clean
 				$(RM) -f $(NAME)
 				make -C $(INCLUDE) fclean
-				$(RM) *.a
+				$(RM) *.a leaks.txt
 
 re:			fclean all
 
