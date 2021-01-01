@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/31 11:39:55 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/01 20:31:41 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME 		= cub3D
 ###############################################################################
 
 SRCS		=	srcs/main.c \
+				srcs/window/initialize_mlx.c \
 				srcs/error/print_error.c \
 				srcs/validation/read_file/file_reading.c \
 				srcs/validation/read_file/init_identifiers.c \
@@ -48,11 +49,15 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		=  -Wall -Wextra -Werror -g #-fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -g #-fsanitize=address -w
+
+MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
 OBJS		= $(SRCS:.c=.o)
 
 INCLUDE		= ./printf
+
+INCLUDE2	= ./minilibx_opengl
 
 RM 			= rm -rf
 
@@ -62,14 +67,17 @@ all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
 				make -C $(INCLUDE)
+				make -C $(INCLUDE2)
 				cp ./printf/libftprintf.a ./
-				@$(CC) $(CFLAGS) -L. libftprintf.a $(OBJS) -o cub3D
+				cp ./minilibx_opengl/libmlx.a ./
+				@$(CC) $(CFLAGS) $(MLXFLAG) -L. libftprintf.a libmlx.a $(OBJS) -o cub3D
 
 ###############################################################################
 
 clean:
 			$(RM) $(OBJS) a.out
 			make -C $(INCLUDE) clean
+			make -C $(INCLUDE2) clean
 
 fclean:		clean
 				$(RM) -f $(NAME)

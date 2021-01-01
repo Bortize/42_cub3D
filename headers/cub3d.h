@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 21:21:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/01 19:40:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../printf/libft/libft.h"
 # include "../printf/ft_printf.h"
 # include "get_next_line.h"
+# include "mlx.h"
 # include <ctype.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -58,6 +59,7 @@ typedef	struct	valid_map
 	int			values_ok;
 }								map_plan;
 
+void	initialize_mlx(void);
 int		file_validation(char *str);
 void	init_identifiers(map_config *map);
 int		file_reading(int fd, map_config *map, map_plan *plan);
