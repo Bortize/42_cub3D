@@ -6,11 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/01/03 22:01:47 by bgomez-r         ###   ########.fr       */
-=======
-/*   Updated: 2021/01/03 11:22:34 by bgomez-r         ###   ########.fr       */
->>>>>>> deca8af68b2bb98cc203ccd38eb0905ad9c14769
+/*   Updated: 2021/01/03 23:30:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +52,13 @@ typedef struct	config
 typedef	struct	valid_map
 {
 	int			i;
-<<<<<<< HEAD
-	int			rows_size;// guarda el número de filas que contiene el plano del mapa
-	char		*one_line_plan;// guarda todas las líneas en un string
-	size_t		row_len;//	guarda la linea mas larga que ha leido del plano del mapa
-	char		**plan;// guarda el plano del mapa
-=======
 	int			rows_size;
 	char		*one_line_plan;
-	size_t	row_len;
+	size_t		row_len;
 	char		**plan;
->>>>>>> deca8af68b2bb98cc203ccd38eb0905ad9c14769
 	int			values_ok;
+	int			player_position_x;
+	int			player_position_y;
 }								map_plan;
 
 void	initialize_mlx(map_config *map);
@@ -106,5 +97,6 @@ void	map_plane_walls(map_plan *plan);
 void	map_plane_wall_up(map_plan *plan);
 void	map_plane_wall_down(map_plan *plan);
 void	map_plane_wall_left_right(map_plan *plan);
+void	player_position(char *str, map_plan *plan);
 
 #endif

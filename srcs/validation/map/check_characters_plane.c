@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/29 20:15:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/03 23:23:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	check_values_allowed(char *str, map_plan *plan)
 		|| (str[plan->i] == 'N') || (str[plan->i] == 'S') || (str[plan->i] == 'E')
 		|| (str[plan->i] == 'W') || (str[plan->i] == ' ') || (str[plan->i] == '\t'))
 		{
+			player_position(str, plan);
 			plan->i++;
 		}
 		else
