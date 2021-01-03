@@ -6,17 +6,20 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/01 20:31:41 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/03 11:28:26 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#########################	Special Targets	####################################
+# Elimina cualquier residuo que se haya podidio generar en la compilacion si algo fallo
 .DELETE_ON_ERROR:
-
+# Silencia todas las salidas por pantalla
 .SILENT:
+# Variable para indicar el nombre de nuestro programa
+#########################	Program Name	####################################
+NAME		= cub3D
 
-NAME 		= cub3D
-
-###############################################################################
+#########################	Function Files	####################################
 
 SRCS		=	srcs/main.c \
 				srcs/window/initialize_mlx.c \
@@ -47,6 +50,8 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/map_plane_walls.c \
 				srcs/validation/map/validate_plan.c
 
+############################	Variables	####################################
+
 CC			= gcc
 
 CFLAGS		= -Wall -Wextra -Werror -g #-fsanitize=address -w
@@ -61,15 +66,19 @@ INCLUDE2	= ./minilibx_opengl
 
 RM 			= rm -rf
 
-###############################################################################
+##########################	Rules	############################################
 
 all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
+				# Compila el Makefile que esta en la ruta ./printf
 				make -C $(INCLUDE)
+				# Compila el Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
+				# Copia las librerias generadas en cada ruta y las sube a este nivel
 				cp ./printf/libftprintf.a ./
 				cp ./minilibx_opengl/libmlx.a ./
+				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				@$(CC) $(CFLAGS) $(MLXFLAG) -L. libftprintf.a libmlx.a $(OBJS) -o cub3D
 
 ###############################################################################
@@ -87,8 +96,8 @@ fclean:		clean
 re:			fclean all
 
 run:	re
-			 ./cub3D valid_map_area_000.cub
+			 ./cub3D map_test/valid_maps/valid_map_area_000.cub
 
-###############################################################################
+##########################	Rules Phony	 #######################################
 
 .PHONY:		all clean flcean re

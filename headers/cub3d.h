@@ -6,7 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2021/01/03 22:01:47 by bgomez-r         ###   ########.fr       */
+=======
+/*   Updated: 2021/01/03 11:22:34 by bgomez-r         ###   ########.fr       */
+>>>>>>> deca8af68b2bb98cc203ccd38eb0905ad9c14769
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +46,31 @@ typedef struct	config
 	int			flag_s;
 	int			floor[3];
 	int			flag_floor;
-	int			ceilling[3];// Igual meter el color por separado tambien como la rsolucion map->r, map->g, map->b (RGB)
+	int			ceilling[3];
 	int			flag_ceilling;
-	char		**tab;// lo uso para trabajar con los identificadores la primera vez que lee la liena
-	char		**tabcf;// lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
+	char		**tab;
+	char		**tabcf;
 	int			flag_map_ready;
 }								map_config;
 
 typedef	struct	valid_map
 {
 	int			i;
+<<<<<<< HEAD
 	int			rows_size;// guarda el número de filas que contiene el plano del mapa
 	char		*one_line_plan;// guarda todas las líneas en un string
 	size_t		row_len;//	guarda la linea mas larga que ha leido del plano del mapa
 	char		**plan;// guarda el plano del mapa
+=======
+	int			rows_size;
+	char		*one_line_plan;
+	size_t	row_len;
+	char		**plan;
+>>>>>>> deca8af68b2bb98cc203ccd38eb0905ad9c14769
 	int			values_ok;
 }								map_plan;
 
-void	initialize_mlx(void);
+void	initialize_mlx(map_config *map);
 int		file_validation(char *str);
 void	init_identifiers(map_config *map);
 int		file_reading(int fd, map_config *map, map_plan *plan);
