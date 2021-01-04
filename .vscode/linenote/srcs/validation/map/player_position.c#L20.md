@@ -1,0 +1,1 @@
+Sumo 1 ya que el contador de filas esta en la función check_characters_plane justo 2 lineas mas abajo, esntoces no se a llegado a sumar aun la linea que estoy trabajando. 
