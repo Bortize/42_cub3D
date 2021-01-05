@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 19:12:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/05 01:21:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 17:48:09 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 /*
 ** Devuelve la posicion del jugador en la matriz plan->plan;
 */
-char	**get_pixel(int x, int y, map_plan *plan)
+char	get_pixel(int x, int y, map_plan *plan)
 {
-	ft_printf("El mapa avanzo en el relleno %s \n", plan->plan[x][y]);
+	ft_printf("El algoritmo esta en: %c \n", plan->plan[x][y]);
 	return (plan->plan[x][y]);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/03 11:01:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 16:19:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc < 2)
 		print_error("Eres un estupido, no vales ni para meter un fichero");
-	initialize_mlx(&map);
+	//initialize_mlx(&map);
 	system("leaks -fullContent cub3D");
 	return (0);
 }

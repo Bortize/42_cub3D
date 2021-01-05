@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 22:16:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 18:49:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void	init_plan_values(map_plan *plan)
 	plan->one_line_plan = "";
 	plan->boundary_value = '1';
 	plan->fill_value = 'f';
+	plan->sprite_value = '2';
 }
