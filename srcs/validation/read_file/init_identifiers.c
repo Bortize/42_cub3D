@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 12:32:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 22:16:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ void	init_plan_values(map_plan *plan)
 	plan->row_len = 0;
 	plan->values_ok = 0;
 	plan->one_line_plan = "";
+	plan->boundary_value = '1';
+	plan->fill_value = 'f';
 }

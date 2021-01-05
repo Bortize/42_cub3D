@@ -6,14 +6,14 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 22:44:23 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 01:19:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
 /*
-** Rerserva memoria para una matriz que alojara todas las lineas leidas en el
+** Reserva memoria para una matriz que alojara todas las lineas leidas en el
 ** plano
 */
 void	assigning_plane_values(map_plan *plan)
@@ -36,5 +36,7 @@ void	assigning_plane_values(map_plan *plan)
 
 void	check_line_by_line(map_plan *plan)
 {
+	boundary_fill(plan->player_position_x, plan->player_position_y,
+		plan->fill_value, plan->boundary_value, plan);
 	map_plane_walls(plan);
 }

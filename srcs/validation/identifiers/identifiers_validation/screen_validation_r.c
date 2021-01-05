@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   texture_validation_so.c                            :+:      :+:    :+:   */
+/*   screen_validation_r.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/20 15:04:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/20 15:05:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/20 15:54:56 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/01/04 19:17:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
-void	texture_validation_so(map_config *map)
+void	screen_validation_r(map_config *map)
 {
-	path_validation(map->tab[1]);
-	if (map->flag_so == 0)
+	if (ft_strcmp("R", map->tab[0]) == 0)
 	{
-		map->flag_so++;
+		map->flag_widht++;
 		map->i++;
-		map->so = map->tab[1];
-	}
-	else
-	{
-		print_error("El fichero '.cub' contiene identificadores "
-			"duplicados. \nPor favor, introduzca un fichero válido");
+		integer_validation_resolution(map);
+		map->width = ft_atoi(map->tab[1]);
+		map->height = ft_atoi(map->tab[2]);
+		ft_printf("🧪w --> %i \n", map->width);
+		ft_printf("🧪h --> %i \n\n\n", map->height);
 	}
 }

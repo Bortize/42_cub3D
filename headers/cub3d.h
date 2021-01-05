@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/03 23:30:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 01:18:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,14 @@ typedef	struct	valid_map
 	int			i;
 	int			rows_size;
 	char		*one_line_plan;
-	size_t		row_len;
+	size_t	row_len;
 	char		**plan;
 	int			values_ok;
 	int			player_position_x;
 	int			player_position_y;
+	char		*player_positon;
+	char		boundary_value;
+	char		fill_value;
 }								map_plan;
 
 void	initialize_mlx(map_config *map);
@@ -97,6 +100,8 @@ void	map_plane_walls(map_plan *plan);
 void	map_plane_wall_up(map_plan *plan);
 void	map_plane_wall_down(map_plan *plan);
 void	map_plane_wall_left_right(map_plan *plan);
-void	player_position(char *str, map_plan *plan);
+void	boundary_fill(int x, int y, int fill_value, int boundary_value, map_plan *plan);
+void	player_start_position(char *str, map_plan *plan);
+char	**get_pixel(int x, int y, map_plan *plan);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:45:54 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/21 21:12:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 19:17:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
 int	color_validation_floor(map_config *map)
 {

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 18:03:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 19:17:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
 /*
 **	Call-Function --> 	assignment_identifiers_colours

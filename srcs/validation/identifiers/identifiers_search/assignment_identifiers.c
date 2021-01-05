@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/23 17:45:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 19:16:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
 /*
 **	Is called by --> find_identifier(char *str, map_config *map);

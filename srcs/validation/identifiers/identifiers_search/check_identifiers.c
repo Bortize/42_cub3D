@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/24 19:31:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 19:17:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
 int	check_identifiers(map_config *map)
 {

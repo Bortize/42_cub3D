@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/03 23:18:59 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/05 01:23:21 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,27 +29,30 @@ SRCS		=	srcs/main.c \
 				srcs/validation/read_file/get_next_line.c \
 				srcs/validation/read_file/get_next_line_utils.c \
 				srcs/validation/read_file/file_validation.c \
-				srcs/validation/identifiers_search/find_identifiers.c \
-				srcs/validation/identifiers_search/check_identifiers.c \
-				srcs/validation/identifiers_search/assignment_identifiers.c \
-				srcs/validation/identifiers_validation/path_validation.c \
-				srcs/validation/identifiers_validation/validation_ceilling_floor.c \
-				srcs/validation/identifiers_validation/integer_validation.c \
-				srcs/validation/identifiers_validation/integer_validation_size.c \
-				srcs/validation/identifiers_validation/screen_validation_r.c \
-				srcs/validation/identifiers_validation/texture_validation_no.c \
-				srcs/validation/identifiers_validation/texture_validation_so.c \
-				srcs/validation/identifiers_validation/texture_validation_ea.c \
-				srcs/validation/identifiers_validation/texture_validation_we.c \
-				srcs/validation/identifiers_validation/texture_validation_s.c \
-				srcs/validation/identifiers_validation/color_validation_ceilling.c \
-				srcs/validation/identifiers_validation/color_validation_floor.c \
+				srcs/validation/identifiers/identifiers_search/find_identifiers.c \
+				srcs/validation/identifiers/identifiers_search/check_identifiers.c \
+				srcs/validation/identifiers/identifiers_search/assignment_identifiers.c \
+				srcs/validation/identifiers/identifiers_validation/path_validation.c \
+				srcs/validation/identifiers/identifiers_validation/validation_ceilling_floor.c \
+				srcs/validation/identifiers/identifiers_validation/integer_validation.c \
+				srcs/validation/identifiers/identifiers_validation/integer_validation_size.c \
+				srcs/validation/identifiers/identifiers_validation/screen_validation_r.c \
+				srcs/validation/identifiers/identifiers_validation/texture_validation_no.c \
+				srcs/validation/identifiers/identifiers_validation/texture_validation_so.c \
+				srcs/validation/identifiers/identifiers_validation/texture_validation_ea.c \
+				srcs/validation/identifiers/identifiers_validation/texture_validation_we.c \
+				srcs/validation/identifiers/identifiers_validation/texture_validation_s.c \
+				srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c \
+				srcs/validation/identifiers/identifiers_validation/color_validation_floor.c \
 				srcs/validation/map/save_plane_lines.c \
 				srcs/validation/map/assigning_plane_values.c \
 				srcs/validation/map/check_characters_plane.c \
 				srcs/validation/map/map_plane_walls.c \
 				srcs/validation/map/validate_plan.c \
-				srcs/validation/map/player_position.c
+				srcs/validation/map/player_start_position.c \
+				srcs/validation/map/boundary_validation/boundary_validation.c \
+				srcs/validation/map/boundary_validation/get_pixel.c \
+				srcs/validation/map/boundary_validation/put_fill_value.c
 
 ############################	Variables	####################################
 

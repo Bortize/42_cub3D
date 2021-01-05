@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   texture_validation_ea.c                            :+:      :+:    :+:   */
+/*   texture_validation_we.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/20 15:08:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/20 15:09:58 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/12/20 15:11:23 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/01/04 19:19:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "../../../../headers/cub3d.h"
 
-void	texture_validation_ea(map_config *map)
+void	texture_validation_we(map_config *map)
 {
 	path_validation(map->tab[1]);
-	if (map->flag_ea == 0)
+	if (map->flag_we == 0)
 	{
-		map->flag_ea++;
+		map->flag_we++;
 		map->i++;
-		map->ea = map->tab[1];
+		map->we = map->tab[1];
 	}
 	else
 	{
 		print_error("El fichero '.cub' contiene identificadores "
-			"duplicados. \nPor favor, introduzca un fichero válido");
-	}	
+			"duplicados.\n Por favor, introduzca un fichero válido");
+	}
 }

@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_position.c                                  :+:      :+:    :+:   */
+/*   player_start_position.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 13:53:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/04 23:01:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	player_position(char *str, map_plan *plan)
+/*
+** Guarda la posicion del jugador cuando la encuentra. La guarda en 2 coordenadas
+** dónde 'x' corresponde al índe del número de vector donde se encontro e 'y' al
+** índice del string donde se encontró
+*/
+void	player_start_position(char *str, map_plan *plan)
 {
 	if ((str[plan->i] == 'N') || (str[plan->i] == 'S') || (str[plan->i] == 'E')
 		|| (str[plan->i] == 'W'))

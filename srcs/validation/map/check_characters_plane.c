@@ -6,12 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/03 23:23:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/05 00:54:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
-
+/*
+** Recorre cada indice del string para ir comprobando si su valor es uno de los
+** permitidos por el subject y comprobando si la posicon del jugador es uno de
+** ellos. En el caso de que algun char del string no sea valido, gestiona el error
+*/
 void	check_values_allowed(char *str, map_plan *plan)
 {
 	plan->i = 0;
@@ -22,7 +26,7 @@ void	check_values_allowed(char *str, map_plan *plan)
 		|| (str[plan->i] == 'N') || (str[plan->i] == 'S') || (str[plan->i] == 'E')
 		|| (str[plan->i] == 'W') || (str[plan->i] == ' ') || (str[plan->i] == '\t'))
 		{
-			player_position(str, plan);
+			player_start_position(str, plan);
 			plan->i++;
 		}
 		else
@@ -31,7 +35,12 @@ void	check_values_allowed(char *str, map_plan *plan)
 		}
 	}
 }
-
+/*
+** Busca si en la lina que le pasan hay por lo menos un valor válido paraentrar
+** a analizarla en profundidad En caso se contener alguno, entra mas en profundidad
+** y despues de comprobarlo, si todos los caractere de la string pasado son correctos,
+** se suma +1 fila. Si no es así, gestiona el error.
+*/
 void	check_characters_plane(char *str, map_plan *plan)
 {
 	ft_printf("congrats, estas leyendo el plano \n");
