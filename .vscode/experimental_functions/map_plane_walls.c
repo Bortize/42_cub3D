@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 13:34:46 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 22:55:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/09 20:36:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	map_plane_wall_left_right(map_plan *plan)
 		}
 		else
 		{
-			print_error("Los muros del plano contienen valores no válidos");
+			print_error("Los muros del plano contienen valores no válidos 🧑‍🎤");
 		}
 		i++;
 	}
@@ -46,7 +46,7 @@ void	map_plane_wall_down(map_plan *plan)
 		}
 		else
 		{
-			print_error("Los muros del plano contienen valores no válidos");
+			print_error("Los muros del plano contienen valores no válidos 🧑‍🎤");
 		}
 		j++;
 	}
@@ -65,7 +65,7 @@ void	map_plane_wall_up(map_plan *plan)
 		}
 		else
 		{
-			print_error("Los muros del plano contienen valores no válidos");
+			print_error("Los muros del plano contienen valores no válidos 🧑‍🎤");
 		}
 		j++;
 	}

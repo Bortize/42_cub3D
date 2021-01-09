@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/05 00:54:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/09 20:32:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	check_characters_plane(char *str, map_plan *plan)
 	}
 	else
 	{
-		print_error("El plano contiene valores no validos ");
+		print_error("El plano contiene valores NO VALIDOS 🧑‍🎤");
 	}
 }
