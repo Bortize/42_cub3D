@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   boundary_validation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:59:10 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/08 12:38:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/10 12:31:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 */
 void	boundary_fill(int x, int y, int fill_value, int boundary_value, map_plan *plan)
 {
+	if (x == 5 || y == 6)
+		print_error("El plano contiene un muro que no esta cerrado");
 	ft_printf("El algoritmo esta en la coordenada %i %i y contiene %c \n", x, y, plan->plan[x][y]);
 	if ((plan->plan[x][y] != 102) && (plan->plan[x][y] != 49) && (plan->plan[x][y] != 50))
 	{
