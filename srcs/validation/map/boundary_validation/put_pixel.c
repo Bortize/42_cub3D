@@ -18,6 +18,6 @@
 char	put_pixel(int x, int y, map_plan *plan)
 {
 	plan->plan[x][y] = 'f';
-	ft_printf("El pixel se cambio a: %c \n", plan->plan[x][y]);
+	ft_printf("✅ El pixel se cambio a: %c \n", plan->plan[x][y]);
 	return (plan->plan[x][y]);
 }

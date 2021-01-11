@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/30 13:22:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/10 20:54:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 int	file_reading(int fd, map_config *map, map_plan *plan)
 {
 	char *line;
+	int i;
+	i = 0;
 
 	while (get_next_line(fd, &line))
 	{
@@ -41,5 +43,7 @@ int	file_reading(int fd, map_config *map, map_plan *plan)
 		print_error("Faltan identificadores, revise su mapa");
 	if (plan->values_ok == 0)
 		assigning_plane_values(plan);
+	while (i < plan->rows_size)// pinta el plano una vez tratado por el algoritmo floodfill. BORRAR
+		ft_printf("🪐 %s \n", plan->plan[i++]);// pinta el plano. BORRAR
 	return (0);
 }
