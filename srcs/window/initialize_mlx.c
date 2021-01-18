@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_mlx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/03 11:04:18 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/17 23:26:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	initialize_mlx(map_config *map)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
+	void	*mlx;
+	void	*mlx_win;
 
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, map->width, map->height, "cub3D");
-	mlx_loop(mlx_ptr);
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, map->width, map->height, "cub3D");
+	mlx_loop(mlx);
 }
