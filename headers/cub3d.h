@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/11 12:28:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/19 01:30:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct	config
+typedef struct	s_config
 {
 	int			i;
 	int			width;
@@ -49,7 +49,7 @@ typedef struct	config
 	int			flag_map_ready;
 }								map_config;
 
-typedef	struct	valid_map
+typedef	struct	s_valid_map
 {
 	int			i;
 	int			rows_size;
@@ -64,6 +64,18 @@ typedef	struct	valid_map
 	char		fill_value;
 	char		sprite_value;
 }								map_plan;
+
+typedef struct	s_window
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char 	*addr;
+	int		line_length;
+	int		endian;
+	void	*img_ptr;
+	int		bpp;
+}								t_window;
 
 void	initialize_mlx(map_config *map);
 int		file_validation(char *str);
