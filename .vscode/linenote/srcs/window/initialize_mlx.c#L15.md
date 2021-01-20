@@ -17,7 +17,7 @@ void	initialize_mlx(map_config *map)
 
 ///////////////////////////////////////////////////
 
-**t_window graphic** --> Estoy creando una nueva clase de objetos de la estructura `t_window` para guardar valores que voy a necesitar a lo largo de mi programa.
+**t_window graphic** --> Estoy creando una nueva clase de objetos de la estructura `t_window` para guardar los valores que se van a generar en estas funciones y que voy a necesitar a lo largo de mi programa.
 
 ***mlx** --> Guarda el identificador que establece la conexion con el motor grafico de la minilibX.
 

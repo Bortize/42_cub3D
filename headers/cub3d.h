@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/19 16:18:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/20 21:18:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ void	boundary_fill(int x, int y, int fill_value, int boundary_value, map_plan *p
 int		player_start_position(char *str, map_plan *plan);
 char	put_pixel(int x, int y, map_plan *plan);
 void	my_mlx_pixel_put(t_window *graphic, int x, int y, int color);
+int		keypress(int keycode, t_window *graphic);
 
 #endif

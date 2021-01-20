@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/19 13:42:43 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/20 21:10:45 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/player_start_position.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
 				srcs/validation/map/boundary_validation/put_pixel.c \
-				srcs/window/my_mlx_pixel_put.c
+				srcs/window/my_mlx_pixel_put.c \
+				srcs/window/keypress.c
 
 ############################	Variables	####################################
 
