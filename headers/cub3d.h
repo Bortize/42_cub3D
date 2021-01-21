@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/21 12:09:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/21 14:32:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef	struct	s_valid_map
 	int			i;
 	int			rows_size;
 	char		*one_line_plan;
-	size_t	row_len;
+	size_t		row_len;
 	char		**plan;// Matriz
 	int			values_ok;
 	int			player_position_x;
@@ -76,6 +76,7 @@ typedef struct	s_window
 	int		endian;
 	void	*img_ptr;
 	int		bpp;
+	map_plan	*plan;
 }								t_window;
 
 void	initialize_mlx(map_config *map);

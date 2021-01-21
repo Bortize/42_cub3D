@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keypress.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 21:10:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/20 21:24:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/21 12:49:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	keypress(int keycode, t_window *graphic)
 {
 	int y;
 	int x;
-	if (keycode == 15)
+	if (keycode == KEY_R)
 	{
 			y=0;
 			while (y < 480)
