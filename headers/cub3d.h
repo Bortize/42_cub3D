@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/20 21:18:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/21 12:09:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../printf/ft_printf.h"
 # include "get_next_line.h"
 # include "../minilibx_opengl/mlx.h"
+# include "keycode_mac.h"
 # include <ctype.h>
 # include <unistd.h>
 # include <stdio.h>
