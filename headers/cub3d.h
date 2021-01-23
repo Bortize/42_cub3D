@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/22 00:54:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/23 14:30:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct	s_config
 	char		**tab;
 	char		**tabcf;
 	int			flag_map_ready;
-}								map_config;
+}				map_config;
 
 typedef	struct	s_valid_map
 {
@@ -64,20 +64,21 @@ typedef	struct	s_valid_map
 	char		boundary_value;
 	char		fill_value;
 	char		sprite_value;
-}								map_plan;
+}				map_plan;
 
 typedef struct	s_window
 {
-	void	*mlx;
-	void	*mlx_win;
-	void	*img;
-	char 	*addr;
-	int		line_length;
-	int		endian;
-	void	*img_ptr;
-	int		bpp;
-	map_plan	plan;
-}								t_window;
+	void		*mlx;
+	void		*mlx_win;
+	void		*img;
+	char 		*addr;
+	int			line_length;
+	int			endian;
+	void		*img_ptr;
+	int			bpp;
+	map_config	*map;
+	map_plan	*plan;
+}				t_window;
 
 void	initialize_mlx(map_config *map);
 int		file_validation(char *str);
@@ -116,5 +117,6 @@ int		player_start_position(char *str, map_plan *plan);
 char	put_pixel(int x, int y, map_plan *plan);
 void	my_mlx_pixel_put(t_window *graphic, int x, int y, int color);
 int		keypress(int keycode, t_window *graphic);
+int		draws_sky_floor(int keycode, t_window *graphic);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/20 21:10:45 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/23 13:43:42 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
 				srcs/validation/map/boundary_validation/put_pixel.c \
 				srcs/window/my_mlx_pixel_put.c \
+				srcs/window/draws_sky_floor.c \
 				srcs/window/keypress.c
 
 ############################	Variables	####################################
