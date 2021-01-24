@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 15:07:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:28:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct	s_config
+typedef struct	s_identifiers
 {
 	int			i;
 	int			width;
@@ -48,15 +48,15 @@ typedef struct	s_config
 	char		**tab;
 	char		**tabcf;
 	int			flag_map_ready;
-}				map_config;
+}				t_identifiers;
 
-typedef	struct	s_valid_map
+typedef	struct	s_map
 {
 	int			i;
 	int			rows_size;
 	char		*one_line_plan;
 	size_t		row_len;
-	char		**plan;// Matriz
+	char		**plan;// Matriz donde guardas el mapa
 	int			values_ok;
 	int			player_position_x;
 	int			player_position_y;
@@ -64,7 +64,7 @@ typedef	struct	s_valid_map
 	char		boundary_value;
 	char		fill_value;
 	char		sprite_value;
-}				map_plan;
+}				t_map;
 
 typedef struct	s_window
 {
@@ -76,45 +76,49 @@ typedef struct	s_window
 	int			endian;
 	void		*img_ptr;
 	int			bpp;
-	map_config	*map;
-	map_plan	*plan;
 }				t_window;
 
-void	initialize_mlx(map_config *map);
+typedef struct	s_cub3d
+{
+	t_identifiers	map;
+	t_map			plan;
+	t_window		graphic;
+}				t_cub3d;
+
+void	initialize_mlx(t_cub3d *cub);
 int		file_validation(char *str);
-void	init_identifiers(map_config *map);
-int		file_reading(int fd, map_config *map, map_plan *plan);
-int		save_plane_lines(char *str, map_plan *plan);
-int		file_reading_map(int fd, map_config *map, map_plan *plan);
-int		find_identifiers(char *str, map_config *map);
-int		assignment_identifiers_text_colour(map_config *map);
-void	assignment_identifiers_colours(map_config *map);
-void	assignment_identifiers_resolution(map_config *map);
-void	validation_identifiers_ceilling(map_config *map);
-void	validation_identifiers_floor(map_config *map);
-int		integer_validation(map_config *map);
+void	init_structs(t_cub3d *cub);
+int		file_reading(int fd, t_cub3d *cub);
+int		save_plane_lines(char *str, t_cub3d *cub3d);
+int		find_identifiers(char *str, t_cub3d *cub);
+int		assignment_identifiers_text_colour(t_cub3d *cub);
+void	assignment_identifiers_colours(t_cub3d *cub);
+void	assignment_identifiers_resolution(t_cub3d *cub);
+void	validation_identifiers_ceilling(t_cub3d *cub);
+void	validation_identifiers_floor(t_cub3d *cub);
+int		integer_validation(t_cub3d *cub);
 void	print_error(char *str);
-int		integer_validation_resolution(map_config *map);
-int		integer_validation_size(map_config *map);
+int		integer_validation_resolution(t_cub3d *cub);
+int		integer_validation_size(t_cub3d *cub);
 int		path_validation(char *str);
-void	screen_validation_r(map_config *map);
-void	texture_validation_no(map_config *map);
-void	texture_validation_so(map_config *map);
-void	texture_validation_ea(map_config *map);
-void	texture_validation_we(map_config *map);
-void	texture_validation_s(map_config *map);
-int		color_validation_ceilling(map_config *map);
-int		color_validation_floor(map_config *map);
-int		validate_plan(char *str, map_plan *plan);
-void	init_plan_values(map_plan *plan);
-int		check_identifiers(map_config *map);
-void	check_characters_plane(char *str, map_plan *plan);
-void	check_allowed_values(char *str, map_plan *plan);
-void	assigning_plane_values(map_plan *plan);
-void	check_line_by_line(map_plan *plan);
-void	boundary_fill(int x, int y, int fill_value, int boundary_value, map_plan *plan);
-int		player_start_position(char *str, map_plan *plan);
-char	put_pixel(int x, int y, map_plan *plan);
+void	screen_validation_r(t_cub3d *cub);
+void	texture_validation_no(t_cub3d *cub);
+void	texture_validation_so(t_cub3d *cub);
+void	texture_validation_ea(t_cub3d *cub);
+void	texture_validation_we(t_cub3d *cub);
+void	texture_validation_s(t_cub3d *cub);
+int		color_validation_ceilling(t_cub3d *cub);
+int		color_validation_floor(t_cub3d *cub);
+int		validate_plan(char *str, t_cub3d *cub3d);
+void	init_plan_values(t_cub3d *cub3d);
+int		check_identifiers(t_cub3d *cub);
+void	check_characters_plane(char *str, t_cub3d *cub3d);
+void	check_allowed_values(char *str, t_cub3d *cub3d);
+void	assigning_plane_values(t_cub3d *cub3d);
+void	check_line_by_line(t_cub3d *cub3d);
+void	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub3d);
+int		player_start_position(char *str, t_cub3d *cub3d);
+char	put_pixel(int x, int y, t_cub3d *cub3d);
 void	my_mlx_pixel_put(t_window *graphic, int x, int y, int color);
 int		keypress(int keycode, t_window *graphic);
 int		draws_sky_floor(int keycode, t_window *graphic);

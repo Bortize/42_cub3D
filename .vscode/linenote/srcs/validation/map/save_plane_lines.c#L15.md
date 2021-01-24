@@ -8,15 +8,15 @@ El segundo ft_strjoin concatena un caracter random que he escogido "p" para util
 sino la funcion ft_strjoin no concatenaria la p porque solo concatena string con string, no char con string
 
 ///////////////////////////////////////////////////////////////////////////////////
-int	save_plane_lines(char *str, map_plan *plan)
+int	save_plane_lines(char *str, t_cub3d *cub3d)
 {
 	char *aux;
 
 	aux  = 0;
-	plan->one_line_plan = ft_strjoin(aux, str);
-	plan->one_line_plan = ft_strjoin(aux, "p");
+	cub->plan.one_line_plan = ft_strjoin(aux, str);
+	cub->plan.one_line_plan = ft_strjoin(aux, "p");
 	free(aux);
 	aux = NULL;
-	ft_printf("Concatenation %s \n", plan->one_line_plan);
+	ft_printf("Concatenation %s \n", cub->plan.one_line_plan);
 	return (0);
 }

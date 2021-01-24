@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/01/04 19:17:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:26:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,30 @@
 **	iguales para devolver un error en ese caso
 */
 
-int	find_identifiers(char *str, map_config *map)
+int	find_identifiers(char *str, t_cub3d *cub)
 {
-	if ((map->tab = ft_split_plus(str, ' ', '\t')))
+	if ((cub->map.tab = ft_split_plus(str, ' ', '\t')))
 	{
-		check_identifiers(map);
-		if (map->tab[2] == NULL)
-			assignment_identifiers_text_colour(map);
-		else if (map->tab[3] == NULL)
-			assignment_identifiers_resolution(map);
-		else if (map->tab[4] == NULL)
-			assignment_identifiers_text_colour(map);
-		else if (ft_strchr(map->tab[0], '0') || ft_strchr(map->tab[0], '1'))
+		check_identifiers(cub);
+		if (cub->map.tab[2] == NULL)
+			assignment_identifiers_text_colour(cub);
+		else if (cub->map.tab[3] == NULL)
+			assignment_identifiers_resolution(cub);
+		else if (cub->map.tab[4] == NULL)
+			assignment_identifiers_text_colour(cub);
+		else if (ft_strchr(cub->map.tab[0], '0') || ft_strchr(cub->map.tab[0], '1'))
 			print_error("El fichero .cub NO contiene el plano del mapa al final");
 		else
 			print_error("Hay demasiados valores en el identificador");
 	}
-	if (map->flag_widht > 1 || map->flag_no > 1 || map->flag_so > 1 ||
-	map->flag_ea > 1 || map->flag_we > 1 || map->flag_s > 1 ||
-	map->flag_ceilling > 1 || map->flag_floor > 1)
+	if (cub->map.flag_widht > 1 || cub->map.flag_no > 1 || cub->map.flag_so > 1 ||
+	cub->map.flag_ea > 1 || cub->map.flag_we > 1 || cub->map.flag_s > 1 ||
+	cub->map.flag_ceilling > 1 || cub->map.flag_floor > 1)
 	{
 		print_error("El mapa contiene identificadores repetidos."
 			" Por favor, introduzca una mapa válido");
 	}
-	if (map->i > 8)
+	if (cub->map.i > 8)
 		print_error("Hay demasiados Identidicadores, revise su mapa");
 	return (0);
 }

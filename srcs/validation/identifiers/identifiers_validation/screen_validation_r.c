@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   screen_validation_r.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:54:56 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 19:17:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:26:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../headers/cub3d.h"
 
-void	screen_validation_r(map_config *map)
+void	screen_validation_r(t_cub3d *cub)
 {
-	if (ft_strcmp("R", map->tab[0]) == 0)
+	if (ft_strcmp("R", cub->map.tab[0]) == 0)
 	{
-		map->flag_widht++;
-		map->i++;
-		integer_validation_resolution(map);
-		map->width = ft_atoi(map->tab[1]);
-		map->height = ft_atoi(map->tab[2]);
-		ft_printf("🧪w --> %i \n", map->width);
-		ft_printf("🧪h --> %i \n\n\n", map->height);
+		cub->map.flag_widht++;
+		cub->map.i++;
+		integer_validation_resolution(cub);
+		cub->map.width = ft_atoi(cub->map.tab[1]);
+		cub->map.height = ft_atoi(cub->map.tab[2]);
+		ft_printf("🧪w --> %i \n", cub->map.width);
+		ft_printf("🧪h --> %i \n\n\n", cub->map.height);
 	}
 }

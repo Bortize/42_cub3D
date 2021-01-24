@@ -1,6 +1,6 @@
 Comprueba que los valores de la linea que recibe por parámetro sean válidos para representar el plano.
 
-Lo primero que nos encontramos nada mas entrar en la fucion es un condicional (if) el cual, el compilador solo entrar a ejecutar lo de dentro si el flag "plan->values_ok" esta desactivado, osea, no es igual 1.
+Lo primero que nos encontramos nada mas entrar en la fucion es un condicional (if) el cual, el compilador solo entrar a ejecutar lo de dentro si el flag "cub->plan.values_ok" esta desactivado, osea, no es igual 1.
 Este flag se activa dentro de esta función y es que esta funcion entre otras cosas, sirve para resevar memoría para la matriz que albergara el plano del mapa. Obviamente pongo este flag aquí porque una vez que entre, ya no necesitaé volver a entrar por lo que el flag cieera
 
 Si la línea leida es mayor que la que tiene guardada, entonces le asigna el valor de la nueva a la variable donde la guarda, que es una variable de la estructura 'plan'. En caso contraio, se queda con la que estaba. Esto lo hago con el propósito de calcular cuál es la línea que tiene la mayor longitud para luego reservar memoria con (sizeof) porque voy a trabajar haciendo una matriz de un cuadrado como en el ejemplo que pongo  a continuación.

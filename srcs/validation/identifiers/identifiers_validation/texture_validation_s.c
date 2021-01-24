@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   texture_validation_s.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:13:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 19:19:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:24:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../headers/cub3d.h"
 
-void	texture_validation_s(map_config *map)
+void	texture_validation_s(t_cub3d *cub)
 {
-	path_validation(map->tab[1]);
-	if (map->flag_s == 0)
+	path_validation(cub->map.tab[1]);
+	if (cub->map.flag_s == 0)
 	{
-		map->flag_s++;
-		map->i++;
-		map->s = map->tab[1];
+		cub->map.flag_s++;
+		cub->map.i++;
+		cub->map.s = cub->map.tab[1];
 	}
 	else
 	{

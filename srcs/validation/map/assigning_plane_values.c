@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/18 15:57:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:32:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@
 ** plano. Asigna los strings del plano a la matriz y comprueba mediante el
 ** método de inundación que el plano sea válido
 */
-void	assigning_plane_values(map_plan *plan)
+void	assigning_plane_values(t_cub3d *cub3d)
 {
 	int i;
 
-	plan->plan = (char **)calloc(plan->rows_size, sizeof(char *));
-	plan->values_ok = 1;// flag para entrar en esta funcion
-	plan->plan = ft_split(plan->one_line_plan, 'p');
+	cub->plan.plan = (char **)calloc(cub->plan.rows_size, sizeof(char *));
+	cub->plan.values_ok = 1;// flag para entrar en esta funcion
+	cub->plan.plan = ft_split(cub->plan.one_line_plan, 'p');
 	i = 0;
-	while (plan->plan[i] != (void *)'\0')
+	while (cub->plan.plan[i] != (void *)'\0')
 	{
-		ft_printf("Assigned to the structure 🧤 %s \n", plan->plan[i]);
+		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan[i]);
 		i++;
 	}
-	check_line_by_line(plan);
-	free(plan->one_line_plan);
-	plan->one_line_plan = NULL;
+	check_line_by_line(cub);
+	free(cub->plan.one_line_plan);
+	cub->plan.one_line_plan = NULL;
 }
 /*
 ** Comprueba mediante el método de inundación que el plano sea válido
 */
-void	check_line_by_line(map_plan *plan)
+void	check_line_by_line(t_cub3d *cub3d)
 {
-	boundary_fill(plan->player_position_x, plan->player_position_y,
-		plan->fill_value, plan->boundary_value, plan);
+	boundary_fill(cub->plan.player_position_x, cub->plan.player_position_y,
+		cub->plan.fill_value, cub->plan.boundary_value, cub);
 }

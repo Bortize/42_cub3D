@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   integer_validation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 19:17:47 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:24:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	gan letras de por medio
 */
 
-int	 integer_validation(map_config *map)
+int	 integer_validation(t_cub3d *cub)
 {
 	int i;
 	int j;
@@ -31,9 +31,9 @@ int	 integer_validation(map_config *map)
 		j = 0;
 		while (j < 3)
 		{
-			if (ft_isdigit(map->tabcf[i][j]) == 1)
+			if (ft_isdigit(cub->map.tabcf[i][j]) == 1)
 			{
-				ft_printf("el numero %i es un entero \n", map->tabcf[i][j]);
+				ft_printf("el numero %i es un entero \n", cub->map.tabcf[i][j]);
 				return (0);
 			}
 			else
@@ -56,7 +56,7 @@ int	 integer_validation(map_config *map)
 **	menos
 */
 
-int	integer_validation_resolution(map_config *map)
+int	integer_validation_resolution(t_cub3d *cub)
 {
 	int	i;
 	int	j;
@@ -65,11 +65,11 @@ int	integer_validation_resolution(map_config *map)
 	while (i <= 2)
 	{
 		j = 0;
-		while (map->tab[i][j])
+		while (cub->map.tab[i][j])
 		{
-			if (ft_isdigit(map->tab[i][j]))
+			if (ft_isdigit(cub->map.tab[i][j]))
 			{
-				ft_printf("el numero %i es un entero \n", map->tab[i][j]);
+				ft_printf("el numero %i es un entero \n", cub->map.tab[i][j]);
 			}
 			else
 			{

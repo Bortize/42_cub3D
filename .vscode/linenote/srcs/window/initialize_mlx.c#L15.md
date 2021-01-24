@@ -1,12 +1,12 @@
 
 ```c
-void	initialize_mlx(map_config *map)
+void	initialize_mlx(t_cub3d *cub)
 {
 	t_window graphic;
 
 	graphic.mlx = mlx_init();
-	graphic.mlx_win = mlx_new_window(graphic.mlx, map->width, map->height, "cub3D");
-	graphic.img = mlx_new_image(graphic.mlx, map->width, map->height);
+	graphic.mlx_win = mlx_new_window(graphic.mlx, cub->map.width, cub->map.height, "cub3D");
+	graphic.img = mlx_new_image(graphic.mlx, cub->map.width, cub->map.height);
 	graphic.addr = mlx_get_data_addr(graphic.img, &graphic.bpp, &graphic.line_length, &graphic.endian);
 	my_mlx_pixel_put(&graphic, 5, 5, 0x0000FF00);
 	mlx_put_image_to_window(graphic.mlx, graphic.mlx_win, graphic.img, 0, 0);
@@ -45,14 +45,14 @@ void	initialize_mlx(map_config *map)
 `"Cub3D"` -->
 <br><br><br>
 
-| `mlx_new_image(mlx, map->width, map->height);` |
+| `mlx_new_image(mlx, cub->map.width, cub->map.height);` |
 | - | -|
 | Crea una nueva imagen compatible con `MLX`. Es la forma recomendada de almacenar en memoria intermedia la imagen que se está renderizando para ser mostrada. Aceptará un puntero a tu instancia `mlx` y requiere un ancho y un alto. Devolverá un puntero de referencia a la imagen. |
 `mlx` -->
 
-`map->width` -->
+`cub->map.width` -->
 
-`map->height` -->
+`cub->map.height` -->
 </br><br><br>
 
 

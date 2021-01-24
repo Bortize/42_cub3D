@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   check_identifiers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 19:17:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:24:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../headers/cub3d.h"
 
-int	check_identifiers(map_config *map)
+int	check_identifiers(t_cub3d *cub)
 {
-	if ((ft_strcmp("R", map->tab[0]) == 0) ||
-		(ft_strcmp("NO", map->tab[0]) == 0) ||
-		(ft_strcmp("SO", map->tab[0]) == 0) ||
-		(ft_strcmp("EA", map->tab[0]) == 0) ||
-		(ft_strcmp("WE", map->tab[0]) == 0) ||
-		(ft_strcmp("S", map->tab[0]) == 0) ||
-		(ft_strcmp("C", map->tab[0]) == 0) ||
-		(ft_strcmp("F", map->tab[0]) == 0))
+	if ((ft_strcmp("R", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("NO", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("SO", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("EA", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("WE", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("S", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("C", cub->map.tab[0]) == 0) ||
+		(ft_strcmp("F", cub->map.tab[0]) == 0))
 	{
 		return (0);
 	}

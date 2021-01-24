@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   map_plane_walls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 13:34:46 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/09 20:36:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 17:31:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	map_plane_wall_left_right(map_plan *plan)
+void	map_plane_wall_left_right(t_cub3d *cub3d)
 {
 	int i;
 	int j;
 
 	i = 1;
 	j = 0;
-	while (i < (plan->rows_size - 1))
+	while (i < (cub->plan.rows_size - 1))
 	{
-		if (plan->plan[i][j] == '1')
+		if (cub->plan.plan[i][j] == '1')
 		{
-			ft_printf("El muro %c es OK \n", plan->plan[plan->rows_size - 1][j]);
+			ft_printf("El muro %c es OK \n", cub->plan.plan[cub->plan.rows_size - 1][j]);
 		}
 		else
 		{
@@ -33,16 +33,16 @@ void	map_plane_wall_left_right(map_plan *plan)
 	}
 }
 
-void	map_plane_wall_down(map_plan *plan)
+void	map_plane_wall_down(t_cub3d *cub3d)
 {
 	int j;
 
 	j = 0;
-	while (plan->plan[plan->rows_size - 1][j] != '1')
+	while (cub->plan.plan[cub->plan.rows_size - 1][j] != '1')
 	{
-		if (plan->plan[plan->rows_size - 1][j] == '1')
+		if (cub->plan.plan[cub->plan.rows_size - 1][j] == '1')
 		{
-			ft_printf("El muro %c es OK \n", plan->plan[plan->rows_size - 1][j]);
+			ft_printf("El muro %c es OK \n", cub->plan.plan[cub->plan.rows_size - 1][j]);
 		}
 		else
 		{
@@ -52,14 +52,14 @@ void	map_plane_wall_down(map_plan *plan)
 	}
 }
 
-void	map_plane_wall_up(map_plan *plan)
+void	map_plane_wall_up(t_cub3d *cub3d)
 {
 	int j;
 
 	j = 0;
-	while (plan->plan[0][j] != '1')
+	while (cub->plan.plan[0][j] != '1')
 	{
-		if (plan->plan[0][j] == '1')
+		if (cub->plan.plan[0][j] == '1')
 		{
 			ft_printf("The UP walll is OK");
 		}
@@ -71,9 +71,9 @@ void	map_plane_wall_up(map_plan *plan)
 	}
 }
 
-void	map_plane_walls(map_plan *plan)
+void	map_plane_walls(t_cub3d *cub3d)
 {
-	map_plane_wall_up(plan);
-	map_plane_wall_down(plan);
-	map_plane_wall_left_right(plan);
+	map_plane_wall_up(cub);
+	map_plane_wall_down(cub);
+	map_plane_wall_left_right(cub);
 }
