@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 18:33:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:05:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** poniendo un caracter random 'p' entre línea y línea para luego poder sepa-
 ** rarlas y asignar cada linea a su respectivo puntero.
 */
-int	save_plane_lines(char *str, t_cub3d *cub3d)
+int	save_plane_lines(char *str, t_cub3d *cub)
 {
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, str);
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, "p");
