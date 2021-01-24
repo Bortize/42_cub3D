@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:32:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** dónde 'x' corresponde al índe del número de vector donde se encontro e 'y' al
 ** índice del string donde se encontró
 */
-int	player_start_position(char *str, t_cub3d *cub3d)
+int	player_start_position(char *str, t_cub3d *cub)
 {
 	if ((str[cub->plan.i] == 'N') || (str[cub->plan.i] == 'S') || (str[cub->plan.i] == 'E')
 		|| (str[cub->plan.i] == 'W'))

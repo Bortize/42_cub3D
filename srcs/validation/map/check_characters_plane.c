@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:32:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** permitidos por el subject y comprobando si la posicon del jugador es uno de
 ** ellos. En el caso de que algun char del string no sea valido, gestiona el error
 */
-void	check_values_allowed(char *str, t_cub3d *cub3d)
+void	check_values_allowed(char *str, t_cub3d *cub)
 {
 	cub->plan.i = 0;
 
@@ -41,7 +41,7 @@ void	check_values_allowed(char *str, t_cub3d *cub3d)
 ** y despues de comprobarlo, si todos los caractere de la string pasado son correctos,
 ** se suma +1 fila. Si no es así, gestiona el error.
 */
-void	check_characters_plane(char *str, t_cub3d *cub3d)
+void	check_characters_plane(char *str, t_cub3d *cub)
 {
 	ft_printf("congrats, estas leyendo el plano \n");
 	ft_printf("Se va a proceder a analizar la línea  🗺️--> %s \n", str);

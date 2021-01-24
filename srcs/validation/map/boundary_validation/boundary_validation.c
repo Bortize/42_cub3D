@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:59:10 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:32:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** metodo por inundación hasta los límites del muro. Cuando encuentra un valor
 ** del suelo valido, lo rellena con 'f' y sigue avanzando
 */
-void	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub3d)
+void	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub)
 {
 	if ((x < 0 || x > cub->plan.rows_size) && (y < 0 || y > (int)cub->plan.row_len))
 		print_error("El plano contiene un muro que no esta cerrado");

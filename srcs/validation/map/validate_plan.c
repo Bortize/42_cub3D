@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:32:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** entra las va comparando para quedarse con la que tiene la mayor longitud,
 ** que sera utilizada para reservar memoría para la matriz mas adelante.
 */
-int		validate_plan(char *str, t_cub3d *cub3d)
+int		validate_plan(char *str, t_cub3d *cub)
 {
 	if (cub->plan.values_ok != 1)
 	{

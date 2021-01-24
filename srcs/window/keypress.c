@@ -6,20 +6,20 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 21:10:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:22:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 20:55:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
-int	keypress(int keycode, t_window *graphic)
+int	keypress(int keycode, t_cub3d *cub)
 {
 	if (keycode == KEY_R)
 	{
 		ft_printf("hola amigo \n");
-		ft_printf("el ancho es %d \n", &cub->map.height);
-		ft_printf("El alto es %d \n", &cub->map.width);
-		ft_printf("%p \n", graphic->addr);
+		ft_printf("el ancho es %d \n", cub->map.height);
+		ft_printf("El alto es %d \n", cub->map.width);
+		ft_printf("%p \n", cub->graphic.addr);
 		int y;
 		int x;
 		if (keycode == 15)
@@ -30,7 +30,7 @@ int	keypress(int keycode, t_window *graphic)
 				x=0;
 				while(x < cub->map.width)
 				{
-					mlx_pixel_put(graphic->mlx, graphic->mlx_win, x, y, 0x00FF0000);
+					mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x00FF0000);
 					x++;
 				}
  				y++;

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:26:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 20:46:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_cub3d	cub;
 
 	int fd;
-	init_structs(&cub);
+	init_structures(&cub);
 	//	init_plan_values(&cub);
 	if (argc > 2)
 		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");

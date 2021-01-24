@@ -8,7 +8,7 @@ El segundo ft_strjoin concatena un caracter random que he escogido "p" para util
 sino la funcion ft_strjoin no concatenaria la p porque solo concatena string con string, no char con string
 
 ///////////////////////////////////////////////////////////////////////////////////
-int	save_plane_lines(char *str, t_cub3d *cub3d)
+int	save_plane_lines(char *str, t_cub3d *cub)
 {
 	char *aux;
 

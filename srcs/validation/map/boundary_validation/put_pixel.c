@@ -15,7 +15,7 @@
 /*
 ** Asigna el valor de relleno a la posicion indicada en el plano
 */
-char	put_pixel(int x, int y, t_cub3d *cub3d)
+char	put_pixel(int x, int y, t_cub3d *cub)
 {
 	cub->plan.plan[x][y] = 'f';
 	ft_printf("✅ El pixel se cambio a: %c \n", cub->plan.plan[x][y]);

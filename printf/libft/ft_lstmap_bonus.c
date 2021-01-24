@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 13:39:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:26:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 20:28:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstdelone(list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&list, cub);
+		ft_lstadd_back(&list, map);
 		lst = lst->next;
 	}
 	return (list);

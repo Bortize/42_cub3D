@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/24 17:37:36 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/24 20:20:42 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,9 +76,9 @@ RM 			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
-				# Compila el Makefile que esta en la ruta ./printf
+				# Llama al Makefile que esta en la ruta ./printf
 				make -C $(INCLUDE)
-				# Compila el Makefile que esta en la ruta ./minilibx_opengl
+				# Llama al Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
 				# Copia las librerias generadas en cada ruta y las sube a este nivel
 				cp ./printf/libftprintf.a ./

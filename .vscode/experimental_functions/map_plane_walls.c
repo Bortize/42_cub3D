@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 13:34:46 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:31:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	map_plane_wall_left_right(t_cub3d *cub3d)
+void	map_plane_wall_left_right(t_cub3d *cub)
 {
 	int i;
 	int j;
@@ -33,7 +33,7 @@ void	map_plane_wall_left_right(t_cub3d *cub3d)
 	}
 }
 
-void	map_plane_wall_down(t_cub3d *cub3d)
+void	map_plane_wall_down(t_cub3d *cub)
 {
 	int j;
 
@@ -52,7 +52,7 @@ void	map_plane_wall_down(t_cub3d *cub3d)
 	}
 }
 
-void	map_plane_wall_up(t_cub3d *cub3d)
+void	map_plane_wall_up(t_cub3d *cub)
 {
 	int j;
 
@@ -71,7 +71,7 @@ void	map_plane_wall_up(t_cub3d *cub3d)
 	}
 }
 
-void	map_plane_walls(t_cub3d *cub3d)
+void	map_plane_walls(t_cub3d *cub)
 {
 	map_plane_wall_up(cub);
 	map_plane_wall_down(cub);
