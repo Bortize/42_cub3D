@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/21 14:16:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 14:54:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 */
 int	main(int argc, char **argv)
 {
-	map_config	map;
-	map_plan	plan;
+	map_config	*map;
+	map_plan	*plan;
 
 	int fd;
 	init_identifiers(&map);
