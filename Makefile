@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/01/23 13:43:42 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/01/24 20:20:42 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 # Elimina cualquier residuo que se haya podidio generar en la compilacion si algo fallo
 .DELETE_ON_ERROR:
 # Silencia todas las salidas por pantalla
-.SILENT:
+#.SILENT:
 # Variable para indicar el nombre de nuestro programa
 #########################	Program Name	####################################
 NAME		= cub3D
@@ -25,7 +25,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/initialize_mlx.c \
 				srcs/error/print_error.c \
 				srcs/validation/read_file/file_reading.c \
-				srcs/validation/read_file/init_identifiers.c \
+				srcs/validation/read_file/init_structures.c \
 				srcs/validation/read_file/get_next_line.c \
 				srcs/validation/read_file/get_next_line_utils.c \
 				srcs/validation/read_file/file_validation.c \
@@ -76,9 +76,9 @@ RM 			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
-				# Compila el Makefile que esta en la ruta ./printf
+				# Llama al Makefile que esta en la ruta ./printf
 				make -C $(INCLUDE)
-				# Compila el Makefile que esta en la ruta ./minilibx_opengl
+				# Llama al Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
 				# Copia las librerias generadas en cada ruta y las sube a este nivel
 				cp ./printf/libftprintf.a ./

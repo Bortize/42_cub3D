@@ -22,4 +22,4 @@ typedef struct	config
 	char		**tab;				Lo uso para trabajar con los identificadores la primera vez que lee la liena
 	char		**tabcf;			Lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready; 	flag activador de que ya se leyeron y asignaron los identificadores a la esctructura
-}								map_config;
+}								t_identifiers;

@@ -6,28 +6,30 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2021/01/24 19:38:57 by bgomez-r         ###   ########.fr       */
+=======
+/*   Updated: 2021/01/24 21:12:05 by bgomez-r         ###   ########.fr       */
+>>>>>>> fixing_structure
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
-void	initialize_mlx(map_config *map)
+void	initialize_mlx(t_cub3d *cub)
 {
-	t_window graphic;
-
-	if (!(graphic.mlx = mlx_init()))
+	if (!(cub->graphic.mlx = mlx_init()))
 		print_error("Fallo al iniciar MLX");
-	graphic.mlx_win = mlx_new_window(graphic.mlx, map->width, map->height, "cub3D");
-	graphic.img = mlx_new_image(graphic.mlx, map->width, map->height);
-	graphic.addr = mlx_get_data_addr(graphic.img, &graphic.bpp, &graphic.line_length, &graphic.endian);
+	cub->graphic.mlx_win = mlx_new_window(cub->graphic.mlx, cub->map.width, cub->map.height, "cub3D");
+	cub->graphic.img = mlx_new_image(cub->graphic.mlx, cub->map.width, cub->map.height);
+	cub->graphic.addr = mlx_get_data_addr(cub->graphic.img, &cub->graphic.bpp, &cub->graphic.line_length, &cub->graphic.endian);
 
-	my_mlx_pixel_put(&graphic, 5, 5, 0x0000FF00);
-	mlx_put_image_to_window(graphic.mlx, graphic.mlx_win, graphic.img, 0, 0);
+	my_mlx_pixel_put(cub, 5, 5, 0x0000FF00);
+	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);
 	//mlx_key_hook(graphic.mlx, keypress, &graphic);
-	mlx_hook(graphic.mlx_win, KEYPRESS, 0, keypress, &graphic);
+	mlx_hook(cub->graphic.mlx_win, KEYPRESS, 0, keypress, cub);
 	//mlx_hook(graphic.mlx_win, KEYPRESS, 0, draws_sky_floor, &graphic);
-	//mlx_loop_hook(graphic.mlx, keypress, &graphic);
+	//mlx_loop_hook(cub->graphic.mlx, keypress, &cub->graphic);
 	//mlx_loop_hook(graphic.mlx, draws_sky_floor, &graphic);
-	mlx_loop(graphic.mlx);// Inicia la randeriazacion de la ventana
+	mlx_loop(cub->graphic.mlx);// Inicia la randeriazacion de la ventana
 }

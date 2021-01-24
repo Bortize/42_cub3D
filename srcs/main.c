@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 14:54:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/24 20:46:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,22 @@
 */
 int	main(int argc, char **argv)
 {
-	map_config	*map;
-	map_plan	*plan;
+	t_cub3d	cub;
 
 	int fd;
-	init_identifiers(&map);
-	init_plan_values(&plan);
+	init_structures(&cub);
+	//	init_plan_values(&cub);
 	if (argc > 2)
 		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
 		ft_printf("Mapa introducido --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
-		file_reading(fd, &map, &plan);
+		file_reading(fd, &cub);
 	}
 	else if (argc < 2)
 		print_error("Eres un estupido, no vales ni para meter un fichero");
-	initialize_mlx(&map);
+	initialize_mlx(&cub);
 	ft_printf("\n \n 🚧 L E A K S 🚧 \n \n");
 	system("leaks -fullContent cub3D");
 	return (0);

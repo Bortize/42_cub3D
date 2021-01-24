@@ -1,1 +1,1 @@
-Comprueba si el iterador de la linea es alguna de las posiciones del jugador. En la caso de que asi sea, guarda la posición de la fila (x) y la columna (y) en las respectivas variables de la estructura (plan) para poder trabajar mas adelante.
+Comprueba si el iterador de la linea es alguna de las posiciones del jugador. En la caso de que asi sea, guarda la posición de la fila (x) y la columna (y) en las respectivas variables de la estructura (cub) para poder trabajar mas adelante.

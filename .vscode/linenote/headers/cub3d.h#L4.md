@@ -41,7 +41,7 @@ typedef struct	config
 	char		**tab;				//	Lo uso para trabajar con los identificadores la primera vez que lee la liena
 	char		**tabcf;			//	Lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready; 	//	flag activador de que ya se leyeron y asignaron los identificadores a la esctructura
-}								map_config;
+}								t_identifiers;
 
 
 ---
@@ -63,7 +63,7 @@ typedef	struct	valid_map
 	int			player_position_y;			//	Guarda la posicion donde se encuentra el jugador 'N' dentro del vector (el índice del string donde se en cuentra)
 	char		boundary_value;				//	Guarda el valor del muro '1'
 	char		fill_value;					//	Guarda el valor con el que irá rellenando la función boundaryfill en caso de encontrar un pixel válido dentro del mapa.
-}								map_plan;
+}								t_map;
 
 
 
