@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 13:40:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 19:50:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/25 19:58:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	draws_sky_floor(int keycode, t_cub3d *cub)
 	int y;
 	int x;
 
-	if (keycode == 15)
+	if (keycode == KEY_R)
 	{
 		y = 0;
 		while (y < cub->map.height / 2)

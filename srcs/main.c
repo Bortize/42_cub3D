@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 20:46:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/25 19:24:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char **argv)
 	t_cub3d	cub;
 
 	int fd;
+	if (argc == 3)
+		printf("Tienes que guardar la caputra de la pantalla");
 	init_structures(&cub);
 	//	init_plan_values(&cub);
 	if (argc > 2)
