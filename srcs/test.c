@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 16:48:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 19:58:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:28:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,8 @@ void	refresh_screen(t_raycaster *rc){
 
 void          initial_calc(t_raycaster *rc, int x)
 {
-  double      camera_x;
-
+  double      camera_x;// coordenada x en el plano de la camara que represneta la actual coordenada x de la pantalla.
+// AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
   camera_x = 2 * x / (double)(WIN_X) - 1;
   rc->ray_dir_x = rc->player_dir_x + rc->player_plane_x * camera_x;
   rc->ray_dir_y = rc->player_dir_y + rc->player_plane_y * camera_x;

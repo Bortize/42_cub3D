@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 18:27:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:05:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	initialize_mlx(t_cub3d *cub)
 	mlx_hook(cub->graphic.mlx_win, KEYPRESS, 0, keypress, cub);
 	//mlx_hook(graphic.mlx_win, KEYPRESS, 0, draws_sky_floor, cub);
 	//mlx_loop_hook(cub->graphic.mlx, keypress, cub);
-	mlx_loop_hook(cub->graphic.mlx, raycasting, cub);
+	//mlx_loop_hook(cub->graphic.mlx, raycasting, cub);
 	//mlx_destroy_image(cub->graphic.mlx, cub->graphic.img);
 	mlx_loop(cub->graphic.mlx);// Inicia la randeriazacion de la ventana
 }

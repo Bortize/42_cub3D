@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 19:04:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 20:31:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ typedef	struct	s_map
 	size_t		row_len;// Tamaño de las filas
 	char		**plan;// Matriz donde guardas el mapa
 	int			values_ok;
-	double		player_position_x;
-	double		player_position_y;
+	double		player_init_position_x;
+	double		player_init_position_y;
 	char		*player_positon;
 	char		boundary_value;
 	char		fill_value;
@@ -68,20 +68,30 @@ typedef	struct	s_map
 
 typedef struct	s_window
 {
-	void		*mlx;
-	void		*mlx_win;
-	void		*img;
-	char 		*addr;
-	int			line_length;
-	int			endian;
-	void		*img_ptr;
-	int			bpp;
-	double		player_dir_x;
-	double		player_dir_y;
-	double		ray_dir_x;
-	double		ray_dir_y;
-	double		player_plane_x;
-	double		player_plane_y;
+	void		*mlx;//						Puntero al motor gráfico
+	void		*mlx_win;//					Puntero a la ventana
+	void		*img;//						Puntero a la imagen "frame" que se genera en cada loop
+	char 		*addr;//					Dirección a la imagen que se genera.
+	int			line_length;//				Longitud del vector del plano de la camara?
+	int			endian;//
+	void		*img_ptr;//
+	int			bpp;//						Bites por pixel
+	double		player_pos_x;//				El vector de posicion del jugador.
+	double		player_pos_y;//				El vector de posicion del jugador.
+	double		player_dir_x;//				La direccion del jugador.
+	double		player_dir_y;//				La direccion del jugador.
+	double		ray_dir_x;//				Direccion del pixel del plano de la camara
+	double		ray_dir_y;//				Direccion del pixel del plano de la camara
+	double		player_plane_x;//			Plano de la camara del jugador.
+	double		player_plane_y;//			Plano de la camara del jugador.
+	int			map_x;//					Cuadrado actual del mapa donde se encuentra el rayo.
+	int			map_y;//					Cuadrado actual del mapa donde se encuentra el rayo.
+	double		side_dist_x;//				Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'x'
+	double		side_dist_y;//				Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'y'
+	double		delta_dist_x;//				Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
+	double		delta_dist_y;//			Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
+	int			step_x;//					Dirección en la que el jugador tiene que anvanzar.
+	int			step_y;//					Dirección en la que el jugador tiene que avanzar.
 }				t_window;
 
 typedef struct	s_cub3d
