@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/25 19:55:54 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 19:04:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ typedef	struct	s_map
 	int			i;
 	int			rows_size;
 	char		*one_line_plan;
-	size_t		row_len;
+	size_t		row_len;// Tamaño de las filas
 	char		**plan;// Matriz donde guardas el mapa
 	int			values_ok;
-	int			player_position_x;
-	int			player_position_y;
+	double		player_position_x;
+	double		player_position_y;
 	char		*player_positon;
 	char		boundary_value;
 	char		fill_value;
@@ -76,6 +76,12 @@ typedef struct	s_window
 	int			endian;
 	void		*img_ptr;
 	int			bpp;
+	double		player_dir_x;
+	double		player_dir_y;
+	double		ray_dir_x;
+	double		ray_dir_y;
+	double		player_plane_x;
+	double		player_plane_y;
 }				t_window;
 
 typedef struct	s_cub3d
@@ -121,6 +127,7 @@ int		player_start_position(char *str, t_cub3d *cub);
 char	put_pixel(int x, int y, t_cub3d *cub);
 void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
 int		keypress(int keycode, t_cub3d *cub);
-int		draws_sky_floor(int keycode, t_cub3d *cub);
+int		draws_sky_floor(t_cub3d *cub);
+int		raycasting(t_cub3d *cub);
 
 #endif

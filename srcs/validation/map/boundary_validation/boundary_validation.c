@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:59:10 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 15:55:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../headers/cub3d.h"
 /*
-** Recorre el plano del mapa partiendo desde la posicon del jugador. Utiliza el
+** Recorre el plano del mapa partiendo desde la posicion del jugador. Utiliza el
 ** metodo por inundación hasta los límites del muro. Cuando encuentra un valor
 ** del suelo valido, lo rellena con 'f' y sigue avanzando
 */

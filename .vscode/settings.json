@@ -4,6 +4,7 @@
 		"stdio.h": "c",
 		"ctype.h": "c",
 		"ft_printf.h": "c",
-		"get_next_line.h": "c"
+		"get_next_line.h": "c",
+		"libft.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 21:10:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/25 20:03:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/27 14:57:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	keypress(int keycode, t_cub3d *cub)
 			x=0;
 			while(x < cub->map.width)
 			{
-				mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x00FF0000);
+				mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0xFFFF0000);
 				x++;
 			}
  			y++;
