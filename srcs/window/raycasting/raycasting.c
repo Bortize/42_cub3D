@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/28 13:14:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:43:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ void	initial_calc(t_cub3d *cub, int x)
 	cub->graphic.ray_dir_y = cub->graphic.player_dir_y + cub->graphic.player_plane_y * camera_x;
 	cub->graphic.map_x = (int)(cub->graphic.player_pos_x);
 	cub->graphic.map_y = (int)(cub->graphic.player_pos_y);
-	cub->graphic.delta_dist_x = sqrt(1 + pow(cub->graphic.ray_dir_y, 2) / pow(cub->graphic.ray_dir_x, 2));
-	cub->graphic.delta_dist_y = sqrt(1 + pow(cub->graphic.ray_dir_x, 2) / pow(cub->graphic.ray_dir_y, 2));
-	//calculate step and initial sideDist
+	// Longitud del rayo de un lado x o y al siguiente lado x o y
+/*
+** 	cub->graphic.delta_dist_x = sqrt(1 + pow(cub->graphic.ray_dir_y, 2) / pow(cub->graphic.ray_dir_x, 2));
+** 	cub->graphic.delta_dist_y = sqrt(1 + pow(cub->graphic.ray_dir_x, 2) / pow(cub->graphic.ray_dir_y, 2));
+*/
+	cub->graphic.delta_dist_x = fabs(1 / cub->graphic.ray_dir_x);
+	cub->graphic.delta_dist_y = fabs(1 / cub->graphic.ray_dir_y);
+	// Calcula el paso y el sideDist inicial
 	if (cub->graphic.ray_dir_x < 0)
 	{
 		cub->graphic.step_x = -1;
@@ -77,9 +82,9 @@ int	raycasting(t_cub3d *cub)
 	while (x < cub->map.width)
 	{
 		initial_calc(cub, x);
-		perform_dda(cub);
-		calc_wall_height(cub);
-		draw_vert_line(cub, x);
+		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
+		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
+		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		x++;
 	}
 	if (handle_events(key,cub) != 0)
