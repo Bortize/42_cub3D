@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 20:40:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/01/28 13:14:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,23 @@ void	initial_calc(t_cub3d *cub, int x)
 
 
 
+void	refresh_screen(t_cub3d *cub){
+	int x;
+	int y;
 
+	x = 0;
+	y = 0;
+	while (x < cub->map.width)
+	{
+		while (y < cub->map.height)
+		{
+			mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x000000);
+			y++;
+		}
+		y=0;
+		x++;
+	}
+}
 
 
 int	raycasting(t_cub3d *cub)
