@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 20:31:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/01 20:40:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,46 +52,49 @@ typedef struct	s_identifiers
 
 typedef	struct	s_map
 {
-	int			i;
-	int			rows_size;
-	char		*one_line_plan;
-	size_t		row_len;// Tamaño de las filas
-	char		**plan;// Matriz donde guardas el mapa
-	int			values_ok;
-	double		player_init_position_x;
-	double		player_init_position_y;
-	char		*player_positon;
-	char		boundary_value;
-	char		fill_value;
-	char		sprite_value;
+	int			i;//
+	int			rows_size;//
+	char		*one_line_plan;//
+	size_t		row_len;//					Tamaño de las filas
+	char		**plan;//					Matriz donde guardas el mapa
+	int			values_ok;//
+	double		player_init_position_x;//
+	double		player_init_position_y;//
+	char		*player_positon;//
+	char		boundary_value;//
+	char		fill_value;//
+	char		sprite_value;//
 }				t_map;
 
 typedef struct	s_window
 {
-	void		*mlx;//						Puntero al motor gráfico
-	void		*mlx_win;//					Puntero a la ventana
-	void		*img;//						Puntero a la imagen "frame" que se genera en cada loop
-	char 		*addr;//					Dirección a la imagen que se genera.
-	int			line_length;//				Longitud del vector del plano de la camara?
-	int			endian;//
-	void		*img_ptr;//
-	int			bpp;//						Bites por pixel
-	double		player_pos_x;//				El vector de posicion del jugador.
-	double		player_pos_y;//				El vector de posicion del jugador.
-	double		player_dir_x;//				La direccion del jugador.
-	double		player_dir_y;//				La direccion del jugador.
-	double		ray_dir_x;//				Direccion del pixel del plano de la camara
-	double		ray_dir_y;//				Direccion del pixel del plano de la camara
-	double		player_plane_x;//			Plano de la camara del jugador.
-	double		player_plane_y;//			Plano de la camara del jugador.
-	int			map_x;//					Cuadrado actual del mapa donde se encuentra el rayo.
-	int			map_y;//					Cuadrado actual del mapa donde se encuentra el rayo.
-	double		side_dist_x;//				Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'x'
-	double		side_dist_y;//				Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'y'
-	double		delta_dist_x;//				Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
-	double		delta_dist_y;//			Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
-	int			step_x;//					Dirección en la que el jugador tiene que anvanzar.
-	int			step_y;//					Dirección en la que el jugador tiene que avanzar.
+	void		*mlx;//				Puntero al motor gráfico
+	void		*mlx_win;//			Puntero a la ventana
+	void		*img;//				Puntero a la imagen "frame" que se genera en cada loop
+	char 		*addr;//			Dirección a la imagen que se genera.
+	int			line_length;//		Longitud del vector del plano de la camara?
+	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
+	void		*img_ptr;//			Dirección a la imagen que es creada por los pixels
+	int			bpp;//				Bites por pixel
+	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
+	double		player_pos_x;//		El vector de posicion del jugador.
+	double		player_pos_y;//		El vector de posicion del jugador.
+	double		player_dir_x;//		La direccion del jugador.
+	double		player_dir_y;//		La direccion del jugador.
+	double		ray_dir_x;//		Direccion del pixel del plano de la camara
+	double		ray_dir_y;//		Direccion del pixel del plano de la camara
+	double		player_plane_x;//	Plano de la camara del jugador.
+	double		player_plane_y;//	Plano de la camara del jugador.
+	int			map_x;//			Cuadrado actual del mapa donde se encuentra el rayo.
+	int			map_y;//			Cuadrado actual del mapa donde se encuentra el rayo.
+	double		side_dist_x;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'x'
+	double		side_dist_y;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'y'
+	double		delta_dist_x;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
+	double		delta_dist_y;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
+	int			step_x;//			Dirección en la que el jugador tiene que anvanzar.
+	int			step_y;//			Dirección en la que el jugador tiene que avanzar.
+	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y.
+	int			hit;//
 }				t_window;
 
 typedef struct	s_cub3d
@@ -139,5 +142,6 @@ void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
 int		keypress(int keycode, t_cub3d *cub);
 int		draws_sky_floor(t_cub3d *cub);
 int		raycasting(t_cub3d *cub);
+void	initial_calc(t_cub3d *cub, int x);
 
 #endif

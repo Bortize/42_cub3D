@@ -6,12 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:24:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/01 12:03:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../headers/cub3d.h"
-
+/*
+** Comprueba la posicion 0 comparándolo con cualquiera de los identificadores
+** permitidos. En caso de no encontrar ninguno, gestiona el error y se detiene en
+** este punto del programa.
+*/
 int	check_identifiers(t_cub3d *cub)
 {
 	if ((ft_strcmp("R", cub->map.tab[0]) == 0) ||

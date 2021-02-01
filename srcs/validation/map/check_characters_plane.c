@@ -6,15 +6,17 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/01 13:02:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 /*
 ** Recorre cada indice del string para ir comprobando si su valor es uno de los
-** permitidos por el subject y comprobando si la posicon del jugador es uno de
-** ellos. En el caso de que algun char del string no sea valido, gestiona el error
+** permitidos por el subject (queremos detectar si el mapa contiene algun iden-
+** tificaodr no permitido y comprobando si la posición del jugador es uno de
+** ellos. En el caso de que algun char del string no sea valido, gestiona el
+** error.
 */
 void	check_values_allowed(char *str, t_cub3d *cub)
 {
@@ -36,9 +38,9 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 	}
 }
 /*
-** Busca si en la lina que le pasan hay por lo menos un valor válido paraentrar
-** a analizarla en profundidad En caso se contener alguno, entra mas en profundidad
-** y despues de comprobarlo, si todos los caractere de la string pasado son correctos,
+** Busca si en la lina que le pasan hay por lo menos un valor válido para entrar
+** a analizarla en profundidad. En caso de contener alguno, entra mas en profundidad
+** y despues de comprobarlo, si todos los caracteres pasados de la string son correctos,
 ** se suma +1 fila. Si no es así, gestiona el error.
 */
 void	check_characters_plane(char *str, t_cub3d *cub)

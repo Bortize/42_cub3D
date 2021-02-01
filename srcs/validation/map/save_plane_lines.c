@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 19:05:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/01 12:28:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 /*
 ** Concatena todas las lineas que ha ido encontrando el GNL en un solo string
 ** poniendo un caracter random 'p' entre línea y línea para luego poder sepa-
-** rarlas y asignar cada linea a su respectivo puntero.
+** rarlas (el caracter p me sirve como identidicador de separdor entre cadenas
+** ) y asignar cada linea a su respectivo puntero.
 */
 int	save_plane_lines(char *str, t_cub3d *cub)
 {
