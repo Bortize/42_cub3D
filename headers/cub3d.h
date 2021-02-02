@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/01 20:40:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/02 19:50:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,11 @@ typedef struct	s_window
 	double		delta_dist_y;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
 	int			step_x;//			Dirección en la que el jugador tiene que anvanzar.
 	int			step_y;//			Dirección en la que el jugador tiene que avanzar.
-	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y.
+	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y
 	int			hit;//
+	int			perp_wall_dist;//
+	int			draw_start;//
+	int			draw_end;//
 }				t_window;
 
 typedef struct	s_cub3d
@@ -143,5 +146,8 @@ int		keypress(int keycode, t_cub3d *cub);
 int		draws_sky_floor(t_cub3d *cub);
 int		raycasting(t_cub3d *cub);
 void	initial_calc(t_cub3d *cub, int x);
+void	perform_dda(t_cub3d *cub);
+void	calc_wall_height(t_cub3d *cub);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/01 20:39:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/02 19:51:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	initial_calc(t_cub3d *cub, int x)
 }
 
 /*
-** Avanza por las baldosas del plano comprobando en cada iteración del while si es rayo ha
+** Avanza por las baldosas del plano comprobando en cada iteración del while si el rayo ha
 ** impactado en algun muro.
 */
 void	perform_dda(t_cub3d *cub)
@@ -97,21 +97,25 @@ void	perform_dda(t_cub3d *cub)
 	}
 }
 
+/*
+** Calcula la altura de los muros utilizando la distancia perpecdicular
+** en vez de la distancia real euclidiana.
+*/
 void	calc_wall_height(t_cub3d *cub)
 {
 	int	line_height;
 
 	if (cub->graphic.side == 0)
-		rc->perp_wall_dist = (rc->map_x - rc->player_pos_x + (1 - rc->step_x) / 2) / rc->ray_dir_x;
+		cub->graphic.perp_wall_dist = (cub->graphic.map_x - cub->graphic.player_pos_x + (1 - cub->graphic.step_x) / 2) / cub->graphic.ray_dir_x;
 	else
-		rc->perp_wall_dist = (rc->map_y - rc->player_pos_y + (1 - rc->step_y) / 2) / rc->ray_dir_y;
-	line_height = (int)(WIN_Y / rc->perp_wall_dist);
-	rc->draw_start = -line_height / 2 + WIN_Y / 2;
-	if (rc->draw_start < 0)
-		rc->draw_start = 0;
-	rc->draw_end = line_height / 2 + WIN_Y / 2;
-	if (rc->draw_end >= WIN_Y)
-	rc->draw_end = WIN_Y - 1;
+		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
+	line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
+	cub->graphic.draw_start = -line_height / 2 + cub->map.height / 2;
+	if (cub->graphic.draw_start < 0)
+		cub->graphic.draw_start = 0;
+	cub->graphic.draw_end = line_height / 2 + cub->map.height / 2;
+	if (cub->graphic.draw_end >= cub->map.height)
+	cub->graphic.draw_end = cub->map.height - 1;
 }
 
 int	raycasting(t_cub3d *cub)
