@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/27 20:04:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:02:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,11 +136,15 @@
 # define KEY_CAPSLOCK		272
 # define KEY_FN				279
 
+#define MV_SPEED	0.199
+#define ROT_SPEED	0.1745
+#define AMB_LIGHT	7
+
 // Colors
-#define WHITE           0x00FFFFFF
-#define RED             0x00FF0000
-#define GREEN           0x0000FF00
-#define BLUE            0x000000FF
-#define BLACK           0x00000000
+#define WHITE				0x00FFFFFF
+#define RED					0x00FF0000
+#define GREEN				0x0000FF00
+#define BLUE				0x000000FF
+#define BLACK				0x00000000
 
 #endif

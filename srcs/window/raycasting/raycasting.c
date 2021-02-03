@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/02 19:51:29 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:39:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	refresh_screen(t_cub3d *cub){
 	{
 		while (y < cub->map.height)
 		{
-			mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x000000);
+			//mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x000000);
+			my_mlx_pixel_put(cub, x, y, BLUE);
 			y++;
 		}
-		y=0;
+		y = 0;
 		x++;
 	}
 }
@@ -80,20 +81,20 @@ void	perform_dda(t_cub3d *cub)
 	while (hit == 0)
 	{
 	// saltar a la siguiente casilla del mapa, o en dirección x, o en dirección y
-	if (cub->graphic.side_dist_x < cub->graphic.side_dist_y)
-	{
-		cub->graphic.side_dist_x += cub->graphic.delta_dist_x;
-		cub->graphic.map_x += cub->graphic.step_x;
-		cub->graphic.side = 0;
-	}
-	else
-	{
-		cub->graphic.side_dist_y += cub->graphic.delta_dist_y;
-		cub->graphic.map_y += cub->graphic.step_y;
-		cub->graphic.side = 1;
-	}
-	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] != '0')
-		hit = 1;
+		if (cub->graphic.side_dist_x < cub->graphic.side_dist_y)
+		{
+			cub->graphic.side_dist_x += cub->graphic.delta_dist_x;
+			cub->graphic.map_x += cub->graphic.step_x;
+			cub->graphic.side = 0;
+		}
+		else
+		{
+			cub->graphic.side_dist_y += cub->graphic.delta_dist_y;
+			cub->graphic.map_y += cub->graphic.step_y;
+			cub->graphic.side = 1;
+		}
+		if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] != '0')
+			hit = 1;
 	}
 }
 
@@ -109,7 +110,9 @@ void	calc_wall_height(t_cub3d *cub)
 		cub->graphic.perp_wall_dist = (cub->graphic.map_x - cub->graphic.player_pos_x + (1 - cub->graphic.step_x) / 2) / cub->graphic.ray_dir_x;
 	else
 		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
+	//Calculate height of line to draw on screen
 	line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
+	//calculate lowest and highest pixel to fill in current stripe
 	cub->graphic.draw_start = -line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_start < 0)
 		cub->graphic.draw_start = 0;
@@ -118,14 +121,50 @@ void	calc_wall_height(t_cub3d *cub)
 	cub->graphic.draw_end = cub->map.height - 1;
 }
 
+/*
+** Selecciona el color para los muros
+*/
+void	draw_vert_line(t_cub3d *cub, int x)
+{
+	int color;
+	int y;
+
+	color = BLUE;
+	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 1)
+		color = GREEN;
+/*
+** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 1)
+** 		color = GREEN;
+** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 3)
+** 		color = GREEN;
+** 	if(cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 4)
+** 		color = RED;
+** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 5)
+** 		color = BLACK;
+*/
+
+	//if (cub->graphic.side == 1)
+	//	color = color + 3000;
+	//else
+	//	color = color;
+
+	y = cub->graphic.draw_start;
+	while (y < cub->graphic.draw_end)
+	{
+		//mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, color);
+		my_mlx_pixel_put(cub, x, y, color);
+		y++;
+	}
+}
+
 int	raycasting(t_cub3d *cub)
 {
 	int x;
 
 	x = 0;
-	refresh_screen(cub);
+	//refresh_screen(cub);
 	//for
-	while (x < cub->map.width)// Mientras x sea menor que el anchod e la resolucion de la ventana
+	while (x < cub->map.width)// Mientras x sea menor que el ancho de la resolucion de la ventana
 	{
 		initial_calc(cub, x);
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
@@ -133,7 +172,8 @@ int	raycasting(t_cub3d *cub)
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		x++;
 	}
-	if (handle_events(key,cub) != 0)
-		return (-1);
+	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);
+//	if (handle_events(keycode, cub) != 0)
+//		return (-1);
 	return (0);
 }

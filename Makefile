@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/01 16:23:41 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/03 18:34:02 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/draws_sky_floor.c \
 				srcs/window/keypress.c \
 				srcs/window/raycasting/raycasting.c \
+				srcs/window/raycasting/handle_events.c
 
 
 ############################	Variables	####################################

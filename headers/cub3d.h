@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/02 19:50:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/03 18:39:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <math.h>
+# include <stdarg.h>
 
 typedef struct	s_identifiers
 {
@@ -74,7 +76,6 @@ typedef struct	s_window
 	char 		*addr;//			Dirección a la imagen que se genera.
 	int			line_length;//		Longitud del vector del plano de la camara?
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
-	void		*img_ptr;//			Dirección a la imagen que es creada por los pixels
 	int			bpp;//				Bites por pixel
 	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
 	double		player_pos_x;//		El vector de posicion del jugador.
@@ -148,6 +149,8 @@ int		raycasting(t_cub3d *cub);
 void	initial_calc(t_cub3d *cub, int x);
 void	perform_dda(t_cub3d *cub);
 void	calc_wall_height(t_cub3d *cub);
+void	draw_vert_line(t_cub3d *cub, int x);
+int 	handle_events(int key, t_cub3d *cub);
 
 
 #endif
