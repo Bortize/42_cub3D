@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 18:39:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/04 17:30:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct	s_identifiers
 	char		**tab;
 	char		**tabcf;
 	int			flag_map_ready;
-}				t_identifiers;
+}				t_identifiers;//map
 
 typedef	struct	s_map
 {
@@ -66,7 +66,7 @@ typedef	struct	s_map
 	char		boundary_value;//
 	char		fill_value;//
 	char		sprite_value;//
-}				t_map;
+}				t_map;//plan
 
 typedef struct	s_window
 {
@@ -99,7 +99,7 @@ typedef struct	s_window
 	int			perp_wall_dist;//
 	int			draw_start;//
 	int			draw_end;//
-}				t_window;
+}				t_window;//graphic
 
 typedef struct	s_cub3d
 {

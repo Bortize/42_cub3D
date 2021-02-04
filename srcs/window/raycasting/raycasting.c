@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 19:39:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/04 17:42:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ void	refresh_screen(t_cub3d *cub){
 
 void	initial_calc(t_cub3d *cub, int x)
 {
+//	Le paso la posicion inicial del jugador para que pueda moverse
+	cub->graphic.player_pos_x = cub->plan.player_init_position_x;
+	cub->graphic.player_pos_y = cub->plan.player_init_position_y;
 //	AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
 	cub->graphic.camera_x = 2 * x / (double)(cub->map.width) - 1;
 	// Direccion del rayo
