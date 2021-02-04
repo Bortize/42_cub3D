@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/04 17:10:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/04 20:18:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ void	init_map(t_cub3d *cub)
 
 void	init_window(t_cub3d *cub)
 {
-	cub->graphic.player_dir_x = -1;
-	cub->graphic.player_dir_x = 0;
+	cub->graphic.player_dir_x = 1;
+	cub->graphic.player_dir_y = 1;
 	cub->graphic.player_plane_x = 0;
 	cub->graphic.player_plane_y = 0.66;
+	cub->graphic.line_height = 0;
 }
 
 void	init_structures(t_cub3d *cub)

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/04 17:30:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/04 20:03:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ typedef struct	s_window
 	int			perp_wall_dist;//
 	int			draw_start;//
 	int			draw_end;//
+	int			line_height;//
 }				t_window;//graphic
 
 typedef struct	s_cub3d

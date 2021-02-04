@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/04 17:42:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/04 20:04:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,19 +107,17 @@ void	perform_dda(t_cub3d *cub)
 */
 void	calc_wall_height(t_cub3d *cub)
 {
-	int	line_height;
-
 	if (cub->graphic.side == 0)
 		cub->graphic.perp_wall_dist = (cub->graphic.map_x - cub->graphic.player_pos_x + (1 - cub->graphic.step_x) / 2) / cub->graphic.ray_dir_x;
 	else
 		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
 	//Calculate height of line to draw on screen
-	line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
+	cub->graphic.line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
 	//calculate lowest and highest pixel to fill in current stripe
-	cub->graphic.draw_start = -line_height / 2 + cub->map.height / 2;
+	cub->graphic.draw_start = -cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_start < 0)
 		cub->graphic.draw_start = 0;
-	cub->graphic.draw_end = line_height / 2 + cub->map.height / 2;
+	cub->graphic.draw_end = cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_end >= cub->map.height)
 	cub->graphic.draw_end = cub->map.height - 1;
 }
