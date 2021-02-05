@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 11:25:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 19:38:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ void	perform_dda(t_cub3d *cub);
 void	calc_wall_height(t_cub3d *cub);
 void	draw_vert_line(t_cub3d *cub, int x);
 int 	handle_events(int key, t_cub3d *cub);
+void	init_window(t_cub3d *cub);
 
 
 #endif

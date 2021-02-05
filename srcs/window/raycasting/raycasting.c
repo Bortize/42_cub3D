@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 18:40:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 20:11:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 /*
 ** Refresca la pantalla para crear la nueva imagen
 */
-
 void	refresh_screen(t_cub3d *cub){
 	int x;
 	int y;
@@ -37,11 +36,8 @@ void	refresh_screen(t_cub3d *cub){
 void	initial_calc(t_cub3d *cub, int x)
 {
 //	Le paso la posicion inicial del jugador para que pueda moverse
-	cub->graphic.player_pos_x = cub->plan.player_init_position_x;
-	cub->graphic.player_pos_y = cub->plan.player_init_position_y;
-
-
-
+	//cub->graphic.player_pos_x = cub->plan.player_init_position_x;
+	//cub->graphic.player_pos_y = cub->plan.player_init_position_y;
 
 //	AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
 	cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;
@@ -81,8 +77,6 @@ void	initial_calc(t_cub3d *cub, int x)
 ** Avanza por las baldosas del plano comprobando en cada iteración del while si el rayo ha
 ** impactado en algun muro.
 */
-
-
 void	perform_dda(t_cub3d *cub)
 {
 	int	hit;
@@ -113,8 +107,6 @@ void	perform_dda(t_cub3d *cub)
 ** Calcula la altura de los muros utilizando la distancia perpecdicular
 ** en vez de la distancia real euclidiana.
 */
-
-
 void	calc_wall_height(t_cub3d *cub)
 {
 	if (cub->graphic.side == 0)
@@ -122,9 +114,8 @@ void	calc_wall_height(t_cub3d *cub)
 	else
 		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
 	//Calculate height of line to draw on screen
-	if (cub->graphic.perp_wall_dist == 0)
-		cub->graphic.perp_wall_dist = 2;
-	cub->graphic.line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
+	if (cub->graphic.perp_wall_dist != 0)
+		cub->graphic.line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
 	//calculate lowest and highest pixel to fill in current stripe
 	cub->graphic.draw_start = -cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_start < 0)
@@ -134,11 +125,10 @@ void	calc_wall_height(t_cub3d *cub)
 	cub->graphic.draw_end = cub->map.height - 1;
 }
 
+
 /*
 ** Selecciona el color para los muros
 */
-
-
 void	draw_vert_line(t_cub3d *cub, int x)
 {
 	int color;

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 17:37:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:59:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,23 @@ int handle_events(int keycode, t_cub3d *cub)
 		system("killall a.out && clear");
 		return (-1);
 	}
-	if (keycode == 125 || keycode == 126 || keycode == 124 || keycode == 123)
+	if (keycode == KEY_S || keycode == KEY_W || keycode == KEY_D || keycode == KEY_A)
 	{
-		if (keycode == 126)
+		if (keycode == KEY_W)
 		{
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_y)] == 0)
 				cub->graphic.player_pos_x += cub->graphic.player_dir_x * MV_SPEED;
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_y * MV_SPEED)] == 0)
 				cub->graphic.player_pos_y += cub->graphic.player_dir_y * MV_SPEED;
 		}
-		if (keycode == 125)
+		if (keycode == KEY_S)
 		{
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x - cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_y)] == 0)
 				cub->graphic.player_pos_x -= cub->graphic.player_dir_x * MV_SPEED;
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_y * MV_SPEED)] == 0)
 				cub->graphic.player_pos_y -= cub->graphic.player_dir_y * MV_SPEED;
 		}
-		if (keycode == 124)
+		if (keycode == KEY_D)
 		{
 			oldDirX = cub->graphic.player_dir_x;
 			cub->graphic.player_dir_x = cub->graphic.player_dir_x * cos(-ROT_SPEED) - cub->graphic.player_dir_y * sin(-ROT_SPEED);
@@ -47,7 +47,7 @@ int handle_events(int keycode, t_cub3d *cub)
 			cub->graphic.player_plane_x = cub->graphic.player_plane_x * cos(-ROT_SPEED) - cub->graphic.player_plane_y * sin(-ROT_SPEED);
 			cub->graphic.player_plane_y = oldPlaneX * sin(-ROT_SPEED) + cub->graphic.player_plane_y * cos(-ROT_SPEED);
 		}
-		if (keycode == 123)
+		if (keycode == KEY_A)
 		{
 			oldDirX = cub->graphic.player_dir_x;
 			cub->graphic.player_dir_x = cub->graphic.player_dir_x * cos(ROT_SPEED) - cub->graphic.player_dir_y * sin(ROT_SPEED);
