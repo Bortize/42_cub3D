@@ -1,4 +1,4 @@
-R 920 640
+R 640 480
 NO ./wolftex/textures/xpm/greystone.xpm
 SO ./wolftex/textures/xpm/redbrick.xpm
 EA ./wolftex/textures/xpm/wood.xpm

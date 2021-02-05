@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/03 18:34:02 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/05 16:07:00 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g #-fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -g3 #-fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
@@ -87,7 +87,7 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				cp ./printf/libftprintf.a ./
 				cp ./minilibx_opengl/libmlx.a ./
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
-				@$(CC) $(CFLAGS) $(MLXFLAG) -L. libftprintf.a libmlx.a $(OBJS) -o cub3D
+				$(CC) $(CFLAGS) $(MLXFLAG) -L. libftprintf.a libmlx.a $(OBJS) -o cub3D
 
 ###############################################################################
 

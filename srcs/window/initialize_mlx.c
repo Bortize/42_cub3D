@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 19:44:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:38:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	initialize_mlx(t_cub3d *cub)
 	cub->graphic.mlx_win = mlx_new_window(cub->graphic.mlx, cub->map.width, cub->map.height, "cub3D");
 	cub->graphic.img = mlx_new_image(cub->graphic.mlx, cub->map.width, cub->map.height);
 	cub->graphic.addr = mlx_get_data_addr(cub->graphic.img, &cub->graphic.bpp, &cub->graphic.line_length, &cub->graphic.endian);
-	//mlx_key_hook(graphic.mlx, keypress, cub);
+	//mlx_key_hook(cub->graphic.mlx, keypress, cub);
 	mlx_hook(cub->graphic.mlx_win, KEYPRESS, 0, handle_events, cub);
 	//mlx_hook(graphic.mlx_win, KEYPRESS, 0, draws_sky_floor, cub);
 	//mlx_loop_hook(cub->graphic.mlx, keypress, cub);

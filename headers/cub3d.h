@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/04 20:03:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 11:25:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ typedef struct	s_window
 	int			line_length;//		Longitud del vector del plano de la camara?
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
 	int			bpp;//				Bites por pixel
-	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
 	double		player_pos_x;//		El vector de posicion del jugador.
 	double		player_pos_y;//		El vector de posicion del jugador.
 	double		player_dir_x;//		La direccion del jugador.
@@ -86,6 +85,7 @@ typedef struct	s_window
 	double		ray_dir_y;//		Direccion del pixel del plano de la camara
 	double		player_plane_x;//	Plano de la camara del jugador.
 	double		player_plane_y;//	Plano de la camara del jugador.
+	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
 	int			map_x;//			Cuadrado actual del mapa donde se encuentra el rayo.
 	int			map_y;//			Cuadrado actual del mapa donde se encuentra el rayo.
 	double		side_dist_x;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'x'
@@ -95,8 +95,8 @@ typedef struct	s_window
 	int			step_x;//			Dirección en la que el jugador tiene que anvanzar.
 	int			step_y;//			Dirección en la que el jugador tiene que avanzar.
 	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y
-	int			hit;//
-	int			perp_wall_dist;//
+	int			hit;//				Checkea cuando el rayo ha impactado en el muro
+	int			perp_wall_dist;//	Distancia perpendicular desde el punto de impacto de la pared al plano de la camara en vez de al jugador.
 	int			draw_start;//
 	int			draw_end;//
 	int			line_height;//

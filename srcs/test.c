@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 16:48:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 19:32:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:13:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int worldMap[mapWidth][mapHeight] =
 #define INIT_P_DIR_X    -1
 #define INIT_P_DIR_Y    0
 #define INIT_P_PLANE_X  0
-#define INIT_P_PLANE_Y  0.66
+#define INIT_P_PLANE_Y  0.33
 #define MV_SPEED 		0.199		//0.199
 #define ROT_SPEED		0.1745		//0.1745
 #define AMB_LIGHT       7
@@ -80,8 +80,8 @@ int worldMap[mapWidth][mapHeight] =
 
 typedef struct      s_raycaster
 {
-  void	          *mlx_ptr;
-  void	          *win_ptr;
+  void	          *mlx_ptr;//			Puntero al motor grafico
+  void	          *win_ptr;//			Puntero a la ventana
   double          player_pos_x;//		El vector de posicion del jugador.
   double          player_pos_y;//		El vector de posicion del jugador.
   double          player_dir_x;//		La direccion del jugador.
@@ -325,9 +325,9 @@ int raycasting(int key, t_raycaster *rc)
 
 int		main(void)
 {
-	t_raycaster		*rc;
+	t_raycaster		*rc;// Inicializa la estructura con los valroes que le ha dado a las macros. Primera vez que lo veo pero OK
 
-	rc = malloc(sizeof(t_raycaster));
+	rc = malloc(sizeof(t_raycaster));// Reserva memoria para crear la estructura. Se puede reservar memoria para crar una estructuar
 	if (init(rc) != 0)
 		return (-1);
 

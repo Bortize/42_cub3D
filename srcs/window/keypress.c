@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 21:10:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 19:05:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/05 16:23:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	keypress(int keycode, t_cub3d *cub)
 	int x;
 	if (keycode == 15)
 	{
-		y=0;
+		y = 0;
 		while (y < cub->map.height / 2)
  		{
 			x=0;
