@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 16:48:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 18:13:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:57:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int worldMap[mapWidth][mapHeight] =
 
 // Initial values
 //1280*620
-#define WIN_X           640
-#define WIN_Y           480
+#define WIN_X           920
+#define WIN_Y           640
 #define INIT_P_POS_X    22
 #define INIT_P_POS_Y    12
 #define INIT_P_DIR_X    -1

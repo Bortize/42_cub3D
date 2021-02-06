@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 19:38:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 13:20:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,17 @@ typedef struct	s_identifiers
 typedef	struct	s_map
 {
 	int			i;//
-	int			rows_size;//
-	char		*one_line_plan;//
+	int			rows_size;//				Guarda el numero de filas que contiene el plano del mapa
+	char		*one_line_plan;//			Guarda todas las lineas del plano en unico string para poder trabajar mas facilmente
 	size_t		row_len;//					Tamaño de las filas
 	char		**plan;//					Matriz donde guardas el mapa
 	int			values_ok;//
-	double		player_init_position_x;//
-	double		player_init_position_y;//
-	char		*player_positon;//
-	char		boundary_value;//
-	char		fill_value;//
-	char		sprite_value;//
+	double		player_init_position_x;//	Vector de posicion del jugador x (inicial)
+	double		player_init_position_y;//	Vector de posicion del jugador y (inical )
+	char		*player_positon;//			Matriz de posicion del jugador (para poder meter en sus indices init x e init y) no lo uliltizo
+	char		boundary_value;//			Valor que se le da a los muros y que es utilizado en el funcion de validacion por inundacion '1'
+	char		fill_value;//				Valor con el que se va a sustituir la baldosa en caso de que sea 0 en el algoritmo por inundacion 'f'
+	char		sprite_value;//				Valor del sprite que tendremos en cuenta al uilizar el algoritmo por inundacion '2'
 }				t_map;//plan
 
 typedef struct	s_window
@@ -79,12 +79,14 @@ typedef struct	s_window
 	int			bpp;//				Bites por pixel
 	double		player_pos_x;//		El vector de posicion del jugador.
 	double		player_pos_y;//		El vector de posicion del jugador.
-	double		player_dir_x;//		La direccion del jugador.
+	double		player_dir_x;//		La direccion del jugador. Actualemnte se esta inicializando a capon en init_strucuture pero debe hacerse en funcion de a que coordenad mire el jugador.
 	double		player_dir_y;//		La direccion del jugador.
-	double		ray_dir_x;//		Direccion del pixel del plano de la camara
-	double		ray_dir_y;//		Direccion del pixel del plano de la camara
 	double		player_plane_x;//	Plano de la camara del jugador.
 	double		player_plane_y;//	Plano de la camara del jugador.
+	int			step_x;//			Dirección en la que el jugador tiene que anvanzar.
+	int			step_y;//			Dirección en la que el jugador tiene que avanzar.
+	double		ray_dir_x;//		Direccion del pixel del plano de la camara
+	double		ray_dir_y;//		Direccion del pixel del plano de la camara
 	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
 	int			map_x;//			Cuadrado actual del mapa donde se encuentra el rayo.
 	int			map_y;//			Cuadrado actual del mapa donde se encuentra el rayo.
@@ -92,8 +94,6 @@ typedef struct	s_window
 	double		side_dist_y;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'y'
 	double		delta_dist_x;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
 	double		delta_dist_y;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
-	int			step_x;//			Dirección en la que el jugador tiene que anvanzar.
-	int			step_y;//			Dirección en la que el jugador tiene que avanzar.
 	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y
 	int			hit;//				Checkea cuando el rayo ha impactado en el muro
 	int			perp_wall_dist;//	Distancia perpendicular desde el punto de impacto de la pared al plano de la camara en vez de al jugador.

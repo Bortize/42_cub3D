@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 20:11:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 15:01:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	initial_calc(t_cub3d *cub, int x)
 //	AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
 	cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;
 	// Direccion del rayo
-	cub->graphic.ray_dir_x = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
-	cub->graphic.ray_dir_y = cub->graphic.player_dir_y + cub->graphic.player_plane_y * cub->graphic.camera_x;
+	cub->graphic.ray_dir_y = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
+	cub->graphic.ray_dir_x = cub->graphic.player_dir_y + cub->graphic.player_plane_y * cub->graphic.camera_x;
 	// Cuadrado actual en el que se en cuentra el rayo
 	cub->graphic.map_x = (int)(cub->graphic.player_pos_x);
 	cub->graphic.map_y = (int)(cub->graphic.player_pos_y);
@@ -114,8 +114,7 @@ void	calc_wall_height(t_cub3d *cub)
 	else
 		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
 	//Calculate height of line to draw on screen
-	if (cub->graphic.perp_wall_dist != 0)
-		cub->graphic.line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
+	cub->graphic.line_height = (int)(cub->map.height / 4);
 	//calculate lowest and highest pixel to fill in current stripe
 	cub->graphic.draw_start = -cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_start < 0)

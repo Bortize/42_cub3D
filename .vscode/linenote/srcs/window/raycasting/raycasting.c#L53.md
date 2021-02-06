@@ -1,4 +1,4 @@
-Antes de empezar a utilizar el algoritmo de DDA (análisis diferencial digiital) tenemos que calcular la distancia que tiene que recorrer el rayo desde su posicion inicial hasta el primer lado 'x' y la direccion de los pasos stepX y stepY, esto es, la direccion en la que le jugador tiene que avanzar.
+Antes de empezar a utilizar el algoritmo de DDA (análisis diferencial digiital) tenemos que calcular la distancia que tiene que recorrer el rayo desde su posicion inicial hasta el primer lado 'x' y la direccion de los pasos stepX y stepY, esto es,la direccion en la que le jugador tiene que avanzar.
 
 ------------------------------------------------
 if (cub->graphic.ray_dir_x < 0)
