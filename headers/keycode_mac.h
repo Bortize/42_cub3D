@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/03 19:02:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:29:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,8 +143,16 @@
 // Colors
 #define WHITE				0x00FFFFFF
 #define RED					0x00FF0000
-#define GREEN				0x0000FF00
+#define GREEN				0x0000FF7F
 #define BLUE				0x000000FF
-#define BLACK				0x00000000
+#define ORANGE				0x00F4A460
+
+/*
+** Definimos los valores de las direcciones de los rayos
+*/
+# define NORTH 1
+# define SOUTH 2
+# define EAST 3
+# define WEST 4
 
 #endif

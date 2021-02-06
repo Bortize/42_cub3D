@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 15:01:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:33:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	initial_calc(t_cub3d *cub, int x)
 	cub->graphic.delta_dist_x = fabs(1 / cub->graphic.ray_dir_x);
 	cub->graphic.delta_dist_y = fabs(1 / cub->graphic.ray_dir_y);
 	// Calcular el sideDist inicial y el paso
-	if (cub->graphic.ray_dir_x < 0)
+	if (cub->graphic.ray_dir_x < 0.)
 	{
 		cub->graphic.step_x = -1;
 		cub->graphic.side_dist_x = (cub->graphic.player_pos_x - cub->graphic.map_x) * cub->graphic.delta_dist_x;
@@ -74,6 +74,17 @@ void	initial_calc(t_cub3d *cub, int x)
 }
 
 /*
+** Esta funcion esta relacioada con la funcion de pintar los muros. Sus numeros, hacen refererencia
+** a los colores en funcion de la direccion de la pared.
+*/
+static	int		ray_direction(t_cub3d *cub)
+{
+	if (cub->graphic.side_dist_x > cub->graphic.side_dist_y)
+		return (cub->graphic.ray_dir_y < 0 ? NORTH : SOUTH);
+	return (cub->graphic.ray_dir_y < 0 ? WEST : EAST);
+}
+
+/*
 ** Avanza por las baldosas del plano comprobando en cada iteración del while si el rayo ha
 ** impactado en algun muro.
 */
@@ -84,6 +95,7 @@ void	perform_dda(t_cub3d *cub)
 	hit = 0;
 	while (hit == 0)
 	{
+		cub->graphic.wall_direction = ray_direction(cub);
 	// saltar a la siguiente casilla del mapa, o en dirección x, o en dirección y
 		if (cub->graphic.side_dist_x < cub->graphic.side_dist_y)
 		{
@@ -97,7 +109,7 @@ void	perform_dda(t_cub3d *cub)
 			cub->graphic.map_y += cub->graphic.step_y;
 			cub->graphic.side = 1;
 		}
-		if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] != '0')
+		if (cub->plan.plan[cub->graphic.map_y][cub->graphic.map_x] == '1')
 			hit = 1;
 	}
 }
@@ -114,7 +126,7 @@ void	calc_wall_height(t_cub3d *cub)
 	else
 		cub->graphic.perp_wall_dist = (cub->graphic.map_y - cub->graphic.player_pos_y + (1 - cub->graphic.step_y) / 2) / cub->graphic.ray_dir_y;
 	//Calculate height of line to draw on screen
-	cub->graphic.line_height = (int)(cub->map.height / 4);
+	cub->graphic.line_height = (int)(cub->map.height / cub->graphic.perp_wall_dist);
 	//calculate lowest and highest pixel to fill in current stripe
 	cub->graphic.draw_start = -cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_start < 0)
@@ -126,7 +138,8 @@ void	calc_wall_height(t_cub3d *cub)
 
 
 /*
-** Selecciona el color para los muros
+** Selecciona el color para los muros en funcion de hacia donde apuntan.
+** esta relacionada ocn la fucnion static	int		ray_direction(t_cub3d *cub)
 */
 void	draw_vert_line(t_cub3d *cub, int x)
 {
@@ -134,8 +147,16 @@ void	draw_vert_line(t_cub3d *cub, int x)
 	int y;
 
 	color = BLUE;
-	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 1)
-		color = GREEN;
+
+		if (cub->graphic.wall_direction == NORTH)
+			color = GREEN;
+		if (cub->graphic.wall_direction == SOUTH)
+			color = RED;
+		if (cub->graphic.wall_direction == WEST)
+			color = BLUE;
+		if (cub->graphic.wall_direction == EAST)
+			color = ORANGE;
+
 /*
 ** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 1)
 ** 		color = GREEN;

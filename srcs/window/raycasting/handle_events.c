@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/05 18:59:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:47:51 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int handle_events(int keycode, t_cub3d *cub)
 		system("killall a.out && clear");
 		return (-1);
 	}
-	if (keycode == KEY_S || keycode == KEY_W || keycode == KEY_D || keycode == KEY_A)
-	{
+	ft_printf("%i\n", keycode);
+
 		if (keycode == KEY_W)
 		{
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_y)] == 0)
-				cub->graphic.player_pos_x += cub->graphic.player_dir_x * MV_SPEED;
-			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_y * MV_SPEED)] == 0)
 				cub->graphic.player_pos_y += cub->graphic.player_dir_y * MV_SPEED;
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_y * MV_SPEED)] == 0)
+				cub->graphic.player_pos_x += cub->graphic.player_dir_x * MV_SPEED;
 		}
 		if (keycode == KEY_S)
 		{
@@ -38,7 +38,7 @@ int handle_events(int keycode, t_cub3d *cub)
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_y * MV_SPEED)] == 0)
 				cub->graphic.player_pos_y -= cub->graphic.player_dir_y * MV_SPEED;
 		}
-		if (keycode == KEY_D)
+		if (keycode == KEY_LEFT)
 		{
 			oldDirX = cub->graphic.player_dir_x;
 			cub->graphic.player_dir_x = cub->graphic.player_dir_x * cos(-ROT_SPEED) - cub->graphic.player_dir_y * sin(-ROT_SPEED);
@@ -47,7 +47,7 @@ int handle_events(int keycode, t_cub3d *cub)
 			cub->graphic.player_plane_x = cub->graphic.player_plane_x * cos(-ROT_SPEED) - cub->graphic.player_plane_y * sin(-ROT_SPEED);
 			cub->graphic.player_plane_y = oldPlaneX * sin(-ROT_SPEED) + cub->graphic.player_plane_y * cos(-ROT_SPEED);
 		}
-		if (keycode == KEY_A)
+		if (keycode == KEY_RIGHT)
 		{
 			oldDirX = cub->graphic.player_dir_x;
 			cub->graphic.player_dir_x = cub->graphic.player_dir_x * cos(ROT_SPEED) - cub->graphic.player_dir_y * sin(ROT_SPEED);
@@ -56,6 +56,5 @@ int handle_events(int keycode, t_cub3d *cub)
 			cub->graphic.player_plane_x = cub->graphic.player_plane_x * cos(ROT_SPEED) - cub->graphic.player_plane_y * sin(ROT_SPEED);
 			cub->graphic.player_plane_y = oldPlaneX * sin(ROT_SPEED) + cub->graphic.player_plane_y * cos(ROT_SPEED);
 		}
-	}
-return (0);
+		return (0);
 }

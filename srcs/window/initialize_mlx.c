@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 14:53:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/06 17:39:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	initialize_mlx(t_cub3d *cub)
 {
-	init_window(cub);
+	cub->graphic.player_pos_x = cub->plan.player_init_position_y;
+	cub->graphic.player_pos_y = cub->plan.player_init_position_x;
 	if (!(cub->graphic.mlx = mlx_init()))
 		print_error("Fallo al iniciar MLX");
 	cub->graphic.mlx_win = mlx_new_window(cub->graphic.mlx, cub->map.width, cub->map.height, "cub3D");
