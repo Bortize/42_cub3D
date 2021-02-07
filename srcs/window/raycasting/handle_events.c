@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 13:39:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/07 19:22:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,37 @@ int handle_events(int keycode, t_cub3d *cub)
 	double oldDirX;
 	double oldPlaneX;
 
-	if (keycode == 53)
-	{
-		system("killall a.out && clear");
-		return (-1);
-	}
-	ft_printf("%i\n", keycode);
-
+		if (keycode == 53)
+		{
+			print_error("Escape");
+		}
 		if (keycode == KEY_W)
 		{
-			if (cub->plan.plan[(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_y)] == 0)
-				cub->graphic.player_pos_y += cub->graphic.player_dir_y * MV_SPEED;
-			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_y * MV_SPEED)] == 0)
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_x * MV_SPEED)] == '0')
 				cub->graphic.player_pos_x += cub->graphic.player_dir_x * MV_SPEED;
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_y * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
+				cub->graphic.player_pos_y += cub->graphic.player_dir_y * MV_SPEED;
 		}
 		if (keycode == KEY_S)
 		{
-			if (cub->plan.plan[(int)(cub->graphic.player_pos_x - cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_y)] == 0)
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x - cub->graphic.player_dir_x * MV_SPEED)] == '0')
 				cub->graphic.player_pos_x -= cub->graphic.player_dir_x * MV_SPEED;
-			if (cub->plan.plan[(int)(cub->graphic.player_pos_x)][(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_y * MV_SPEED)] == 0)
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_y * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
 				cub->graphic.player_pos_y -= cub->graphic.player_dir_y * MV_SPEED;
+		}
+		if (keycode == KEY_D)
+		{
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x - cub->graphic.player_dir_y * MV_SPEED)] == '0')
+				cub->graphic.player_pos_x -= cub->graphic.player_dir_y * MV_SPEED;
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
+				cub->graphic.player_pos_y -= cub->graphic.player_dir_x * MV_SPEED;
+		}
+		if (keycode == KEY_A)
+		{
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_y * MV_SPEED)] == '0')
+				cub->graphic.player_pos_x += cub->graphic.player_dir_y * MV_SPEED;
+			if (cub->plan.plan[(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
+				cub->graphic.player_pos_y += cub->graphic.player_dir_x * MV_SPEED;
 		}
 		if (keycode == KEY_LEFT)
 		{

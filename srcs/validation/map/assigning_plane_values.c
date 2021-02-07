@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 15:18:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/07 15:26:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,15 @@ void	assigning_plane_values(t_cub3d *cub)
 	cub->plan.values_ok = 1;// flag para entrar en esta funcion
 	cub->plan.plan = ft_split(cub->plan.one_line_plan, 'p');
 	cub->plan.plan_tmp = ft_split(cub->plan.one_line_plan, 'p');
-	i = 0;
-	while (cub->plan.plan[i] != '\0')
-	{
+	i = -1;
+	while (cub->plan.plan[++i] != '\0')
 		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan[i]);
-		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan_tmp[i]);
-		i++;
-	}
+	i = -1;
 	if (boundary_fill(cub->plan.player_init_position_x, cub->plan.player_init_position_y,
 		cub->plan.fill_value, cub->plan.boundary_value, cub))
 	{
-
+		while (cub->plan.plan_tmp[++i] != '\0')
+			ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan_tmp[i]);
 	};
 	free(cub->plan.one_line_plan);
 	free(cub->plan.plan_tmp);

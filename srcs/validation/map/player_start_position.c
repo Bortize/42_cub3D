@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 19:06:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/07 18:50:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	player_start_position(char *str, t_cub3d *cub)
 	{
 		cub->plan.player_init_position_x = (double)cub->plan.rows_size + 0.5;
 		cub->plan.player_init_position_y = (double)cub->plan.i + 0.5;
+		str[cub->plan.i] = '0';
 		ft_printf("se encontro al jugador en la posición %d %d \n", cub->plan.player_init_position_x, cub->plan.player_init_position_y);
 	}
 	return (0);

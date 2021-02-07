@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 20:33:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/07 19:39:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,15 @@ void	initial_calc(t_cub3d *cub, int x)
 //	AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
 	cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;
 	// Direccion del rayo
-	cub->graphic.ray_dir_y = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
-	cub->graphic.ray_dir_x = cub->graphic.player_dir_y + cub->graphic.player_plane_y * cub->graphic.camera_x;
+	cub->graphic.ray_dir_x = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
+	cub->graphic.ray_dir_y = cub->graphic.player_dir_y + cub->graphic.player_plane_y * cub->graphic.camera_x;
 	// Cuadrado actual en el que se en cuentra el rayo
 	cub->graphic.map_x = (int)(cub->graphic.player_pos_x);
 	cub->graphic.map_y = (int)(cub->graphic.player_pos_y);
 	// Longitud del rayo de un lado 'x' o 'y' al siguiente lado 'x' o 'y'
 	cub->graphic.delta_dist_x = fabs(1 / cub->graphic.ray_dir_x);
 	cub->graphic.delta_dist_y = fabs(1 / cub->graphic.ray_dir_y);
+	//printf("%f, %f\n", cub->graphic.player_pos_y, cub->graphic.player_pos_y);
 	// Calcular el sideDist inicial y el paso
 	if (cub->graphic.ray_dir_x < 0.)
 	{
@@ -133,7 +134,9 @@ void	calc_wall_height(t_cub3d *cub)
 		cub->graphic.draw_start = 0;
 	cub->graphic.draw_end = cub->graphic.line_height / 2 + cub->map.height / 2;
 	if (cub->graphic.draw_end >= cub->map.height)
-	cub->graphic.draw_end = cub->map.height - 1;
+		cub->graphic.draw_end = cub->map.height - 1;
+	if (cub->graphic.draw_end < 0)
+		cub->graphic.draw_end = 0;
 }
 
 
@@ -151,7 +154,7 @@ void	draw_vert_line(t_cub3d *cub, int x)
 		if (cub->graphic.wall_direction == NORTH)
 			color = GREEN;
 		if (cub->graphic.wall_direction == SOUTH)
-			color = RED;
+			color = WHITE;
 		if (cub->graphic.wall_direction == WEST)
 			color = BLUE;
 		if (cub->graphic.wall_direction == EAST)
