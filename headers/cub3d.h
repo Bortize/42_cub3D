@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 20:13:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/07 14:56:25 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef	struct	s_map
 	char		*one_line_plan;//			Guarda todas las lineas del plano en unico string para poder trabajar mas facilmente
 	size_t		row_len;//					Tamaño de las filas
 	char		**plan;//					Matriz donde guardas el mapa
+	char		**plan_tmp;//					Matriz donde guardas el mapa
 	int			values_ok;//
 	double		player_init_position_x;//	Vector de posicion del jugador x (inicial)
 	double		player_init_position_y;//	Vector de posicion del jugador y (inical )
@@ -140,8 +141,7 @@ int		check_identifiers(t_cub3d *cub);
 void	check_characters_plane(char *str, t_cub3d *cub);
 void	check_allowed_values(char *str, t_cub3d *cub);
 void	assigning_plane_values(t_cub3d *cub);
-void	check_line_by_line(t_cub3d *cub);
-void	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
+int		boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
 int		player_start_position(char *str, t_cub3d *cub);
 char	put_pixel(int x, int y, t_cub3d *cub);
 void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
