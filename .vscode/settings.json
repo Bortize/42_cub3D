@@ -5,6 +5,10 @@
 		"ctype.h": "c",
 		"ft_printf.h": "c",
 		"get_next_line.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"__split_buffer": "c",
+		"array": "c",
+		"string_view": "c",
+		"vector": "c"
 	}
 }

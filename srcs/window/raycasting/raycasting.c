@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 19:39:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/08 18:40:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	refresh_screen(t_cub3d *cub){
 		while (y < cub->map.height)
 		{
 			//mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x000000);
-			my_mlx_pixel_put(cub, x, y, RED);
+			my_mlx_pixel_put(cub, x, y, PURPLE);
 			y++;
 		}
 		y = 0;
@@ -141,40 +141,21 @@ void	calc_wall_height(t_cub3d *cub)
 
 
 /*
-** Selecciona el color para los muros en funcion de hacia donde apuntan.
-** esta relacionada ocn la fucnion static	int		ray_direction(t_cub3d *cub)
+** Selecciona el color para los muros en funcion de hacia donde apunta el rayo.
 */
 void	draw_vert_line(t_cub3d *cub, int x)
 {
 	int color;
 	int y;
 
-	color = BLUE;
-
-		if (cub->graphic.wall_direction == NORTH)
-			color = GREEN;
-		if (cub->graphic.wall_direction == SOUTH)
-			color = WHITE;
-		if (cub->graphic.wall_direction == WEST)
-			color = BLUE;
-		if (cub->graphic.wall_direction == EAST)
-			color = ORANGE;
-
-/*
-** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 1)
-** 		color = GREEN;
-** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 3)
-** 		color = GREEN;
-** 	if(cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 4)
-** 		color = RED;
-** 	if (cub->plan.plan[cub->graphic.map_x][cub->graphic.map_y] == 5)
-** 		color = BLACK;
-*/
-
-	//if (cub->graphic.side == 1)
-	//	color = color + 3000;
-	//else
-	//	color = color;
+	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x > 0)
+		color = GREEN;
+	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x <= 0)
+		color = YELLOW;
+	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y > 0)
+		color = WHITE;
+	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y <= 0)
+		color = CIAN;
 
 	y = cub->graphic.draw_start;
 	while (y < cub->graphic.draw_end)

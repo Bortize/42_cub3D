@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 17:21:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/08 15:50:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/02/08 20:24:21 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/02/08 20:35:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../headers/cub3d.h"
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int		game(t_cub3d *cub)
 {
-	size_t	len_needle;
-
-	len_needle = ft_strlen(needle);
-	if (*needle == '\0')
-		return ((char *)haystack);
-	while (*haystack != '\0' && len_needle <= len)
-	{
-		if (ft_memcmp(haystack, needle, len_needle) == 0)
-			return (char *)haystack;
-		haystack++;
-		len--;
-	}
-	return (NULL);
+	raycasting(cub);
+	return (0);
 }

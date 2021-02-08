@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/06 20:29:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/08 18:40:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,9 @@
 #define RED					0x00FF0000
 #define GREEN				0x0000FF7F
 #define BLUE				0x000000FF
-#define ORANGE				0x00F4A460
+#define YELLOW				0x00FFC431
+#define PURPLE				0x001D032E
+#define CIAN				0x002CFAE1
 
 /*
 ** Definimos los valores de las direcciones de los rayos

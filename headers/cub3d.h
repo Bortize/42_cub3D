@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 14:56:25 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/08 20:50:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,23 @@ typedef struct	s_window
 	int			wall_direction;
 }				t_window;//graphic
 
+typedef struct	s_controls
+{
+	int			forward;
+	int			backward;
+	int			right;
+	int 		left;
+	int			rotating_left;
+	int			rotating_right;
+	int			escape;
+}				t_controls;//move
+
 typedef struct	s_cub3d
 {
 	t_identifiers	map;
 	t_map			plan;
 	t_window		graphic;
+	t_controls		move;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
@@ -152,8 +164,11 @@ void	initial_calc(t_cub3d *cub, int x);
 void	perform_dda(t_cub3d *cub);
 void	calc_wall_height(t_cub3d *cub);
 void	draw_vert_line(t_cub3d *cub, int x);
-int 	handle_events(int key, t_cub3d *cub);
+void	rotation(t_cub3d *cub);
 void	init_window(t_cub3d *cub);
-
+int		key_press(int keycode, t_cub3d *cub);
+int		key_release(int keycode, t_cub3d *cub);
+int		game(t_cub3d *cub);
+void	flags_key(int keycode, t_cub3d *cub);
 
 #endif
