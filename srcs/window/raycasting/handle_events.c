@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 19:22:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/08 15:25:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int handle_events(int keycode, t_cub3d *cub)
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x - cub->graphic.player_dir_y * MV_SPEED)] == '0')
 				cub->graphic.player_pos_x -= cub->graphic.player_dir_y * MV_SPEED;
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_y - cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
-				cub->graphic.player_pos_y -= cub->graphic.player_dir_x * MV_SPEED;
+				cub->graphic.player_pos_y += cub->graphic.player_dir_x * MV_SPEED;
 		}
 		if (keycode == KEY_A)
 		{
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_y)][(int)(cub->graphic.player_pos_x + cub->graphic.player_dir_y * MV_SPEED)] == '0')
 				cub->graphic.player_pos_x += cub->graphic.player_dir_y * MV_SPEED;
 			if (cub->plan.plan[(int)(cub->graphic.player_pos_y + cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)] == '0')
-				cub->graphic.player_pos_y += cub->graphic.player_dir_x * MV_SPEED;
+				cub->graphic.player_pos_y -= cub->graphic.player_dir_x * MV_SPEED;
 		}
 		if (keycode == KEY_LEFT)
 		{
