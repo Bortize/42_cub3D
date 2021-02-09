@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/08 18:40:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 13:36:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ void	draw_vert_line(t_cub3d *cub, int x)
 		color = WHITE;
 	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y <= 0)
 		color = CIAN;
-
+	draws_sky_floor(cub, x);
 	y = cub->graphic.draw_start;
 	while (y < cub->graphic.draw_end)
 	{

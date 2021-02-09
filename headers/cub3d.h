@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 09:32:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 13:39:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ int		player_start_position(char *str, t_cub3d *cub);
 char	put_pixel(int x, int y, t_cub3d *cub);
 void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
 int		keypress(int keycode, t_cub3d *cub);
-int		draws_sky_floor(t_cub3d *cub);
+void	draws_sky_floor(t_cub3d *cub, int x);
 int		raycasting(t_cub3d *cub);
 void	initial_calc(t_cub3d *cub, int x);
 void	perform_dda(t_cub3d *cub);
@@ -173,5 +173,7 @@ int		game(t_cub3d *cub);
 void	flags_key(int keycode, t_cub3d *cub);
 int		if_moving(t_cub3d *cub);
 int		if_rotating(t_cub3d *cub);
+//int		convert_colour(t_cub3d *cub);
+void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 
 #endif
