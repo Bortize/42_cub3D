@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 19:09:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 20:37:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,25 @@ typedef	struct	s_map
 	char		sprite_value;//				Valor del sprite que tendremos en cuenta al uilizar el algoritmo por inundacion '2'
 }				t_map;//plan
 
+typedef struct	s_image
+{
+	void		*img_text;
+//	int			*addr_text;
+	int			width_text;
+	int			height_text;
+	int			bpp;//				Bites por pixel
+	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
+	int 		*addr;//			Dirección a la imagen que se genera.
+	int			size_line;
+}				t_image;
+
 typedef struct	s_window
 {
 	void		*mlx;//				Puntero al motor gráfico
 	void		*mlx_win;//			Puntero a la ventana
 	void		*img;//				Puntero a la imagen "frame" que se genera en cada loop
 	char 		*addr;//			Dirección a la imagen que se genera.
+	int			bpp;//
 	int			line_length;//		Longitud del vector del plano de la camara?
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
 	double		player_pos_x;//		El vector de posicion del jugador.
@@ -101,8 +114,12 @@ typedef struct	s_window
 	double		perp_wall_dist;//	Distancia perpendicular desde el punto de impacto de la pared al plano de la camara en vez de al jugador.
 	int			draw_start;//
 	int			draw_end;//
-	int			line_height;//
+	int			line_height;//		La altura de la linea que tiene que dibujar
 	int			wall_direction;
+	t_image		ray_texture;
+	int				texture_x;
+	double			texture_step;
+	double			texture_pos;
 }				t_window;//graphic
 /*
 ** Variables que controlan toda la parte de controles del juego
@@ -120,17 +137,6 @@ typedef struct	s_controls
 /*
 ** Se utiliza en toda la parte de las texturas
 */
-typedef struct	s_image
-{
-	void		*img_text;
-//	int			*addr_text;
-	int			width_text;
-	int			height_text;
-	int			bpp;//				Bites por pixel
-	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
-	char 		*addr;//			Dirección a la imagen que se genera.
-	int			*size_line;
-}				t_image;
 
 typedef struct	s_cub3d
 {
@@ -197,5 +203,6 @@ int		if_rotating(t_cub3d *cub);
 //int		convert_colour(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 void	load_textures(t_cub3d *cub);
+t_image	raycast_texture(t_cub3d *cub);
 
 #endif
