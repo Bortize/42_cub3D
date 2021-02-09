@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 14:16:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 19:09:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ typedef struct	s_window
 	char 		*addr;//			Dirección a la imagen que se genera.
 	int			line_length;//		Longitud del vector del plano de la camara?
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
-	int			bpp;//				Bites por pixel
 	double		player_pos_x;//		El vector de posicion del jugador.
 	double		player_pos_y;//		El vector de posicion del jugador.
 	double		player_dir_x;//		La direccion del jugador. Actualemnte se esta inicializando a capon en init_strucuture pero debe hacerse en funcion de a que coordenad mire el jugador.
@@ -105,7 +104,9 @@ typedef struct	s_window
 	int			line_height;//
 	int			wall_direction;
 }				t_window;//graphic
-
+/*
+** Variables que controlan toda la parte de controles del juego
+*/
 typedef struct	s_controls
 {
 	int			forward;
@@ -116,6 +117,20 @@ typedef struct	s_controls
 	int			rotating_right;
 	int			escape;
 }				t_controls;//move
+/*
+** Se utiliza en toda la parte de las texturas
+*/
+typedef struct	s_image
+{
+	void		*img_text;
+//	int			*addr_text;
+	int			width_text;
+	int			height_text;
+	int			bpp;//				Bites por pixel
+	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
+	char 		*addr;//			Dirección a la imagen que se genera.
+	int			*size_line;
+}				t_image;
 
 typedef struct	s_cub3d
 {
@@ -123,6 +138,10 @@ typedef struct	s_cub3d
 	t_map			plan;
 	t_window		graphic;
 	t_controls		move;
+	t_image			no_text;
+	t_image			so_text;
+	t_image			ea_text;
+	t_image			we_text;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
@@ -177,5 +196,6 @@ int		if_moving(t_cub3d *cub);
 int		if_rotating(t_cub3d *cub);
 //int		convert_colour(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
+void	load_textures(t_cub3d *cub);
 
 #endif

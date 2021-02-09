@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/09 13:39:33 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/09 16:04:33 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/raycasting/controls.c \
 				srcs/window/raycasting/rotation.c \
 				srcs/window/raycasting/player.c \
+				srcs/window/load_textures.c \
 				srcs/window/raycasting/game.c
 
 
