@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/08 20:50:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 09:32:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,10 +165,13 @@ void	perform_dda(t_cub3d *cub);
 void	calc_wall_height(t_cub3d *cub);
 void	draw_vert_line(t_cub3d *cub, int x);
 void	rotation(t_cub3d *cub);
+void	movement(t_cub3d *cub);
 void	init_window(t_cub3d *cub);
 int		key_press(int keycode, t_cub3d *cub);
 int		key_release(int keycode, t_cub3d *cub);
 int		game(t_cub3d *cub);
 void	flags_key(int keycode, t_cub3d *cub);
+int		if_moving(t_cub3d *cub);
+int		if_rotating(t_cub3d *cub);
 
 #endif

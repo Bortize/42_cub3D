@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:51:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/08 20:38:54 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 09:51:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,14 @@ static void		rotate_left(t_cub3d *cub)
 */
 void	rotation(t_cub3d *cub)
 {
+/*
 	if (cub->move.rotating_left)
 		rotate_left(cub);
 	if (cub->move.rotating_right)
 		rotate_right(cub);
+*/
+	if (cub->move.rotating_left)
+		rotate_right(cub);
+	if (cub->move.rotating_right)
+		rotate_left(cub);
 }
