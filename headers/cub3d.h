@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 13:39:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 14:16:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ typedef struct	s_identifiers
 	int			flag_s;
 	int			floor[3];
 	int			flag_floor;
+	int			floor_conv;
 	int			ceilling[3];
 	int			flag_ceilling;
+	int			ceilling_conv;
 	char		**tab;
 	char		**tabcf;
 	int			flag_map_ready;

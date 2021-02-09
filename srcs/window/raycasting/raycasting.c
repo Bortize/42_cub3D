@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 13:36:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/09 14:18:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	refresh_screen(t_cub3d *cub){
 		while (y < cub->map.height)
 		{
 			//mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, 0x000000);
-			my_mlx_pixel_put(cub, x, y, PURPLE);
+			my_mlx_pixel_put(cub, x, y, cub->map.floor_conv);
 			y++;
 		}
 		y = 0;

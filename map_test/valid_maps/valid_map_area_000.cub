@@ -5,7 +5,7 @@ EA ./wolftex/textures/xpm/wood.xpm
 WE ./wolftex/textures/xpm/wood.xpm
 S ./wolftex/textures/xpm/barrel.xpm
 C 25,255,254
-F 100,200,160
+F 100,220,160
 
 11111111
 10000101
