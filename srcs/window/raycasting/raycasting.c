@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 17:42:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/10 18:48:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,6 @@ void	draw_vert_line(t_cub3d *cub, int x)
 	y = cub->graphic.draw_start;
 	while (y < cub->graphic.draw_end)
 	{
-		//mlx_pixel_put(cub->graphic.mlx, cub->graphic.mlx_win, x, y, color);
 		my_mlx_pixel_put(cub, x, y, color);
 		y++;
 	}
@@ -171,13 +170,13 @@ void	draw_vert_line(t_cub3d *cub, int x)
 */
 t_image	raycast_texture(t_cub3d *cub)
 {
-	if (cub->graphic.wall_direction == NORTH)
+	if (cub->graphic.wall_direction == NORTH && cub->graphic.ray_dir_x > 0)
 		return (cub->no_text);
-	else if (cub->graphic.wall_direction == SOUTH)
+	else if (cub->graphic.wall_direction == SOUTH && cub->graphic.ray_dir_x <= 0)
 		return (cub->so_text);
-	else if (cub->graphic.wall_direction == EAST)
+	else if (cub->graphic.wall_direction == EAST && cub->graphic.ray_dir_y > 0)
 		return (cub->ea_text);
-	else if (cub->graphic.wall_direction == WEST)
+	else if (cub->graphic.wall_direction == WEST && cub->graphic.ray_dir_y <= 0)
 		return (cub->we_text);
 	return (cub->we_text);
 }
@@ -215,7 +214,7 @@ void			draw_textured_line(t_cub3d *cub, int x)
 		cub->graphic.texture_pos += cub->graphic.texture_step;
 		if (text_y <= cub->graphic.ray_texture.height_text)
 			color = texture.addr[cub->graphic.ray_texture.height_text * text_y + cub->graphic.texture_x];
-		set_pixel(cub, cub->map.width * i + x, color);
+		my_mlx_pixel_put(cub, x, i, color);
 	}
 }
 
