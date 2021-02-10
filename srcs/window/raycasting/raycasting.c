@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 12:38:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/10 17:42:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,13 @@ void	draw_vert_line(t_cub3d *cub, int x)
 	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x <= 0)
 		color = YELLOW;
 	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y > 0)
-		color = WHITE;
+		color = PURPLE;
 	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y <= 0)
 		color = CIAN;
+
+//	if (cub->graphic.side == 1)
+//		color = color + 3000;
+
 	draws_sky_floor(cub, x);
 	y = cub->graphic.draw_start;
 	while (y < cub->graphic.draw_end)
@@ -178,6 +182,9 @@ t_image	raycast_texture(t_cub3d *cub)
 	return (cub->we_text);
 }
 
+/*
+** Castea la textura para mostrar el pixel de la textura
+*/
 void			cast_texture(t_cub3d *cub)
 {
 	double		wall_x;
@@ -187,9 +194,9 @@ void			cast_texture(t_cub3d *cub)
 	else
 		wall_x = cub->graphic.player_pos_x + cub->graphic.perp_wall_dist * cub->graphic.ray_dir_x;
 	wall_x -= floor(wall_x);
-	cub->graphic.texture_x = wall_x * (double)cub->graphic.ray_texture.height_text;
+	cub->graphic.texture_x = wall_x * (double)cub->graphic.ray_texture.width_text;
 	cub->graphic.texture_step = (double)cub->graphic.ray_texture.height_text / cub->graphic.line_height;
-	cub->graphic.texture_pos = (cub->graphic.draw_start - cub->map.height / 2 + cub->graphic.ray_texture.height_text / 2)
+	cub->graphic.texture_pos = (cub->graphic.draw_start - cub->map.height / 2 + cub->graphic.line_height / 2)
 		* cub->graphic.texture_step;
 }
 
@@ -208,7 +215,7 @@ void			draw_textured_line(t_cub3d *cub, int x)
 		cub->graphic.texture_pos += cub->graphic.texture_step;
 		if (text_y <= cub->graphic.ray_texture.height_text)
 			color = texture.addr[cub->graphic.ray_texture.height_text * text_y + cub->graphic.texture_x];
-		set_pixel(cub->graphic.mlx, cub->map.width * i + x, color);
+		set_pixel(cub, cub->map.width * i + x, color);
 	}
 }
 
@@ -225,9 +232,10 @@ int	raycasting(t_cub3d *cub)
 		initial_calc(cub, x);
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
 		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
+		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
+		raycast_texture(cub);
 		cast_texture(cub);
 		draw_textured_line(cub, x);
-		//draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		x++;
 	}
 	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 20:37:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/10 17:15:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,7 @@ typedef struct	s_cub3d
 	t_map			plan;
 	t_window		graphic;
 	t_controls		move;
+	t_image			win;
 	t_image			no_text;
 	t_image			so_text;
 	t_image			ea_text;

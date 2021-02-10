@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/08 20:51:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/10 15:42:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int		key_press(int keycode, t_cub3d *cub)
 */
 int		key_release(int keycode, t_cub3d *cub)
 {
-	//	if (keycode == KEY_ESC)
-//		close_window(game);
+	if (keycode == KEY_ESCAPE)
+		print_error("Adios al cub3d");
 	if (keycode == KEY_W)
 		cub->move.forward = 0;
 	if (keycode == KEY_S)
