@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 20:54:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/10 12:38:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,9 @@ void	draw_vert_line(t_cub3d *cub, int x)
 		y++;
 	}
 }
-
+/*
+** Añade las texturas para los muros
+*/
 t_image	raycast_texture(t_cub3d *cub)
 {
 	if (cub->graphic.wall_direction == NORTH)
@@ -223,6 +225,7 @@ int	raycasting(t_cub3d *cub)
 		initial_calc(cub, x);
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
 		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
+		cast_texture(cub);
 		draw_textured_line(cub, x);
 		//draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		x++;
