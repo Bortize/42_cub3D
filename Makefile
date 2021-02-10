@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/10 18:58:26 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/10 19:31:33 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,7 @@ re:			fclean all
 
 run:	clean
 			make
-			 ./cub3D map_test/valid_maps/valid_map_area_008.cub
+			 ./cub3D maps/map.cub
 
 ##########################	Rules Phony	 #######################################
 
