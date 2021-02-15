@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 17:15:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/15 15:58:58 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,11 +115,11 @@ typedef struct	s_window
 	int			draw_start;//
 	int			draw_end;//
 	int			line_height;//		La altura de la linea que tiene que dibujar
-	int			wall_direction;
+	int			wall_direction;//
 	t_image		ray_texture;
-	int				texture_x;
-	double			texture_step;
-	double			texture_pos;
+	int			texture_x;
+	double		texture_step;
+	double		texture_pos;
 }				t_window;//graphic
 /*
 ** Variables que controlan toda la parte de controles del juego

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 19:38:23 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/15 16:00:44 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	initial_calc(t_cub3d *cub, int x)
 	//cub->graphic.player_pos_x = cub->plan.player_init_position_x;
 	//cub->graphic.player_pos_y = cub->plan.player_init_position_y;
 
-//	AHORA SE PROCEDE A CALCULAR LA DIRECCION DE LA SEMIRECTA.
+//	AHORA SE PROCEDE A CALCULAR LA DIRECCION DEL RAYO
 	cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;
 	// Direccion del rayo
 	cub->graphic.ray_dir_x = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
@@ -80,9 +80,20 @@ void	initial_calc(t_cub3d *cub, int x)
 */
 static	int		ray_direction(t_cub3d *cub)
 {
+	int direction;
+
+	direction = 0;
 	if (cub->graphic.side_dist_x > cub->graphic.side_dist_y)
-		return (cub->graphic.ray_dir_y < 0 ? NORTH : SOUTH);
-	return (cub->graphic.ray_dir_y < 0 ? WEST : EAST);
+	{
+		direction = cub->graphic.ray_dir_y < 0 ? NORTH : SOUTH;
+		return (direction);
+	}
+	else
+	{
+		direction = cub->graphic.ray_dir_y < 0 ? WEST : EAST;
+		return (direction);
+	}
+
 }
 
 /*
@@ -140,6 +151,7 @@ void	calc_wall_height(t_cub3d *cub)
 /*
 ** Selecciona el color para los muros en funcion de hacia donde apunta el rayo.
 */
+
 void	draw_vert_line(t_cub3d *cub, int x)
 {
 	int color;
@@ -165,18 +177,19 @@ void	draw_vert_line(t_cub3d *cub, int x)
 		y++;
 	}
 }
+
 /*
 ** Añade las texturas para los muros
 */
 t_image	raycast_texture(t_cub3d *cub)
 {
-	if (cub->graphic.wall_direction == NORTH && cub->graphic.ray_dir_x > 0)
+	if (cub->graphic.wall_direction == NORTH)
 		return (cub->no_text);
-	else if (cub->graphic.wall_direction == SOUTH && cub->graphic.ray_dir_x <= 0)
+	else if (cub->graphic.wall_direction == SOUTH)
 		return (cub->so_text);
-	else if (cub->graphic.wall_direction == EAST && cub->graphic.ray_dir_y > 0)
+	else if (cub->graphic.wall_direction == EAST && cub->graphic.ray_dir_x > 0)
 		return (cub->ea_text);
-	else if (cub->graphic.wall_direction == WEST && cub->graphic.ray_dir_y <= 0)
+	else if (cub->graphic.wall_direction == WEST && cub->graphic.ray_dir_x <= 0)
 		return (cub->we_text);
 	return (cub->we_text);
 }
@@ -218,7 +231,10 @@ void			draw_textured_line(t_cub3d *cub, int x)
 	}
 }
 
-
+/*
+** Inicia todos los calculos para calcular el lanzamiento y colision de los rayos para
+** calcular la altura de los muros y poder dibujarlos
+*/
 int	raycasting(t_cub3d *cub)
 {
 	int x;

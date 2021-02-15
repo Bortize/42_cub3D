@@ -6,14 +6,15 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 15:42:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/15 14:09:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
 /*
-** Activa el flag perteniente a su tecla asiganada cuadno esta es presionada
+** Escucha si una tecla es presionada y activa el flag perteniente a
+** esa tecla para luego poder gestioanrla en la funcion "player"
 */
 int		key_press(int keycode, t_cub3d *cub)
 {
@@ -37,7 +38,8 @@ int		key_press(int keycode, t_cub3d *cub)
 }
 
 /*
-** Desativa el flag perteneciente a cada tecla cuado esta es desactivada
+** Escucha cuando una tecla es soltada y desactiva el flag perteniente a
+** esa tecla (0) para luego poder gestioanrla en la funcion "player"
 */
 int		key_release(int keycode, t_cub3d *cub)
 {
