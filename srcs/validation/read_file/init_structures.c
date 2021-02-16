@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 14:20:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:54:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	init_window(t_cub3d *cub)
 	cub->graphic.player_pos_x = 0;
 	cub->graphic.player_pos_y = 0;
 	cub->graphic.player_dir_x = 0;
-	cub->graphic.player_dir_y = -1;
-	cub->graphic.player_plane_x = 1;// plano de la camara del jugador
+	cub->graphic.player_dir_y = 1;
+	cub->graphic.player_plane_x = -1;// plano de la camara del jugador
 	cub->graphic.player_plane_y = 0;// plano de la camara del jugador
 	//cub->graphic.line_height = ;
 }

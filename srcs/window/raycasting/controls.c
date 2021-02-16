@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/15 14:09:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:50:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 */
 int		key_press(int keycode, t_cub3d *cub)
 {
+	int a;
+
 	if (keycode == KEY_ESCAPE)
 		cub->move.escape = 1;
 	if (keycode == KEY_W)
@@ -32,6 +34,8 @@ int		key_press(int keycode, t_cub3d *cub)
 		cub->move.rotating_right = 1;
 	if (keycode == KEY_LEFT)
 		cub->move.rotating_left = 1;
+	if (keycode == KEY_6)
+		a = 0;
 //	if (keycode == KEY_SHIFT)
 //		game->player.shifting = true;
 	return (0);
