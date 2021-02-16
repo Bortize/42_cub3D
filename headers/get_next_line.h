@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:15:09 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/21 12:05:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/16 20:24:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 #endif
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 4032
+# define BUFFER_SIZE 8032
 
 #endif
