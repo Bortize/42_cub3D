@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/17 11:41:00 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/17 18:16:31 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g3 #-fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -g3 -Iheaders #-fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
@@ -90,10 +90,10 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				# Llama al Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
 				# Copia las librerias generadas en cada ruta y las sube a este nivel
-				cp ./printf/libftprintf.a ./
-				cp ./minilibx_opengl/libmlx.a ./
+				#cp ./printf/libftprintf.a .
+				#cp ./minilibx_opengl/libmlx.a .
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
-				$(CC) $(CFLAGS) $(MLXFLAG) -L. libftprintf.a libmlx.a $(OBJS) -o cub3D
+				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
 
 ###############################################################################
 

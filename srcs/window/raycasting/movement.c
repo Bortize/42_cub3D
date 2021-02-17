@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 15:43:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 18:42:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	move_right(t_cub3d *cub)
 	== '0')
 		cub->graphic.player_pos_x -= cub->graphic.player_dir_y * MV_SPEED;
 
-	if (cub->plan.plan[(int)(cub->graphic.player_pos_y -
+	if (cub->plan.plan[(int)(cub->graphic.player_pos_y +
 	cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)]
 	== '0')
 		cub->graphic.player_pos_y += cub->graphic.player_dir_x * MV_SPEED;
@@ -57,7 +57,7 @@ void	move_left(t_cub3d *cub)
 	== '0')
 		cub->graphic.player_pos_x += cub->graphic.player_dir_y * MV_SPEED;
 
-	if (cub->plan.plan[(int)(cub->graphic.player_pos_y +
+	if (cub->plan.plan[(int)(cub->graphic.player_pos_y -
 	cub->graphic.player_dir_x * MV_SPEED)][(int)(cub->graphic.player_pos_x)]
 	== '0')
 		cub->graphic.player_pos_y -= cub->graphic.player_dir_x * MV_SPEED;
