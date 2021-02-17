@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/16 20:14:28 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/17 11:41:00 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/check_characters_plane.c \
 				srcs/validation/map/validate_plan.c \
 				srcs/validation/map/player_start_position.c \
+				srcs/validation/map/where_player_look.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
 				srcs/validation/map/boundary_validation/put_pixel.c \
 				srcs/window/my_mlx_pixel_put.c \

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/15 15:58:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:43:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef	struct	s_map
 	char		**plan;//					Matriz donde guardas el mapa
 	char		**plan_tmp;//					Matriz donde guardas el mapa
 	int			values_ok;//
+	char		player_init_coor;//
 	double		player_init_position_x;//	Vector de posicion del jugador x (inicial)
 	double		player_init_position_y;//	Vector de posicion del jugador y (inical )
 	char		*player_positon;//			Matriz de posicion del jugador (para poder meter en sus indices init x e init y) no lo uliltizo
@@ -73,10 +74,10 @@ typedef	struct	s_map
 
 typedef struct	s_image
 {
-	void		*img_text;
+	void		*img_text;//		Guarda la instancia de la imagen creada por la funcion mlx_xpm_file_to_image();
 //	int			*addr_text;
-	int			width_text;
-	int			height_text;
+	int			width_text;//
+	int			height_text;//
 	int			bpp;//				Bites por pixel
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
 	int 		*addr;//			Dirección a la imagen que se genera.
@@ -94,7 +95,7 @@ typedef struct	s_window
 	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
 	double		player_pos_x;//		El vector de posicion del jugador.
 	double		player_pos_y;//		El vector de posicion del jugador.
-	double		player_dir_x;//		La direccion del jugador. Actualemnte se esta inicializando a capon en init_strucuture pero debe hacerse en funcion de a que coordenad mire el jugador.
+	double		player_dir_x;//		La direccion del jugador.
 	double		player_dir_y;//		La direccion del jugador.
 	double		player_plane_x;//	Plano de la camara del jugador.
 	double		player_plane_y;//	Plano de la camara del jugador.
@@ -205,5 +206,6 @@ int		if_rotating(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 void	load_textures(t_cub3d *cub);
 t_image	raycast_texture(t_cub3d *cub);
+void	where_player_look(t_cub3d *cub, char c);
 
 #endif

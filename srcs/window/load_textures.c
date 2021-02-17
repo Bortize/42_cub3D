@@ -6,13 +6,14 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:53:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/16 20:02:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 13:08:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 /*
-** Carga las texturas para los muros
+** Convierte las textuas en imagenes euclidianas que son enviadas a la
+** ventana.
 */
 void	load_textures(t_cub3d *cub)
 {

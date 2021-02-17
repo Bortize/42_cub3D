@@ -2,22 +2,29 @@
 ```c
 void	initialize_mlx(t_cub3d *cub)
 {
-	t_window graphic;
-
-	graphic.mlx = mlx_init();
-	graphic.mlx_win = mlx_new_window(graphic.mlx, cub->map.width, cub->map.height, "cub3D");
-	graphic.img = mlx_new_image(graphic.mlx, cub->map.width, cub->map.height);
-	graphic.addr = mlx_get_data_addr(graphic.img, &graphic.bpp, &graphic.line_length, &graphic.endian);
-	my_mlx_pixel_put(&graphic, 5, 5, 0x0000FF00);
-	mlx_put_image_to_window(graphic.mlx, graphic.mlx_win, graphic.img, 0, 0);
-	mlx_key_hook(graphic.mlx, key_hook, &graphic);
-	mlx_loop(graphic.mlx);
+	cub->graphic.player_pos_x = cub->plan.player_init_position_y;
+	cub->graphic.player_pos_y = cub->plan.player_init_position_x;
+	if (!(cub->graphic.mlx = mlx_init()))
+		print_error("Fallo al iniciar MLX");
+	load_textures(cub);
+	cub->graphic.mlx_win = mlx_new_window(cub->graphic.mlx, cub->map.width, cub->map.height, "cub3D");
+	cub->graphic.img = mlx_new_image(cub->graphic.mlx, cub->map.width, cub->map.height);
+	cub->graphic.addr = mlx_get_data_addr(cub->graphic.img, &cub->graphic.bpp, &cub->graphic.line_length, &cub->graphic.endian);
+	mlx_hook(cub->graphic.mlx_win, KEYPRESS, 0, key_press, cub);
+	mlx_hook(cub->graphic.mlx_win, KEYRELEASE, 0, key_release, cub);
+	mlx_loop_hook(cub->graphic.mlx, game, cub);
+	//mlx_destroy_image(cub->graphic.mlx, cub->graphic.img);
+	mlx_loop(cub->graphic.mlx);
 }
 ```
 
 ///////////////////////////////////////////////////
 
-**t_window graphic** --> Estoy creando una nueva clase de objetos de la estructura `t_window` para guardar los valores que se van a generar en estas funciones y que voy a necesitar a lo largo de mi programa.
+Lo primero que hago es asignar la posicion inicial donde se encontro al jugador a la hora de parsear el mapa. Lo hago aquí, fuera de la funcion 'game' ya que si lo hiciera dentro, debido al loop, devolvería constantemente al jugador a la posición inicial y no lo dejaria moverse por el plano.
+
+Ahora llamo a la funcion 'mlx_init' la cual devuelve un puntero que establece la conexión con el motor gráfico. Lo guardare en mi variable "cub->graphic.mlx". Si la conexion falla por cualquier razon no podré iniciar el juego por lo que gestiono el error con un if en caso de que sucediera.
+
+Lo siguiente que hago utilizar las texturas que fueron recogidas en el parseo, para poder tratarlas con las funciones que convierten las texturas en imagenes en el juego. Lo primero que hago es utilizar la función 'mlx_xpm_file_to_image' para convertir un archivo de extensión .xpm en una nueva instancia de la imagen. Lo segundo utilizar la función 'mlx_get_data_addr' para poder dibujar cada pixel de la ventana en el color que le corresponde.
 
 ***mlx** --> Guarda el identificador que establece la conexion con el motor grafico de la minilibX.
 
