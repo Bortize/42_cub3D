@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 14:19:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 19:21:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	init_window(t_cub3d *cub)
 	cub->graphic.player_pos_x = 0;
 	cub->graphic.player_pos_y = 0;
 	//cub->graphic.line_height = ;
+	cub->move.frontal = 0;
+	cub->move.lateral = 0;
 }
 
 void	init_structures(t_cub3d *cub)

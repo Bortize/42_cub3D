@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 15:43:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 20:00:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,9 @@ typedef struct	s_controls
 	int			rotating_left;
 	int			rotating_right;
 	int			escape;
+	int			frontal;
+	int			lateral;
+	int			rotating;
 }				t_controls;//move
 /*
 ** Se utiliza en toda la parte de las texturas

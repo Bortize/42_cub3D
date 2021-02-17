@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:24:21 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/15 14:10:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/17 19:46:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 */
 int		game(t_cub3d *cub)
 {
-	raycasting(cub);
-
-	if (if_moving(cub))
-		movement(cub);
-	if (if_rotating(cub))
+	if (if_moving(cub) || if_rotating(cub))
+	{
 		rotation(cub);
+		movement(cub);
+		raycasting(cub);
+	}
+	//if (if_rotating(cub))
+	//	rotation(cub);
 	return (0);
 }
