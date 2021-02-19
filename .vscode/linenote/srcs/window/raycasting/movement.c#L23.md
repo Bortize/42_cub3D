@@ -1,4 +1,10 @@
+pos_x -> el valor en el eje x de la posicion en la que se va a situar en el siguiente paso
 
+pos_y -> el valor en el eje y de la posicion en la que se va a situar en el siguiente paso
+
+speed -> la velocidad por la direccion en la que avanza
+
+------------------
 
 Multiplica la velocidad de movimiento por el valor del avance que ha sido presionado. Si se ha presionado 'W' multiplica 0.099 por ++ y si se presiona 'S' multiplica 0.099 por --
 

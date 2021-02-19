@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 13:39:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 21:46:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <math.h>
 # include <stdarg.h>
 
-typedef struct	s_identifiers
+typedef struct __attribute__((__packed__)) s_identifiers
 {
 	int			i;
 	int			width;
@@ -54,7 +54,7 @@ typedef struct	s_identifiers
 	int			flag_map_ready;
 }				t_identifiers;//map
 
-typedef	struct	s_map
+typedef	struct	__attribute__((__packed__)) s_map
 {
 	int			i;//
 	int			rows_size;//				Guarda el numero de filas que contiene el plano del mapa
@@ -125,7 +125,7 @@ typedef struct	s_window
 /*
 ** Variables que controlan toda la parte de controles del juego
 */
-typedef struct	s_controls
+typedef struct	__attribute__((__packed__)) s_controls
 {
 	int			forward;
 	int			backward;
@@ -149,6 +149,7 @@ typedef struct	s_cub3d
 	t_window		graphic;
 	t_controls		move;
 	t_image			win;
+	t_image			text[4];// hace refencia a las texturas
 	t_image			no_text;
 	t_image			so_text;
 	t_image			ea_text;

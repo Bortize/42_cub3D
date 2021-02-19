@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/10 17:39:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:33:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,9 +152,9 @@
 /*
 ** Definimos los valores de las direcciones de los rayos
 */
-# define NORTH 1
-# define SOUTH 2
-# define EAST 3
-# define WEST 4
+# define NORTH 0
+# define SOUTH 1
+# define EAST 2
+# define WEST 3
 
 #endif

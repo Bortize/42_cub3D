@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 12:28:18 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 21:45:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,16 @@ static	int		ray_direction(t_cub3d *cub)
 	direction = 0;
 	if (cub->graphic.side_dist_x > cub->graphic.side_dist_y)
 	{
-		direction = cub->graphic.ray_dir_y < 0 ? NORTH : SOUTH;
+		direction = 0 + (cub->graphic.ray_dir_y > 0);
+		//direction = cub->graphic.ray_dir_y < 0 ? NORTH : SOUTH;
 		return (direction);
 	}
 	else
 	{
-		direction = cub->graphic.ray_dir_y < 0 ? WEST : EAST;
+		direction = 2 + (cub->graphic.ray_dir_y < 0);
+		//direction = cub->graphic.ray_dir_y < 0 ? WEST : EAST;
 		return (direction);
 	}
-
 }
 
 /*
@@ -108,7 +109,8 @@ void	perform_dda(t_cub3d *cub)
 	while (hit == 0)
 	{
 		cub->graphic.wall_direction = ray_direction(cub);
-		cub->graphic.ray_texture = raycast_texture(cub);// El rayo que define los colors de las texturas.
+		cub->graphic.ray_texture = cub->text[cub->graphic.wall_direction];
+		// raycast_texture(cub);// El rayo que define los colors de las texturas.
 	// saltar a la siguiente casilla del mapa, o en dirección x, o en dirección y
 		if (cub->graphic.side_dist_x < cub->graphic.side_dist_y)
 		{
@@ -127,7 +129,7 @@ void	perform_dda(t_cub3d *cub)
 	}
 }
 /*
-** Calcula la altura de los muros utilizando la distancia perpecdicular
+** Calcula la altura de los muros utilizando la distancia perpendicular
 ** en vez de la distancia real euclidiana.
 */
 void	calc_wall_height(t_cub3d *cub)
@@ -176,22 +178,6 @@ void	draw_vert_line(t_cub3d *cub, int x)
 		my_mlx_pixel_put(cub, x, y, color);
 		y++;
 	}
-}
-
-/*
-** Añade las texturas para los muros
-*/
-t_image	raycast_texture(t_cub3d *cub)
-{
-	if (cub->graphic.wall_direction == NORTH)
-		return (cub->no_text);
-	else if (cub->graphic.wall_direction == SOUTH)
-		return (cub->so_text);
-	else if (cub->graphic.wall_direction == EAST && cub->graphic.ray_dir_x > 0)
-		return (cub->ea_text);
-	else if (cub->graphic.wall_direction == WEST && cub->graphic.ray_dir_x <= 0)
-		return (cub->we_text);
-	return (cub->we_text);
 }
 
 /*
@@ -248,7 +234,6 @@ int	raycasting(t_cub3d *cub)
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
 		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
-		raycast_texture(cub);
 		cast_texture(cub);
 		draw_textured_line(cub, x);
 		x++;

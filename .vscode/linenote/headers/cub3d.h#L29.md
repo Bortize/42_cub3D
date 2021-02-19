@@ -1,4 +1,4 @@
-typedef struct	config
+typedef struct __attribute__((__packed__)) s_identifiers
 {
 	int			i;
 	int			width;				Ancho de la resolucion de la ventana
@@ -18,8 +18,18 @@ typedef struct	config
 	int			floor[3];			Guarda los colores del suelo
 	int			flag_floor;			Flag para reconocer si encontro los colores del suelo en el fichero.cub
 	int			ceilling[3];		Guarda los colores del cielo
+	int			ceilling_conv;
 	int			flag_ceilling;		Flag para reconocer si encontro los colores del cielo en el fichero.cub
 	char		**tab;				Lo uso para trabajar con los identificadores la primera vez que lee la liena
 	char		**tabcf;			Lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready; 	flag activador de que ya se leyeron y asignaron los identificadores a la esctructura
 }								t_identifiers;
+
+
+typedef -> Se utiliza para dar el tipo del que va a ser la estructura
+
+struct -> El tipo de la structura
+
+__attribute__((__packed__)) -> Sirve minificar los bites contiguos en la memoria dejando libres los bites que no son utilizados.
+
+s_identifiers -> el nombre de la estructura.

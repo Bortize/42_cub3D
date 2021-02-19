@@ -7,3 +7,6 @@ rotation -> Contiene el algoritmo que maneja la rotación del jugador
 movement -> Contiene el algorítmo que maneja el movimiento del jugador
 
 raycasting -> Contiene todos los calculos para el lanzamiento y colision de rayos para calcular la altura de los muros.
+
+
+sleep(0) -> Deja el proceso libre mientras no se active ningun evento. Es útil para liberar carga de trabajo a la CPU

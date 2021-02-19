@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:53:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 13:08:23 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:16:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,28 @@
 */
 void	load_textures(t_cub3d *cub)
 {
-	cub->no_text.img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.no,
-	&cub->no_text.width_text, &cub->no_text.height_text);
+	cub->text[0].img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.no,
+	&cub->text[0].width_text, &cub->text[0].height_text);
 
-	cub->so_text.img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.so,
-	&cub->so_text.width_text, &cub->so_text.height_text);
+	cub->text[1].img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.so,
+	&cub->text[1].width_text, &cub->text[1].height_text);
 
-	cub->we_text.img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.we,
-	&cub->we_text.width_text, &cub->we_text.height_text);
+	cub->text[2].img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.we,
+	&cub->text[2].width_text, &cub->text[2].height_text);
 
-	cub->ea_text.img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.ea,
-	&cub->ea_text.width_text, &cub->ea_text.height_text);
+	cub->text[3].img_text = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.ea,
+	&cub->text[3].width_text, &cub->text[3].height_text);
 
 //////////////////////////////////////////////////////////////////////////////////
+	cub->text[0].addr = (int *)mlx_get_data_addr(cub->text[0].img_text, &cub->text[0].bpp,
+	&cub->text[0].size_line, &cub->so_text.endian);
 
-	cub->so_text.addr = (int *)mlx_get_data_addr(cub->so_text.img_text, &cub->so_text.bpp,
-	&cub->so_text.size_line, &cub->so_text.endian);
+	cub->text[1].addr = (int *)mlx_get_data_addr(cub->text[1].img_text, &cub->text[1].bpp,
+	&cub->text[1].size_line, &cub->text[1].endian);
 
-	cub->no_text.addr = (int *)mlx_get_data_addr(cub->no_text.img_text, &cub->no_text.bpp,
-	&cub->so_text.size_line, &cub->so_text.endian);
+	cub->text[2].addr = (int *)mlx_get_data_addr(cub->text[2].img_text, &cub->text[2].bpp,
+	&cub->text[2].size_line, &cub->text[2].endian);
 
-
-	cub->we_text.addr = (int *)mlx_get_data_addr(cub->we_text.img_text, &cub->we_text.bpp,
-	&cub->we_text.size_line, &cub->we_text.endian);
-
-	cub->ea_text.addr = (int *)mlx_get_data_addr(cub->ea_text.img_text, &cub->ea_text.bpp,
-	&cub->ea_text.size_line, &cub->ea_text.endian);
+	cub->text[3].addr = (int *)mlx_get_data_addr(cub->text[3].img_text, &cub->text[3].bpp,
+	&cub->text[3].size_line, &cub->text[3].endian);
 }
