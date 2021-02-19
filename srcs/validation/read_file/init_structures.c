@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 19:21:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 10:22:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 **	empezar a trabajar con ellas. Ademas elimina el valor basuara que pudieran
 **	contener a la hora de su declaración
 */
-
 void	init_identifiers(t_cub3d *cub)
 {
 	cub->map.i = 0;
@@ -59,8 +58,8 @@ void	init_window(t_cub3d *cub)
 	cub->graphic.player_pos_x = 0;
 	cub->graphic.player_pos_y = 0;
 	//cub->graphic.line_height = ;
-	cub->move.frontal = 0;
-	cub->move.lateral = 0;
+	cub->move.frontal = 0;// flag movimiento frontal y trasero del jugador.
+	cub->move.lateral = 0;// flag moviemto lateral del jugador
 }
 
 void	init_structures(t_cub3d *cub)

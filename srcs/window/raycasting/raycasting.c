@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 14:31:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/19 12:28:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	initial_calc(t_cub3d *cub, int x)
 	//cub->graphic.player_pos_x = cub->plan.player_init_position_x;
 	//cub->graphic.player_pos_y = cub->plan.player_init_position_y;
 
-//	AHORA SE PROCEDE A CALCULAR LA DIRECCION DEL RAYO
+//	Calcula la posicion y direccion del rayo
 	cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;
 	// Direccion del rayo
 	cub->graphic.ray_dir_x = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;
@@ -148,10 +148,10 @@ void	calc_wall_height(t_cub3d *cub)
 	if (cub->graphic.draw_end < 0)
 		cub->graphic.draw_end = 0;
 }
+
 /*
 ** Selecciona el color para los muros en funcion de hacia donde apunta el rayo.
 */
-
 void	draw_vert_line(t_cub3d *cub, int x)
 {
 	int color;
@@ -237,7 +237,7 @@ void			draw_textured_line(t_cub3d *cub, int x)
 */
 int	raycasting(t_cub3d *cub)
 {
-	int x;
+	int x;// contador del ancho de la ventana para completar el lanzamiento de los rayos.
 
 	x = 0;
 	refresh_screen(cub);
