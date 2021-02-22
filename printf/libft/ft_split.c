@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/31 13:11:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 11:27:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:51:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	k = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c)) + 1)))
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1))))
 		return (NULL);
 	while (s[i])
 	{

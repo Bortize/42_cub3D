@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 13:45:18 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/22 18:43:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
+#include "cub3d.h"
 
 /*
 **	Devuelve error en caso de que el usuario le pase mas argumentos que el que

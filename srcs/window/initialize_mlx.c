@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 18:49:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/22 18:43:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "cub3d.h"
 
 void	initialize_mlx(t_cub3d *cub)
 {
