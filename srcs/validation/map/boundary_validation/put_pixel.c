@@ -11,7 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 /*
 ** Asigna el valor de relleno a la posicion indicada en el plano
 */

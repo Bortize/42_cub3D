@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/01 13:02:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 16:59:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 /*
 ** Recorre cada indice del string para ir comprobando si su valor es uno de los
 ** permitidos por el subject (queremos detectar si el mapa contiene algun iden-
@@ -28,6 +28,8 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		|| (str[cub->plan.i] == 'N') || (str[cub->plan.i] == 'S') || (str[cub->plan.i] == 'E')
 		|| (str[cub->plan.i] == 'W') || (str[cub->plan.i] == ' ') || (str[cub->plan.i] == '\t'))
 		{
+			if (str[cub->plan.i] == '2')
+				cub->sprt.count_sprites++;// Guarda el numero de sprites que aparecen en el mapa
 			player_start_position(str, cub);
 			cub->plan.i++;
 		}

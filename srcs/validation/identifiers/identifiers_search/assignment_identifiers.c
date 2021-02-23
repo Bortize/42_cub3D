@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:26:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:04:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 
 /*
 **	Is called by --> find_identifier(char *str, t_cub3d *cub);

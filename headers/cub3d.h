@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 21:46:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:50:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,16 @@ typedef struct	__attribute__((__packed__)) s_controls
 ** Se utiliza en toda la parte de las texturas
 */
 
+typedef struct	__attribute__((__packed__)) s_sprites
+{
+	int		i;// contador de sprites
+	double	x;
+	double	y;
+	double *sprite;
+	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
+	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
+}											t_sprites;//sprite
+
 typedef struct	s_cub3d
 {
 	t_identifiers	map;
@@ -154,6 +164,7 @@ typedef struct	s_cub3d
 	t_image			so_text;
 	t_image			ea_text;
 	t_image			we_text;
+	t_sprites		sprt;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);

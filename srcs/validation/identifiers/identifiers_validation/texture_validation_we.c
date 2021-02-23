@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:11:23 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 17:24:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 
 void	texture_validation_we(t_cub3d *cub)
 {

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 11:35:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:15:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
 /*	Call-Function --> main
 **	Read the .map file line by line to identify if it contains the values to be
@@ -44,6 +44,6 @@ int	file_reading(int fd, t_cub3d *cub)
 	if (cub->plan.values_ok == 0)
 		assigning_plane_values(cub);
 	while (i < cub->plan.rows_size)// pinta el plano una vez tratado por el algoritmo floodfill. BORRAR
-		ft_printf("🪐 %s \n", cub->plan.plan[i++]);// pinta el plano. BORRAR
+		ft_printf("🌎 %s \n", cub->plan.plan[i++]);// pinta el plano. BORRAR
 	return (0);
 }

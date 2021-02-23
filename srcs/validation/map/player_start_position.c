@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/17 14:29:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:07:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 /*
 ** Guarda la posicion del jugador cuando la encuentra. La guarda en 2 coordenadas
 ** dónde 'x' corresponde al índe del número de vector donde se encontro e 'y' al

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   path_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 11:33:13 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/04 19:17:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 
 int	path_validation(char *str)
 {

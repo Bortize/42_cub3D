@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/01 12:03:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:06:09 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 /*
 ** Comprueba la posicion 0 comparándolo con cualquiera de los identificadores
 ** permitidos. En caso de no encontrar ninguno, gestiona el error y se detiene en

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/22 17:23:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:47:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	init_window(t_cub3d *cub)
 	//cub->graphic.line_height = ;
 	cub->move.frontal = 0;// flag movimiento frontal y trasero del jugador.
 	cub->move.lateral = 0;// flag moviemto lateral del jugador
-	cub->move.rotating = 0;
+	cub->move.rotating = 0;// flag rotación
 }
 
 void	init_structures(t_cub3d *cub)

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:37:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/07 14:58:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../headers/cub3d.h"
+#include "cub3d.h"
 /*
 ** Recorre el plano del mapa partiendo desde la posicion del jugador. Utiliza el
 ** metodo por inundación hasta los límites del muro. Cuando encuentra un valor

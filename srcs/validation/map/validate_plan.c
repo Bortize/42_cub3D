@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/01/24 19:48:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 13:55:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
 /*
 ** Chequea que cada linea del plano contenga los valores permitidos en el
