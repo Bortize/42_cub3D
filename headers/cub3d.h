@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 19:50:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 21:16:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,6 @@ typedef struct	__attribute__((__packed__)) s_sprites
 	int		i;// contador de sprites
 	double	x;
 	double	y;
-	double *sprite;
 	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
 }											t_sprites;//sprite

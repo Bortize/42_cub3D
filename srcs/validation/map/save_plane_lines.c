@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 20:50:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/23 21:37:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	find_sprites(t_cub3d *cub)
 	int y;// coordeanda y del plano
 	int i;// iterador del string
 	int s;// contador de sprites encontrados
+	t_sprites sprite[cub->sprt.count_sprites];// creo tantas instancias como sprites he encontrado
 
 	i = 0;
 	x = 0;
@@ -34,8 +35,6 @@ void	find_sprites(t_cub3d *cub)
 		}
 		if (cub->plan.one_line_plan[i] == '2')
 		{
-			t_sprites sprite[s];// Creo una nueva isntancia de de la estructrua por cada sprite encontrado
-
 			sprite[s].x = x + 0.5;// asigno el vector x que he encontrado
 			sprite[s].y = y + 0.5;// asigno el vector y que he encontrado
 			s++;// avanzo una posicion el contador
