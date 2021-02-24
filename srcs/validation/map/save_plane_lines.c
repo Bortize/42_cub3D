@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 21:37:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:05:58 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	find_sprites(t_cub3d *cub)
 			sprite[s].y = y + 0.5;// asigno el vector y que he encontrado
 			s++;// avanzo una posicion el contador
 		}
-		i++;// avanzo en el iterador que recorre el strign
-		y++;// avanzo en el iterador que recorre la la linea del mapa.
+		i++;// Avanzo en el iterador que recorre el strign
+		y++;// Avanzo en el iterador que recorre la la linea del mapa.
 	}
 }
 

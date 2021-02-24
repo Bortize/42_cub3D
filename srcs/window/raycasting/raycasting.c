@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 21:45:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/24 17:04:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ static	int		ray_direction(t_cub3d *cub)
 	}
 	else
 	{
-		direction = 2 + (cub->graphic.ray_dir_y < 0);
+		direction = 2 + (cub->graphic.ray_dir_x < 0);
 		//direction = cub->graphic.ray_dir_y < 0 ? WEST : EAST;
 		return (direction);
 	}
