@@ -1,10 +1,10 @@
 R 100 720
 NO ./wolf
-tex/./tester/wolftex/textures/xpm/greystone.xpm
-SO ./tester/wolftex/textures/xpm/redbrick.xpm
-EA ./tester/wolftex/textures/xpm/wood.xpm
-WE ./tester/wolftex/textures/xpm/wood.xpm
-S ./tester/wolftex/textures/xpm/barrel.xpm
+tex/./resources/wolftex/textures/xpm/greystone.xpm
+SO ./resources/wolftex/textures/xpm/redbrick.xpm
+EA ./resources/wolftex/textures/xpm/wood.xpm
+WE ./resources/wolftex/textures/xpm/wood.xpm
+S ./resources/wolftex/textures/xpm/barrel.xpm
 C 255,200,160
 F 122,122,122
 

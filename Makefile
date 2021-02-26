@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/23 14:50:05 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/26 01:31:27 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,8 @@ MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
 OBJS		= $(SRCS:.c=.o)
 
+OBJS_DIR = ./objs_dir
+
 INCLUDE		= ./printf
 
 INCLUDE2	= ./minilibx_opengl
@@ -94,11 +96,13 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				#cp ./minilibx_opengl/libmlx.a .
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
+				mkdir objs_dir
+				mv $(OBJS) $(OBJS_DIR)
 
 ###############################################################################
 
 clean:
-			$(RM) $(OBJS) a.out
+			$(RM) $(OBJS) $(OBJS_DIR) a.out
 			make -C $(INCLUDE) clean
 			make -C $(INCLUDE2) clean
 
