@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 21:16:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:23:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,14 +142,22 @@ typedef struct	__attribute__((__packed__)) s_controls
 ** Se utiliza en toda la parte de las texturas
 */
 
-typedef struct	__attribute__((__packed__)) s_sprites
+typedef struct	__attribute__((__packed__)) s_sprite
 {
 	int		i;// contador de sprites
 	double	x;
 	double	y;
+	double	dist;
+	double	inv_det;
 	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
-}											t_sprites;//sprite
+}											t_sprite;//sprite
+
+typedef struct	__attribute__((__packed__)) s_sprites
+{
+	t_sprite *sprite;
+}											t_sprites;
+
 
 typedef struct	s_cub3d
 {
@@ -163,7 +171,8 @@ typedef struct	s_cub3d
 	t_image			so_text;
 	t_image			ea_text;
 	t_image			we_text;
-	t_sprites		sprt;
+	t_sprite		sprt;
+	t_sprites		sprites;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
@@ -221,5 +230,6 @@ void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 void	load_textures(t_cub3d *cub);
 t_image	raycast_texture(t_cub3d *cub);
 void	where_player_look(t_cub3d *cub, char c);
+void	draw_sprites(t_cub3d *cub);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/24 15:05:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:17:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	find_sprites(t_cub3d *cub)
 	int y;// coordeanda y del plano
 	int i;// iterador del string
 	int s;// contador de sprites encontrados
-	t_sprites sprite[cub->sprt.count_sprites];// creo tantas instancias como sprites he encontrado
+	t_sprite sprite[cub->sprt.count_sprites];// creo tantas instancias como sprites he encontrado
 
 	i = 0;
 	x = 0;
@@ -37,6 +37,8 @@ void	find_sprites(t_cub3d *cub)
 		{
 			sprite[s].x = x + 0.5;// asigno el vector x que he encontrado
 			sprite[s].y = y + 0.5;// asigno el vector y que he encontrado
+			cub->sprites.sprite = (t_sprite *)malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+			  = sprite[s];
 			s++;// avanzo una posicion el contador
 		}
 		i++;// Avanzo en el iterador que recorre el strign

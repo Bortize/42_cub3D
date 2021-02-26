@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/02/26 01:31:27 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/02/26 18:15:28 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/raycasting/controls.c \
 				srcs/window/raycasting/rotation.c \
 				srcs/window/raycasting/player.c \
+				srcs/window/raycasting_sprites/sprites.c \
 				srcs/window/load_textures.c \
 				srcs/window/raycasting/game.c
 
@@ -74,7 +75,7 @@ MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
 OBJS		= $(SRCS:.c=.o)
 
-OBJS_DIR = ./objs_dir
+OBJS_DIR= ./objs_dir
 
 INCLUDE		= ./printf
 
@@ -91,12 +92,11 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				make -C $(INCLUDE)
 				# Llama al Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
-				# Copia las librerias generadas en cada ruta y las sube a este nivel
-				#cp ./printf/libftprintf.a .
-				#cp ./minilibx_opengl/libmlx.a .
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
+				# Crea el directorio objs_dir donde guardara todos los objetos generados
 				mkdir objs_dir
+				# Mueve todos los objetos generados al directorio que creamos en el paso anterior
 				mv $(OBJS) $(OBJS_DIR)
 
 ###############################################################################
