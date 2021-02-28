@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/26 19:23:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/28 13:49:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct __attribute__((__packed__)) s_identifiers
 	int			flag_map_ready;
 }				t_identifiers;//map
 
-typedef	struct	__attribute__((__packed__)) s_map
+typedef	struct	s_map
 {
 	int			i;//
 	int			rows_size;//				Guarda el numero de filas que contiene el plano del mapa
@@ -125,7 +125,7 @@ typedef struct	s_window
 /*
 ** Variables que controlan toda la parte de controles del juego
 */
-typedef struct	__attribute__((__packed__)) s_controls
+typedef struct	s_controls
 {
 	int			forward;
 	int			backward;
@@ -142,18 +142,52 @@ typedef struct	__attribute__((__packed__)) s_controls
 ** Se utiliza en toda la parte de las texturas
 */
 
-typedef struct	__attribute__((__packed__)) s_sprite
+typedef struct s_sprite
 {
 	int		i;// contador de sprites
-	double	x;
-	double	y;
-	double	dist;
-	double	inv_det;
+	double	x;// vector 'x' donde se encuentra el sprite
+	double	y;// vector 'y' donde se encuentra el sprite
+	double	dist;//
+	double	inv_det;//
+	double	transform_x;//
+	double	transform_y;//
+	int			screen_x;
+	int			height;
+	int			width;
+	int			color;
+	int			v_move_screen;
+	int			draw_start_y;
+	int			draw_start_x;
+	int			draw_end_y;
+	int			draw_end_x;
+	int			texture_x;
+	int			texture_y;
+	int			start_x;
+	int			start_y;
+	int			end_x;
+	int			end_y;
 	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
 }											t_sprite;//sprite
 
-typedef struct	__attribute__((__packed__)) s_sprites
+typedef struct		s_texture
+{
+	char			*path;
+	int				*ptr;
+	void			*texture;
+	char			*ext;
+	int				start_x;
+	int				start_y;
+	int				end_x;
+	int				end_y;
+	int				width;
+	int				height;
+	int				size_l;
+	int				bpp;
+	int				endian;
+}					t_texture;
+
+typedef struct	 s_sprites
 {
 	t_sprite *sprite;
 }											t_sprites;
@@ -161,16 +195,18 @@ typedef struct	__attribute__((__packed__)) s_sprites
 
 typedef struct	s_cub3d
 {
+	double		zbuffer;
 	t_identifiers	map;
 	t_map			plan;
 	t_window		graphic;
 	t_controls		move;
 	t_image			win;
-	t_image			text[4];// hace refencia a las texturas
-	t_image			no_text;
-	t_image			so_text;
-	t_image			ea_text;
-	t_image			we_text;
+	t_image			text[4];// hace refencia a las texturas n,s,e,o.
+	t_image			sprite;// hace referencia a las texuras de los sprites
+//t_image			no_text;
+//t_image			so_text;
+//t_image			ea_text;
+//t_image			we_text;
 	t_sprite		sprt;
 	t_sprites		sprites;
 }				t_cub3d;

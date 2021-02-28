@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/26 19:48:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/28 17:34:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,57 @@ static void		sort_sprites(t_cub3d *cub)
 		}
 	}
 }
-
+/*
+** Inicializa toda la configuracion del lanzamiento de rayos para los sprites
+*/
 static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 {
 	sprite.x = sprite.x - cub->graphic.player_pos_x;
 	sprite.y = sprite.y - cub->graphic.player_pos_y;
-	sprite.inv_det = 1.0 / (cub->graphic.camera_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->plane.y)
+	sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);
+	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * sprite.x - cub->graphic.player_dir_x * sprite.y);
+	sprite.transform_y = sprite.inv_det * (cub->graphic.map_y * sprite.x + cub->graphic.map_x * sprite.y);
+	sprite.screen_x = (int)((cub->map.width / 2) * (1 + sprite.transform_x / sprite.transform_y));// La profundidad dentro de la pantalla
+	sprite.height = abs((int)(cub->map.height / (sprite.transform_y)));// Calcula la altura del sprite en pantalla
+	// Calcula el pixel mas alto y mas bajo para rellenar la franja atual
+	sprite.draw_start_y = -sprite.height / 2 + cub->map.height / 2;
+	if (sprite.draw_start_y < 0)
+		sprite.draw_start_y = 0;
+	sprite.draw_end_y = sprite.height / 2 + cub->map.height / 2;
+	if (sprite.draw_end_y >= cub->map.height)
+		sprite.draw_end_y = cub->map.height - 1;
+// Calcula el ancho del sprite
+	sprite.width = abs((int)(cub->map.height / (sprite.transform_y)));
+	sprite.draw_start_x = -sprite.width / 2 + sprite.screen_x;
+	if (sprite.draw_start_x < 0)
+		sprite.draw_start_x = 0;
+	sprite.draw_end_x = sprite.width / 2 + sprite.screen_x;
+	if (sprite.draw_end_x >= cub->map.width)
+		sprite.draw_end_x = cub->map.width - 1;
+	return (sprite);
+}
+
+static void		draw_sprite(t_cub3d *cub, t_sprite spr)
+{
+	int				x;
+	int				y;
+	int				k;
+	t_texture	tex;
+
+	x = spr.draw_start_x - 1;
+	tex = cub->sprite;
+
+	x = spr.start_x = (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
+	if (spr.transform_y > 0 && x > 0 && x < cub->map.width && spr.transform_y < cub->zbuffer[x])
+	{
+		y = spr.start_y - 1;
+		while (++y < spr.end_y)
+		{
+			k = y * 256 - cub->map.height * 128 + spr.height * 128;
+			spr.texture_x
+		}
+	}
+
 }
 
 /*

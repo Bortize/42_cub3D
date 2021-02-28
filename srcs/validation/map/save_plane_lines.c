@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save_plane_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/26 19:17:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/28 12:29:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	find_sprites(t_cub3d *cub)
 			sprite[s].x = x + 0.5;// asigno el vector x que he encontrado
 			sprite[s].y = y + 0.5;// asigno el vector y que he encontrado
 			cub->sprites.sprite = (t_sprite *)malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
-			  = sprite[s];
 			s++;// avanzo una posicion el contador
 		}
 		i++;// Avanzo en el iterador que recorre el strign
