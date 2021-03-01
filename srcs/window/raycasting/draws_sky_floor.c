@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 13:40:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/09 13:36:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 18:42:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	set_pixel(t_cub3d *cub, size_t pixel, int color)
+inline void	set_pixel(t_cub3d *cub, size_t pixel, int color)
 {
 	cub->graphic.addr[pixel] = color;
 }

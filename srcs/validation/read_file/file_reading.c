@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 20:15:54 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:39:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	file_reading(int fd, t_cub3d *cub)
 					find_identifiers(line, cub);
 				if (cub->map.flag_map_ready == 1)
 				{
+					cub->zbuffer = malloc(sizeof(double) * cub->map.width);
 					validate_plan(line, cub);
 					save_plane_lines(line, cub);
 				}

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 19:47:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 20:24:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,16 @@ void	init_window(t_cub3d *cub)
 	cub->move.rotating = 0;// flag rotación
 }
 
+void	init_sprites(t_cub3d *cub)
+{
+	cub->sprites = 0;
+}
+
 void	init_structures(t_cub3d *cub)
 {
 	init_identifiers(cub);
 	init_map(cub);
 	init_window(cub);
+	init_sprites(cub);
 }
 

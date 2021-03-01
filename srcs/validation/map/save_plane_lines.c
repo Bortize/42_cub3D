@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save_plane_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/28 12:29:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 21:00:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 ** Crea una nueva instancia de la estructura y guarda los valroes de la
 ** posicion en donde se encontro el sprite en el mapa
 */
+
 void	find_sprites(t_cub3d *cub)
 {
 	int x;// coordenada x del plano
 	int y;// coordeanda y del plano
 	int i;// iterador del string
 	int s;// contador de sprites encontrados
-	t_sprite sprite[cub->sprt.count_sprites];// creo tantas instancias como sprites he encontrado
 
 	i = 0;
 	x = 0;
 	s = 0;
+	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
 	while ((cub->plan.one_line_plan[i]) != '\0')
 	{
 		if (cub->plan.one_line_plan[i] == 'p')
@@ -35,9 +36,8 @@ void	find_sprites(t_cub3d *cub)
 		}
 		if (cub->plan.one_line_plan[i] == '2')
 		{
-			sprite[s].x = x + 0.5;// asigno el vector x que he encontrado
-			sprite[s].y = y + 0.5;// asigno el vector y que he encontrado
-			cub->sprites.sprite = (t_sprite *)malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+			cub->sprites[s].x = x + 0.5;// asigno el vector x que he encontrado
+			cub->sprites[s].y = y + 0.5;// asigno el vector y que he encontrado
 			s++;// avanzo una posicion el contador
 		}
 		i++;// Avanzo en el iterador que recorre el strign

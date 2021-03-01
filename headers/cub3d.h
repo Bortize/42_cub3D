@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/01 16:07:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 20:23:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,34 +141,38 @@ typedef struct	s_controls
 /*
 ** Se utiliza en toda la parte de las texturas
 */
-
 typedef struct s_sprite
 {
-	int			i;// contador de sprites
+	int		i;// contador de sprites
 	double	x;// vector 'x' donde se encuentra el sprite
 	double	y;// vector 'y' donde se encuentra el sprite
-	int			count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
+	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	double	dist;//
 	double	inv_det;//
 	double	transform_x;//
 	double	transform_y;//
-	int			screen_x;
-	int			height;
-	int			width;
-	int			color;
-	int			v_move_screen;
-	int			draw_start_y;
-	int			draw_start_x;
-	int			draw_end_y;
-	int			draw_end_x;
-	int			texture_x;
-	int			texture_y;
-	int			start_x;
-	int			start_y;
-	int			end_x;
-	int			end_y;
+	int		screen_x;
+	int		height;
+	int		width;
+	int		color;
+	int		v_move_screen;
+	int		draw_start_y;
+	int		draw_start_x;
+	int		draw_end_y;
+	int		draw_end_x;
+	int		texture_x;
+	int		texture_y;
+	int		start_x;
+	int		start_y;
+	int		end_x;
+	int		end_y;
 	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
-}											t_sprite;//sprite
+}				t_sprite;//sprite
+
+typedef struct	s_sprites
+{
+	t_sprite *sprite;// string de sprites
+}				t_sprites;
 
 typedef struct		s_texture
 {
@@ -185,30 +189,24 @@ typedef struct		s_texture
 	int				size_l;
 	int				bpp;
 	int				endian;
-}									t_texture;
-
-typedef struct	 s_sprites
-{
-	t_sprite *sprite;// string de sprites
-}											t_sprites;
-
+}					t_texture;
 
 typedef struct	s_cub3d
 {
-	double		*zbuffer;
+	double			*zbuffer;
 	t_identifiers	map;
 	t_map			plan;
 	t_window		graphic;
 	t_controls		move;
 	t_image			win;
-	t_image			text[4];// hace refencia a las texturas n,s,e,o.
-	t_texture			sprite;// hace referencia a las texuras de los sprites
+	t_image			text[4];// hace refencia a las texturas n,s,e,o. (t_image y t_texture con casi identicas, solo que t_texture abarca mas variables)
+	t_texture		sprite;// incluye todas las variables para poder pintar las texturas. En este caso crea una nueva instancia para un sprite
 //t_image			no_text;
 //t_image			so_text;
 //t_image			ea_text;
 //t_image			we_text;
-	t_sprite		sprt;
-	t_sprites		sprites;
+	t_sprite		sprt;// structura que incluye todas las variables que afectan a un sprite
+	t_sprite		*sprites;// arry de sprites. Donde se almacenan todos los sprites
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);

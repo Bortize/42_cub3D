@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/01 14:55:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 20:55:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,6 +233,7 @@ int	raycasting(t_cub3d *cub)
 		initial_calc(cub, x);
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
 		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
+		cub->zbuffer[x] = cub->graphic.perp_wall_dist;// Se le asigna al buffer la distancia de todos los rallos perpendiculares al plano de la camara.
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		cast_texture(cub);
 		draw_textured_line(cub, x);
