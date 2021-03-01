@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/28 13:49:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 16:07:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <math.h>
 # include <stdarg.h>
 
-typedef struct __attribute__((__packed__)) s_identifiers
+typedef struct	s_identifiers
 {
 	int			i;
 	int			width;
@@ -144,9 +144,10 @@ typedef struct	s_controls
 
 typedef struct s_sprite
 {
-	int		i;// contador de sprites
+	int			i;// contador de sprites
 	double	x;// vector 'x' donde se encuentra el sprite
 	double	y;// vector 'y' donde se encuentra el sprite
+	int			count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	double	dist;//
 	double	inv_det;//
 	double	transform_x;//
@@ -166,7 +167,6 @@ typedef struct s_sprite
 	int			start_y;
 	int			end_x;
 	int			end_y;
-	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
 }											t_sprite;//sprite
 
@@ -185,24 +185,24 @@ typedef struct		s_texture
 	int				size_l;
 	int				bpp;
 	int				endian;
-}					t_texture;
+}									t_texture;
 
 typedef struct	 s_sprites
 {
-	t_sprite *sprite;
+	t_sprite *sprite;// string de sprites
 }											t_sprites;
 
 
 typedef struct	s_cub3d
 {
-	double		zbuffer;
+	double		*zbuffer;
 	t_identifiers	map;
 	t_map			plan;
 	t_window		graphic;
 	t_controls		move;
 	t_image			win;
 	t_image			text[4];// hace refencia a las texturas n,s,e,o.
-	t_image			sprite;// hace referencia a las texuras de los sprites
+	t_texture			sprite;// hace referencia a las texuras de los sprites
 //t_image			no_text;
 //t_image			so_text;
 //t_image			ea_text;

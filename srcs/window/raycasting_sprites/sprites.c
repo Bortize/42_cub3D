@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/28 17:34:47 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 16:19:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,23 +75,28 @@ static void		draw_sprite(t_cub3d *cub, t_sprite spr)
 {
 	int				x;
 	int				y;
-	int				k;
+	int				d;
 	t_texture	tex;
 
 	x = spr.draw_start_x - 1;
 	tex = cub->sprite;
-
-	x = spr.start_x = (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
-	if (spr.transform_y > 0 && x > 0 && x < cub->map.width && spr.transform_y < cub->zbuffer[x])
+	while (++x < spr.draw_end_x)
 	{
-		y = spr.start_y - 1;
-		while (++y < spr.end_y)
+//		spr.texture_x = int(256 * (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width);
+		spr.texture_x = (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
+		if (spr.transform_y > 0 && x > 0 && x < cub->map.width && spr.transform_y < cub->zbuffer[x])
 		{
-			k = y * 256 - cub->map.height * 128 + spr.height * 128;
-			spr.texture_x
+			y = spr.start_y - 1;
+			while (++y < spr.end_y)
+			{
+				d = (y) * 256 - cub->map.height * 128 + spr.height * 128;
+				spr.texture_y = ((d * tex.height) / spr.height) / 256;
+				spr.color = tex.ptr[tex.width * spr.texture_y + spr.texture_x];
+				if ((spr.color & 0x00ffffff) != 0)
+					set_pixel(cub, cub->map.width * y * x, spr.color);
+			}
 		}
 	}
-
 }
 
 /*
@@ -99,11 +104,38 @@ static void		draw_sprite(t_cub3d *cub, t_sprite spr)
 */
 void	draw_sprites(t_cub3d *cub)
 {
-	size_t	i;
+	int	i;
 
 	i = -1;
 	sort_sprites(cub);
 	i = -1;
 	while (++i < cub->sprt.count_sprites)
 		draw_sprite(cub, init_sprite(cub, cub->sprites.sprite[i]));
+}
+
+
+
+void		set_sprites(t_cub3d *cub)
+{
+	size_t			y;
+	size_t			x;
+	size_t			i;
+
+	cub->zbuffer = malloc(sizeof(double) * cub->map.width);
+	cub->sprites.sprite = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+	y = -1;
+	i = -1;
+	while (cub->plan.plan[y++])
+	{
+		x = -1;
+		while(cub->plan.plan[y][++x])
+		{
+			if (cub->plan.plan[y][x] == '2')
+				cub->sprites.sprite[++i] = (t_sprite)
+				{.
+				y = (double)y + 0.5,
+				.x = (double)x + 0.5,
+				.dist = (double)0};
+			}
+		}
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/25 19:19:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 14:55:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,6 +236,7 @@ int	raycasting(t_cub3d *cub)
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		cast_texture(cub);
 		draw_textured_line(cub, x);
+		draw_sprites(cub);
 		x++;
 	}
 	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:53:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 18:16:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/01 16:21:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	load_textures(t_cub3d *cub)
 
 //////////////////////////////////////////////////////////////////////////////////
 	cub->text[0].addr = (int *)mlx_get_data_addr(cub->text[0].img_text, &cub->text[0].bpp,
-	&cub->text[0].size_line, &cub->so_text.endian);
+	&cub->text[0].size_line, &cub->text[0].endian);
 
 	cub->text[1].addr = (int *)mlx_get_data_addr(cub->text[1].img_text, &cub->text[1].bpp,
 	&cub->text[1].size_line, &cub->text[1].endian);
