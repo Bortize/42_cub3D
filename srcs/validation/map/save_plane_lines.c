@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 14:59:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 19:30:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,7 @@ void	find_sprites(t_cub3d *cub)
 */
 int	save_plane_lines(char *str, t_cub3d *cub)
 {
-	if (cub->flag_malloc_sprites == 0)
-	{
-		cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
-		cub->flag_malloc_sprites = 1;
-	}
+	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
 //	if (cub->sprt.pos_sprite = (int *)malloc(sizeof(cub->sprt.count_sprites)));// reserva memoria para la matriz de los sprites
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, str);
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, "p");
