@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 14:08:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:51:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,7 @@ typedef struct	s_cub3d
 //t_image			we_text;
 	t_sprite		sprt;// structura que incluye todas las variables que afectan a un sprite
 	t_sprite		*sprites;// arry de sprites. Donde se almacenan todos los sprites
+	int					flag_malloc_sprites;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
