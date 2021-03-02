@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/01 20:55:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 01:17:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		sort_sprites(t_cub3d *cub)
 		cub->sprites[i].dist = hypot(cub->sprites[i].x - cub->graphic.player_pos_x,
 		cub->sprites[i].y - cub->graphic.player_pos_y);
 	i = -1;
-	while (++i < cub->sprt.count_sprites)
+	while (++i < cub->sprt.count_sprites -1)
 	{
 		k = i;
 		while (++k < cub->sprt.count_sprites)
@@ -48,9 +48,10 @@ static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 {
 	sprite.x = sprite.x - cub->graphic.player_pos_x;
 	sprite.y = sprite.y - cub->graphic.player_pos_y;
-	sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);
+	//sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);//matriz inversa de la camara
+	sprite.inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
 	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * sprite.x - cub->graphic.player_dir_x * sprite.y);
-	sprite.transform_y = sprite.inv_det * (cub->graphic.map_y * sprite.x + cub->graphic.map_x * sprite.y);
+	sprite.transform_y = sprite.inv_det * (cub->graphic.player_plane_y * sprite.x + cub->graphic.player_plane_x * sprite.y);
 	sprite.screen_x = (int)((cub->map.width / 2) * (1 + sprite.transform_x / sprite.transform_y));// La profundidad dentro de la pantalla
 	sprite.height = abs((int)(cub->map.height / (sprite.transform_y)));// Calcula la altura del sprite en pantalla
 	// Calcula el pixel mas alto y mas bajo para rellenar la franja atual
@@ -73,28 +74,28 @@ static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 
 static void		draw_sprite(t_cub3d *cub, t_sprite spr)
 {
-	int				x;
+	int				stripe;
 	int				y;
 	int				d;
 	t_texture	tex;
 
-	x = spr.draw_start_x - 1;
+	stripe = spr.draw_start_x - 1;
 	tex = cub->sprite;
-	while (++x < spr.draw_end_x)
+	while (++stripe < spr.draw_end_x)
 	{
 //		spr.texture_x = int(256 * (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width);
-		spr.texture_x = (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
+		spr.texture_x = (stripe - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
 	//ft_printf("hola %p\n", cub->zbuffer);
-		if (spr.transform_y > 0 && x > 0 && x < cub->map.width && spr.transform_y < cub->zbuffer[x])// zbuffer almacena la distancia perpencicular
+		if (spr.transform_y > 0 && stripe > 0 && stripe < cub->map.width && spr.transform_y < cub->zbuffer[stripe])// zbuffer almacena la distancia perpencicular
 		{
 			y = spr.start_y - 1;
 			while (++y < spr.end_y)
 			{
 				d = (y) * 256 - cub->map.height * 128 + spr.height * 128;
 				spr.texture_y = ((d * tex.height) / spr.height) / 256;
-				spr.color = tex.ptr[tex.width * spr.texture_y + spr.texture_x];
-				if ((spr.color & 0x00ffffff) != 0)
-					set_pixel(cub, cub->map.width * y * x, spr.color);
+				spr.color = tex.ptr[tex.width * spr.texture_y + spr.texture_x];// Obtieen el color actual de la textura
+				if ((spr.color & 0x00FFFFFF) != 0)
+					set_pixel(cub, cub->map.width * y * stripe, spr.color);
 			}
 		}
 	}

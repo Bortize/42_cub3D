@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/01 20:56:53 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/02 12:41:33 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g3 -Iheaders #-fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -g3 -Iheaders -fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
@@ -94,6 +94,8 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				make -C $(INCLUDE2)
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
+				# Borra el directorio si existiera. Se hace porque si existe da problemas
+				rm -Rf ./objs_dir
 				# Crea el directorio objs_dir donde guardara todos los objetos generados
 				mkdir objs_dir
 				# Mueve todos los objetos generados al directorio que creamos en el paso anterior

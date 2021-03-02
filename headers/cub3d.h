@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/01 20:23:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:08:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ typedef struct s_sprite
 	int		i;// contador de sprites
 	double	x;// vector 'x' donde se encuentra el sprite
 	double	y;// vector 'y' donde se encuentra el sprite
-	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	double	dist;//
+	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	double	inv_det;//
 	double	transform_x;//
 	double	transform_y;//
@@ -157,8 +157,8 @@ typedef struct s_sprite
 	int		color;
 	int		v_move_screen;
 	int		draw_start_y;
-	int		draw_start_x;
 	int		draw_end_y;
+	int		draw_start_x;
 	int		draw_end_x;
 	int		texture_x;
 	int		texture_y;
@@ -166,7 +166,7 @@ typedef struct s_sprite
 	int		start_y;
 	int		end_x;
 	int		end_y;
-	int		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
+	double		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
 }				t_sprite;//sprite
 
 typedef struct	s_sprites
@@ -265,5 +265,6 @@ void	load_textures(t_cub3d *cub);
 t_image	raycast_texture(t_cub3d *cub);
 void	where_player_look(t_cub3d *cub, char c);
 void	draw_sprites(t_cub3d *cub);
+void	find_sprites(t_cub3d *cub);
 
 #endif

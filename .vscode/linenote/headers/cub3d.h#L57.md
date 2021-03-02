@@ -1,4 +1,3 @@
-```c
 typedef	struct	valid_map
 {
 	int			i;
@@ -12,4 +11,3 @@ typedef	struct	valid_map
 	char		boundary_value;			Guarda el valor del muro '1'
 	char		fill_value;					Guarda el valor con el que irá rellenando la función boundaryfill en caso de encontrar un pixel válido dentro del mapa.
 }								t_map;
-```

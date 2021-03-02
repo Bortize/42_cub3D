@@ -20,9 +20,10 @@ Asigna a tex el valor de sprite. Lo va a utilizar como auxiliar creo porque tant
 
 
 ```c
-while (++x < spr.draw_end_x)
+while (++stripe < spr.draw_end_x)
 ```
-Mientras que el contador 'x' que recoredemos se le habia asignado al posición inicial de donde teneia que empezar a pintar, sea menor de la posicion final de donde tiene que empezar a pintar, la iteración del bucle continua.
+##### Recorre cada franja vertical de la pantalla <br>
+Mientras que el contador 'stripe' que recoredemos se le habia asignado al posición inicial de donde teneia que empezar a pintar, sea menor de la posicion final de donde tiene que empezar a pintar, la iteración del bucle continua.
 <br><br><br>
 
 

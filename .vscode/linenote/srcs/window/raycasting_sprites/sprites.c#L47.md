@@ -6,8 +6,12 @@ Traduce la posición de los sprites a la relativa de la cámara.
 <br/><br/><br/>
 
 ```c
-sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);
+sprite.inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
 ```
+cub->graphic.player_plane_x -> plano de la camara del jugador<br>
+cub->graphic.player_dir_y -> direccion del jugador<br>
+cub->graphic.player_dir_x -> direccion del jugador<br>
+cub->graphic.player_plane_y -> plano de la camara del jugador<br>
 Transforma el sprite con la matriz inversa de la cámara
 ```
 sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);

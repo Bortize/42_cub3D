@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save_plane_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/01 21:00:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:09:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	find_sprites(t_cub3d *cub)
 	i = 0;
 	x = 0;
 	s = 0;
-	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+	//cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+	//cub->sprites[cub->sprt.count_sprites];
 	while ((cub->plan.one_line_plan[i]) != '\0')
 	{
 		if (cub->plan.one_line_plan[i] == 'p')
@@ -36,8 +37,9 @@ void	find_sprites(t_cub3d *cub)
 		}
 		if (cub->plan.one_line_plan[i] == '2')
 		{
-			cub->sprites[s].x = x + 0.5;// asigno el vector x que he encontrado
 			cub->sprites[s].y = y + 0.5;// asigno el vector y que he encontrado
+			cub->sprites[s].x = x + 0.5;// asigno el vector x que he encontrado
+			printf("El sprite %i se encontro en %f %f \n", s, cub->sprites[s].x, cub->sprites[s].y);
 			s++;// avanzo una posicion el contador
 		}
 		i++;// Avanzo en el iterador que recorre el strign
@@ -53,7 +55,8 @@ void	find_sprites(t_cub3d *cub)
 */
 int	save_plane_lines(char *str, t_cub3d *cub)
 {
-	cub->sprt.pos_sprite = (int *)malloc(sizeof(cub->sprt.count_sprites));// reserva memoria para la matriz de los sprites
+	if (!(cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites)));
+	if (!(cub->sprt.pos_sprite = (int *)malloc(sizeof(cub->sprt.count_sprites))));// reserva memoria para la matriz de los sprites
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, str);
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, "p");
 	find_sprites(cub);
