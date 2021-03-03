@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   path_validation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 11:33:13 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 02:13:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	path_validation(char *str)
+void	path_validation(char *str)
 {
 	char *extension;
 	int str_len;
@@ -36,5 +36,4 @@ int	path_validation(char *str)
 		}
 	}
 	ft_printf("PATH file extension ✅ \n");
-	return (1);
 }

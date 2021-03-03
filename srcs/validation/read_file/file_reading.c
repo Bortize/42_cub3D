@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 15:44:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 20:42:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	file_reading(int fd, t_cub3d *cub)
 					cub->map.flag_map_ready = 1;
 		}
 	}
+	cub->zbuffer = malloc(sizeof(double) * cub->map.width);
 	if (cub->map.i < 8)
 		print_error("Faltan identificadores, revise su mapa");
 	if (cub->plan.values_ok == 0)

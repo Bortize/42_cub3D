@@ -6,46 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 19:30:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 20:37:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-/*
-** Crea una nueva instancia de la estructura y guarda los valroes de la
-** posicion en donde se encontro el sprite en el mapa
-*/
-
-void	find_sprites(t_cub3d *cub)
-{
-	int x;// coordenada x del plano
-	int y;// coordeanda y del plano
-	int i;// iterador del string
-	int s;// contador de sprites encontrados
-
-	i = 0;
-	x = 0;
-	s = 0;
-	//cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
-	//cub->sprites[cub->sprt.count_sprites];
-	while ((cub->plan.one_line_plan[i]) != '\0')
-	{
-		if (cub->plan.one_line_plan[i] == 'p')
-		{
-			x++;// suma +1 al numero de fila en el que se encuentra
-			y = 0;// restablece el contador de y a 0 ya que esta en una nueva fila
-		}
-		if (cub->plan.one_line_plan[i] == '2')
-		{
-			cub->sprites[s].y = y + 0.5;// asigno el vector y que he encontrado
-			cub->sprites[s].x = x + 0.5;// asigno el vector x que he encontrado
-			printf("El sprite %i se encontro en %f %f \n", s, cub->sprites[s].x, cub->sprites[s].y);
-			s++;// avanzo una posicion el contador
-		}
-		i++;// Avanzo en el iterador que recorre el strign
-		y++;// Avanzo en el iterador que recorre la la linea del mapa.
-	}
-}
 
 /*
 ** Concatena todas las lineas que ha ido encontrando el GNL en un solo string
@@ -55,11 +20,8 @@ void	find_sprites(t_cub3d *cub)
 */
 int	save_plane_lines(char *str, t_cub3d *cub)
 {
-	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
-//	if (cub->sprt.pos_sprite = (int *)malloc(sizeof(cub->sprt.count_sprites)));// reserva memoria para la matriz de los sprites
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, str);
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, "p");
-	find_sprites(cub);
 	ft_printf("Concatenation Linea %s \n", cub->plan.one_line_plan);
 	return (0);
 }

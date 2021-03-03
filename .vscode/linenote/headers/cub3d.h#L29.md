@@ -1,6 +1,6 @@
 typedef struct __attribute__((__packed__)) s_identifiers
 {
-	int			i;
+	int			i;						Contador de identificadores validos
 	int			width;				Ancho de la resolucion de la ventana
 	int			flag_widht;			flag si encuentra el ancho de la resolucion
 	int			height;				Alto de la resolucion de la ventana
@@ -20,7 +20,7 @@ typedef struct __attribute__((__packed__)) s_identifiers
 	int			ceilling[3];		Guarda los colores del cielo
 	int			ceilling_conv;
 	int			flag_ceilling;		Flag para reconocer si encontro los colores del cielo en el fichero.cub
-	char		**tab;				Lo uso para trabajar con los identificadores la primera vez que lee la liena
+	char		**tab;					Array de strings devuelve el ft_split_plus despues de eliminar espacios y tabulaciones
 	char		**tabcf;			Lo uso para trabajar los identificadores y poder guardar los valroes para finalmente asigarlos a sus respectivas variables de la estructura
 	int			flag_map_ready; 	flag activador de que ya se leyeron y asignaron los identificadores a la esctructura
 }								t_identifiers;

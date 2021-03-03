@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 14:51:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 02:14:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,7 +225,7 @@ int		integer_validation(t_cub3d *cub);
 void	print_error(char *str);
 int		integer_validation_resolution(t_cub3d *cub);
 int		integer_validation_size(t_cub3d *cub);
-int		path_validation(char *str);
+void	path_validation(char *str);
 void	screen_validation_r(t_cub3d *cub);
 void	texture_validation_no(t_cub3d *cub);
 void	texture_validation_so(t_cub3d *cub);

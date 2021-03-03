@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 12:38:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/02 21:38:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,11 +233,12 @@ int	raycasting(t_cub3d *cub)
 		initial_calc(cub, x);
 		perform_dda(cub);// el algoritmo en bucle que va a calcular cuadno chocque el rayo
 		calc_wall_height(cub);// Calcula la altura del muro una vez que el rayo choca con el muro
-//		cub->zbuffer[x] = cub->graphic.perp_wall_dist;// Se le asigna al buffer la distancia de todos los rallos perpendiculares al plano de la camara.
+		cub->zbuffer[x] = cub->graphic.perp_wall_dist;// Se le asigna al buffer la distancia de todos los rayos perpendiculares al plano de la camara.
+//		printf("rayos perpendicualres %d al plano ⚡ %f \n", x, cub->zbuffer[x]);
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		cast_texture(cub);
 		draw_textured_line(cub, x);
-//		draw_sprites(cub);
+		draw_sprites(cub);
 		x++;
 	}
 	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);
