@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   texture_validation_s.c                             :+:      :+:    :+:   */
+/*   load_texture_sprite.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/20 15:13:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 12:04:57 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/03 15:12:01 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/03 15:20:47 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	texture_validation_s(t_cub3d *cub)
+
+void	load_textures_sprite(t_cub3d *cub)
 {
-	path_validation(cub->map.tab[1]);
-	if (cub->map.flag_s == 0)
-	{
-		cub->map.flag_s++;
-		cub->map.i++;
-		cub->map.s = cub->map.tab[1];
-	}
-	else
-	{
-		print_error("El fichero '.cub' contiene identificadores "
-			"duplicados. \nPor favor, introduzca un fichero válido");
-	}
+	cub->sprite.texture = mlx_xpm_file_to_image(cub->graphic.mlx, cub->map.s,
+	&cub->sprite.width, &cub->sprite.height);
+
+//////////////////////////////////////////////////////////////////////////////////
+	cub->sprite.addr = (int *)mlx_get_data_addr(cub->sprite.texture, &cub->sprite.bpp,
+	&cub->sprite.size_l, &cub->sprite.endian);
 }

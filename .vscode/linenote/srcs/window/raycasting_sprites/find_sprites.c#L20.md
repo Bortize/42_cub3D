@@ -5,7 +5,7 @@ void	find_sprites(t_cub3d *cub)
 	int y;// coordeanda y del plano
 	int i;// iterador del string
 	int s;// contador de sprites encontrados
-	t_sprites sprite[cub->sprt.count_sprites];// creo tantas instancias como sprites he encontrado
+	t_sprites sprite[cub->count_sprites];// creo tantas instancias como sprites he encontrado
 
 	i = 0;
 	x = 0;
@@ -42,9 +42,9 @@ Cuando encuentre un 'p' sabra que esta en la siguiente linea por lo que le sumar
 Cuando encuentre un sprite, se lo asignara a la instancia de la estructura que corresponda al numeor del sprite. Recordemos que al comienzo de la funcion, hemos creado tanstas instancias como sprites hemos encontrado. Ahora solo tenemos que asiganar los valors de donde fueron encontrados a cada instancia 's' que sera el numero del sprite.
 
 ```c
-t_sprites sprite[cub->sprt.count_sprites];
+t_sprites sprite[cub->count_sprites];
 ```
-Como ya habiamos contabilizado el número de sprites que tiene nuestro mapa (lo hicimos en la funcion check_values_allowed con el flag cub->sprt.count_sprites), ahora necesitamos crear tantas instancias de la estructura t_sprites como sprites hemos encontrado en el plano. Para ello, creamos un sprite y le añadimos al índice el número de sprites encontrados y listo.
+Como ya habiamos contabilizado el número de sprites que tiene nuestro mapa (lo hicimos en la funcion check_values_allowed con el flag cub->count_sprites), ahora necesitamos crear tantas instancias de la estructura t_sprites como sprites hemos encontrado en el plano. Para ello, creamos un sprite y le añadimos al índice el número de sprites encontrados y listo.
 
 ```c
 while ((cub->plan.one_line_plan[i]) != '\0')

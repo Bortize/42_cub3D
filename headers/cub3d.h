@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 02:14:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:21:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,23 @@ typedef struct	s_controls
 	int			lateral;// controla el avance del jugador tanto hacía la izquierda como la derecha
 	int			rotating;
 }				t_controls;//move
+
+typedef struct		s_texture
+{
+	char			*path;
+	int 			*addr;//			Dirección a la imagen que se genera.
+	void			*texture;//Guarda la instancia de la imagen creada por la funcion mlx_xpm_file_to_image();
+	char			*ext;
+	int				start_x;
+	int				start_y;
+	int				end_x;
+	int				end_y;
+	int				width;
+	int				height;
+	int				size_l;
+	int				bpp;
+	int				endian;
+}					t_texture;
 /*
 ** Se utiliza en toda la parte de las texturas
 */
@@ -147,7 +164,6 @@ typedef struct s_sprite
 	double	x;// vector 'x' donde se encuentra el sprite
 	double	y;// vector 'y' donde se encuentra el sprite
 	double	dist;//
-	int		count_sprites;//			cuenta la cantidad de sprites que aparecen en el mapa;
 	double	inv_det;//
 	double	transform_x;//
 	double	transform_y;//
@@ -174,22 +190,6 @@ typedef struct	s_sprites
 	t_sprite *sprite;// string de sprites
 }				t_sprites;
 
-typedef struct		s_texture
-{
-	char			*path;
-	int				*ptr;
-	void			*texture;
-	char			*ext;
-	int				start_x;
-	int				start_y;
-	int				end_x;
-	int				end_y;
-	int				width;
-	int				height;
-	int				size_l;
-	int				bpp;
-	int				endian;
-}					t_texture;
 
 typedef struct	s_cub3d
 {
@@ -205,8 +205,9 @@ typedef struct	s_cub3d
 //t_image			so_text;
 //t_image			ea_text;
 //t_image			we_text;
-	t_sprite		sprt;// structura que incluye todas las variables que afectan a un sprite
+//	t_sprite		sprt;// structura que incluye todas las variables que afectan a un sprite
 	t_sprite		*sprites;// arry de sprites. Donde se almacenan todos los sprites
+	int				count_sprites;
 	int					flag_malloc_sprites;
 }				t_cub3d;
 
@@ -267,5 +268,6 @@ t_image	raycast_texture(t_cub3d *cub);
 void	where_player_look(t_cub3d *cub, char c);
 void	draw_sprites(t_cub3d *cub);
 void	find_sprites(t_cub3d *cub);
+void	load_textures_sprite(t_cub3d *cub);
 
 #endif

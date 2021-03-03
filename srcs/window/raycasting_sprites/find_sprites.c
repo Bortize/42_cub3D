@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 20:35:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 20:35:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 14:25:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	find_sprites(t_cub3d *cub)
 	i = 0;
 	x = 0;
 	s = 0;
-	//cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
-	//cub->sprites[cub->sprt.count_sprites];
-	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+	//cub->sprites = malloc(sizeof(t_sprite) * cub->count_sprites);
+	//cub->sprites[cub->count_sprites];
+	cub->sprites = malloc(sizeof(t_sprite) * cub->count_sprites);
 	while ((cub->plan.one_line_plan[i]) != '\0')
 	{
 		if (cub->plan.one_line_plan[i] == 'p')

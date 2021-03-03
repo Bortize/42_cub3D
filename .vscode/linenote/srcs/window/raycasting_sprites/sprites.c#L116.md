@@ -6,7 +6,7 @@ Ordena los sprites por distancia, de mas lejanos a mas cercanos.
 
 
 ```c
-while (++i < cub->sprt.count_sprites)
+while (++i < cub->count_sprites)
 		draw_sprite(cub, init_sprite(cub, cub->sprites[i]));
 ```
 El bucle no se detendrá mientras el iterador sea menos que el numero de sprites que contiene el plano.

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 20:52:20 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:43:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,20 @@ static void		sort_sprites(t_cub3d *cub)
 	int			k;
 	t_sprite	tmp;
 
-	if (cub->sprt.count_sprites == 0)
+	if (cub->count_sprites == 0)
 		return ;
-	i = -1;
-	while (++i < cub->sprt.count_sprites)
+	i = 0;
+	while (i < cub->count_sprites)
+	{
 		cub->sprites[i].dist = hypot(cub->sprites[i].x - cub->graphic.player_pos_x,
 		cub->sprites[i].y - cub->graphic.player_pos_y);
-	i = -1;
-	while (++i < cub->sprt.count_sprites -1)
+		i++;
+	}
+	i = 0;
+	while (i < cub->count_sprites)
 	{
 		k = i;
-		while (++k < cub->sprt.count_sprites)
+		while (++k < cub->count_sprites)
 		{
 			if (cub->sprites[i].dist < cub->sprites[k].dist)
 			{
@@ -39,8 +42,11 @@ static void		sort_sprites(t_cub3d *cub)
 				cub->sprites[i] = tmp;
 			}
 		}
+		i++;
 	}
 }
+
+
 /*
 ** Inicializa toda la configuracion del lanzamiento de rayos para los sprites
 */
@@ -72,32 +78,35 @@ static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 	return (sprite);
 }
 
+
 static void		draw_sprite(t_cub3d *cub, t_sprite spr)
 {
-	int				stripe;
-	int				y;
-	int				d;
+	int			stripe;// franjas de pixels verticales
+	int			y;
+	int			d;
 	t_texture	tex;
 
-	stripe = spr.draw_start_x - 1;
+	stripe = spr.draw_start_x;
 	tex = cub->sprite;
-	while (++stripe < spr.draw_end_x)
+	while (stripe < spr.draw_end_x)
 	{
 //		spr.texture_x = int(256 * (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width);
 		spr.texture_x = (stripe - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
 	//ft_printf("hola %p\n", cub->zbuffer);
 		if (spr.transform_y > 0 && stripe > 0 && stripe < cub->map.width && spr.transform_y < cub->zbuffer[stripe])// zbuffer almacena la distancia perpencicular
 		{
-			y = spr.start_y - 1;
-			while (++y < spr.end_y)
+			y = spr.draw_start_y;
+			while (y < spr.draw_end_y)
 			{
 				d = (y) * 256 - cub->map.height * 128 + spr.height * 128;
 				spr.texture_y = ((d * tex.height) / spr.height) / 256;
-				spr.color = tex.ptr[tex.width * spr.texture_y + spr.texture_x];// Obtieen el color actual de la textura
+				spr.color = tex.addr[tex.width * spr.texture_y + spr.texture_x];// Obtieen el color actual de la textura
 				if ((spr.color & 0x00FFFFFF) != 0)
 					set_pixel(cub, cub->map.width * y * stripe, spr.color);
+				y++;
 			}
 		}
+		stripe++;
 	}
 }
 
@@ -108,11 +117,14 @@ void	draw_sprites(t_cub3d *cub)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	sort_sprites(cub);
-	i = -1;
-	while (++i < cub->sprt.count_sprites)
+	while (i < cub->count_sprites)
+	{
 		draw_sprite(cub, init_sprite(cub, cub->sprites[i]));
+//		ft_printf("churra %i %i \n", cub->count_sprites, i);
+		i++;
+	}
 }
 
 
@@ -124,7 +136,7 @@ void		set_sprites(t_cub3d *cub)
 	size_t			i;
 
 	cub->zbuffer = malloc(sizeof(double) * cub->map.width);
-	cub->sprites = malloc(sizeof(t_sprite) * cub->sprt.count_sprites);
+	cub->sprites = malloc(sizeof(t_sprite) * cub->count_sprites);
 	y = -1;
 	i = -1;
 	while (cub->plan.plan[y++])

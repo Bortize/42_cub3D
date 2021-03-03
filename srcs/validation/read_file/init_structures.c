@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 15:12:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:42:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	init_window(t_cub3d *cub)
 void	init_sprites(t_cub3d *cub)
 {
 	cub->sprites = NULL;
-	cub->sprt.count_sprites = 0;
+	cub->count_sprites = 0;
 }
 
 void	init_structures(t_cub3d *cub)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 20:55:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 12:18:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	assigning_plane_values(t_cub3d *cub)
 	{
 		while (cub->plan.plan_tmp[++i] != NULL)
 			ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan_tmp[i]);
-	};
+	}
 	find_sprites(cub);// localiza la posicion de los sprites antes de que sea elimianda
 	free(cub->plan.one_line_plan);
 	free(cub->plan.plan_tmp);
