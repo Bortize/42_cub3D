@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 13:27:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/03 19:47:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,6 +241,7 @@ int	raycasting(t_cub3d *cub)
 		draw_sprites(cub);
 		x++;
 	}
+//	draw_sprites(cub);
 	mlx_put_image_to_window(cub->graphic.mlx, cub->graphic.mlx_win, cub->graphic.img, 0, 0);
 //	if (handle_events(keycode, cub) != 0)
 //		return (-1);

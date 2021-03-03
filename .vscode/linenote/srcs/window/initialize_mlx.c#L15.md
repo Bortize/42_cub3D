@@ -7,6 +7,7 @@ void	initialize_mlx(t_cub3d *cub)
 	if (!(cub->graphic.mlx = mlx_init()))
 		print_error("Fallo al iniciar MLX");
 	load_textures(cub);
+	load_textures_sprite(cub);
 	cub->graphic.mlx_win = mlx_new_window(cub->graphic.mlx, cub->map.width, cub->map.height, "cub3D");
 	cub->graphic.img = mlx_new_image(cub->graphic.mlx, cub->map.width, cub->map.height);
 	cub->graphic.addr = mlx_get_data_addr(cub->graphic.img, &cub->graphic.bpp, &cub->graphic.line_length, &cub->graphic.endian);
@@ -26,7 +27,13 @@ Lo primero que hago es asignar la posicion inicial donde se encontro al jugador 
 
 Ahora llamo a la funcion 'mlx_init' la cual devuelve un puntero que establece la conexión con el motor gráfico. Lo guardare en mi variable "cub->graphic.mlx". Si la conexion falla por cualquier razon no podré iniciar el juego por lo que gestiono el error con un if en caso de que sucediera.
 
-Lo siguiente que hago utilizar las texturas que fueron recogidas en el parseo, para poder tratarlas con las funciones que convierten las texturas en imagenes en el juego. Lo que hago es utilizar la función 'mlx_xpm_file_to_image' para convertir un archivo de extensión .xpm en una nueva instancia de la imagen. Lo segundo utilizar la función 'mlx_get_data_addr' para poder dibujar cada pixel de la ventana en el color que le corresponde.
+```c
+load_textures(cub);
+load_textures_sprite(cub);
+```
+Lo siguiente que hago utilizar las texturas que fueron recogidas en el parseo, para poder tratarlas con las funciones que convierten las texturas en imagenes en el juego. Lo que hago es utilizar la función 'mlx_xpm_file_to_image' para convertir un archivo de extensión .xpm en una nueva instancia de la imagen. Lo segundo utilizar la función 'mlx_get_data_addr' para poder dibujar cada pixel de la ventana en el color que le corresponde.<br>
+
+Hago lo mismo para la Textura de los sprites.
 
 
 ***mlx** --> Guarda el identificador que establece la conexion con el motor grafico de la minilibX.

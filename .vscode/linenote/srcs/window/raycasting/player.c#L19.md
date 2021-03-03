@@ -1,1 +1,0 @@
-Esta funcion se utiliza en el condiciional 'if' de la funcion que la llama. En la función 'game' que es la que la llama, es donde compruba si el valor que devuelve la funcion fue cambiado, en ese caso devuelve el valor y entra dentro de la función.
