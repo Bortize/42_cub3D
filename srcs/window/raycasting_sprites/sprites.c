@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 19:46:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 13:26:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		sort_sprites(t_cub3d *cub)
 	while (i < cub->count_sprites)
 	{
 		cub->sprites[i].dist = hypot(cub->sprites[i].x - cub->graphic.player_pos_x,
-		cub->sprites[i].y - cub->graphic.player_pos_y);
+		cub->sprites[i].y - cub->graphic.player_pos_y);// calcula la distancia al jugador de todos los sprites en base a su posicion real
 		i++;
 	}
 	i = 0;
@@ -52,14 +52,17 @@ static void		sort_sprites(t_cub3d *cub)
 */
 static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 {
-	sprite.x = sprite.x - cub->graphic.player_pos_x;
-	sprite.y = sprite.y - cub->graphic.player_pos_y;
+	double	spritex;
+	double	spritey;
+
+	spritex = sprite.x - cub->graphic.player_pos_x;
+	spritey = sprite.y - cub->graphic.player_pos_y;
 	//sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);//matriz inversa de la camara
 	sprite.inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
-	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * sprite.x - cub->graphic.player_dir_x * sprite.y);
-	sprite.transform_y = sprite.inv_det * (cub->graphic.player_plane_y * sprite.x + cub->graphic.player_plane_x * sprite.y);
+	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * spritex - cub->graphic.player_dir_x * spritey);
+	sprite.transform_y = sprite.inv_det * (-cub->graphic.player_plane_y * spritex + cub->graphic.player_plane_x * spritey);
 	sprite.screen_x = (int)((cub->map.width / 2) * (1 + sprite.transform_x / sprite.transform_y));// La profundidad dentro de la pantalla
-	sprite.height = abs((int)(cub->map.height / (sprite.transform_y)));// Calcula la altura del sprite en pantalla
+	sprite.height = abs((int)(cub->map.height / sprite.transform_y));// Calcula la altura del sprite en pantalla
 	// Calcula el pixel mas alto y mas bajo para rellenar la franja atual
 	sprite.draw_start_y = -sprite.height / 2 + cub->map.height / 2;
 	if (sprite.draw_start_y < 0)
@@ -102,7 +105,7 @@ static void		draw_sprite(t_cub3d *cub, t_sprite spr)
 				spr.texture_y = ((d * tex.height) / spr.height) / 256;
 				spr.color = tex.addr[tex.width * spr.texture_y + spr.texture_x];// Obtieen el color actual de la textura
 				if ((spr.color & 0x00FFFFFF) != 0)
-					set_pixel(cub, cub->map.width * y * stripe, spr.color);
+					my_mlx_pixel_put(cub, stripe, y, spr.color);
 				y++;
 			}
 		}

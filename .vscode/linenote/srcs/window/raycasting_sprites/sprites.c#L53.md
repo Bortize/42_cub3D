@@ -1,6 +1,6 @@
 ```c
 sprite.x = sprite.x - cub->graphic.player_pos_x;
-sprite.y = sprite.y - cub->graphic.player_pos_y;
+spritey = spritey - cub->graphic.player_pos_y;
 ```
 Traduce la posición de los sprites a la relativa de la cámara.
 <br/><br/><br/>
@@ -24,8 +24,8 @@ Necesaria para una correcta multiplicacion de las matrices
 <br/><br/><br/>
 
 ```c
-	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * sprite.x - cub->graphic.player_dir_x * sprite.y);
-	sprite.transform_y = sprite.inv_det * (cub->graphic.map_y * sprite.x + cub->graphic.map_x * sprite.y);
+	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * sprite.x - cub->graphic.player_dir_x * spritey);
+	sprite.transform_y = sprite.inv_det * (cub->graphic.map_y * sprite.x + cub->graphic.map_x * spritey);
 ```
 Calcula realmente la profundidad dentro de la pantalla, lo que 'z' es en 3D
 <br/><br/><br/>
