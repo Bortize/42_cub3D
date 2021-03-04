@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 19:47:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 00:19:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 /*
-** Refresca la pantalla para crear la nueva imagen
+** Refresca la pantalla para crear la nueva imagen y aprovecha para pintar
+** el suelo del color que le es pasado por parametro en la funcion my_mlx_
+** pixel_put
 */
 void	refresh_screen(t_cub3d *cub){
 	int x;
@@ -156,28 +158,28 @@ void	calc_wall_height(t_cub3d *cub)
 */
 void	draw_vert_line(t_cub3d *cub, int x)
 {
-	int color;
-	int y;
+//	int color;
+//	int y;
 
-	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x > 0)
-		color = GREEN;
-	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x <= 0)
-		color = YELLOW;
-	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y > 0)
-		color = PURPLE;
-	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y <= 0)
-		color = CIAN;
+//	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x > 0)
+//		color = GREEN;
+//	if (cub->graphic.side == 0 && cub->graphic.ray_dir_x <= 0)
+//		color = YELLOW;
+//	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y > 0)
+//		color = PURPLE;
+//	if (cub->graphic.side == 1 && cub->graphic.ray_dir_y <= 0)
+//		color = CIAN;
 
 //	if (cub->graphic.side == 1)
 //		color = color + 3000;
 
 	draws_sky_floor(cub, x);
-	y = cub->graphic.draw_start;
-	while (y < cub->graphic.draw_end)
-	{
-		my_mlx_pixel_put(cub, x, y, color);
-		y++;
-	}
+//	y = cub->graphic.draw_start;
+//	while (y < cub->graphic.draw_end)
+//	{
+//		my_mlx_pixel_put(cub, x, y, color);
+//		y++;
+//	}
 }
 
 /*
@@ -238,7 +240,7 @@ int	raycasting(t_cub3d *cub)
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		cast_texture(cub);
 		draw_textured_line(cub, x);
-		draw_sprites(cub);
+//		draw_sprites(cub);
 		x++;
 	}
 //	draw_sprites(cub);

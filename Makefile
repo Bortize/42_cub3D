@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/03 15:21:51 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/03 23:27:14 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g3 -Iheaders #-fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -g3 -Iheaders -fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
@@ -93,7 +93,7 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				# Llama al Makefile que esta en la ruta ./printf
 				make -C $(INCLUDE)
 				# Llama al Makefile que esta en la ruta ./minilibx_opengl
-#				make -C $(INCLUDE2)
+				make -C $(INCLUDE2)
 				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
 				# Borra el directorio si existiera. Se hace porque si existe da problemas

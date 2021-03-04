@@ -4,7 +4,7 @@ cub->graphic.camera_x = 2 * x / (double)cub->map.width - 1;|
 |-|
 
 
-`Lo primero que hace es calcular camera_x, que es la coordenadad x en el plano de la camra que represnta la acutal coordenda x de la pantalla. Recordemos que 'x' es el pixel en el que se encuentra el rayo y habra tantos pixels como ancho tenga la ventana porque recordenos que el raycast dibuja en franjas verticales de pixels, no pixel a pixel como lo hace el raytracing`
+`Lo primero que hace es calcular camera_x, que es la coordenadad x en el plano de la cámara que representa la actual coordenda x de la pantalla. Recordemos que 'x' es el pixel en el que se encuentra el rayo y habra tantos pixels como ancho tenga la ventana porque recordenos que el raycast dibuja en franjas verticales de pixels, no pixel a pixel como lo hace el raytracing`
 <br><br><br>
 
 cub->graphic.ray_dir_x = cub->graphic.player_dir_x + cub->graphic.player_plane_x * cub->graphic.camera_x;|
