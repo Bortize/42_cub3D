@@ -1,4 +1,4 @@
-C 100 , 200 , 222
+C 100, 200, 222
 R 1080 720
 NO ./tester/wolftex/textures/xpm/greystone.xpm
 SO ./tester/wolftex/textures/xpm/redbrick.xpm

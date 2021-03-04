@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 00:19:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:07:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,7 +240,7 @@ int	raycasting(t_cub3d *cub)
 		draw_vert_line(cub, x);// Dibuja las franjas de los pixeles de izq a dcha
 		cast_texture(cub);
 		draw_textured_line(cub, x);
-//		draw_sprites(cub);
+		draw_sprites(cub);
 		x++;
 	}
 //	draw_sprites(cub);
