@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 18:06:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:06:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void		sort_sprites(t_cub3d *cub)
 	i = 0;
 	while (i < cub->count_sprites)
 	{
-		cub->sprites[i].dist = hypot(cub->sprites[i].y - cub->graphic.player_pos_y,
-		cub->sprites[i].x - cub->graphic.player_pos_x);// calcula la distancia al jugador de todos los sprites en base a su posicion real
+		cub->sprites[i].dist = ((cub->graphic.player_pos_y - cub->sprites[i].y) * (cub->graphic.player_pos_y - cub->sprites[i].y) +
+		(cub->graphic.player_pos_x - cub->sprites[i].x) * (cub->graphic.player_pos_x - cub->sprites[i].x));// calcula la distancia al jugador de todos los sprites en base a su posicion real
 		i++;
 	}
 	i = 0;
@@ -53,65 +53,64 @@ static void		sort_sprites(t_cub3d *cub)
 /*
 ** Inicializa toda la configuracion del lanzamiento de rayos para los sprites
 */
-static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
+static	void	init_sprite(t_cub3d *cub, t_sprite *sprite)
 {
 	double	spritex;
 	double	spritey;
 
-	spritey = sprite.y - cub->graphic.player_pos_y;
-	spritex = sprite.x - cub->graphic.player_pos_x;
+	spritey = sprite->y - cub->graphic.player_pos_y;
+	spritex = sprite->x - cub->graphic.player_pos_x;
 	//sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);//matriz inversa de la camara
-	sprite.inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
-	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * spritex - cub->graphic.player_dir_x * spritey);
-	sprite.transform_y = sprite.inv_det * (-cub->graphic.player_plane_y * spritex + cub->graphic.player_plane_x * spritey);
-	sprite.screen_x = (int)((cub->map.width / 2) * (1 + sprite.transform_x / sprite.transform_y));// La profundidad dentro de la pantalla
-	sprite.height = abs((int)(cub->map.height / sprite.transform_y));// Calcula la altura del sprite en pantalla
+	sprite->inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
+	sprite->transform_x = sprite->inv_det * (cub->graphic.player_dir_y * spritex - cub->graphic.player_dir_x * spritey);
+	sprite->transform_y = sprite->inv_det * (-cub->graphic.player_plane_y * spritex + cub->graphic.player_plane_x * spritey);
+	sprite->screen_x = (int)((cub->map.width / 2) * (1 + sprite->transform_x / sprite->transform_y));// La profundidad dentro de la pantalla
+	sprite->height = abs((int)(cub->map.height / sprite->transform_y));// Calcula la altura del sprite en pantalla
 	// Calcula el pixel mas alto y mas bajo para rellenar la franja atual
-	sprite.draw_start_y = -sprite.height / 2 + cub->map.height / 2;
-	if (sprite.draw_start_y < 0)
-		sprite.draw_start_y = 0;
-	sprite.draw_end_y = sprite.height / 2 + cub->map.height / 2;
-	if (sprite.draw_end_y >= cub->map.height)
-		sprite.draw_end_y = cub->map.height - 1;
+	sprite->draw_start_y = -sprite->height / 2 + cub->map.height / 2;
+	if (sprite->draw_start_y < 0)
+		sprite->draw_start_y = 0;
+	sprite->draw_end_y = sprite->height / 2 + cub->map.height / 2;
+	if (sprite->draw_end_y >= cub->map.height)
+		sprite->draw_end_y = cub->map.height - 1;
 // Calcula el ancho del sprite
-	sprite.width = abs((int)(cub->map.height / (sprite.transform_y)));
-	sprite.draw_start_x = -sprite.width / 2 + sprite.screen_x;
-	if (sprite.draw_start_x < 0)
-		sprite.draw_start_x = 0;
-	sprite.draw_end_x = sprite.width / 2 + sprite.screen_x;
-	if (sprite.draw_end_x >= cub->map.width)
-		sprite.draw_end_x = cub->map.width - 1;
-	return (sprite);
+	sprite->width = abs((int)(cub->map.height / sprite->transform_y));
+	sprite->draw_start_x = -sprite->width / 2 + sprite->screen_x;
+	if (sprite->draw_start_x < 0)
+		sprite->draw_start_x = 0;
+	sprite->draw_end_x = sprite->width / 2 + sprite->screen_x;
+	if (sprite->draw_end_x >= cub->map.width)
+		sprite->draw_end_x = cub->map.width - 1;
+	//return (sprite);
 }
 
 
-static void		draw_sprite(t_cub3d *cub, t_sprite spr)
+static void		draw_sprite(t_cub3d *cub, t_sprite *spr)
 {
 	int			stripe;// franjas de pixels verticales
 	int			y;
 	int			d;
 	t_texture	tex;
 
-	stripe = spr.draw_start_x;
+	init_sprite(cub, spr);
+	stripe = spr->draw_start_x;
 	tex = cub->sprite;
-	while (stripe < spr.draw_end_x)
+	while (stripe < spr->draw_end_x)
 	{
 //		spr.texture_x = int(256 * (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width);
-		spr.texture_x = (stripe - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width;
+		spr->texture_x = (int)(256 * (stripe - (-spr->width / 2 + spr->screen_x)) * tex.width / spr->width) / 256;
 	//ft_printf("hola %p\n", cub->zbuffer);
-		if (spr.transform_y > 0 && stripe > 0 && stripe < cub->map.width && spr.transform_y < cub->zbuffer[stripe])// zbuffer almacena la distancia perpencicular
-		{
-			y = spr.draw_start_y;
-			while (y < spr.draw_end_y)
+		y = spr->draw_start_y;
+		if (spr->transform_y > 0 && stripe > 0 && stripe < cub->map.width && spr->transform_y < cub->zbuffer[stripe])// zbuffer almacena la distancia perpencicular
+			while (y < spr->draw_end_y)
 			{
-				d = (y) * 256 - cub->map.height * 128 + spr.height * 128;
-				spr.texture_y = ((d * tex.height) / spr.height) / 256;
-				spr.color = tex.addr[tex.width * spr.texture_y + spr.texture_x];// Obtieen el color actual de la textura
-				if ((spr.color & 0x00FFFFFF) != 0)
-					my_mlx_pixel_put(cub, stripe, y, spr.color);
+				d = (y) * 256 - cub->map.height * 128 + spr->height * 128;
+				spr->texture_y = ((d * tex.height) / spr->height) / 256;
+				spr->color = tex.addr[tex.width * spr->texture_y + spr->texture_x];// Obtieen el color actual de la textura
+				if ((spr->color & 0x00FFFFFF) != 0)
+					my_mlx_pixel_put(cub, stripe, y, spr->color);
 				y++;
 			}
-		}
 		stripe++;
 	}
 }
@@ -127,7 +126,7 @@ void	draw_sprites(t_cub3d *cub)
 	sort_sprites(cub);
 	while (i < cub->count_sprites)
 	{
-		draw_sprite(cub, init_sprite(cub, cub->sprites[i]));
+		draw_sprite(cub, &cub->sprites[i]);// hay que utilizar punteros para no copiar la misma estrucutra cada vez que quieras hacer los calcullos de un sprite
 //		ft_printf("churra %i %i \n", cub->count_sprites, i);
 		i++;
 	}
