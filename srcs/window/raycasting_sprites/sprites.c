@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 19:06:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:32:51 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 static void		sort_sprites(t_cub3d *cub)
 {
 	int			i;
-//	int			k;
-//	t_sprite	tmp;
+	int			k;
+	t_sprite	tmp;
 
 	if (cub->count_sprites == 0)
 		return ;
@@ -30,26 +30,21 @@ static void		sort_sprites(t_cub3d *cub)
 		i++;
 	}
 	i = 0;
+ 	while (i < cub->count_sprites)
+ 	{
+ 		k = i;
+ 		while (++k < cub->count_sprites)
+ 		{
+ 			if (cub->sprites[i].dist < cub->sprites[k].dist)
+ 			{
+ 				tmp = cub->sprites[i];
+ 				cub->sprites[i] = cub->sprites[k];
+ 				cub->sprites[i] = tmp;
+ 			}
+ 		}
+ 		i++;
+ 	}
 }
-/*
-** 	while (i < cub->count_sprites)
-** 	{
-** 		k = i;
-** 		while (++k < cub->count_sprites)
-** 		{
-** 			if (cub->sprites[i].dist < cub->sprites[k].dist)
-** 			{
-** 				tmp = cub->sprites[i];
-** 				cub->sprites[i] = cub->sprites[k];
-** 				cub->sprites[i] = tmp;
-** 			}
-** 		}
-** 		i++;
-** 	}
-**
-*/
-
-
 /*
 ** Inicializa toda la configuracion del lanzamiento de rayos para los sprites
 */
@@ -90,23 +85,23 @@ static void		draw_sprite(t_cub3d *cub, t_sprite *spr)
 	int			stripe;// franjas de pixels verticales
 	int			y;
 	int			d;
-	t_texture	tex;
+	t_texture	*tex;
 
 	init_sprite(cub, spr);
 	stripe = spr->draw_start_x;
-	tex = cub->sprite;
+	tex = &cub->sprite;
 	while (stripe < spr->draw_end_x)
 	{
 //		spr.texture_x = int(256 * (x - (-spr.width / 2 + spr.screen_x)) * tex.width / spr.width);
-		spr->texture_x = (int)(256 * (stripe - (-spr->width / 2 + spr->screen_x)) * tex.width / spr->width) / 256;
+		spr->texture_x = (int)(256 * (stripe - (-spr->width / 2 + spr->screen_x)) * tex->width / spr->width) / 256;
 	//ft_printf("hola %p\n", cub->zbuffer);
 		y = spr->draw_start_y;
 		if (spr->transform_y > 0 && stripe > 0 && stripe < cub->map.width && spr->transform_y < cub->zbuffer[stripe])// zbuffer almacena la distancia perpencicular
 			while (y < spr->draw_end_y)
 			{
-				d = (y) * 256 - cub->map.height * 128 + spr->height * 128;
-				spr->texture_y = ((d * tex.height) / spr->height) / 256;
-				spr->color = tex.addr[tex.width * spr->texture_y + spr->texture_x];// Obtieen el color actual de la textura
+				d = y * 256 - cub->map.height * 128 + spr->height * 128;
+				spr->texture_y = ((d * tex->height) / spr->height) / 256;
+				spr->color = tex->addr[tex->width * spr->texture_y + spr->texture_x];// Obtieen el color actual de la textura
 				if ((spr->color & 0x00FFFFFF) != 0)
 					my_mlx_pixel_put(cub, stripe, y, spr->color);
 				y++;
