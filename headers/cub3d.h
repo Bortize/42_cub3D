@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 15:41:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 00:08:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ typedef struct	s_identifiers
 	char		**tabcf;
 	int			flag_map_ready;
 }				t_identifiers;//map
-
 typedef	struct	s_map
 {
 	int			i;//
@@ -72,144 +71,56 @@ typedef	struct	s_map
 	char		sprite_value;//				Valor del sprite que tendremos en cuenta al uilizar el algoritmo por inundacion '2'
 }				t_map;//plan
 
-typedef struct	s_image
-{
-	void		*img_text;//		Guarda la instancia de la imagen creada por la funcion mlx_xpm_file_to_image();
-//	int			*addr_text;
-	int			width_text;//
-	int			height_text;//
-	int			bpp;//				Bites por pixel
-	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
-	int 		*addr;//			Dirección a la imagen que se genera.
-	int			size_line;
-}				t_image;
 
-typedef struct	s_window
-{
-	void		*mlx;//				Puntero al motor gráfico
-	void		*mlx_win;//			Puntero a la ventana
-	void		*img;//				Puntero a la imagen "frame" que se genera en cada loop
-	char 		*addr;//			Dirección a la imagen que se genera.
-	int			bpp;//
-	int			line_length;//		Longitud del vector del plano de la camara?
-	int			endian;//			Manera en la que se representan los bites dependiendo del sistema
-	double		player_pos_x;//		El vector de posicion del jugador.
-	double		player_pos_y;//		El vector de posicion del jugador.
-	double		player_dir_x;//		La direccion del jugador.
-	double		player_dir_y;//		La direccion del jugador.
-	double		player_plane_x;//	Plano de la camara del jugador.
-	double		player_plane_y;//	Plano de la camara del jugador.
-	double		step_x;//			Dirección en la que el jugador tiene que anvanzar.
-	double		step_y;//			Dirección en la que el jugador tiene que avanzar.
-	double		ray_dir_x;//		Direccion del pixel del plano de la camara
-	double		ray_dir_y;//		Direccion del pixel del plano de la camara
-	double		camera_x;//			Coordenada 'x' en el plano de la camara que representa la actual coordenada 'x' de la pantalla
-	int			map_x;//			Cuadrado actual del mapa donde se encuentra el rayo.
-	int			map_y;//			Cuadrado actual del mapa donde se encuentra el rayo.
-	double		side_dist_x;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'x'
-	double		side_dist_y;//		Distancia que el rayo tiene que recorrer desde su posicion inicial hasta el primer lado de 'y'
-	double		delta_dist_x;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
-	double		delta_dist_y;//		Distancia que el rayo tiene que recorrer de 1 lado x al siguiente lado x.
-	int			side;//				Checkea que lado del muro se encuentra el rayo, si en el x o en el y
-	int			hit;//				Checkea cuando el rayo ha impactado en el muro
-	double		perp_wall_dist;//	Distancia perpendicular desde el punto de impacto de la pared al plano de la camara en vez de al jugador.
-	int			draw_start;//
-	int			draw_end;//
-	int			line_height;//		La altura de la linea que tiene que dibujar
-	int			wall_direction;//
-	t_image		ray_texture;
-	int			texture_x;
-	double		texture_step;
-	double		texture_pos;
-}				t_window;//graphic
+
 /*
-** Variables que controlan toda la parte de controles del juego
+** Inicia todo lo necesario para que la mlx carge
+** y funcione correctamente
 */
-typedef struct	s_controls
+typedef struct s_mlx
 {
-	int			forward;
-	int			backward;
-	int			right;
-	int 		left;
-	int			rotating_left;
-	int			rotating_right;
-	int			escape;
-	int			frontal;// controla el avance del jugador tanto frntal como de forma trasera
-	int			lateral;// controla el avance del jugador tanto hacía la izquierda como la derecha
-	int			rotating;
-}				t_controls;//move
+	void	*init;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+}							t_mlx;
 
-typedef struct		s_texture
-{
-	char			*path;
-	int 			*addr;//			Dirección a la imagen que se genera.
-	void			*texture;//Guarda la instancia de la imagen creada por la funcion mlx_xpm_file_to_image();
-	char			*ext;
-	int				start_x;
-	int				start_y;
-	int				end_x;
-	int				end_y;
-	int				width;
-	int				height;
-	int				size_l;
-	int				bpp;
-	int				endian;
-}					t_texture;
+
 /*
-** Se utiliza en toda la parte de las texturas
+** Controles que afectan a la ventan y al juego
 */
-typedef struct s_sprite
+typedef struct s_controls
 {
-	int		i;// contador de sprites
-	double	x;// vector 'x' donde se encuentra el sprite
-	double	y;// vector 'y' donde se encuentra el sprite
-	double	dist;//
-	double	inv_det;//
-	double	transform_x;//
-	double	transform_y;//
-	int		screen_x;
-	int		height;
-	int		width;
-	int		color;
-	int		v_move_screen;
-	int		draw_start_y;
-	int		draw_end_y;
-	int		draw_start_x;
-	int		draw_end_x;
-	int		texture_x;
-	int		texture_y;
-	int		start_x;
-	int		start_y;
-	int		end_x;
-	int		end_y;
-	double		*pos_sprite;//			Guarda la posicon de los sprites en una matriz
-}				t_sprite;//sprite
+	int	esc;
+	int	forward;
+	int	sideways;
+	int	rotate;
+}							t_controls;
 
-typedef struct	s_sprites
-{
-	t_sprite *sprite;// string de sprites
-}				t_sprites;
+
+
+
+
+
+
+
+
+
+
 
 
 typedef struct	s_cub3d
 {
-	double			*zbuffer;
+	double				*zbuffer;
 	t_identifiers	map;
-	t_map			plan;
-	t_window		graphic;
-	t_controls		move;
-	t_image			win;
-	t_image			text[4];// hace refencia a las texturas n,s,e,o. (t_image y t_texture con casi identicas, solo que t_texture abarca mas variables)
-	t_texture		sprite;// incluye todas las variables para poder pintar las texturas. En este caso crea una nueva instancia para un sprite
-//t_image			no_text;
-//t_image			so_text;
-//t_image			ea_text;
-//t_image			we_text;
-//	t_sprite		sprt;// structura que incluye todas las variables que afectan a un sprite
-	t_sprite		*sprites;// arry de sprites. Donde se almacenan todos los sprites
-	int				count_sprites;
-	int					flag_malloc_sprites;
-}				t_cub3d;
+	t_map					plan;
+	t_mlx					mlx;
+	t_controls		ctrl;
+	t_image				text[4];// hace refencia a las texturas n,s,e,o. (t_image y t_texture con casi identicas, solo que t_texture abarca mas variables)
+}								t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
 int		file_validation(char *str);
@@ -242,32 +153,15 @@ void	check_characters_plane(char *str, t_cub3d *cub);
 void	check_allowed_values(char *str, t_cub3d *cub);
 void	assigning_plane_values(t_cub3d *cub);
 int		boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
-int		player_start_position(char *str, t_cub3d *cub);
-char	put_pixel(int x, int y, t_cub3d *cub);
-void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
-int		keypress(int keycode, t_cub3d *cub);
-void	draws_sky_floor(t_cub3d *cub, int x);
-int		raycasting(t_cub3d *cub);
-void	initial_calc(t_cub3d *cub, int x);
-void	perform_dda(t_cub3d *cub);
-void	calc_wall_height(t_cub3d *cub);
-void	draw_vert_line(t_cub3d *cub, int x);
-void	rotation(t_cub3d *cub);
-void	movement(t_cub3d *cub);
-void	init_window(t_cub3d *cub);
-int		key_press(int keycode, t_cub3d *cub);
-int		key_release(int keycode, t_cub3d *cub);
-int		game(t_cub3d *cub);
-void	flags_key(int keycode, t_cub3d *cub);
-int		if_moving(t_cub3d *cub);
-int		if_rotating(t_cub3d *cub);
-//int		convert_colour(t_cub3d *cub);
-void	set_pixel(t_cub3d *cub, size_t pixel, int color);
+void	graphic(t_cub3d *cub);
+void	start_mlx(t_cub3d *cub);
 void	load_textures(t_cub3d *cub);
-t_image	raycast_texture(t_cub3d *cub);
-void	where_player_look(t_cub3d *cub, char c);
-void	draw_sprites(t_cub3d *cub);
-void	find_sprites(t_cub3d *cub);
-void	load_textures_sprite(t_cub3d *cub);
+void	load_wall_texture(t_cub3d *cub);
+void	load_sprite_texture(t_cub3d *cub);
+void	key_press(int keycode, t_cub3d *cub);
+void	key_release(int keycode, t_cub3d *cub);
+int		moving(t_cub3d *cub);
+int		rotating(t_cub3d *cub);
+
 
 #endif

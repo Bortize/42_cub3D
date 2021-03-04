@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/04 18:58:06 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/05 00:04:35 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ NAME		= cub3D
 #########################	Function Files	####################################
 
 SRCS		=	srcs/main.c \
-				srcs/window/initialize_mlx.c \
 				srcs/error/print_error.c \
 				srcs/validation/read_file/file_reading.c \
 				srcs/validation/read_file/init_structures.c \
@@ -51,27 +50,20 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/player_start_position.c \
 				srcs/validation/map/where_player_look.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
-				srcs/validation/map/boundary_validation/put_pixel.c \
-				srcs/window/my_mlx_pixel_put.c \
-				srcs/window/raycasting/draws_sky_floor.c \
-				srcs/window/keypress.c \
-				srcs/window/raycasting/raycasting.c \
-				srcs/window/raycasting/movement.c \
-				srcs/window/raycasting/controls.c \
-				srcs/window/raycasting/rotation.c \
-				srcs/window/raycasting/player.c \
-				srcs/window/raycasting_sprites/sprites.c \
-				srcs/window/raycasting_sprites/find_sprites.c \
-				srcs/window/raycasting_sprites/load_texture_sprite.c \
+				srcs/window/graphic.c \
+				srcs/window/start_mlx.c \
 				srcs/window/load_textures.c \
-				srcs/window/raycasting/game.c
+				srcs/window/load_wall_texture.c \
+				srcs/window/load_sprite_texture.c \
+				srcs/window/controls.c \
+				srcs/window/player_movement.c \
 
 
 ############################	Variables	####################################
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -Iheaders -O3 #-g3 -fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -Iheaders -O3 -g3 -fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 

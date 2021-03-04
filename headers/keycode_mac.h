@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycode_mac.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/19 20:33:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 23:19:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@
 # define KEY_SPACEBAR		49
 # define KEY_TILDE			50
 # define KEY_BACKSPACE		51
-# define KEY_ESCAPE			53
+# define KEY_ESC					53
 # define KEY_F17			64
 # define KEY_PAD_DOT		65
 # define KEY_PAD_MULTIPLY	67

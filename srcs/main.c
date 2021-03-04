@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 00:04:22 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:51:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc < 2)
 		print_error("Eres un estupido, no vales ni para meter un fichero");
-	initialize_mlx(&cub);
+	graphic(&cub);
 	ft_printf("\n \n 🚧 L E A K S 🚧 \n \n");
 	system("leaks -fullContent cub3D");
 	return (0);

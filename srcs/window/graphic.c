@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_textures.c                                    :+:      :+:    :+:   */
+/*   graphic.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 22:00:27 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 22:06:23 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/04 21:44:45 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/04 23:56:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	load_textures(t_cub3d *cub)
+void	graphic(t_cub3d *cub)
 {
-	load_sprite_texture(cub);
-	load_sprite_texture(cub);
+	start_mlx(&cub);
+	load_textures(cub);
+	mlx_do_key_autorepeatoff(cub->mlx.init);
+	mlx_hook(cub->mlx.win, KEYPRESS, 0, key_press, cub);
+	mlx_hook(cub->mlx.win, KEYRELEASE, 0, key_release, cub);
+	mlx_loop_hook(cub->mlx.init, game, cub);
 }
