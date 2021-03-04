@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 20:35:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 14:25:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 14:27:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	find_sprites(t_cub3d *cub)
 	i = 0;
 	x = 0;
 	s = 0;
+	y = 0;
 	//cub->sprites = malloc(sizeof(t_sprite) * cub->count_sprites);
 	//cub->sprites[cub->count_sprites];
 	cub->sprites = malloc(sizeof(t_sprite) * cub->count_sprites);
@@ -39,7 +40,7 @@ void	find_sprites(t_cub3d *cub)
 		}
 		if (cub->plan.one_line_plan[i] == '2')
 		{
-			cub->sprites[s].y = y + 0.5;// asigno el vector y que he encontrado
+			cub->sprites[s].y = y - 0.5;// asigno el vector y que he encontrado
 			cub->sprites[s].x = x + 0.5;// asigno el vector x que he encontrado
 			printf("El sprite %i se encontro en %f %f \n", s, cub->sprites[s].x, cub->sprites[s].y);
 			s++;// avanzo una posicion el contador

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 14:25:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 13:51:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 void	check_values_allowed(char *str, t_cub3d *cub)
 {
 	cub->plan.i = 0;
-
 	while (str[cub->plan.i] != '\0')
 	{
 		if ((str[cub->plan.i] == '0') || (str[cub->plan.i] == '1') || (str[cub->plan.i] == '2')

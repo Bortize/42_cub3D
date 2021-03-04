@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_mlx_pixel_put.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 13:40:03 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 00:16:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 17:37:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ** Dibuja todos los pixels en el buffer para que tengas tu frame listo para
 ** ser enviado a la ventana
 */
-void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color)
+inline void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color)
 {
 	char	*dst;
 

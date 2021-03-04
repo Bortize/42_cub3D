@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_mlx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 19:13:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 23:37:29 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 18:01:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	initialize_mlx(t_cub3d *cub)
 {
-	cub->graphic.player_pos_x = cub->plan.player_init_position_y;
-	cub->graphic.player_pos_y = cub->plan.player_init_position_x;
+	cub->graphic.player_pos_x = cub->plan.player_init_position_x;
+	cub->graphic.player_pos_y = cub->plan.player_init_position_y;
 	if (!(cub->graphic.mlx = mlx_init()))
 		print_error("Fallo al iniciar MLX");
 	load_textures(cub);

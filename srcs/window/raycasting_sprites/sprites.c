@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:15:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 13:26:52 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/04 18:06:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,37 @@
 static void		sort_sprites(t_cub3d *cub)
 {
 	int			i;
-	int			k;
-	t_sprite	tmp;
+//	int			k;
+//	t_sprite	tmp;
 
 	if (cub->count_sprites == 0)
 		return ;
 	i = 0;
 	while (i < cub->count_sprites)
 	{
-		cub->sprites[i].dist = hypot(cub->sprites[i].x - cub->graphic.player_pos_x,
-		cub->sprites[i].y - cub->graphic.player_pos_y);// calcula la distancia al jugador de todos los sprites en base a su posicion real
+		cub->sprites[i].dist = hypot(cub->sprites[i].y - cub->graphic.player_pos_y,
+		cub->sprites[i].x - cub->graphic.player_pos_x);// calcula la distancia al jugador de todos los sprites en base a su posicion real
 		i++;
 	}
 	i = 0;
-	while (i < cub->count_sprites)
-	{
-		k = i;
-		while (++k < cub->count_sprites)
-		{
-			if (cub->sprites[i].dist < cub->sprites[k].dist)
-			{
-				tmp = cub->sprites[i];
-				cub->sprites[i] = cub->sprites[k];
-				cub->sprites[i] = tmp;
-			}
-		}
-		i++;
-	}
 }
+/*
+** 	while (i < cub->count_sprites)
+** 	{
+** 		k = i;
+** 		while (++k < cub->count_sprites)
+** 		{
+** 			if (cub->sprites[i].dist < cub->sprites[k].dist)
+** 			{
+** 				tmp = cub->sprites[i];
+** 				cub->sprites[i] = cub->sprites[k];
+** 				cub->sprites[i] = tmp;
+** 			}
+** 		}
+** 		i++;
+** 	}
+**
+*/
 
 
 /*
@@ -55,8 +58,8 @@ static	t_sprite	init_sprite(t_cub3d *cub, t_sprite sprite)
 	double	spritex;
 	double	spritey;
 
-	spritex = sprite.x - cub->graphic.player_pos_x;
 	spritey = sprite.y - cub->graphic.player_pos_y;
+	spritex = sprite.x - cub->graphic.player_pos_x;
 	//sprite.inv_det = 1.0 / (cub->graphic.map_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.map_y);//matriz inversa de la camara
 	sprite.inv_det = 1.0 / (cub->graphic.player_plane_x * cub->graphic.player_dir_y - cub->graphic.player_dir_x * cub->graphic.player_plane_y);
 	sprite.transform_x = sprite.inv_det * (cub->graphic.player_dir_y * spritex - cub->graphic.player_dir_x * spritey);
