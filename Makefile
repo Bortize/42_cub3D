@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/05 00:04:35 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/05 14:06:01 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,8 @@ SRCS		=	srcs/main.c \
 				srcs/window/load_sprite_texture.c \
 				srcs/window/controls.c \
 				srcs/window/player_movement.c \
+				srcs/window/raycast.c \
+				srcs/window/game.c
 
 
 ############################	Variables	####################################

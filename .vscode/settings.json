@@ -10,6 +10,7 @@
 		"array": "c",
 		"string_view": "c",
 		"vector": "c",
-		"string": "c"
+		"string": "c",
+		"iosfwd": "c"
 	}
 }

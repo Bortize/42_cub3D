@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 15:41:51 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 13:21:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,73 @@ void	init_map(t_cub3d *cub)
 	cub->plan.player_init_position_y = 0;
 }
 
-void	init_window(t_cub3d *cub)
+static void	init_player(t_cub3d *cub)
 {
-	cub->graphic.player_pos_x = 0;
-	cub->graphic.player_pos_y = 0;
-	//cub->graphic.line_height = ;
-	cub->move.frontal = 0;// flag movimiento frontal y trasero del jugador.
-	cub->move.lateral = 0;// flag moviemto lateral del jugador
-	cub->move.rotating = 0;// flag rotación
+	cub->p.posx = 0;
+	cub->p.posy = 0;
+	cub->p.dirx = 0;
+	cub->p.diry = 0;
+	cub->p.planex = 0;
+	cub->p.planey = 0;
 }
 
-void	init_sprites(t_cub3d *cub)
+static void	init_raycast(t_cub3d *cub)
 {
-	cub->sprites = NULL;
-	cub->count_sprites = 0;
+	cub->rcast.x = 0;
+	cub->rcast.camerax = 0;
+	cub->rcast.raydirx  = 0;
+	cub->rcast.raydiry = 0;
+	cub->rcast.mapx = 0;
+	cub->rcast.mapy = 0;
+	cub->rcast.sidedistx = 0;
+	cub->rcast.sidedisty = 0;
+	cub->rcast.deltadistx = 0;
+	cub->rcast.deltadisty = 0;
+	cub->rcast.perpwalldist = 0;
+	cub->rcast.stepx = 0;
+	cub->rcast.stepy = 0;
+	cub->rcast.hit = 0;
+	cub->rcast.side = 0;
+	cub->rcast.wallx = 0;
+	cub->rcast.texnum = 0;
 }
+
+static void	init_window(t_cub3d *cub)
+{
+	cub->win.lineheight = 0;
+	cub->win.drawstart = 0;
+	cub->win.drawend = 0;
+}
+
+static void	init_texture(t_cub3d *cub)
+{
+	int i;
+
+	i = 0;
+	while (i < 5)
+	{
+		cub->tex[i].img_tex = 0;
+		cub->tex[i].bpp = 0;
+		cub->tex[i].endian = 0;
+		cub->tex[i].size_line = 0;
+		cub->tex[i].x = 0;
+		cub->tex[i].y = 0;
+		cub->tex[i].height = 0;
+		cub->tex[i].width = 0;
+		cub->tex[i].step = 0;
+		cub->tex[i].pos = 0;
+		i++;
+	}
+}
+
 
 void	init_structures(t_cub3d *cub)
 {
 	init_identifiers(cub);
 	init_map(cub);
+	init_raycast(cub);
+	init_player(cub);
 	init_window(cub);
-	init_sprites(cub);
-	cub->flag_malloc_sprites = 0;
+	init_texture(cub);
 }
 
