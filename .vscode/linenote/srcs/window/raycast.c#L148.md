@@ -1,0 +1,1 @@
+Elimina el ultimo pixel de cada byte para dar un tono mas oscuro y crear el sombreado. Introduce el valor en formato decimal pero internametn se transforma en binario. Puedes hacer la prueba con una calculadora conversora.

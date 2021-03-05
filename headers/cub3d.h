@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 21:02:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 23:41:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,7 @@ void	move_forward(t_cub3d *cub);
 void	move_sideways(t_cub3d *cub);
 void	rotation(t_cub3d *cub);
 void	refresh_screen(t_cub3d *cub);
+void	draws_sky_floor(t_cub3d *cub, int x);
 
 
 #endif
