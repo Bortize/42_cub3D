@@ -17,6 +17,7 @@ void	start_mlx(t_cub3d *cub)
 {
 	if (!(cub->mlx.init = mlx_init()))
 		print_error("Fallo al iniciar MLX");
+	ft_printf("resolution %i %i\n", cub->map.width, cub->map.height);
 	cub->mlx.win = mlx_new_window(cub->mlx.init, cub->map.width,
 		cub->map.height, "cub3D");
 	cub->mlx.img = mlx_new_image(cub->mlx.init, cub->map.width, cub->map.height);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 14:58:58 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 21:02:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,31 +140,34 @@ typedef struct	s_window
 
 typedef struct	s_texture
 {
-	void					*img_tex;// Puntero a la imagen que se genera en mlx_xpm_file_to_image
-	int						*addr;// Dirección a la imagen que se genera.
-	int						bpp;// Bites por pixel
-	int						endian;// Manera en la que se representan los bites dependiendo del sistema
-	int						size_line;
-	int						x;// Coordenada x en la textura
-	int						y;// Coordenada y en la textura
-	double				height;// Ancho de la textura
-	double				width;// Alto de la textura
+	void				*img_tex;// Puntero a la imagen que se genera en mlx_xpm_file_to_image
+	int					*addr;// Dirección a la imagen que se genera.
+	int					bpp;// Bites por pixel
+	int					endian;// Manera en la que se representan los bites dependiendo del sistema
+	int					size_line;
+	int					width;// Alto de la textura
+	int					height;// Ancho de la textura
+}								t_texture;
+
+typedef struct s_raycalc
+{
 	double				step;// Cuanto hay que aumentar la coordenada de la textura por pixel de la pantalla
 	double				pos;// Coordenada inicial de la textura
-	unsigned int	color;
-}								t_texture;
+	int					x;// Coordenada x en la textura/
+	int		 			y;// Coordenada y en la textura
+}								t_raycalc;
 
 typedef struct	s_cub3d
 {
-	double				*zbuffer;
-	t_parse				map;// Parseo del juego
-	t_map					plan;// Plano del juego
-	t_mlx					mlx;// Configuracion mlx
+	double			*zbuffer;
+	t_parse			map;// Parseo del juego
+	t_map			plan;// Plano del juego
+	t_mlx			mlx;// Configuracion mlx
 	t_controls		ctrl;// Controloes del juego
-	t_raycast			rcast;// Raycast
-	t_player			p;// Jugador
-	t_window			win;// Ventana
-	t_texture			tex[4];// Array de configuracion de texturas para los muros y sprite
+	t_raycast		rcast;// Raycast
+	t_player		p;// Jugador
+	t_window		win;// Ventana
+	t_texture		tex[4];// Array de configuracion de texturas para los muros y sprite
 
 //	t_image				text[4];// hace refencia a las texturas n,s,e,o. (t_image y t_texture con casi identicas, solo que t_texture abarca mas variables)
 }								t_cub3d;
@@ -200,17 +203,31 @@ void	check_characters_plane(char *str, t_cub3d *cub);
 void	check_allowed_values(char *str, t_cub3d *cub);
 void	assigning_plane_values(t_cub3d *cub);
 int		boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
+char	put_pixel(int x, int y, t_cub3d *cub);
 void	graphic(t_cub3d *cub);
 void	start_mlx(t_cub3d *cub);
 void	load_textures(t_cub3d *cub);
 void	load_wall_texture(t_cub3d *cub);
 void	load_sprite_texture(t_cub3d *cub);
-void	key_press(int keycode, t_cub3d *cub);
-void	key_release(int keycode, t_cub3d *cub);
+int		key_press(int keycode, t_cub3d *cub);
+int		key_release(int keycode, t_cub3d *cub);
 int		moving(t_cub3d *cub);
 int		rotating(t_cub3d *cub);
-int		raycast(t_cub3d *cub);
+void	raycast(t_cub3d *cub, int col);
+void	raycast_init(t_cub3d *cub);
 int		game(t_cub3d *cub);
+void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color);
+void	set_plan_position(t_cub3d *cub, double x, double y);
+void 	move_forward(t_cub3d *cub);
+void	move_sideways(t_cub3d *cub);
+int		player_start_position(char *str, t_cub3d *cub);
+void	where_player_look(t_cub3d *cub, char c);
+void	movement(t_cub3d *cub);
+void	set_plan_position(t_cub3d *cub, double x, double y);
+void	move_forward(t_cub3d *cub);
+void	move_sideways(t_cub3d *cub);
+void	rotation(t_cub3d *cub);
+void	refresh_screen(t_cub3d *cub);
 
 
 #endif

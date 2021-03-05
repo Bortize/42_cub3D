@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/05 14:06:01 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/05 21:37:12 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,16 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/player_start_position.c \
 				srcs/validation/map/where_player_look.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
+				srcs/validation/map/boundary_validation/put_pixel.c \
 				srcs/window/graphic.c \
 				srcs/window/start_mlx.c \
 				srcs/window/load_textures.c \
 				srcs/window/load_wall_texture.c \
 				srcs/window/load_sprite_texture.c \
 				srcs/window/controls.c \
+				srcs/window/movement.c \
+				srcs/window/my_mlx_pixel_put.c \
+				srcs/window/rotation.c \
 				srcs/window/player_movement.c \
 				srcs/window/raycast.c \
 				srcs/window/game.c
@@ -65,7 +69,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -Iheaders -O3 -g3 -fsanitize=address -w
+CFLAGS		= -Wall -Wextra -Werror -Iheaders -O3 -g3 #-fsanitize=address -w
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 

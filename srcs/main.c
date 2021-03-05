@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/04 21:51:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 19:00:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@
 */
 int	main(int argc, char **argv)
 {
-	t_cub3d	cub;
+	t_cub3d	*cub;
 	int fd;
+
+	cub = malloc(sizeof(t_cub3d));
 
 	if (argc == 3)
 		ft_printf("Tienes que guardar la caputra de la pantalla");
-	init_structures(&cub);
+	init_structures(cub);
 	if (argc > 2)
 		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
 	//	init_plan_values(&cub);
@@ -33,11 +35,11 @@ int	main(int argc, char **argv)
 	{
 		ft_printf("Mapa introducido --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
-		file_reading(fd, &cub);
+		file_reading(fd, cub);
 	}
 	else if (argc < 2)
 		print_error("Eres un estupido, no vales ni para meter un fichero");
-	graphic(&cub);
+	graphic(cub);
 	ft_printf("\n \n 🚧 L E A K S 🚧 \n \n");
 	system("leaks -fullContent cub3D");
 	return (0);

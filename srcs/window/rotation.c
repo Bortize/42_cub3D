@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotation.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:51:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 14:05:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 21:23:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	rotation(t_cub3d *cub)
 	cub->p.diry = oldDirX * sin(rot_speed) + cub->p.diry * cos(rot_speed);
 
 	oldPlaneX = cub->p.planex;
-	cub->p.planex = cub->p.planex * cos(rot_speed) - cub->p.diry * sin(rot_speed);
-	cub->p.diry  = oldPlaneX * sin(rot_speed) + cub->p.diry  * cos(rot_speed);
+	cub->p.planex = cub->p.planex * cos(rot_speed) - cub->p.planey * sin(rot_speed);
+	cub->p.planey  = oldPlaneX * sin(rot_speed) + cub->p.planey  * cos(rot_speed);
 }

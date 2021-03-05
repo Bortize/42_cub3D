@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 13:21:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/05 20:42:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 **	empezar a trabajar con ellas. Ademas elimina el valor basuara que pudieran
 **	contener a la hora de su declaración
 */
+/*
 void	init_identifiers(t_cub3d *cub)
 {
 	cub->map.i = 0;
@@ -51,6 +52,17 @@ void	init_map(t_cub3d *cub)
 	cub->plan.sprite_value = '2';
 	cub->plan.player_init_position_x = 0;//	Vector de posicion del jugador x (inicial)
 	cub->plan.player_init_position_y = 0;
+}
+
+static void	init_mlx(t_cub3d *cub)
+{
+	cub->mlx.init = 0;
+	cub->mlx.win = 0;
+	cub->mlx.img = 0;
+	cub->mlx.addr = 0;
+	cub->mlx.bpp = 0;
+	cub->mlx.line_len = 0;
+	cub->mlx.endian = 0;
 }
 
 static void	init_player(t_cub3d *cub)
@@ -96,30 +108,27 @@ static void	init_texture(t_cub3d *cub)
 	int i;
 
 	i = 0;
-	while (i < 5)
+	while (i < 4)
 	{
-		cub->tex[i].img_tex = 0;
-		cub->tex[i].bpp = 0;
-		cub->tex[i].endian = 0;
-		cub->tex[i].size_line = 0;
-		cub->tex[i].x = 0;
-		cub->tex[i].y = 0;
-		cub->tex[i].height = 0;
-		cub->tex[i].width = 0;
-		cub->tex[i].step = 0;
-		cub->tex[i].pos = 0;
+		ft_bzero(&cub->tex[i], sizeof(t_texture));
 		i++;
 	}
 }
-
+*/
 
 void	init_structures(t_cub3d *cub)
 {
-	init_identifiers(cub);
-	init_map(cub);
-	init_raycast(cub);
-	init_player(cub);
-	init_window(cub);
-	init_texture(cub);
+	ft_bzero(cub, sizeof(t_cub3d));
+	cub->plan.one_line_plan = "";
+	cub->plan.boundary_value = '1';
+	cub->plan.fill_value = 'f';
+	cub->plan.sprite_value = '2';
+	//init_identifiers(cub);
+	//init_map(cub);
+	//init_mlx(cub);
+	//init_raycast(cub);
+	//init_player(cub);
+	//init_window(cub);
+	//init_texture(cub);
 }
 
