@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/05 23:41:56 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/07 12:56:12 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/save_plane_lines.c \
 				srcs/validation/map/assigning_plane_values.c \
 				srcs/validation/map/check_characters_plane.c \
+				srcs/validation/map/find_sprites.c \
 				srcs/validation/map/validate_plan.c \
 				srcs/validation/map/player_start_position.c \
 				srcs/validation/map/where_player_look.c \
@@ -63,7 +64,9 @@ SRCS		=	srcs/main.c \
 				srcs/window/player_movement.c \
 				srcs/window/raycast.c \
 				srcs/window/draw_sky_floor.c \
-				srcs/window/game.c
+				srcs/window/game.c \
+				srcs/window/sort_sprites.c \
+				srcs/window/init_sprites.c
 
 
 ############################	Variables	####################################

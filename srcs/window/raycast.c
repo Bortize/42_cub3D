@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 23:47:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/07 12:56:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,19 @@ void	raycast(t_cub3d *cub, int col)
 		my_mlx_pixel_put(cub, col, cub->rcast.y, color);
 		cub->rcast.y++;
 	}
+	sort_sprites(cub);
+	//after sorting the sprites, do the projection and draw them
+
+
+
+
+
+
+
+
+
+
+
 }
 
 void raycast_init(t_cub3d *cub)
@@ -161,6 +174,7 @@ void raycast_init(t_cub3d *cub)
 	{
 		raycast(cub, x);
 		draws_sky_floor(cub, x);
+//		sort_sprites(cub);
 		x++;
 	}
 	mlx_put_image_to_window(cub->mlx.init, cub->mlx.win, cub->mlx.img, 0, 0);

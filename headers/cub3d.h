@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 23:41:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/07 14:07:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ typedef struct s_player
 	double	dirx;// Direccion del jugador
 	double	diry;// Direccion del jugador
 	double	planex;// Plano de la camara dej jugador
-	double	planey;//	Plano de la camara dej jugador
+	double	planey;// Plano de la camara dej jugador
 }							t_player;
 
 typedef struct s_raycast
@@ -157,6 +157,13 @@ typedef struct s_raycalc
 	int		 			y;// Coordenada y en la textura
 }								t_raycalc;
 
+typedef struct	s_sprite
+{
+	double	x;
+	double	y;
+	double	dist;
+}				t_sprite;
+
 typedef struct	s_cub3d
 {
 	double			*zbuffer;
@@ -168,8 +175,8 @@ typedef struct	s_cub3d
 	t_player		p;// Jugador
 	t_window		win;// Ventana
 	t_texture		tex[4];// Array de configuracion de texturas para los muros y sprite
-
-//	t_image				text[4];// hace refencia a las texturas n,s,e,o. (t_image y t_texture con casi identicas, solo que t_texture abarca mas variables)
+	t_sprite		*sprites;// arry de sprites. Donde se almacenan todos los sprites
+	int				*spriteorder;
 }								t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
@@ -200,6 +207,7 @@ int		validate_plan(char *str, t_cub3d *cub);
 void	init_plan_values(t_cub3d *cub);
 int		check_identifiers(t_cub3d *cub);
 void	check_characters_plane(char *str, t_cub3d *cub);
+void	find_sprites(t_cub3d *cub);
 void	check_allowed_values(char *str, t_cub3d *cub);
 void	assigning_plane_values(t_cub3d *cub);
 int		boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
@@ -229,6 +237,8 @@ void	move_sideways(t_cub3d *cub);
 void	rotation(t_cub3d *cub);
 void	refresh_screen(t_cub3d *cub);
 void	draws_sky_floor(t_cub3d *cub, int x);
+void	sort_sprites(t_cub3d *cub);
+void	init_sprite(t_cub3d *cub);
 
 
 #endif
