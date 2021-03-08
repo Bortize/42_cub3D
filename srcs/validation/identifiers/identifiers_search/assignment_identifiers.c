@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/03 12:06:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 20:40:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	assignment_identifiers_colours(t_cub3d *cub)
 
 int	assignment_identifiers_text_colour(t_cub3d *cub)
 {
-	ft_printf("🧪 --> %s \n", cub->map.tab[0]);
-	ft_printf("🧪 --> %s \n\n\n\n", cub->map.tab[1]);
+//	ft_printf("🧪 --> %s \n", cub->map.tab[0]);
+//	ft_printf("🧪 --> %s \n\n\n\n", cub->map.tab[1]);
 	if ((ft_strcmp("NO", cub->map.tab[0]) == 0))
 		texture_validation_no(cub);
 	if (ft_strcmp("SO", cub->map.tab[0]) == 0)

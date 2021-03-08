@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save_plane_lines.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/02 20:37:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 20:53:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	save_plane_lines(char *str, t_cub3d *cub)
 {
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, str);
 	cub->plan.one_line_plan = ft_strjoin(cub->plan.one_line_plan, "p");
-	ft_printf("Concatenation Linea %s \n", cub->plan.one_line_plan);
+//	ft_printf("Concatenation Linea %s \n", cub->plan.one_line_plan);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:11:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 20:32:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 21:14:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void		sort_sprites(t_cub3d *cub)
 	int			i;
 	int			j;
 	t_sprite	tmp;
+	int			sorted;
 
 	if (cub->map.count_sprites == 0)
 		return ;
@@ -33,8 +34,9 @@ void		sort_sprites(t_cub3d *cub)
 		i++;
 	}
 	i = 0;
- 	while (i < cub->map.count_sprites)
+	while (i < cub->map.count_sprites)
  	{
+		sorted = 0;
  		j = i;
  		while (++j < cub->map.count_sprites)
  		{
@@ -43,8 +45,11 @@ void		sort_sprites(t_cub3d *cub)
  				tmp = cub->sprites[i];
  				cub->sprites[i] = cub->sprites[j];
  				cub->sprites[j] = tmp;
+				sorted = !sorted;
  			}
+ 			i++;
  		}
- 		i++;
+		if (!sorted)
+			break ;
  	}
 }

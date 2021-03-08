@@ -18,6 +18,6 @@
 char	put_pixel(int x, int y, t_cub3d *cub)
 {
 	cub->plan.plan_tmp[y][x] = 'f';
-	ft_printf("✅ El pixel se cambio a: %c \n", cub->plan.plan_tmp[y][x]);
+//	ft_printf("✅ El pixel se cambio a: %c \n", cub->plan.plan_tmp[y][x]);
 	return (cub->plan.plan_tmp[y][x]);
 }

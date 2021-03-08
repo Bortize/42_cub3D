@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 15:24:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 20:55:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,11 @@ void	assigning_plane_values(t_cub3d *cub)
 	cub->plan.plan = ft_split(cub->plan.one_line_plan, 'p');
 	cub->plan.plan_tmp = ft_split(cub->plan.one_line_plan, 'p');// cuadno haces split ya reservo memoria
 	i = -1;
-	while (cub->plan.plan[++i] != NULL)
-		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan[i]);
+//	while (cub->plan.plan[++i] != NULL)
+//		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan[i]);
 	i = -1;
 	if (boundary_fill(cub->plan.player_init_position_x, cub->plan.player_init_position_y,
 		cub->plan.fill_value, cub->plan.boundary_value, cub))
-	{
-		while (cub->plan.plan_tmp[++i] != NULL)
-			ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan_tmp[i]);
-	}
 	find_sprites(cub);// localiza la posicion de los sprites antes de que sea elimianda
 	free(cub->plan.one_line_plan);
 	free(cub->plan.plan_tmp);
