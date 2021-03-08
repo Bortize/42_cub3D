@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/08 13:24:32 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/08 14:06:21 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/game.c \
 				srcs/window/sort_sprites.c \
 				srcs/window/set_pixel.c \
+				srcs/window/refresh_screen.c \
 				srcs/window/init_sprites.c
 
 

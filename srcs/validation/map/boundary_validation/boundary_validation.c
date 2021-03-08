@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:37:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:42:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 */
 int	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub)
 {
-	if ((x < 0 || x > cub->plan.rows_size) && (y < 0 || y > (int)cub->plan.row_len))
+	if ((y < 0 || y > cub->plan.rows_size) && (x < 0 || x > (int)cub->plan.row_len))
 		print_error("El plano contiene un muro que no esta cerrado");
-	ft_printf("El algoritmo esta en la coordenada %i %i y contiene %c \n", x, y, cub->plan.plan_tmp[x][y]);
-	if ((cub->plan.plan_tmp[x][y] == 'f') || (cub->plan.plan_tmp[x][y] == '1') || (cub->plan.plan_tmp[x][y] == '2'))
+		printf("x vale %i \n", x);
+		printf("y vale %i \n", y);
+//	printf("El algoritmo esta en la coordenada %i %i y contiene %c \n", x, y, cub->plan.plan_tmp[x][y]);
+	if ((cub->plan.plan_tmp[y][x] == 'f') || (cub->plan.plan_tmp[y][x] == '1') || (cub->plan.plan_tmp[y][x] == '2'))
 		{
 		ft_printf("🚫 El valor no puede modificarse \n");
 	}

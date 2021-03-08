@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 13:33:01 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:49:34 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,6 +247,7 @@ void	draws_sky_floor(t_cub3d *cub, int x);
 void	sort_sprites(t_cub3d *cub);
 void	init_sprites(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
+void	refresh_screen(t_cub3d *cub);
 
 
 #endif

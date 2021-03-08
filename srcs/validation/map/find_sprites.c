@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 17:18:21 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/07 12:45:25 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:41:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ void	find_sprites(t_cub3d *cub)
 	{
 		if (cub->plan.one_line_plan[i] == 'p')
 		{
-			x++;// suma +1 al numero de fila en el que se encuentra
-			y = 0;// restablece el contador de y a 0 ya que esta en una nueva fila
+			x = 0;// restablece el contador de x a 0 ya que esta en una nueva fila
+			y++;// suma +1 al numero de fila en el que se encuentra
 		}
 		if (cub->plan.one_line_plan[i] == '2')
 		{
-			cub->sprites[s].x = y - 0.5;// asigno el vector y que he encontrado
-			cub->sprites[s].y = x + 0.5;// asigno el vector x que he encontrado
+			cub->sprites[s].x = x - 0.5;// asigno el vector y que he encontrado
+			cub->sprites[s].y = y + 0.5;// asigno el vector x que he encontrado
 			printf("El sprite %i se encontro en %f %f \n", s, cub->sprites[s].x, cub->sprites[s].y);
 			s++;// avanzo una posicion el contador
 		}
 		i++;// Avanzo en el iterador que recorre el strign
-		y++;// Avanzo en el iterador que recorre la la linea del mapa.
+		x++;// Avanzo en el iterador que recorre la la linea del mapa.
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:55:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 13:46:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:02:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,8 @@ void	init_sprites(t_cub3d *cub)
 					texy = ((d * textur.height) / spriteheight) / 256;
 					color = textur.addr[textur.width * texy + texx];
 					if((color & 0x00FFFFFF) != 0)
-//						my_mlx_pixel_put(cub, stripe, y, textur.color);
-						set_pixel(cub, cub->map.width * stripe + y, color);
+						my_mlx_pixel_put(cub, stripe, y, color);
+//						set_pixel(cub, cub->map.width * stripe + y, color);
 					y++;
 				}
 			}

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/07 12:26:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:24:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	assigning_plane_values(t_cub3d *cub)
 	cub->plan.plan = (char **)calloc(cub->plan.rows_size, sizeof(char *));
 	cub->plan.values_ok = 1;// flag para entrar en esta funcion
 	cub->plan.plan = ft_split(cub->plan.one_line_plan, 'p');
-	cub->plan.plan_tmp = ft_split(cub->plan.one_line_plan, 'p');
+	cub->plan.plan_tmp = ft_split(cub->plan.one_line_plan, 'p');// cuadno haces split ya reservo memoria
 	i = -1;
 	while (cub->plan.plan[++i] != NULL)
 		ft_printf("Assigned to the structure 🧤 %s \n", cub->plan.plan[i]);
