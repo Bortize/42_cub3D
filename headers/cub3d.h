@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 15:49:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 17:44:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,9 +165,10 @@ typedef struct	s_raycalc
 
 typedef struct	s_sprite
 {
-	double	x;
-	double	y;
-	double	dist;
+	double		x;
+	double		y;
+	double		dist;
+	t_texture	*tex;
 }				t_sprite;
 
 typedef struct	s_cub3d
@@ -182,7 +183,7 @@ typedef struct	s_cub3d
 	t_window	win;// Ventana
 //	t_texture	tex[4];// Array de configuracion de texturas para los muros y sprite
 	t_textures	tex;
-	t_sprite	*sprites;// arry de sprites. Donde se almacenan todos los sprites
+	t_sprite	*sprites;// arry de sprites. Donde se almacenan las posiciones de todod los sprites
 	int			*spriteorder;
 }				t_cub3d;
 

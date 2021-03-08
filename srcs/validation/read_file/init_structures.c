@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 12:43:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:57:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,8 @@ void	init_structures(t_cub3d *cub)
 	cub->plan.boundary_value = '1';
 	cub->plan.fill_value = 'f';
 	cub->plan.sprite_value = '2';
+	//cub->p.planex = 0.0;
+	//cub->p.planey = 0.66;
 	//init_identifiers(cub);
 	//init_map(cub);
 	//init_mlx(cub);

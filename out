@@ -1,0 +1,1961 @@
+El char b coincide
+El char u coincide
+El char c coincide
+El char . coincide
+Map file extension ✅ 
+Mapa introducido --> tester/valid_maps/valid_map_area_000.cub 
+
+
+GNL has read this line 📖 --> C 100, 200, 222 
+🧪 --> C 
+🧪 --> 100, 
+
+
+
+El rango de color es valido 
+el numero 49 es un entero 
+ 🧪 -->  100 
+ 🧪 -->  200 
+ 🧪 -->  222 
+
+
+GNL has read this line 📖 --> R 1080 720 
+el numero 49 es un entero 
+el numero 48 es un entero 
+el numero 56 es un entero 
+el numero 48 es un entero 
+el numero 55 es un entero 
+el numero 50 es un entero 
+el numero 48 es un entero 
+🧪w --> 1080 
+🧪h --> 720 
+
+
+
+GNL has read this line 📖 --> NO ./tester/wolftex/textures/xpm/wood.xpm 
+🧪 --> NO 
+🧪 --> ./tester/wolftex/textures/xpm/wood.xpm 
+
+
+
+El char m coincide
+El char p coincide
+El char x coincide
+El char . coincide
+PATH file extension ✅ 
+
+GNL has read this line 📖 --> SO ./tester/wolftex/textures/xpm/wood.xpm 
+🧪 --> SO 
+🧪 --> ./tester/wolftex/textures/xpm/wood.xpm 
+
+
+
+El char m coincide
+El char p coincide
+El char x coincide
+El char . coincide
+PATH file extension ✅ 
+
+GNL has read this line 📖 --> EA ./tester/wolftex/textures/xpm/wood.xpm 
+🧪 --> EA 
+🧪 --> ./tester/wolftex/textures/xpm/wood.xpm 
+
+
+
+El char m coincide
+El char p coincide
+El char x coincide
+El char . coincide
+PATH file extension ✅ 
+
+GNL has read this line 📖 --> WE ./tester/wolftex/textures/xpm/wood.xpm 
+🧪 --> WE 
+🧪 --> ./tester/wolftex/textures/xpm/wood.xpm 
+
+
+
+El char m coincide
+El char p coincide
+El char x coincide
+El char . coincide
+PATH file extension ✅ 
+
+GNL has read this line 📖 --> S ./tester/wolftex/textures/xpm/barrel.xpm 
+🧪 --> S 
+🧪 --> ./tester/wolftex/textures/xpm/barrel.xpm 
+
+
+
+El char m coincide
+El char p coincide
+El char x coincide
+El char . coincide
+PATH file extension ✅ 
+
+GNL has read this line 📖 --> F 234,33,99 
+🧪 --> F 
+🧪 --> 234,33,99 
+
+
+
+El rango de color es valido 
+el numero 50 es un entero 
+ 🧪 -->  234 
+ 🧪 -->  33 
+ 🧪 -->  99 
+
+
+GNL has read this line 📖 --> 11111111111111111 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 11111111111111111 
+ La línea del plano es válida ✅
+Número de líneas leídas: 1 
+Concatenation Linea 11111111111111111p 
+
+GNL has read this line 📖 --> 100000000000000N1 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 100000000000000N1 
+se encontro al jugador en la posición 1 78 
+ La línea del plano es válida ✅
+Número de líneas leídas: 2 
+Concatenation Linea 11111111111111111p10000000000000001p 
+
+GNL has read this line 📖 --> 1000000S020000001 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 1000000S020000001 
+se encontro al jugador en la posición 2 83 
+ La línea del plano es válida ✅
+Número de líneas leídas: 3 
+Concatenation Linea 11111111111111111p10000000000000001p10000000020000001p 
+
+GNL has read this line 📖 --> 10000000000000001 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 10000000000000001 
+ La línea del plano es válida ✅
+Número de líneas leídas: 4 
+Concatenation Linea 11111111111111111p10000000000000001p10000000020000001p10000000000000001p 
+
+GNL has read this line 📖 --> 10000000000000001 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 10000000000000001 
+ La línea del plano es válida ✅
+Número de líneas leídas: 5 
+Concatenation Linea 11111111111111111p10000000000000001p10000000020000001p10000000000000001p10000000000000001p 
+
+GNL has read this line 📖 --> 10000000000000001 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 10000000000000001 
+ La línea del plano es válida ✅
+Número de líneas leídas: 6 
+Concatenation Linea 11111111111111111p10000000000000001p10000000020000001p10000000000000001p10000000000000001p10000000000000001p 
+
+GNL has read this line 📖 --> 11111111111111111 
+congrats, estas leyendo el plano 
+Se va a proceder a analizar la línea  🗺️--> 11111111111111111 
+ La línea del plano es válida ✅
+Número de líneas leídas: 7 
+Concatenation Linea 11111111111111111p10000000000000001p10000000020000001p10000000000000001p10000000000000001p10000000000000001p11111111111111111p 
+Assigned to the structure 🧤 11111111111111111 
+Assigned to the structure 🧤 10000000000000001 
+Assigned to the structure 🧤 10000000020000001 
+Assigned to the structure 🧤 10000000000000001 
+Assigned to the structure 🧤 10000000000000001 
+Assigned to the structure 🧤 10000000000000001 
+Assigned to the structure 🧤 11111111111111111 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+x vale 7 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 3 
+y vale 2 
+x vale 2 
+y vale 2 
+x vale 1 
+y vale 2 
+x vale 0 
+y vale 2 
+x vale 0 
+y vale 3 
+x vale 1 
+y vale 3 
+x vale 0 
+y vale 3 
+x vale 0 
+y vale 4 
+x vale 1 
+y vale 4 
+x vale 0 
+y vale 4 
+x vale 0 
+y vale 5 
+x vale 1 
+y vale 5 
+x vale 0 
+y vale 5 
+x vale 0 
+y vale 6 
+x vale 1 
+y vale 6 
+x vale 2 
+y vale 6 
+x vale 2 
+y vale 5 
+x vale 1 
+y vale 5 
+x vale 1 
+y vale 6 
+x vale 2 
+y vale 6 
+x vale 3 
+y vale 6 
+x vale 3 
+y vale 5 
+x vale 2 
+y vale 5 
+x vale 2 
+y vale 6 
+x vale 3 
+y vale 6 
+x vale 4 
+y vale 6 
+x vale 4 
+y vale 5 
+x vale 3 
+y vale 5 
+x vale 3 
+y vale 6 
+x vale 4 
+y vale 6 
+x vale 5 
+y vale 6 
+x vale 5 
+y vale 5 
+x vale 4 
+y vale 5 
+x vale 4 
+y vale 6 
+x vale 5 
+y vale 6 
+x vale 6 
+y vale 6 
+x vale 6 
+y vale 5 
+x vale 5 
+y vale 5 
+x vale 5 
+y vale 6 
+x vale 6 
+y vale 6 
+x vale 7 
+y vale 6 
+x vale 7 
+y vale 5 
+x vale 6 
+y vale 5 
+x vale 6 
+y vale 6 
+x vale 7 
+y vale 6 
+x vale 8 
+y vale 6 
+x vale 8 
+y vale 5 
+x vale 7 
+y vale 5 
+x vale 7 
+y vale 6 
+x vale 8 
+y vale 6 
+x vale 9 
+y vale 6 
+x vale 9 
+y vale 5 
+x vale 8 
+y vale 5 
+x vale 8 
+y vale 6 
+x vale 9 
+y vale 6 
+x vale 10 
+y vale 6 
+x vale 10 
+y vale 5 
+x vale 9 
+y vale 5 
+x vale 9 
+y vale 6 
+x vale 10 
+y vale 6 
+x vale 11 
+y vale 6 
+x vale 11 
+y vale 5 
+x vale 10 
+y vale 5 
+x vale 10 
+y vale 6 
+x vale 11 
+y vale 6 
+x vale 12 
+y vale 6 
+x vale 12 
+y vale 5 
+x vale 11 
+y vale 5 
+x vale 11 
+y vale 6 
+x vale 12 
+y vale 6 
+x vale 13 
+y vale 6 
+x vale 13 
+y vale 5 
+x vale 12 
+y vale 5 
+x vale 12 
+y vale 6 
+x vale 13 
+y vale 6 
+x vale 14 
+y vale 6 
+x vale 14 
+y vale 5 
+x vale 13 
+y vale 5 
+x vale 13 
+y vale 6 
+x vale 14 
+y vale 6 
+x vale 15 
+y vale 6 
+x vale 15 
+y vale 5 
+x vale 14 
+y vale 5 
+x vale 14 
+y vale 6 
+x vale 15 
+y vale 6 
+x vale 16 
+y vale 6 
+x vale 16 
+y vale 5 
+x vale 16 
+y vale 4 
+x vale 15 
+y vale 4 
+x vale 14 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 2 
+y vale 4 
+x vale 1 
+y vale 4 
+x vale 1 
+y vale 5 
+x vale 2 
+y vale 5 
+x vale 3 
+y vale 5 
+x vale 3 
+y vale 4 
+x vale 3 
+y vale 3 
+x vale 2 
+y vale 3 
+x vale 1 
+y vale 3 
+x vale 1 
+y vale 4 
+x vale 2 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 3 
+y vale 3 
+x vale 3 
+y vale 2 
+x vale 2 
+y vale 2 
+x vale 1 
+y vale 2 
+x vale 2 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 4 
+y vale 3 
+x vale 3 
+y vale 3 
+x vale 3 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 5 
+y vale 3 
+x vale 4 
+y vale 3 
+x vale 4 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 6 
+y vale 3 
+x vale 5 
+y vale 3 
+x vale 5 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 7 
+y vale 3 
+x vale 6 
+y vale 3 
+x vale 6 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 8 
+y vale 3 
+x vale 7 
+y vale 3 
+x vale 7 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 9 
+y vale 3 
+x vale 8 
+y vale 3 
+x vale 8 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 10 
+y vale 3 
+x vale 9 
+y vale 3 
+x vale 9 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 11 
+y vale 3 
+x vale 10 
+y vale 3 
+x vale 10 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 12 
+y vale 3 
+x vale 11 
+y vale 3 
+x vale 11 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 13 
+y vale 3 
+x vale 12 
+y vale 3 
+x vale 12 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 14 
+y vale 4 
+x vale 14 
+y vale 3 
+x vale 13 
+y vale 3 
+x vale 13 
+y vale 4 
+x vale 14 
+y vale 4 
+x vale 15 
+y vale 4 
+x vale 15 
+y vale 3 
+x vale 14 
+y vale 3 
+x vale 14 
+y vale 4 
+x vale 15 
+y vale 4 
+x vale 16 
+y vale 4 
+x vale 16 
+y vale 3 
+x vale 16 
+y vale 2 
+x vale 15 
+y vale 2 
+x vale 14 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 9 
+y vale 3 
+x vale 10 
+y vale 3 
+x vale 11 
+y vale 3 
+x vale 11 
+y vale 2 
+x vale 11 
+y vale 1 
+x vale 10 
+y vale 1 
+x vale 9 
+y vale 1 
+x vale 8 
+y vale ✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+✅ El pixel se cambio a: f 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+1 
+x vale 7 
+y vale 1 
+x vale 6 
+y vale 1 
+x vale 5 
+y vale 1 
+x vale 4 
+y vale 1 
+x vale 3 
+y vale 1 
+x vale 2 
+y vale 1 
+x vale 1 
+y vale 1 
+x vale 0 
+y vale 1 
+x vale 0 
+y vale 2 
+x vale 1 
+y vale 2 
+x vale 2 
+y vale 2 
+x vale 2 
+y vale 1 
+x vale 2 
+y vale 0 
+x vale 1 
+y vale 0 
+x vale 0 
+y vale 0 
+x vale 1 
+y vale 2 
+x vale 2 
+y vale 2 
+x vale 3 
+y vale 2 
+x vale 3 
+y vale 1 
+x vale 3 
+y vale 0 
+x vale 2 
+y vale 0 
+x vale 1 
+y vale 0 
+x vale 2 
+y vale 2 
+x vale 3 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 4 
+y vale 1 
+x vale 4 
+y vale 0 
+x vale 3 
+y vale 0 
+x vale 2 
+y vale 0 
+x vale 3 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 5 
+y vale 1 
+x vale 5 
+y vale 0 
+x vale 4 
+y vale 0 
+x vale 3 
+y vale 0 
+x vale 4 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 6 
+y vale 1 
+x vale 6 
+y vale 0 
+x vale 5 
+y vale 0 
+x vale 4 
+y vale 0 
+x vale 5 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 7 
+y vale 1 
+x vale 7 
+y vale 0 
+x vale 6 
+y vale 0 
+x vale 5 
+y vale 0 
+x vale 6 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 8 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 7 
+y vale 3 
+x vale 8 
+y vale 3 
+x vale 9 
+y vale 3 
+x vale 9 
+y vale 2 
+x vale 9 
+y vale 1 
+x vale 8 
+y vale 1 
+x vale 7 
+y vale 1 
+x vale 8 
+y vale 1 
+x vale 8 
+y vale 0 
+x vale 7 
+y vale 0 
+x vale 6 
+y vale 0 
+x vale 7 
+y vale 2 
+x vale 8 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 9 
+y vale 1 
+x vale 9 
+y vale 0 
+x vale 8 
+y vale 0 
+x vale 7 
+y vale 0 
+x vale 8 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 10 
+y vale 1 
+x vale 10 
+y vale 0 
+x vale 9 
+y vale 0 
+x vale 8 
+y vale 0 
+x vale 9 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 11 
+y vale 1 
+x vale 11 
+y vale 0 
+x vale 10 
+y vale 0 
+x vale 9 
+y vale 0 
+x vale 10 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 12 
+y vale 1 
+x vale 11 
+y vale 1 
+x vale 11 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 13 
+y vale 1 
+x vale 12 
+y vale 1 
+x vale 12 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 14 
+y vale 2 
+x vale 14 
+y vale 1 
+x vale 13 
+y vale 1 
+x vale 13 
+y vale 2 
+x vale 14 
+y vale 2 
+x vale 15 
+y vale 2 
+x vale 15 
+y vale 1 
+x vale 14 
+y vale 1 
+x vale 14 
+y vale 2 
+x vale 15 
+y vale 2 
+x vale 16 
+y vale 2 
+x vale 16 
+y vale 1 
+x vale 16 
+y vale 0 
+x vale 15 
+y vale 0 
+x vale 14 
+y vale 0 
+x vale 15 
+y vale 0 
+x vale 14 
+y vale 0 
+x vale 13 
+y vale 0 
+x vale 14 
+y vale 0 
+x vale 13 
+y vale 0 
+x vale 12 
+y vale 0 
+x vale 13 
+y vale 0 
+x vale 12 
+y vale 0 
+x vale 11 
+y vale 0 
+x vale 12 
+y vale 0 
+x vale 11 
+y vale 0 
+x vale 10 
+y vale 0 
+x vale 10 
+y vale 1 
+x vale 9 
+y vale 1 
+x vale 10 
+y vale 3 
+x vale 11 
+y vale 3 
+x vale 12 
+y vale 3 
+x vale 12 
+y vale 2 
+x vale 12 
+y vale 1 
+x vale 11 
+y vale 1 
+x vale 10 
+y vale 1 
+x vale 11 
+y vale 3 
+x vale 12 
+y vale 3 
+x vale 13 
+y vale 3 
+x vale 13 
+y vale 2 
+x vale 13 
+y vale 1 
+x vale 12 
+y vale 1 
+x vale 11 
+y vale 1 
+x vale 12 
+y vale 3 
+x vale 13 
+y vale 3 
+x vale 14 
+y vale 3 
+x vale 14 
+y vale 2 
+x vale 14 
+y vale 1 
+x vale 13 
+y vale 1 
+x vale 12 
+y vale 1 
+x vale 13 
+y vale 3 
+x vale 14 
+y vale 3 
+x vale 15 
+y vale 3 
+x vale 15 
+y vale 2 
+x vale 15 
+y vale 1 
+x vale 14 
+y vale 1 
+x vale 13 
+y vale 1 
+x vale 14 
+y vale 3 
+x vale 15 
+y vale 3 
+x vale 16 
+y vale 3 
+x vale 16 
+y vale 2 
+x vale 16 
+y vale 1 
+x vale 15 
+y vale 1 
+x vale 14 
+y vale 1 
+x vale 14 
+y vale 2 
+x vale 15 
+y vale 2 
+x vale 14 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 14 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 13 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 12 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 11 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 10 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 8 
+y vale 2 
+x vale 9 
+y vale 2 
+x vale 8 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 8 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 7 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 6 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 5 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 3 
+y vale 2 
+x vale 4 
+y vale 2 
+x vale 3 
+y vale 2 
+x vale 2 
+y vale 2 
+x vale 2 
+y va🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+🚫 El valor no puede modificarse 
+Assigned to the structure 🧤 11111111111111111 
+Assigned to the structure 🧤 1fffffffffffffff1 
+Assigned to the structure 🧤 1ffffffff2ffffff1 
+Assigned to the structure 🧤 1fffffffffffffff1 
+Assigned to the structure 🧤 1fffffffffffffff1 
+Assigned to the structure 🧤 1fffffffffffffff1 
+Assigned to the structure 🧤 11111111111111111 
+🌎 11111111111111111 
+🌎 10000000000000001 
+🌎 10000000020000001 
+🌎 10000000000000001 
+🌎 10000000000000001 
+🌎 10000000000000001 
+🌎 11111111111111111 
+resolution 1080 720
+Error:
+Cerrando Cub3D 
+le 3 
+x vale 1 
+y vale 3 
+x vale 2 
+y vale 5 
+x vale 3 
+y vale 5 
+x vale 4 
+y vale 5 
+x vale 4 
+y vale 4 
+x vale 4 
+y vale 3 
+x vale 3 
+y vale 3 
+x vale 2 
+y vale 3 
+x vale 3 
+y vale 5 
+x vale 4 
+y vale 5 
+x vale 5 
+y vale 5 
+x vale 5 
+y vale 4 
+x vale 5 
+y vale 3 
+x vale 4 
+y vale 3 
+x vale 3 
+y vale 3 
+x vale 4 
+y vale 5 
+x vale 5 
+y vale 5 
+x vale 6 
+y vale 5 
+x vale 6 
+y vale 4 
+x vale 6 
+y vale 3 
+x vale 5 
+y vale 3 
+x vale 4 
+y vale 3 
+x vale 5 
+y vale 5 
+x vale 6 
+y vale 5 
+x vale 7 
+y vale 5 
+x vale 7 
+y vale 4 
+x vale 7 
+y vale 3 
+x vale 6 
+y vale 3 
+x vale 5 
+y vale 3 
+x vale 6 
+y vale 5 
+x vale 7 
+y vale 5 
+x vale 8 
+y vale 5 
+x vale 8 
+y vale 4 
+x vale 8 
+y vale 3 
+x vale 7 
+y vale 3 
+x vale 6 
+y vale 3 
+x vale 7 
+y vale 5 
+x vale 8 
+y vale 5 
+x vale 9 
+y vale 5 
+x vale 9 
+y vale 4 
+x vale 9 
+y vale 3 
+x vale 8 
+y vale 3 
+x vale 7 
+y vale 3 
+x vale 8 
+y vale 5 
+x vale 9 
+y vale 5 
+x vale 10 
+y vale 5 
+x vale 10 
+y vale 4 
+x vale 10 
+y vale 3 
+x vale 9 
+y vale 3 
+x vale 8 
+y vale 3 
+x vale 9 
+y vale 5 
+x vale 10 
+y vale 5 
+x vale 11 
+y vale 5 
+x vale 11 
+y vale 4 
+x vale 11 
+y vale 3 
+x vale 10 
+y vale 3 
+x vale 9 
+y vale 3 
+x vale 10 
+y vale 5 
+x vale 11 
+y vale 5 
+x vale 12 
+y vale 5 
+x vale 12 
+y vale 4 
+x vale 12 
+y vale 3 
+x vale 11 
+y vale 3 
+x vale 10 
+y vale 3 
+x vale 11 
+y vale 5 
+x vale 12 
+y vale 5 
+x vale 13 
+y vale 5 
+x vale 13 
+y vale 4 
+x vale 13 
+y vale 3 
+x vale 12 
+y vale 3 
+x vale 11 
+y vale 3 
+x vale 12 
+y vale 5 
+x vale 13 
+y vale 5 
+x vale 14 
+y vale 5 
+x vale 14 
+y vale 4 
+x vale 14 
+y vale 3 
+x vale 13 
+y vale 3 
+x vale 12 
+y vale 3 
+x vale 13 
+y vale 5 
+x vale 14 
+y vale 5 
+x vale 15 
+y vale 5 
+x vale 15 
+y vale 4 
+x vale 15 
+y vale 3 
+x vale 14 
+y vale 3 
+x vale 13 
+y vale 3 
+x vale 14 
+y vale 5 
+x vale 15 
+y vale 5 
+x vale 16 
+y vale 5 
+x vale 16 
+y vale 4 
+x vale 16 
+y vale 3 
+x vale 15 
+y vale 3 
+x vale 14 
+y vale 3 
+x vale 14 
+y vale 4 
+x vale 15 
+y vale 4 
+x vale 14 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 14 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 13 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 12 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 11 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 10 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 9 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 8 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 7 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 6 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 5 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 4 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 2 
+y vale 4 
+x vale 3 
+y vale 4 
+x vale 2 
+y vale 4 
+x vale 1 
+y vale 4 
+x vale 2 
+y vale 4 
+x vale 1 
+y vale 4 
+x vale 0 
+y vale 4 
+x vale 2 
+y vale 5 
+x vale 2 
+y vale 4 
+x vale 2 
+y vale 3 
+x vale 1 
+y vale 3 
+x vale 0 
+y vale 3 
+x vale 2 
+y vale 4 
+x vale 2 
+y vale 3 
+x vale 2 
+y vale 2 
+x vale 1 
+y vale 2 
+x vale 0 
+y vale 2 
+x vale 2 
+y vale 3 
+x vale 2 
+y vale 2 
+x vale 2 
+y vale 1 
+x vale 1 
+y vale 1 
+x vale 0 
+y vale 1 
+x vale 1 
+y vale 3 
+x vale 2 
+y vale 3 
+x vale 3 
+y vale 3 
+x vale 3 
+y vale 2 
+x vale 3 
+y vale 1 
+x vale 2 
+y vale 1 
+x vale 1 
+y vale 1 
+x vale 2 
+y vale 3 
+x vale 3 
+y vale 3 
+x vale 4 
+y vale 3 
+x vale 4 
+y vale 2 
+x vale 4 
+y vale 1 
+x vale 3 
+y vale 1 
+x vale 2 
+y vale 1 
+x vale 3 
+y vale 3 
+x vale 4 
+y vale 3 
+x vale 5 
+y vale 3 
+x vale 5 
+y vale 2 
+x vale 5 
+y vale 1 
+x vale 4 
+y vale 1 
+x vale 3 
+y vale 1 
+x vale 4 
+y vale 3 
+x vale 5 
+y vale 3 
+x vale 6 
+y vale 3 
+x vale 6 
+y vale 2 
+x vale 6 
+y vale 1 
+x vale 5 
+y vale 1 
+x vale 4 
+y vale 1 
+x vale 5 
+y vale 3 
+x vale 6 
+y vale 3 
+x vale 7 
+y vale 3 
+x vale 7 
+y vale 2 
+x vale 7 
+y vale 1 
+x vale 6 
+y vale 1 
+x vale 5 
+y vale 1 
+x vale 6 
+y vale 3 
+x vale 7 
+y vale 3 
+x vale 8 
+y vale 3 
+x vale 8 
+y vale 2 
+x vale 8 
+y vale 1 
+x vale 7 
+y vale 1 
+x vale 6 
+y vale 1 
+El sprite 0 se encontro en 9.500000 2.500000 

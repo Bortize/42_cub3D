@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 14:58:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 20:29:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	raycast(t_cub3d *cub, int col)
 	else
 		cub->rcast.perpwalldist = (cub->rcast.mapy - cub->p.posy + (1 - cub->rcast.stepy) / 2) / cub->rcast.raydiry;
 
+	cub->zbuffer[col] = cub->rcast.perpwalldist;
 	//Calculate height of line to draw on screen
 	cub->win.lineheight = (int)(cub->map.height / cub->rcast.perpwalldist);
 		//calculate lowest and highest pixel to fill in current stripe
@@ -126,6 +127,10 @@ void	raycast(t_cub3d *cub, int col)
 		my_mlx_pixel_put(cub, col, cub->rcast.y, color);
 		cub->rcast.y++;
 	}
+}
+
+void	putamadre(t_cub3d *cub)
+{
 	sort_sprites(cub);
 	//after sorting the sprites, do the projection and draw them
 //	init_sprites(cub);
@@ -144,28 +149,34 @@ void	raycast(t_cub3d *cub, int col)
 	int	drawstartx;
 	int drawendx;
 
+	int y;
+	int d;
+	int texy;
+	int stripe;
+	int texx;
+	unsigned int color;
 	//after sorting the sprites, do the projection and draw them
 	i = 0;
 	while (i < cub->map.count_sprites)
 	{
 		//translate sprite position to relative to camera
-		spritex = cub->sprites[cub->spriteorder[i]].x - cub->p.posx;
-		spritey = cub->sprites[cub->spriteorder[i]].y - cub->p.posy;
+		spritex = cub->sprites[i].x - cub->p.posx;
+		spritey = cub->sprites[i].y - cub->p.posy;
 
 		//transform sprite with the inverse camera matrix
 		// [ planeX   dirX ] -1                                       [ dirY      -dirX ]
 		// [               ]       =  1/(planeX*dirY-dirX*planeY) *   [                 ]
 		// [ planeY   dirY ]                                          [ -planeY  planeX ]
 
-		invdet = 1.0 / (cub->p.planex * cub->p.diry - cub->p.diry * cub->p.planey);
+		invdet = 1.0 / (cub->p.planex * cub->p.diry - cub->p.dirx * cub->p.planey);
 
-		transformx = invdet * (cub->p.diry * spritex + cub->p.dirx * spritey);
+		transformx = invdet * (cub->p.diry * spritex - cub->p.dirx * spritey);
 		transformy = invdet * (-cub->p.planey * spritex + cub->p.planex * spritey);
 
-		spritescreenx = (int)(cub->map.width / 2) * (1 + transformx / transformy);
+		spritescreenx = (int)((cub->map.width / 2) * (1 + transformx / transformy));
 
 		//parameters for scaling and moving the sprites
-		spriteheight = fabs((int)cub->map.height / (transformy));
+		spriteheight = abs((int)(cub->map.height / transformy));
 
 		//calculate lowest and highest pixel to fill in current stripe
 		drawstarty = -spriteheight / 2 + cub->map.height / 2;
@@ -176,7 +187,7 @@ void	raycast(t_cub3d *cub, int col)
 			drawendy = cub->map.height - 1;
 
 		//calculate width of the sprite
-		spritewidth = abs((int)(cub->map.height / (transformy)));
+		spritewidth = abs((int)(cub->map.height / transformy));
 		drawstartx = -spritewidth / 2 + spritescreenx;
 		if (drawstartx < 0)
 			drawstartx = 0;
@@ -185,13 +196,11 @@ void	raycast(t_cub3d *cub, int col)
 			drawendx = cub->map.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
-		t_texture textur;
-		int stripe;
-		int texx;
+		//t_texture textur;
 		stripe = drawstartx;
 		while (stripe < drawendx)
 		{
-			texx = (((int)256 * (stripe - (-spritewidth / 2 + spritescreenx)) * textur.width / spritewidth) / 256);
+			texx = (int)(256 * (stripe - (-spritewidth / 2 + spritescreenx)) * cub->tex.sprite[0].width / spritewidth) / 256;
 			//the conditions in the if are:
 			//1) it's in front of camera plane so you don't see things behind you
 			//2) it's on the screen (left)
@@ -199,26 +208,23 @@ void	raycast(t_cub3d *cub, int col)
 			//4) ZBuffer, with perpendicular distance
 			if (transformy > 0 && stripe > 0 && stripe < cub->map.width && transformy < cub->zbuffer[stripe])
 			{
-				int y;
-
 				y = drawstarty;
 				while (y < drawendy)
 				{
+//					ft_printf("veces %i \n", y);
 					// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
-					int d;
-					int texy;
-					unsigned int color;
+
 
 					d = y * 256 - cub->map.height * 128 + spriteheight * 128;//256 and 128 factors to avoid floats
-					texy = ((d * textur.height) / spriteheight) / 256;
-					color = textur.addr[textur.width * texy + texx];
+					texy = ((d * cub->tex.sprite[0].height) / spriteheight) / 256;
+					color = cub->tex.sprite[0].addr[cub->tex.sprite[0].width * texy + texx];
 					if((color & 0x00FFFFFF) != 0)
 						my_mlx_pixel_put(cub, stripe, y, color);
-//						set_pixel(cub, cub->map.width * stripe + y, color);
+//						set_pixel(cub, cub->map.width * cub->zbuffer[stripe] + y, color);
 					y++;
 				}
 			}
-		stripe++;
+			stripe++;
 		}
 	i++;
 	}
@@ -237,9 +243,10 @@ void raycast_init(t_cub3d *cub)
 	{
 		raycast(cub, x);
 		draws_sky_floor(cub, x);
-		sort_sprites(cub);
 //		init_sprites(cub, x);
 		x++;
 	}
+	sort_sprites(cub);
+	putamadre(cub);
 	mlx_put_image_to_window(cub->mlx.init, cub->mlx.win, cub->mlx.img, 0, 0);
 }
