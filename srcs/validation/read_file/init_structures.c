@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 20:42:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 12:43:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static void	init_texture(t_cub3d *cub)
 	i = 0;
 	while (i < 4)
 	{
-		ft_bzero(&cub->tex[i], sizeof(t_texture));
+		ft_bzero(&cub->tex.walls[i], sizeof(t_texture));
 		i++;
 	}
 }

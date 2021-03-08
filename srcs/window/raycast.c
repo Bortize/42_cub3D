@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/07 12:56:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/08 13:00:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,15 +122,15 @@ void	raycast(t_cub3d *cub, int col)
 		cub->rcast.wallx = cub->p.posx + cub->rcast.perpwalldist * cub->rcast.raydirx;
 	cub->rcast.wallx -= (floor)(cub->rcast.wallx);
 	//x coordinate on the texture
-	ray.x = (int)(cub->rcast.wallx * (double)(cub->tex[cub->rcast.side].width));
+	ray.x = (int)(cub->rcast.wallx * (double)(cub->tex.walls[cub->rcast.side].width));
 	if (cub->rcast.side <= 1 && cub->rcast.raydirx > 0)
-		ray.x = cub->tex[cub->rcast.side].width - ray.x - 1;
+		ray.x = cub->tex.walls[cub->rcast.side].width - ray.x - 1;
 	if (cub->rcast.side >= 2 && cub->rcast.raydiry > 0)
-		ray.x = cub->tex[cub->rcast.side].width - ray.x - 1;
+		ray.x = cub->tex.walls[cub->rcast.side].width - ray.x - 1;
 
 	t_texture *text;
 
-	text = &cub->tex[cub->rcast.side];
+	text = &cub->tex.walls[cub->rcast.side];
 	// TODO: an integer-only bresenham or DDA like algorithm could make the texture coordinate stepping faster
 	// How much to increase the texture coordinate per screen pixel
 	ray.step = 1.0 * text->height / cub->win.lineheight;
@@ -151,6 +151,7 @@ void	raycast(t_cub3d *cub, int col)
 	}
 	sort_sprites(cub);
 	//after sorting the sprites, do the projection and draw them
+	init_sprites(cub);
 
 
 
@@ -175,6 +176,7 @@ void raycast_init(t_cub3d *cub)
 		raycast(cub, x);
 		draws_sky_floor(cub, x);
 //		sort_sprites(cub);
+//		init_sprites(cub);
 		x++;
 	}
 	mlx_put_image_to_window(cub->mlx.init, cub->mlx.win, cub->mlx.img, 0, 0);
