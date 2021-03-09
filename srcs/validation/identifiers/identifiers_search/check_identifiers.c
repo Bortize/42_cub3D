@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   check_identifiers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 14:06:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:30:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-** Comprueba la posicion 0 comparándolo con cualquiera de los identificadores
-** permitidos. En caso de no encontrar ninguno, gestiona el error y se detiene en
-** este punto del programa.
+**  It checks position 0 against any of the allowed identifiers.
+**  If none is found, it handles the error and stops
+**  at this point in the program.
 */
 int	check_identifiers(t_cub3d *cub)
 {
@@ -31,7 +31,7 @@ int	check_identifiers(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("Uno de los identificadores introducdios NO ES VALIDO.");
+		print_error("One of the identifiers introduced is NOT VALID");
 	}
 	return (0);
 }

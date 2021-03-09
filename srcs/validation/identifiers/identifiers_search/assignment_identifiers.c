@@ -6,28 +6,27 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:21:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:39:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
 /*
-**	Is called by --> find_identifier(char *str, t_cub3d *cub);
-**	Comprueba el valor del indicice [0] despues de que haya sido deparado por
-**	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
-**	y[2] a la variable que le corresponde dentro de la estructura
-**	Call to the function --> integer_validation_resolution(cub);
+** Is called by --> find_identifier(char *str, t_cub3d *cub);
+** Check the value of the indicice [0] after it has been departed by
+** ft_split_plus to know which identifier it is and to be able to assign the
+** value of [1] and [2] to the variable that is and [2] to the corresponding
+** variable in the structure.
 */
 void	assignment_identifiers_resolution(t_cub3d *cub)
 {
 	screen_validation_r(cub);
 }
-/*	Is called by --> assignment_identifiers(t_cub3d *cub)
-**	Comprueba el valor del indicice [0] despues de que haya sido deparado por
-**	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
-**	y [2] a la variable que le corresponde dentro de la estructura
-**	Call to the function --> validation_identifiers_ceilling(cub);
+/*
+** Is called by --> assignment_identifiers(t_cub3d *cub)
+** Checks the value of index [0] after it has been departed by
+** ft_split_plus to know what identifier it is and to assign the value of [1]
+and [2] to the variable and [2] to the corresponding variable in the structure.
 */
 void	assignment_identifiers_colours(t_cub3d *cub)
 {
@@ -35,10 +34,10 @@ void	assignment_identifiers_colours(t_cub3d *cub)
 	color_validation_floor(cub);
 }
 /*
-**	Call-Function --> find_identifier
-**	Comprueba el valor del indicice [0] despues de que haya sido separado por
-**	ft_split_plus para saber que identificador es y poder asigar el valor de [1]
-**	a la variable que le corresponde dentro de la estructura
+** Call-Function --> find_identifier
+** Checks the value of the index [0] after it has been separated by ft_split_plus
+** to know which identifier it is and to assign the value of [1] to the
+** corresponding variable in the structure.
 */
 int	assignment_identifiers_text_colour(t_cub3d *cub)
 {

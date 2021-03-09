@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   validate_plan.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 13:55:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:25:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Chequea que cada linea del plano contenga los valores permitidos en el
-** subject y en tal caso, calcula la longitud de cada linea y cada vez que
-** entra las va comparando para quedarse con la que tiene la mayor longitud,
-** que sera utilizada para reservar memoría para la matriz mas adelante.
+** It checks that each line of the plane contains the values allowed in the
+** subject and if so, it calculates the length of each line and each time it
+** enters it compares them to keep the one with the longest length, which will
+** be used to reserve memory for the matrix later on.
 */
 int		validate_plan(char *str, t_cub3d *cub)
 {

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:49:18 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:27:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	file_reading(int fd, t_cub3d *cub)
 	}
 	cub->zbuffer = malloc(sizeof(double) * cub->map.width);
 	if (cub->map.i < 8)
-		print_error("Faltan identificadores, revise su mapa");
+		print_error("Missing identifiers, check your map");
 	if (cub->plan.values_ok == 0)
 		assigning_plane_values(cub);
 	return (0);

@@ -6,14 +6,14 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:54:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:49:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Funcionees de movimiento del jugador
+** Player movement
 */
 void	movement(t_cub3d *cub)
 {

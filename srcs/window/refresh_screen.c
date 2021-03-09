@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   refresh_screen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:05:14 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 14:05:54 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:47:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Refresca la ventana constantemente y aprovecha para pitar el suelo para
-** sustituyendo el negro por el color elegido.
+** It constantly refreshes the window and takes advantage of the opportunity to
+** whistle the floor by replacing the black with the color of your choice
 */
 void	refresh_screen(t_cub3d *cub)
 {

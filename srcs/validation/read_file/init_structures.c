@@ -6,16 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:52:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:34:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
-/*	Call-Function -->
-**	Inicializa todas las variables de la estructura para permitirnos poder
-**	empezar a trabajar con ellas. Ademas elimina el valor basuara que pudieran
-**	contener a la hora de su declaración
+/*
+** It initializes all the variables of the structure to allow us to start working
+** with them. It also eliminates the basuara value that they could contain at the
+** time of their declaration.
 */
 void	init_structures(t_cub3d *cub)
 {

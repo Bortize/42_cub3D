@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:27:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:44:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	integer_validation_resolution(t_cub3d *cub)
 		while (cub->map.tab[i][j])
 		{
 			if (ft_isdigit(cub->map.tab[i][j]))
-				ft_printf("el numero %i es un entero \n", cub->map.tab[i][j]);
+				ft_printf("the number %i is an integer \n", cub->map.tab[i][j]);
 			else
-				print_error("Algunos datos de la resolución contienen valores"
-					" no numéricos. Arreglelo y vuelva a ejecutar el programa.");
+				print_error("Some resolution data contain values"
+					" not numeric. Fix it and run the program again.");
 			j++;
 		}
 		i++;

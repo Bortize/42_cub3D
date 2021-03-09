@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   load_wall_texture.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:01:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 12:44:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:42:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	load_wall_texture(t_cub3d *cub)
+inline static void	file_to_image(t_cub3d *cub)
 {
 	cub->tex.walls[0].img_tex = mlx_xpm_file_to_image(cub->mlx.init, cub->map.no,
 		&cub->tex.walls[0].width, &cub->tex.walls[0].height);
@@ -22,9 +22,29 @@ void	load_wall_texture(t_cub3d *cub)
 		&cub->tex.walls[2].width, &cub->tex.walls[2].height);
 	cub->tex.walls[3].img_tex = mlx_xpm_file_to_image(cub->mlx.init, cub->map.ea,
 		&cub->tex.walls[3].width, &cub->tex.walls[3].height);
+}
 
-	cub->tex.walls[0].addr = (int *)mlx_get_data_addr(cub->tex.walls[0].img_tex, &cub->tex.walls[0].bpp, &cub->tex.walls[0].size_line, &cub->tex.walls[0].endian);
-	cub->tex.walls[1].addr = (int *)mlx_get_data_addr(cub->tex.walls[1].img_tex, &cub->tex.walls[1].bpp, &cub->tex.walls[1].size_line, &cub->tex.walls[1].endian);
-	cub->tex.walls[2].addr = (int *)mlx_get_data_addr(cub->tex.walls[2].img_tex, &cub->tex.walls[2].bpp, &cub->tex.walls[2].size_line, &cub->tex.walls[2].endian);
-	cub->tex.walls[3].addr = (int *)mlx_get_data_addr(cub->tex.walls[3].img_tex, &cub->tex.walls[3].bpp, &cub->tex.walls[3].size_line, &cub->tex.walls[3].endian);
+inline static void	get_data(t_cub3d *cub)
+{
+	cub->tex.walls[0].addr = (int *)mlx_get_data_addr(cub->tex.walls[0].img_tex,
+	&cub->tex.walls[0].bpp, &cub->tex.walls[0].size_line,
+	&cub->tex.walls[0].endian);
+
+	cub->tex.walls[1].addr = (int *)mlx_get_data_addr(cub->tex.walls[1].img_tex,
+	&cub->tex.walls[1].bpp, &cub->tex.walls[1].size_line,
+	&cub->tex.walls[1].endian);
+
+	cub->tex.walls[2].addr = (int *)mlx_get_data_addr(cub->tex.walls[2].img_tex,
+	&cub->tex.walls[2].bpp, &cub->tex.walls[2].size_line,
+	&cub->tex.walls[2].endian);
+
+	cub->tex.walls[3].addr = (int *)mlx_get_data_addr(cub->tex.walls[3].img_tex,
+	&cub->tex.walls[3].bpp, &cub->tex.walls[3].size_line,
+	&cub->tex.walls[3].endian);
+}
+
+void	load_wall_texture(t_cub3d *cub)
+{
+	file_to_image(cub);
+	get_data(cub);
 }

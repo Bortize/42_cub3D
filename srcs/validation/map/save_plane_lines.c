@@ -6,17 +6,17 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 13:58:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:47:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:25:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Concatena todas las lineas que ha ido encontrando el GNL en un solo string
-** poniendo un caracter random 'p' entre línea y línea para luego poder sepa-
-** rarlas (el caracter p me sirve como identidicador de separdor entre cadenas
-** ) y asignar cada linea a su respectivo puntero.
+** It concatenates all the lines found by the GNL in a single string by putting a
+** random character 'p' between each line to separate them (the character p serves
+** as a separator identifier between strings) and assign each line to its
+** respective pointer.
 */
 int	save_plane_lines(char *str, t_cub3d *cub)
 {

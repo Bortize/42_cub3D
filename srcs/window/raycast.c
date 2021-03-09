@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 13:35:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:44:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,6 +251,7 @@ void raycast_init(t_cub3d *cub)
 	if (cub->bmp_flag)
 	{
 		screenshot(cub);
+		exit(EXIT_SUCCESS);
 	}
 	mlx_put_image_to_window(cub->mlx.init, cub->mlx.win, cub->mlx.img, 0, 0);
 }

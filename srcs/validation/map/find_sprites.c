@@ -6,17 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 17:18:21 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:38:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:22:27 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Crea una nueva instancia de la estructura y guarda los valroes de la
-** posicion en donde se encontro el sprite en el mapa
+** Creates a new instance of the structure and saves the values of the position
+** where the sprite was found on the map
 */
-
 void	find_sprites(t_cub3d *cub)
 {
 	int x;

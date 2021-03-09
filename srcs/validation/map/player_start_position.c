@@ -6,21 +6,20 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:45:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:24:09 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-** Guarda la posicion del jugador cuando la encuentra. La guarda en 2 coordenadas
-** dónde 'x' corresponde al índe del número de vector donde se encontro e 'y' al
-** índice del string donde se encontró
+** Saves the position of the player when found. It saves it in 2 coordinates where
+** 'x' corresponds to the index of the vector number where it was found and 'y'
+** to the index of the string where it was found.
 */
-
 int	player_start_position(char *str, t_cub3d *cub)
 {
-	if ((str[cub->plan.i] == 'N') || (str[cub->plan.i] == 'S') || (str[cub->plan.i] == 'E')
-		|| (str[cub->plan.i] == 'W'))
+	if ((str[cub->plan.i] == 'N') || (str[cub->plan.i] == 'S') ||
+	(str[cub->plan.i] == 'E') || (str[cub->plan.i] == 'W'))
 	{
 		where_player_look(cub, str[cub->plan.i]);
 		cub->plan.player_init_position_x = (double)cub->plan.i + 0.5;

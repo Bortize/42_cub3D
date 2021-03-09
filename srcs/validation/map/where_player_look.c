@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   where_player_look.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:26:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 20:01:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:26:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-** Ajusta los valores de la direccion hacía donde mira el jugador en el momento
-** de iniciar el juego en funcion del eje cardinal donde se encontro al jugador
+** Adjusts the values of the direction in which the player is facing at the
+** moment of starting the game according to the cardinal axis where the player
+** was found.
 */
 void	where_player_look(t_cub3d *cub, char c)
 {

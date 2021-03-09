@@ -6,17 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:45:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:21:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-** Recorre cada indice del string para ir comprobando si su valor es uno de los
-** permitidos por el subject (queremos detectar si el mapa contiene algun iden-
-** tificaodr no permitido y comprobando si la posición del jugador es uno de
-** ellos. En el caso de que algun char del string no sea valido, gestiona el
-** error.
+** It goes through each index of the string to check if its value is one of those
+** allowed by the subject (we want to detect if the map contains any identifier
+** not allowed and checking if the position of the player is one of them. In the
+** case that some char of the string is not valid, it handles the error.
 */
 void	check_values_allowed(char *str, t_cub3d *cub)
 {
@@ -38,11 +37,12 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		}
 	}
 }
+
 /*
-** Busca si en la lina que le pasan hay por lo menos un valor válido para entrar
-** a analizarla en profundidad. En caso de contener alguno, entra mas en profundidad
-** y despues de comprobarlo, si todos los caracteres pasados de la string son correctos,
-** se suma +1 fila. Si no es así, gestiona el error.
+** Look to see if there is at least one valid value in the list that is passed to
+** you to analyze it in depth. If it contains one, it enters more in depth and
+** after checking it, if all the characters passed in the string are correct, it
+** adds +1 row. If not, it handles the error.
 */
 void	check_characters_plane(char *str, t_cub3d *cub)
 {

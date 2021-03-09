@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/09 12:02:20 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/09 23:25:53 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,8 @@ SRCS		=	srcs/main.c \
 				srcs/window/sort_sprites.c \
 				srcs/window/set_pixel.c \
 				srcs/window/refresh_screen.c \
-				srcs/window/init_sprites.c
+				srcs/window/init_sprites.c \
+				srcs/window/screenshot.c
 
 
 ############################	Variables	####################################

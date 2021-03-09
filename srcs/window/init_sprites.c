@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   init_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:55:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 14:02:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:37:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Inicializa toda la configuracion del lanzamiento de rayos para los sprites
+** Initializes all ray casting settings for sprites
 */
 void	init_sprites(t_cub3d *cub)
 {
@@ -24,7 +24,6 @@ void	init_sprites(t_cub3d *cub)
 	double transformx;
 	double transformy;
 	int spritescreenx;
-//	int	vmovescreen;
 	int	spriteheight;
 	int drawstarty;
 	int	drawendy;

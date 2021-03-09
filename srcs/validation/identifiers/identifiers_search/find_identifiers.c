@@ -6,17 +6,15 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/09 01:21:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:29:51 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-**	Call-Function --> read_map
-**	Elimina todos los espacios y tabulaciones que contiene la linea que recibe
-**	por parámetro para agrupar los string encontrados en un vector y poder
-**	identificar sus valores. Tambien comprueba si el mapa tiene identificadores
-**	iguales para devolver un error en ese caso
+** It removes all spaces and tabs contained in the line it receives as a parameter
+** to group the strings found in a vector to identify their values. It also checks
+** if the map has equal identifiers to return an error if so.
 */
 int	find_identifiers(char *str, t_cub3d *cub)
 {
@@ -30,18 +28,18 @@ int	find_identifiers(char *str, t_cub3d *cub)
 		else if (cub->map.tab[4] == NULL)
 			assignment_identifiers_text_colour(cub);
 		else if (ft_strchr(cub->map.tab[0], '0') || ft_strchr(cub->map.tab[0], '1'))
-			print_error("El fichero .cub NO contiene el plano del mapa al final");
+			print_error("The .cub file does NOT contain the map plan at the end");
 		else
-			print_error("Hay demasiados valores en el identificador");
+			print_error("There are too many values in the identifier");
 	}
 	if (cub->map.flag_widht > 1 || cub->map.flag_no > 1 || cub->map.flag_so > 1 ||
 	cub->map.flag_ea > 1 || cub->map.flag_we > 1 || cub->map.flag_s > 1 ||
 	cub->map.flag_ceilling > 1 || cub->map.flag_floor > 1)
 	{
-		print_error("El mapa contiene identificadores repetidos."
-			" Por favor, introduzca una mapa válido");
+		print_error("The map contains repeated identifiers."
+			" Please enter a valid map");
 	}
 	if (cub->map.i > 8)
-		print_error("Hay demasiados Identidicadores, revise su mapa");
+		print_error("There are too many Identifiers, check your map");
 	return (0);
 }

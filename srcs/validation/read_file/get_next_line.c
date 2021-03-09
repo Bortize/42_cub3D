@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:12:55 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/26 21:51:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:34:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 void	del_buff(char **s)
 {

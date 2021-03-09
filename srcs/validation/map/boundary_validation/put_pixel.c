@@ -13,7 +13,7 @@
 
 #include "cub3d.h"
 /*
-** Asigna el valor de relleno a la posicion indicada en el plano
+** Assigns the fill value to the position indicated in the plane.
 */
 char	put_pixel(int x, int y, t_cub3d *cub)
 {

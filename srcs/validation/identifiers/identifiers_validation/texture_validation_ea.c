@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_validation_ea.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:08:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 23:45:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	texture_validation_ea(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("El fichero '.cub' contiene identificadores "
-			"duplicados. \nPor favor, introduzca un fichero válido");
+		print_error("The '.cub' file contains duplicate identifiers."
+			" \nPlease enter a valid file");
 	}
 }

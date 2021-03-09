@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sort_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:11:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 21:14:29 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:45:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 /*
-** Ordena los sprites en funcion de la distancia al jugador de mas lejos a mas
-** cerca
+** Sort the sprites according to the distance to the player from
+** farthest to closest
 */
 void		sort_sprites(t_cub3d *cub)
 {
@@ -25,10 +25,8 @@ void		sort_sprites(t_cub3d *cub)
 	if (cub->map.count_sprites == 0)
 		return ;
 	i = 0;
-	//cub->spriteorder = malloc(sizeof(int) * cub->map.count_sprites);// reserva memoria para poder trabajr con el ordenamiento de sprites
 	while (i < cub->map.count_sprites)
 	{
-		//cub->spriteorder[i] = i;
 		cub->sprites[i].dist = ((cub->p.posy - cub->sprites[i].y) * (cub->p.posy - cub->sprites[i].y) +
 		(cub->p.posx - cub->sprites[i].x) * (cub->p.posx - cub->sprites[i].x));// calcula la distancia al jugador de todos los sprites en base a su posicion real
 		i++;

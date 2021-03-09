@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:14:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/22 18:44:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 00:33:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /*
-** Calcula el número de caracteres que tiene la cadena apuntada por *str.
-** Retorna el número de caracteres que contiene sin contar el carácter nulo que
-** no se incluye.
+** Calculates the number of characters in the string pointed to by *str.
+** Returns the number of characters it contains excluding the null character
+** that is not included.
 */
 size_t	ft_strlen(const char *s)
 {
@@ -28,11 +28,10 @@ size_t	ft_strlen(const char *s)
 }
 
 /*
-** Localiza la primera aparición de c (convertido a unsigned char) en la cadena
-** apuntada por s (incluyendo el carácter nulo).
-** RETORNO:
-** La función retorna un puntero a partir del carácter encontrado. Si no se ha
-** encontrado el carácter, c, entonces retorna un puntero NULL.
+** Locates the first occurrence of c (converted to unsigned char) in the string
+** pointed to by s (including the null character). RETURN: The function returns
+** a pointer from the character found. If the character, c, was not found, then
+** it returns a NULL pointer.
 */
 char	*ft_strchr(const char *s, int c)
 {
@@ -51,12 +50,11 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /*
-** Busca una subcadena contenida dentro de una cadena. Por ejemplo, si en una
-** variable S tenemos la cadena de caracteres "abcdef", la siguiente función
-** obtendrá la cadena "cde": s1=substr(s,2,3)
-** Los parámetros suelen ser los siguientes: El primero parámetro la cadena de
-** origen, el segundo parámetro la posición inicial (que suele comenzar a
-** contarse desde el 0, no desde el 1) y el tercer parámetro el tamaño.
+** Searches for a substring contained within a string. For example, if in a
+** variable S we have the string "abcdef", the following function will get the
+** string "cde": s1=substr(s,2,3) The parameters are usually the following: The
+** first parameter the source string, the second parameter the starting position
+** (which usually starts counting from 0, not 1) and the third parameter the size.
 */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
@@ -82,9 +80,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 }
 
 /*
-** Esta función reserva memoria y devuelve una nueva cadena terminada por un '\0'
-** que es el resultado de lo que ocuparia en bytes la concatenación de los
-** parámetros s1 y s2. Si la asignación falla devuelve NULL
+** This function allocates memory and returns a new string terminated by a '0'
+** which is the result of what the concatenation of the parameters s1 and s2
+** would occupy in bytes. If the assignment fails it returns NULL
 */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
