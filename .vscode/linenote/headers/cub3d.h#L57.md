@@ -1,3 +1,25 @@
+```c
+typedef	struct	s_map
+{
+	int			i;//
+	int			rows_size;//				Guarda el numero de filas que contiene el plano del mapa
+	char		*one_line_plan;//			Guarda todas las lineas del plano en unico string para poder trabajar mas facilmente
+	size_t		row_len;//					Tamaño de las filas
+	char		**plan;//					Matriz donde guardas el mapa
+	char		**plan_tmp;//					Matriz donde guardas el mapa
+	int			values_ok;//
+	char		player_init_coor;//
+	double		player_init_position_x;//	Vector de posicion del jugador x (inicial)
+	double		player_init_position_y;//	Vector de posicion del jugador y (inical )
+	char		*player_positon;//			Matriz de posicion del jugador (para poder meter en sus indices init x e init y) no lo uliltizo
+	char		boundary_value;//			Valor que se le da a los muros y que es utilizado en el funcion de validacion por inundacion '1'
+	char		fill_value;//				Valor con el que se va a sustituir la baldosa en caso de que sea 0 en el algoritmo por inundacion 'f'
+	char		sprite_value;//				Valor del sprite que tendremos en cuenta al uilizar el algoritmo por inundacion '2'
+}				t_map;//plan
+```
+<br><br>
+
+```c
 typedef	struct	valid_map
 {
 	int			i;
@@ -11,3 +33,4 @@ typedef	struct	valid_map
 	char		boundary_value;			Guarda el valor del muro '1'
 	char		fill_value;					Guarda el valor con el que irá rellenando la función boundaryfill en caso de encontrar un pixel válido dentro del mapa.
 }								t_map;
+```

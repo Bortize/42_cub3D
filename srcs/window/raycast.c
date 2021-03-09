@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 21:07:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 13:35:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	raycast(t_cub3d *cub, int col)
 	}
 }
 
-void	putamadre(t_cub3d *cub)
+void	draw_sprites(t_cub3d *cub)
 {
 	//sort_sprites(cub);
 	//after sorting the sprites, do the projection and draw them
@@ -247,6 +247,10 @@ void raycast_init(t_cub3d *cub)
 		x++;
 	}
 	sort_sprites(cub);
-	putamadre(cub);
+	draw_sprites(cub);
+	if (cub->bmp_flag)
+	{
+		screenshot(cub);
+	}
 	mlx_put_image_to_window(cub->mlx.init, cub->mlx.win, cub->mlx.img, 0, 0);
 }

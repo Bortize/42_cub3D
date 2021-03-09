@@ -1,0 +1,1 @@
+El valor de PixelDataOffset es 54 porque el valor total combinado de las cabeceras del mapa de bits es de 54 bytes. Dado que los Datos de Píxel en la imagen comienzan justo después (como ningún bloque de Paleta de Color), 54 es el valor de desplazamiento de la imagen de Mapa de Bits y 0x36 es su valor en hexadecimal.
