@@ -1,0 +1,16 @@
+C 100, 200, 222
+R 1080 720
+NO ./tester/wolftex/textures/xpm/wood.xpm
+SO ./tester/wolftex/textures/xpm/wood.xpm
+EA ./tester/wolftex/textures/xpm/wood.xpm
+WE ./tester/wolftex/textures/xpm/wood.xpm
+S ./tester/wolftex/textures/xpm/barrel.xpm
+F 234,33,99
+
+11111111111111111
+100000000000000N1
+1000000E020000001
+10000000000000001
+10000000000000001
+10000000000000001
+11111111111111111

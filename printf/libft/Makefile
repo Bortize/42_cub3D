@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/04 17:38:10 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/12/13 14:28:37 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/12/23 09:49:37 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,6 @@ CFLAGS = -Wall -Wextra -Werror -g
 all: $(NAME)
 
 $(NAME):
-		${CC} ${FLAGS} -c ${FUNCTIONS}
-		ar rc ${NAME}	${OBJ}
-		ranlib ${NAME}
-
-bonus:
 		${CC} ${FLAGS} -c ${FUNCTIONS} ${FBONUS}
 		ar rc ${NAME}	${OBJ} ${OBJBONUS}
 		ranlib ${NAME}

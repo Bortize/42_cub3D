@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 13:14:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/19 19:28:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/02/22 18:44:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 /*
 ** Calcula el número de caracteres que tiene la cadena apuntada por *str.
@@ -70,7 +70,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	{
 		i = 0;
 		if (ft_strlen(s) > start)
-			while (i < len)
+			while (i < len && s[start + i] != '\0')
 			{
 				new[i] = s[start + i];
 				i++;
