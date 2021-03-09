@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/07 12:24:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:55:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ int	main(int argc, char **argv)
 	int fd;
 
 	cub = malloc(sizeof(t_cub3d));
-
 	if (argc == 3)
 		ft_printf("Tienes que guardar la caputra de la pantalla");
 	init_structures(cub);
 	if (argc > 2)
-		ft_printf("Error. Debe introducir un único fichero con extensión '.map' \n");
-	//	init_plan_values(&cub);
+		print_error("Error. Debe introducir un único fichero con extensión '.map' \n");
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
 		ft_printf("Mapa introducido --> %s \n\n", argv[1]);

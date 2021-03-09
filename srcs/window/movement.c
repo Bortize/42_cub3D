@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 21:29:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:54:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	movement(t_cub3d *cub)
 {
 	move_forward(cub);
 	move_sideways(cub);
-//	if (cub->move.escape == 1)
-//		print_error("cub3d Cerrado\n");
 }
 
 void	set_plan_position(t_cub3d *cub, double x, double y)

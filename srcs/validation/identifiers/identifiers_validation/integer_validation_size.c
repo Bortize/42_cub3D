@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   integer_validation_size.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 20:49:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:47:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@
 */
 int	integer_validation_size(t_cub3d *cub)
 {
-	if ((ft_atoi(cub->map.tabcf[0]) > 255) || (ft_atoi(cub->map.tabcf[1]) > 255) ||
+	if ((ft_atoi(cub->map.tabcf[0]) > 255) ||
+		(ft_atoi(cub->map.tabcf[1]) > 255) ||
 		(ft_atoi(cub->map.tabcf[2]) > 255))
-	{
-		print_error("El rango del color excede del permitido. Arreglelo");
-		return (-1);
-	}
-	else
-	{
-		ft_printf("El rango de color es valido \n");
-		return (0);
-	}
+			print_error("El rango del color excede del permitido. Arreglelo");
+	return (0);
 }

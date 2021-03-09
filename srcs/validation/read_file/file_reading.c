@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 20:50:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:49:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	file_reading(int fd, t_cub3d *cub)
 	{
 		if (line[0] != '\0')
 		{
-//			ft_printf("\nGNL has read this line 📖 --> %s \n", line);
 				if (cub->map.i < 8)
 					find_identifiers(line, cub);
 				if (cub->map.flag_map_ready == 1)
@@ -34,7 +33,7 @@ int	file_reading(int fd, t_cub3d *cub)
 					validate_plan(line, cub);
 					save_plane_lines(line, cub);
 				}
-				free(line);// Necesito liberarlo cada vez para dejar la linea libre
+				free(line);
 				if (cub->map.i == 8)
 					cub->map.flag_map_ready = 1;
 		}
@@ -44,7 +43,5 @@ int	file_reading(int fd, t_cub3d *cub)
 		print_error("Faltan identificadores, revise su mapa");
 	if (cub->plan.values_ok == 0)
 		assigning_plane_values(cub);
-//	while (i < cub->plan.rows_size)// pinta el plano una vez tratado por el algoritmo floodfill. BORRAR
-//		ft_printf("🌎 %s \n", cub->plan.plan[i++]);// pinta el plano. BORRAR
 	return (0);
 }

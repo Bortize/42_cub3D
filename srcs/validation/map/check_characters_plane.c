@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_characters_plane.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 20:52:18 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:45:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		|| (str[cub->plan.i] == 'W') || (str[cub->plan.i] == ' ') || (str[cub->plan.i] == '\t'))
 		{
 			if (str[cub->plan.i] == '2')
-				cub->map.count_sprites++;// Guarda el numero de sprites que aparecen en el mapa
+				cub->map.count_sprites++;
 			player_start_position(str, cub);
 			cub->plan.i++;
 		}
@@ -46,16 +46,12 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 */
 void	check_characters_plane(char *str, t_cub3d *cub)
 {
-//	ft_printf("congrats, estas leyendo el plano \n");
-//	ft_printf("Se va a proceder a analizar la línea  🗺️--> %s \n", str);
 	if (ft_strchr(str, '0') || ft_strchr(str, '1') || ft_strchr(str, '2') ||
 		ft_strchr(str, 'N') || ft_strchr(str, 'S') || ft_strchr(str, 'E') ||
 		ft_strchr(str, 'W') || ft_strchr(str, ' ') || ft_strchr(str, '\t'))
 	{
 		check_values_allowed(str, cub);
-//		ft_printf(" La línea del plano es válida ✅\n");
 		cub->plan.rows_size++;
-//		ft_printf("Número de líneas leídas: %i \n", cub->plan.rows_size);
 	}
 	else
 	{

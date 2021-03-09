@@ -6,12 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/04 02:28:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/09 01:21:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
 /*
 **	Call-Function --> read_map
 **	Elimina todos los espacios y tabulaciones que contiene la linea que recibe
@@ -19,7 +18,6 @@
 **	identificar sus valores. Tambien comprueba si el mapa tiene identificadores
 **	iguales para devolver un error en ese caso
 */
-
 int	find_identifiers(char *str, t_cub3d *cub)
 {
 	if ((cub->map.tab = ft_split_plus(str, ' ', '\t')))
