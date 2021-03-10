@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 01:12:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 21:32:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,78 +17,15 @@ void	raycast(t_cub3d *cub, int col)
 	t_raycalc	ray;
 
 	ft_bzero(&ray, sizeof(t_raycalc));
-	//calculate ray position and direction
-	cub->rcast.camerax = 2 * col / (double)cub->map.width - 1;
-	cub->rcast.raydirx = cub->p.dirx + cub->p.planex * cub->rcast.camerax;
-	cub->rcast.raydiry = cub->p.diry + cub->p.planey * cub->rcast.camerax;
-	//which box of the map we're in
-	cub->rcast.mapx = (int)(cub->p.posx);
-	cub->rcast.mapy = (int)(cub->p.posy);
-	//length of ray from one x or y-side to next x or y-side
-	cub->rcast.deltadistx = fabs(1 / cub->rcast.raydirx);
-	cub->rcast.deltadisty = fabs(1 / cub->rcast.raydiry);
-
-	//calculate step and initial sideDist
-	if (cub->rcast.raydirx < 0)
-	{
-		cub->rcast.stepx = -1;
-		cub->rcast.sidedistx = (cub->p.posx - cub->rcast.mapx) * cub->rcast.deltadistx;
-	}
-	else
-	{
-		cub->rcast.stepx = 1;
-		cub->rcast.sidedistx = (cub->rcast.mapx + 1.0 - cub->p.posx) * cub->rcast.deltadistx;
-	}
-	if (cub->rcast.raydiry < 0)
-	{
-		cub->rcast.stepy = -1;
-		cub->rcast.sidedisty = (cub->p.posy - cub->rcast.mapy) * cub->rcast.deltadisty;
-	}
-	else
-	{
-		cub->rcast.stepy = 1;
-		cub->rcast.sidedisty = (cub->rcast.mapy + 1.0 - cub->p.posy) * cub->rcast.deltadisty;
-	}
-
-	//perform DDA
-	int hit = 0;
-	while (hit == 0)
-	{
-		//jump to next map square, OR in x-direction, OR in y-direction
-		if (cub->rcast.sidedistx < cub->rcast.sidedisty)
-		{
-			cub->rcast.sidedistx += cub->rcast.deltadistx;
-			cub->rcast.mapx += cub->rcast.stepx;
-			cub->rcast.side = 0 + (cub->rcast.raydirx < 0);
-		}
-		else
-		{
-			cub->rcast.sidedisty += cub->rcast.deltadisty;
-			cub->rcast.mapy += cub->rcast.stepy;
-			cub->rcast.side = 2 + (cub->rcast.raydiry > 0);
-		}
-		if (cub->plan.plan[cub->rcast.mapy][cub->rcast.mapx] == '1')
-			hit = 1;
-	}
-
-	//Calculate distance of perpendicular ray (Euclidean distance will give fisheye effect!)
-	if(cub->rcast.side <= 1)
-		cub->rcast.perpwalldist = (cub->rcast.mapx - cub->p.posx + (1 - cub->rcast.stepx) / 2) / cub->rcast.raydirx;
-	else
-		cub->rcast.perpwalldist = (cub->rcast.mapy - cub->p.posy + (1 - cub->rcast.stepy) / 2) / cub->rcast.raydiry;
+	init_raycast(cub, col);
+	step_and_initial_sidedist(cub);
+	perfom_dda(&cub->rcast, &cub->plan);
+	distance_perp_ray(&cub->rcast, &cub->p);
 
 	cub->zbuffer[col] = cub->rcast.perpwalldist;
 	//Calculate height of line to draw on screen
 	cub->win.lineheight = (int)(cub->map.height / cub->rcast.perpwalldist);
-		//calculate lowest and highest pixel to fill in current stripe
-	cub->win.drawstart = -cub->win.lineheight / 2 + cub->map.height / 2;
-	if (cub->win.drawstart < 0)
-		cub->win.drawstart = 0;
-	cub->win.drawend = cub->win.lineheight / 2 + cub->map.height / 2;
-	if (cub->win.drawend >= cub->map.height)
-		cub->win.drawend = cub->map.height - 1;
-	if (cub->win.drawend < 0)
-		cub->win.drawend = 0;
+	low_hight_pixel(&cub->win, &cub->map);
 
 
 	//texturing calculations
@@ -131,23 +68,7 @@ void	raycast(t_cub3d *cub, int col)
 
 void	draw_sprites(t_cub3d *cub)
 {
-	//sort_sprites(cub);
-	//after sorting the sprites, do the projection and draw them
-//	init_sprites(cub);
 	int i;
-	double spritex;
-	double spritey;
-	double invdet;
-	double transformx;
-	double transformy;
-	int spritescreenx;
-//	int	vmovescreen;
-	int	spriteheight;
-	int drawstarty;
-	int	drawendy;
-	int	spritewidth;
-	int	drawstartx;
-	int drawendx;
 
 	int y;
 	int d;
@@ -155,68 +76,57 @@ void	draw_sprites(t_cub3d *cub)
 	int stripe;
 	int texx;
 	unsigned int color;
-	//after sorting the sprites, do the projection and draw them
+
 	i = 0;
 	while (i < cub->map.count_sprites)
 	{
-		//translate sprite position to relative to camera
-		spritex = cub->sprites[i].x - cub->p.posx;
-		spritey = cub->sprites[i].y - cub->p.posy;
-
-		//transform sprite with the inverse camera matrix
-		// [ planeX   dirX ] -1                                       [ dirY      -dirX ]
-		// [               ]       =  1/(planeX*dirY-dirX*planeY) *   [                 ]
-		// [ planeY   dirY ]                                          [ -planeY  planeX ]
-
-		invdet = 1.0 / (cub->p.planex * cub->p.diry - cub->p.dirx * cub->p.planey);
-
-		transformx = invdet * (cub->p.diry * spritex - cub->p.dirx * spritey);
-		transformy = invdet * (-cub->p.planey * spritex + cub->p.planex * spritey);
-
-		spritescreenx = (int)((cub->map.width / 2) * (1 + transformx / transformy));
-
-		//parameters for scaling and moving the sprites
-		spriteheight = abs((int)(cub->map.height / transformy));
+		cub->spr.spritex = cub->sprites[i].x - cub->p.posx;
+		cub->spr.spritey = cub->sprites[i].y - cub->p.posy;
+		cub->spr.invdet = 1.0 / (cub->p.planex * cub->p.diry - cub->p.dirx * cub->p.planey);
+		cub->spr.transformx = cub->spr.invdet * (cub->p.diry * cub->spr.spritex - cub->p.dirx * cub->spr.spritey);
+		cub->spr.transformy = cub->spr.invdet * (-cub->p.planey * cub->spr.spritex + cub->p.planex * cub->spr.spritey);
+		cub->spr.spritescreenx = (int)((cub->map.width / 2) * (1 + cub->spr.transformx / cub->spr.transformy));
+		cub->spr.spriteheight = abs((int)(cub->map.height / cub->spr.transformy));
 
 		//calculate lowest and highest pixel to fill in current stripe
-		drawstarty = -spriteheight / 2 + cub->map.height / 2;
-		if (drawstarty < 0)
-			drawstarty = 0;
-		drawendy = spriteheight / 2 + cub->map.height / 2;
-		if (drawendy >= cub->map.height)
-			drawendy = cub->map.height - 1;
+		cub->spr.drawstarty = -cub->spr.spriteheight / 2 + cub->map.height / 2;
+		if (cub->spr.drawstarty < 0)
+			cub->spr.drawstarty = 0;
+		cub->spr.drawendy = cub->spr.spriteheight / 2 + cub->map.height / 2;
+		if (cub->spr.drawendy >= cub->map.height)
+			cub->spr.drawendy = cub->map.height - 1;
 
 		//calculate width of the sprite
-		spritewidth = abs((int)(cub->map.height / transformy));
-		drawstartx = -spritewidth / 2 + spritescreenx;
-		if (drawstartx < 0)
-			drawstartx = 0;
-		drawendx = spritewidth / 2 + spritescreenx;
-		if (drawendx >= cub->map.width)
-			drawendx = cub->map.width - 1;
+		cub->spr.spritewidth = abs((int)(cub->map.height / cub->spr.transformy));
+		cub->spr.drawstartx = -cub->spr.spritewidth / 2 + cub->spr.spritescreenx;
+		if (cub->spr.drawstartx < 0)
+			cub->spr.drawstartx = 0;
+		cub->spr.drawendx = cub->spr.spritewidth / 2 + cub->spr.spritescreenx;
+		if (cub->spr.drawendx >= cub->map.width)
+			cub->spr.drawendx = cub->map.width - 1;
 
 		//loop through every vertical stripe of the sprite on screen
 		//t_texture textur;
-		stripe = drawstartx;
-		while (stripe < drawendx)
+		stripe = cub->spr.drawstartx;
+		while (stripe < cub->spr.drawendx)
 		{
-			texx = (int)(256 * (stripe - (-spritewidth / 2 + spritescreenx)) * cub->tex.sprite[0].width / spritewidth) / 256;
+			texx = (int)(256 * (stripe - (-cub->spr.spritewidth / 2 + cub->spr.spritescreenx)) * cub->tex.sprite[0].width / cub->spr.spritewidth) / 256;
 			//the conditions in the if are:
 			//1) it's in front of camera plane so you don't see things behind you
 			//2) it's on the screen (left)
 			//3) it's on the screen (right)
 			//4) ZBuffer, with perpendicular distance
-			if (transformy > 0 && stripe > 0 && stripe < cub->map.width && transformy < cub->zbuffer[stripe])
+			if (cub->spr.transformy > 0 && stripe > 0 && stripe < cub->map.width && cub->spr.transformy < cub->zbuffer[stripe])
 			{
-				y = drawstarty;
-				while (y < drawendy)
+				y = cub->spr.drawstarty;
+				while (y < cub->spr.drawendy)
 				{
 //					ft_printf("veces %i \n", y);
 					// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 
 
-					d = y * 256 - cub->map.height * 128 + spriteheight * 128;//256 and 128 factors to avoid floats
-					texy = ((d * cub->tex.sprite[0].height) / spriteheight) / 256;
+					d = y * 256 - cub->map.height * 128 + cub->spr.spriteheight * 128;//256 and 128 factors to avoid floats
+					texy = ((d * cub->tex.sprite[0].height) / cub->spr.spriteheight) / 256;
 					color = cub->tex.sprite[0].addr[cub->tex.sprite[0].width * texy + texx];
 					if((color & 0x00FFFFFF) != 0)
 						my_mlx_pixel_put(cub, stripe, y, color);

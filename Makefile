@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/10 18:09:17 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/10 21:33:50 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,13 @@ SRCS		=	srcs/main.c \
 				srcs/window/set_pixel.c \
 				srcs/window/refresh_screen.c \
 				srcs/window/init_sprites.c \
-				srcs/window/screenshot.c
+				srcs/window/screenshot.c \
+				srcs/window/step_and_initial_sidedist.c \
+				srcs/window/perfom_dda.c \
+				srcs/window/init_raycast.c \
+				srcs/window/distance_perp_ray.c \
+				srcs/window/low_hight_pixel.c \
+#				srcs/window/texture_calculation.c
 
 
 ############################	Variables	####################################

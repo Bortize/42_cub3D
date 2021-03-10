@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:37:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 21:24:51 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,5 +277,11 @@ void	init_sprites(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 void	refresh_screen(t_cub3d *cub);
 int		screenshot(t_cub3d *cub);
+void	step_and_initial_sidedist(t_cub3d *cub);
+void	perfom_dda(t_raycast *rcast, t_map *plan);
+void	init_raycast(t_cub3d *cub, int col);
+void	distance_perp_ray(t_raycast *rcast, t_player *p);
+void	low_hight_pixel(t_window *win, t_parse *map);
+void	texture_calculation(t_raycalc *ray, t_cub3d *cub);
 
 #endif

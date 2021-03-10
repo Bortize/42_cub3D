@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:55:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:31:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:47:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init_sprites(t_cub3d *cub)
 		transformx = invdet * (cub->p.diry * spritex + cub->p.dirx * spritey);
 		transformy = invdet * (-cub->p.planey * spritex + cub->p.planex * spritey);
 
-		spritescreenx = (int)(cub->map.width / 2) * (1 + transformx / transformy);
+		cub->spr.spritescreenx = (int)(cub->map.width / 2) * (1 + transformx / transformy);
 
 		//parameters for scaling and moving the sprites
 		spriteheight = fabs((int)cub->map.height / (transformy));
@@ -59,16 +59,16 @@ void	init_sprites(t_cub3d *cub)
 		drawstarty = -spriteheight / 2 + cub->map.height / 2;
 		if (drawstarty < 0)
 			drawstarty = 0;
-		drawendy = spriteheight / 2 + cub->map.height / 2;
-		if (drawendy >= cub->map.height)
-			drawendy = cub->map.height - 1;
+		cub->spr.drawendy = spriteheight / 2 + cub->map.height / 2;
+		if (cub->spr.drawendy >= cub->map.height)
+			cub->spr.drawendy = cub->map.height - 1;
 
 		//calculate width of the sprite
 		spritewidth = abs((int)(cub->map.height / (transformy)));
-		drawstartx = -spritewidth / 2 + spritescreenx;
+		drawstartx = -spritewidth / 2 + cub->spr.spritescreenx;
 		if (drawstartx < 0)
 			drawstartx = 0;
-		drawendx = spritewidth / 2 + spritescreenx;
+		drawendx = spritewidth / 2 + cub->spr.spritescreenx;
 		if (drawendx >= cub->map.width)
 			drawendx = cub->map.width - 1;
 
@@ -79,7 +79,7 @@ void	init_sprites(t_cub3d *cub)
 		stripe = drawstartx;
 		while (stripe < drawendx)
 		{
-			texx = (((int)256 * (stripe - (-spritewidth / 2 + spritescreenx)) * textur.width / spritewidth) / 256);
+			texx = (((int)256 * (stripe - (-spritewidth / 2 + cub->spr.spritescreenx)) * textur.width / spritewidth) / 256);
 			//the conditions in the if are:
 			//1) it's in front of camera plane so you don't see things behind you
 			//2) it's on the screen (left)
@@ -90,7 +90,7 @@ void	init_sprites(t_cub3d *cub)
 				int y;
 
 				y = drawstarty;
-				while (y < drawendy)
+				while (y < cub->spr.drawendy)
 				{
 					// Cast the texture coordinate to integer, and mask with (texHeight - 1) in case of overflow
 					int d;
