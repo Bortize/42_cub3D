@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:37:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:21:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
 /*
 ** It listens if a key is pressed and activates the flag belonging to that
 ** key in order to manage it in the "player" function.
 */
+
 int	key_press(int keycode, t_cub3d *cub)
 {
 	if (keycode == KEY_ESC)
@@ -33,11 +35,13 @@ int	key_press(int keycode, t_cub3d *cub)
 		cub->ctrl.rotate--;
 	return (0);
 }
+
 /*
 ** Listens when a key is released and deactivates the flag belonging to
 ** that key (0) in order to manage it in the "player" function.
 */
-int		key_release(int keycode, t_cub3d *cub)
+
+int	key_release(int keycode, t_cub3d *cub)
 {
 	if (keycode == KEY_ESC)
 		print_error("Finishing cub3d");

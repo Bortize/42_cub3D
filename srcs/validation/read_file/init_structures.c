@@ -6,17 +6,18 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 14:02:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:21:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** It initializes all the variables of the structure to allow us to start working
-** with them. It also eliminates the basuara value that they could contain at the
-** time of their declaration.
+** It initializes all the variables of the structure to allow us to start
+** working with them. It also eliminates the basuara value that they could
+** contain at the time of their declaration.
 */
+
 void	init_structures(t_cub3d *cub)
 {
 	ft_bzero(cub, sizeof(t_cub3d));
@@ -25,4 +26,3 @@ void	init_structures(t_cub3d *cub)
 	cub->plan.fill_value = 'f';
 	cub->plan.sprite_value = '2';
 }
-

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 17:18:21 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 13:49:27 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:37:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 ** Creates a new instance of the structure and saves the values of the position
 ** where the sprite was found on the map
 */
+
 void	find_sprites(t_cub3d *cub)
 {
-	int x;
-	int y;
-	int i;
-	int s;
+	int	x;
+	int	y;
+	int	i;
+	int	s;
 
 	i = 0;
 	x = 0;

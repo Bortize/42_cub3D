@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   sort_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:11:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:45:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:34:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
 /*
 ** Sort the sprites according to the distance to the player from
 ** farthest to closest
 */
-void		sort_sprites(t_cub3d *cub)
+
+void			sort_sprites(t_cub3d *cub)
 {
 	int			i;
 	int			j;

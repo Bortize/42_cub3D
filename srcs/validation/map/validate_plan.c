@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_plan.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 20:52:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:25:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:21:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** enters it compares them to keep the one with the longest length, which will
 ** be used to reserve memory for the matrix later on.
 */
+
 int		validate_plan(char *str, t_cub3d *cub)
 {
 	if (cub->plan.values_ok != 1)

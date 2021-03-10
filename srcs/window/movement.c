@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:49:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:32:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-/*
-** Player movement
-*/
-void	movement(t_cub3d *cub)
-{
-	move_forward(cub);
-	move_sideways(cub);
-}
 
 void	set_plan_position(t_cub3d *cub, double x, double y)
 {
@@ -51,4 +42,14 @@ void	move_sideways(t_cub3d *cub)
 	pos_x = cub->p.posx - cub->p.diry * speed;
 	pos_y = cub->p.posy + cub->p.dirx * speed;
 	set_plan_position(cub, pos_x, pos_y);
+}
+
+/*
+** Player movement
+*/
+
+void	movement(t_cub3d *cub)
+{
+	move_forward(cub);
+	move_sideways(cub);
 }

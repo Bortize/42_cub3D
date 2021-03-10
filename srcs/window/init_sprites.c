@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_sprites.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:55:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:37:56 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:31:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** Initializes all ray casting settings for sprites
 */
+
 void	init_sprites(t_cub3d *cub)
 {
 	int i;

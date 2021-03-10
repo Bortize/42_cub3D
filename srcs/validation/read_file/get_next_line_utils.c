@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/10 13:14:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:33:54 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/10 19:09:45 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/10 19:24:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** Returns the number of characters it contains excluding the null character
 ** that is not included.
 */
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -33,6 +34,7 @@ size_t	ft_strlen(const char *s)
 ** a pointer from the character found. If the character, c, was not found, then
 ** it returns a NULL pointer.
 */
+
 char	*ft_strchr(const char *s, int c)
 {
 	int i;
@@ -53,9 +55,11 @@ char	*ft_strchr(const char *s, int c)
 ** Searches for a substring contained within a string. For example, if in a
 ** variable S we have the string "abcdef", the following function will get the
 ** string "cde": s1=substr(s,2,3) The parameters are usually the following: The
-** first parameter the source string, the second parameter the starting position
-** (which usually starts counting from 0, not 1) and the third parameter the size.
+** first parameter the source string, the second parameter the starting
+** position (which usually starts counting from 0, not 1) and the third
+** parameter the size.
 */
+
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*new;
@@ -84,6 +88,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 ** which is the result of what the concatenation of the parameters s1 and s2
 ** would occupy in bytes. If the assignment fails it returns NULL
 */
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	unsigned int	size_s1;

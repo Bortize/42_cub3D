@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   player_start_position.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 23:15:50 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:24:09 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/10 18:17:57 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/10 18:20:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
 /*
-** Saves the position of the player when found. It saves it in 2 coordinates where
-** 'x' corresponds to the index of the vector number where it was found and 'y'
-** to the index of the string where it was found.
+** Saves the position of the player when found. It saves it in 2 coordinates
+** where 'x' corresponds to the index of the vector number where it was found
+** and 'y' to the index of the string where it was found.
 */
+
 int	player_start_position(char *str, t_cub3d *cub)
 {
 	if ((str[cub->plan.i] == 'N') || (str[cub->plan.i] == 'S') ||

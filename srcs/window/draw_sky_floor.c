@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_sky_floor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 13:40:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 23:41:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:10:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	draws_sky_floor(t_cub3d *cub, int x)
 
 	y = 0;
 	while (y < cub->win.drawstart)
- 	{
-		 my_mlx_pixel_put(cub, x, y, cub->map.ceilling_conv);
- 		y++;
+	{
+		my_mlx_pixel_put(cub, x, y, cub->map.ceilling_conv);
+		y++;
 	}
 }

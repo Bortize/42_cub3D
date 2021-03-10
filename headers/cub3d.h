@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 13:41:23 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 19:37:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ typedef	struct	s_map
 	char		fill_value;
 	char		sprite_value;
 }				t_map;
+
+typedef struct	s_point
+{
+	int	x;
+	int	y;
+}				t_point;
 /*
 ** Inicia todo lo necesario para que la mlx carge
 ** y funcione correctamente
@@ -170,23 +176,42 @@ typedef struct	s_sprite
 	double		dist;
 	t_texture	*tex;
 }				t_sprite;
+
+typedef struct	s_rcastsprite
+{
+	int		i;
+	double	spritex;
+	double	spritey;
+	double	invdet;
+	double	transformx;
+	double	transformy;
+	int		spritescreenx;
+	int		spriteheight;
+	int		drawstarty;
+	int		drawendy;
+	int		spritewidth;
+	int		drawstartx;
+	int		drawendx;
+}				t_rcastsprite;
+
 /*
 ** This is the main structure of the program
 */
 typedef struct	s_cub3d
 {
-	double		*zbuffer;
-	t_parse		map;
-	t_map		plan;
-	t_mlx		mlx;
-	t_controls	ctrl;
-	t_raycast	rcast;
-	t_player	p;
-	t_window	win;
-	t_textures	tex;
-	t_sprite	*sprites;
-	int			*spriteorder;
-	int			bmp_flag;
+	double			*zbuffer;
+	t_parse			map;
+	t_map			plan;
+	t_mlx			mlx;
+	t_controls		ctrl;
+	t_raycast		rcast;
+	t_player		p;
+	t_window		win;
+	t_textures		tex;
+	t_rcastsprite	spr;
+	t_sprite		*sprites;
+	int				*spriteorder;
+	int				bmp_flag;
 }				t_cub3d;
 
 void	initialize_mlx(t_cub3d *cub);
@@ -220,7 +245,7 @@ void	check_characters_plane(char *str, t_cub3d *cub);
 void	find_sprites(t_cub3d *cub);
 void	check_allowed_values(char *str, t_cub3d *cub);
 void	assigning_plane_values(t_cub3d *cub);
-int		boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub);
+int		boundary_fill(int x, int y, t_cub3d *cub);
 char	put_pixel(int x, int y, t_cub3d *cub);
 void	graphic(t_cub3d *cub);
 void	start_mlx(t_cub3d *cub);

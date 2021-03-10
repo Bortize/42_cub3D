@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 12:06:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 18:04:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	assignment_identifiers_colours(t_cub3d *cub)
 ** to the corresponding variable in the structure.
 */
 
-int	assignment_identifiers_text_colour(t_cub3d *cub)
+int		assignment_identifiers_text_colour(t_cub3d *cub)
 {
 	if ((ft_strcmp("NO", cub->map.tab[0]) == 0))
 		texture_validation_no(cub);
