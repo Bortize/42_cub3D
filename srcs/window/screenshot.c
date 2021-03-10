@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   screenshot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:35:42 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 23:23:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 13:31:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,18 @@ static	void		bmp_header(t_cub3d *cub, int fd, unsigned char *bmp)
 	bmp[10] = (unsigned char)54;
 	bmp[14] = (unsigned char)40;
 	int_char(bmp + 18, cub->map.width);
+//	int_char(bmp + 22, -cub->map.height);
 	int_char(bmp + 22, cub->map.height);
 	bmp[26] = (unsigned char)1;
-	bmp[28] = (unsigned char)24;
+	bmp[28] = (unsigned char)32;
 	write(fd, bmp, 54);
 }
-
+/*
 static void			bmp_pixels(t_cub3d *cub, int fd)
 {
 	int		y;
 	int		x;
-	int		color;
+	int		*color;
 
 	y = -1;
 	while (++y < cub->map.height)
@@ -49,9 +50,29 @@ static void			bmp_pixels(t_cub3d *cub, int fd)
 		x = -1;
 		while (++x < cub->map.width)
 		{
-			color = cub->mlx.addr[cub->map.width * (cub->map.height - 1 - y) + x];
-			write(fd, &color, 3);
+			color = &cub->mlx.addr[(cub->mlx.line_len * y) + x * 4];
+			write(fd, color, 4);
 		}
+	}
+}
+*/
+
+static void			bmp_pixels(t_cub3d *cub, int fd)
+{
+	int		y;
+	int		x;
+	int		*color;
+
+	y = cub->map.height - 1;
+	while (y >= 0)
+	{
+		x = -1;
+		while (++x < cub->map.width)
+		{
+			color = &cub->mlx.addr[(cub->mlx.line_len * y) + x * 4];
+			write(fd, color, 4);
+		}
+		y--;
 	}
 }
 
