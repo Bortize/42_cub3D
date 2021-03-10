@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/10 12:17:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 14:02:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	find_identifiers(char *str, t_cub3d *cub)
 			assignment_identifiers_text_colour(cub);
 		else if (ft_strchr(cub->map.tab[0], '0') ||
 		ft_strchr(cub->map.tab[0], '1'))
-			print_error("he plan must follow the identifiers");
+			print_error("He plan must follow the identifiers");
 		else
 			print_error("There are too many values in the identifier");
 	}

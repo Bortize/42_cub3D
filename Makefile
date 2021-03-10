@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/10 11:36:02 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/10 14:10:11 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 #-g3 -fsanitize=address
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
