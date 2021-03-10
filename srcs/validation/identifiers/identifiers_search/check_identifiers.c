@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   check_identifiers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:30:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 12:03:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
 /*
 **  It checks position 0 against any of the allowed identifiers.
 **  If none is found, it handles the error and stops
 **  at this point in the program.
 */
+
 int	check_identifiers(t_cub3d *cub)
 {
 	if ((ft_strcmp("R", cub->map.tab[0]) == 0) ||

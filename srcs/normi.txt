@@ -1,0 +1,380 @@
+Norme: ./normi.txt
+Warning: Not a valid file
+Norme: ./error/print_error.c
+Norme: ./main.c
+Norme: ./validation/identifiers/identifiers_search/check_identifiers.c
+Norme: ./validation/identifiers/identifiers_search/assignment_identifiers.c
+Error: global scope bad aligned
+Norme: ./validation/identifiers/identifiers_search/find_identifiers.c
+Norme: ./validation/identifiers/identifiers_validation/integer_validation_size.c
+Norme: ./validation/identifiers/identifiers_validation/integer_validation.c
+Norme: ./validation/identifiers/identifiers_validation/texture_validation_ea.c
+Norme: ./validation/identifiers/identifiers_validation/texture_validation_no.c
+Norme: ./validation/identifiers/identifiers_validation/color_validation_ceilling.c
+Error: 42 header not at top of the file
+Error (line 15): function color_validation_ceilling has 34 lines
+Norme: ./validation/identifiers/identifiers_validation/color_validation_floor.c
+Error: 42 header not at top of the file
+Error (line 15): function color_validation_floor has 34 lines
+Norme: ./validation/identifiers/identifiers_validation/path_validation.c
+Error: 42 header not at top of the file
+Error (line 15): declarations in path_validation are bad aligned
+Error (line 26, col 1): missing space after while
+Norme: ./validation/identifiers/identifiers_validation/texture_validation_we.c
+Norme: ./validation/identifiers/identifiers_validation/screen_validation_r.c
+Error: 42 header not at top of the file
+Norme: ./validation/identifiers/identifiers_validation/texture_validation_s.c
+Norme: ./validation/identifiers/identifiers_validation/texture_validation_so.c
+Norme: ./validation/map/boundary_validation/put_pixel.c
+Error: 42 header not at top of the file
+Error (line 12): comment not well formatted
+Error (line 14): preprocessor block must be followed by one empty line
+Error (line 18): bad spacing before put_pixel
+Norme: ./validation/map/assigning_plane_values.c
+Error: 42 header not at top of the file
+Error (line 17): line has 82 characters
+Error (line 20): bad spacing before assigning_plane_values
+Norme: ./validation/map/save_plane_lines.c
+Error: 42 header not at top of the file
+Error (line 16): line has 82 characters
+Error (line 17): line has 83 characters
+Error (line 21): bad spacing before save_plane_lines
+Norme: ./validation/map/boundary_validation/boundary_validation.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 19): bad spacing before boundary_fill
+Error (line 19): boundary_fill have 5 parameters
+Error (line 19): line has 82 characters
+Error (line 33, col 9): missing parentheses in return statement
+Norme: ./validation/identifiers/identifiers_validation/validation_ceilling_floor.c
+Error (line 15): multiple empty lines
+Error (line 16): multiple empty lines
+Error (line 22): bad spacing before validation_identifiers_ceilling
+Error (line 36, col 31): missing space around *
+Error (line 54, col 28): missing space around *
+Norme: ./validation/map/find_sprites.c
+Error: 42 header not at top of the file
+Error (line 19): bad spacing before find_sprites
+Error (line 19): function find_sprites has 26 lines
+Norme: ./validation/map/where_player_look.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 19): bad spacing before where_player_look
+Norme: ./validation/read_file/file_validation.c
+Error: 42 header not at top of the file
+Error (line 19): bad spacing before file_validation
+Error (line 19): declarations in file_validation are bad aligned
+Error (line 30, col 1): missing space after while
+Norme: ./validation/map/player_start_position.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 15): line has 83 characters
+Error (line 19): bad spacing before player_start_position
+Norme: ./validation/read_file/file_reading.c
+Error: 42 header not at top of the file
+Error (line 15): comment not well formatted
+Error (line 19): bad spacing before file_reading
+Error (line 19): declarations must be followed by one empty line in file_reading
+Error (line 19): function file_reading has 26 lines
+Error (line 19): declarations in file_reading are bad aligned
+Error (line 24): Empty line
+Error (line 29): bad indentation
+Error (line 30): bad indentation
+Error (line 31): bad indentation
+Error (line 32): bad indentation
+Error (line 33): bad indentation
+Error (line 34): bad indentation
+Error (line 35): bad indentation
+Error (line 36): bad indentation
+Error (line 37): bad indentation
+Error (line 38): bad indentation
+Norme: ./validation/read_file/init_structures.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 16): line has 82 characters
+Error (line 17): line has 82 characters
+Error (line 20): bad spacing before init_structures
+Norme: ./validation/map/check_characters_plane.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 15): line has 82 characters
+Error (line 20): bad spacing before check_values_allowed
+Error (line 25): line has 96 characters
+Error (line 26): line has 95 characters
+Error (line 27): line has 97 characters
+Error (line 42): line has 82 characters
+Error (line 47): bad spacing before check_characters_plane
+Norme: ./validation/map/validate_plan.c
+Error: 42 header not at top of the file
+Error (line 21): bad spacing before validate_plan
+Norme: ./window/controls.c
+Error: 42 header not at top of the file
+Error: global scope bad aligned
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 18): bad spacing before key_press
+Error (line 18): bad spacing after key_press
+Error (line 40): bad spacing before key_release
+Norme: ./validation/read_file/get_next_line_utils.c
+Error: 42 header not at top of the file
+Error (line 20): bad spacing before ft_strlen
+Error (line 36): bad spacing before ft_strchr
+Error (line 57): line has 83 characters
+Error (line 59): bad spacing before ft_substr
+Error (line 87): bad spacing before ft_strjoin
+Norme: ./window/graphic.c
+Norme: ./window/game.c
+Norme: ./window/load_textures.c
+Error: 42 header not at top of the file
+Norme: ./validation/read_file/get_next_line.c
+Error: 42 header not at top of the file
+Norme: ./window/draw_sky_floor.c
+Error: 42 header not at top of the file
+Error (line 21): must begin only by tabulations
+Error (line 21): bad indentation
+Error (line 22): must begin only by tabulations
+Error (line 23): must begin only by tabulations
+Error (line 23): bad indentation
+Norme: ./window/load_sprite_texture.c
+Error: 42 header not at top of the file
+Error (line 17): line has 82 characters
+Error (line 19): Empty line
+Error (line 21): line has 82 characters
+Norme: ./window/player_movement.c
+Error: file must end with a single empty line
+Error: 42 header not at top of the file
+Error (line 19): bad spacing before moving
+Error (line 19): bad spacing after moving
+Error (line 26): bad spacing before rotating
+Norme: ./window/my_mlx_pixel_put.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 18): bad spacing before my_mlx_pixel_put
+Norme: ./window/load_wall_texture.c
+Error: 42 header not at top of the file
+Error: global scope bad aligned
+Error (line 17): line has 82 characters
+Error (line 19): line has 82 characters
+Error (line 21): line has 82 characters
+Error (line 23): line has 82 characters
+Error (line 32): Empty line
+Error (line 36): Empty line
+Error (line 40): Empty line
+Norme: ./window/rotation.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 17): bad spacing before rotation
+Error (line 19, col 8): oldDirX not unixcase
+Error (line 20, col 8): oldPlaneX not unixcase
+Error (line 24): Empty line
+Error (line 30): Empty line
+Error (line 34, col 14): bad spacing
+Error (line 35, col 15): bad spacing
+Norme: ./window/screenshot.c
+Error: 42 header not at top of the file
+Error: global scope bad aligned
+Error (line 52): line has 83 characters
+Error (line 58): declarations in screenshot are bad aligned
+Norme: ./window/init_sprites.c
+Error: 42 header not at top of the file
+Error (line 18): bad spacing before init_sprites
+Error (line 18): declarations in init_sprites must be at the top of the function
+Error (line 18): function init_sprites has 92 lines
+Error (line 18): declarations in init_sprites are bad aligned
+Error (line 18, col 0): init_sprites has 20 variables
+Error (line 34): C++ comment
+Error (line 38): C++ comment
+Error (line 38): bad indentation
+Error (line 42): C++ comment
+Error (line 43): C++ comment
+Error (line 43): line has 90 characters
+Error (line 44): C++ comment
+Error (line 44): line has 90 characters
+Error (line 45): C++ comment
+Error (line 45): line has 90 characters
+Error (line 47): line has 84 characters
+Error (line 50): line has 84 characters
+Error (line 52): line has 83 characters
+Error (line 54): C++ comment
+Error (line 57): C++ comment
+Error (line 65): C++ comment
+Error (line 65): bad indentation
+Error (line 74): C++ comment
+Error (line 74): bad indentation
+Error (line 81): line has 116 characters
+Error (line 82): C++ comment
+Error (line 83): C++ comment
+Error (line 83): line has 82 characters
+Error (line 84): C++ comment
+Error (line 85): C++ comment
+Error (line 86): C++ comment
+Error (line 87): line has 110 characters
+Error (line 94): C++ comment
+Error (line 94): line has 113 characters
+Error (line 94): bad indentation
+Error (line 99): C++ comment
+Error (line 99): line has 115 characters
+Error (line 102, col 5): missing space after if
+Error (line 104): C++ comment
+Error (line 110): bad indentation
+Norme: ./window/start_mlx.c
+Error: 42 header not at top of the file
+Error (line 12): comment not well formatted
+Error (line 23): line has 82 characters
+Norme: ./window/movement.c
+Error: 42 header not at top of the file
+Error: global scope bad aligned
+Error (line 18): bad spacing before movement
+Error (line 32): Space before function name
+Error (line 36, col 7): bad spacing
+Error (line 48, col 7): bad spacing
+Norme: ./window/refresh_screen.c
+Error: 42 header not at top of the file
+Error (line 19): bad spacing before refresh_screen
+Norme: ./window/sort_sprites.c
+Error: 42 header not at top of the file
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 18): bad spacing before sort_sprites
+Error (line 18): function sort_sprites has 33 lines
+Error (line 30): line has 104 characters
+Error (line 31): C++ comment
+Error (line 31): line has 162 characters
+Error (line 36): must begin only by tabulations
+Error (line 36): bad indentation
+Error (line 38): must begin only by tabulations
+Error (line 38): bad indentation
+Error (line 39): must begin only by tabulations
+Error (line 39): bad indentation
+Error (line 40): must begin only by tabulations
+Error (line 40): bad indentation
+Error (line 41): must begin only by tabulations
+Error (line 41): bad indentation
+Error (line 42): must begin only by tabulations
+Error (line 42): bad indentation
+Error (line 43): must begin only by tabulations
+Error (line 43): bad indentation
+Error (line 44): must begin only by tabulations
+Error (line 44): bad indentation
+Error (line 45): must begin only by tabulations
+Error (line 45): bad indentation
+Error (line 47): must begin only by tabulations
+Error (line 47): bad indentation
+Error (line 48): must begin only by tabulations
+Error (line 48): bad indentation
+Error (line 49): must begin only by tabulations
+Error (line 49): bad indentation
+Error (line 52): must begin only by tabulations
+Error (line 52): bad indentation
+Norme: ./window/raycast.c
+Error: 42 header not at top of the file
+Error: global scope bad aligned
+Error (line 15): declarations in raycast must be at the top of the function
+Error (line 15): declarations must be followed by one empty line in raycast
+Error (line 15): function raycast has 113 lines
+Error (line 15): declarations in raycast are bad aligned
+Error (line 20): C++ comment
+Error (line 24): C++ comment
+Error (line 27): C++ comment
+Error (line 31): C++ comment
+Error (line 35): line has 88 characters
+Error (line 40): line has 94 characters
+Error (line 45): line has 88 characters
+Error (line 50): line has 94 characters
+Error (line 53): C++ comment
+Error (line 54, col 5): hit is instanciated during declaration
+Error (line 57): C++ comment
+Error (line 57): bad indentation
+Error (line 74): C++ comment
+Error (line 74): line has 93 characters
+Error (line 75, col 1): missing space after if
+Error (line 76): line has 117 characters
+Error (line 78): line has 117 characters
+Error (line 81): C++ comment
+Error (line 83): C++ comment
+Error (line 83): bad indentation
+Error (line 93): multiple empty lines
+Error (line 94): C++ comment
+Error (line 94): bad indentation
+Error (line 95): C++ comment
+Error (line 95): line has 133 characters
+Error (line 95): bad indentation
+Error (line 96): C++ comment
+Error (line 98): line has 87 characters
+Error (line 100): line has 87 characters
+Error (line 102): C++ comment
+Error (line 103): line has 87 characters
+Error (line 112): C++ comment
+Error (line 112): line has 111 characters
+Error (line 113): C++ comment
+Error (line 115): C++ comment
+Error (line 116): line has 95 characters
+Error (line 120): C++ comment
+Error (line 120): line has 101 characters
+Error (line 120): bad indentation
+Error (line 125, col 2): missing space after if
+Error (line 132): declarations in draw_sprites must be at the top of the function
+Error (line 132): declarations must be followed by one empty line in draw_sprites
+Error (line 132): function draw_sprites has 97 lines
+Error (line 132): declarations in draw_sprites are bad aligned
+Error (line 132, col 0): draw_sprites has 19 variables
+Error (line 134): C++ comment
+Error (line 134): bad indentation
+Error (line 135): C++ comment
+Error (line 135): bad indentation
+Error (line 136): C++ comment
+Error (line 144): C++ comment
+Error (line 158): C++ comment
+Error (line 162): C++ comment
+Error (line 162): bad indentation
+Error (line 165): Empty line
+Error (line 166): C++ comment
+Error (line 167): C++ comment
+Error (line 167): line has 90 characters
+Error (line 168): C++ comment
+Error (line 168): line has 90 characters
+Error (line 169): C++ comment
+Error (line 169): line has 90 characters
+Error (line 170): Empty line
+Error (line 171): line has 84 characters
+Error (line 172): Empty line
+Error (line 174): line has 84 characters
+Error (line 175): Empty line
+Error (line 176): line has 85 characters
+Error (line 177): Empty line
+Error (line 178): C++ comment
+Error (line 180): Empty line
+Error (line 181): C++ comment
+Error (line 188): Empty line
+Error (line 189): C++ comment
+Error (line 189): bad indentation
+Error (line 197): Empty line
+Error (line 198): C++ comment
+Error (line 198): bad indentation
+Error (line 199): C++ comment
+Error (line 199): bad indentation
+Error (line 203): line has 126 characters
+Error (line 204): C++ comment
+Error (line 205): C++ comment
+Error (line 205): line has 82 characters
+Error (line 206): C++ comment
+Error (line 207): C++ comment
+Error (line 208): C++ comment
+Error (line 209): line has 110 characters
+Error (line 214): C++ comment
+Error (line 215): C++ comment
+Error (line 215): line has 113 characters
+Error (line 215): bad indentation
+Error (line 216): Empty line
+Error (line 217): multiple empty lines
+Error (line 217): Empty line
+Error (line 218): C++ comment
+Error (line 218): line has 115 characters
+Error (line 219): line has 83 characters
+Error (line 220): line has 93 characters
+Error (line 221, col 5): missing space after if
+Error (line 223): C++ comment
+Error (line 223): line has 90 characters
+Error (line 229): bad indentation
+Error (line 233): Space before function name
+Error (line 243): C++ comment
+Norme: ./window/set_pixel.c

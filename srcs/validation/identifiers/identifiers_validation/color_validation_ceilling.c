@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_validation_ceilling.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:42:41 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 01:27:31 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 12:59:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

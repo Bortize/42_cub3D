@@ -6,15 +6,15 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 11:14:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/17 09:02:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:17:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
-void print_error(char *str)
+void	print_error(char *str)
 {
 	ft_printf("Error:\n");
 	ft_printf("%s \n", str);
-	exit (-1);
+	exit(-1);
 }
