@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 20:32:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:28:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 01:34:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	file_validation(char *str)
 		if (str[str_len - i] == extension[extension_len - i])
 			i++;
 		else
-			print_error("Map file extension ❌  \n");
+			print_error("The extension of the loaded map is not valid. ❌ \n"
+				"Enter a map with '.cub' extension \n");
 	}
 	return (1);
 }

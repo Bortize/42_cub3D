@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 00:44:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/10 01:12:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,9 +229,6 @@ void	draw_sprites(t_cub3d *cub)
 	i++;
 	}
 }
-
-
-
 
 void raycast_init(t_cub3d *cub)
 {
