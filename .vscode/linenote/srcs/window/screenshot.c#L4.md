@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   screenshot.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 13:35:42 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 13:43:16 by bgomez-r         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "cub3d.h"
 
 static	void		int_char(unsigned char *src, int nb)
@@ -31,11 +19,31 @@ static	void		bmp_header(t_cub3d *cub, int fd, unsigned char *bmp)
 	bmp[10] = (unsigned char)54;
 	bmp[14] = (unsigned char)40;
 	int_char(bmp + 18, cub->map.width);
+//	int_char(bmp + 22, -cub->map.height);
 	int_char(bmp + 22, cub->map.height);
 	bmp[26] = (unsigned char)1;
 	bmp[28] = (unsigned char)32;
 	write(fd, bmp, 54);
 }
+/*
+static void			bmp_pixels(t_cub3d *cub, int fd)
+{
+	int		y;
+	int		x;
+	int		*color;
+
+	y = -1;
+	while (++y < cub->map.height)
+	{
+		x = -1;
+		while (++x < cub->map.width)
+		{
+			color = &cub->mlx.addr[(cub->mlx.line_len * y) + x * 4];
+			write(fd, color, 4);
+		}
+	}
+}
+*/
 
 static void			bmp_pixels(t_cub3d *cub, int fd)
 {
