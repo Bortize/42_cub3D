@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   boundary_validation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:37:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 17:54:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 12:18:31 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	boundary_fill(int x, int y, t_cub3d *cub)
 	(cub->plan.plan_tmp[y][x] == '1') ||
 	(cub->plan.plan_tmp[y][x] == '2'))
 	{
-		ft_printf("🚫 The value cannot be changed \n");
+		return (1);
 	}
 	else
 	{

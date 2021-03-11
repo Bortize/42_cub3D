@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 02:55:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:57:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,7 +193,16 @@ typedef struct	s_rcastsprite
 	int		drawstartx;
 	int		drawendx;
 }				t_rcastsprite;
-
+typedef struct	s_drawsprites
+{
+	int i;
+	int y;
+	int d;
+	int texy;
+	int stripe;
+	int texx;
+	unsigned int color;
+}								t_drawsprites;
 /*
 ** This is the main structure of the program
 */
@@ -273,7 +282,7 @@ void	rotation(t_cub3d *cub);
 void	refresh_screen(t_cub3d *cub);
 void	draws_sky_floor(t_cub3d *cub, int x);
 void	sort_sprites(t_cub3d *cub);
-void	init_sprites(t_cub3d *cub);
+void	draw_sprites(t_cub3d *cub);
 void	set_pixel(t_cub3d *cub, size_t pixel, int color);
 void	refresh_screen(t_cub3d *cub);
 int		screenshot(t_cub3d *cub);
@@ -286,5 +295,7 @@ void	texture_calculations(t_raycast *rcast, t_player *p);
 void	increase_draw_texture(t_cub3d *cub, t_raycalc ray, int col);
 void	sprite_low_hight_pixel_fill(t_parse *map, t_rcastsprite *spr);
 void	width_sprite(t_parse *map, t_rcastsprite *spr);
+void	init_raycast_sprites(t_cub3d *cub, t_drawsprites drwspr);
+void	vertical_stripe_sprite_screen(t_cub3d *cub, t_drawsprites drwspr);
 
 #endif

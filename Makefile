@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/11 02:45:47 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/11 12:13:41 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,6 @@ SRCS		=	srcs/main.c \
 				srcs/window/sort_sprites.c \
 				srcs/window/set_pixel.c \
 				srcs/window/refresh_screen.c \
-				srcs/window/init_sprites.c \
 				srcs/window/screenshot.c \
 				srcs/window/step_and_initial_sidedist.c \
 				srcs/window/perfom_dda.c \
@@ -78,7 +77,9 @@ SRCS		=	srcs/main.c \
 				srcs/window/texture_calculations.c \
 				srcs/window/increase_draw_texture.c \
 				srcs/window/sprite_low_hight_pixel_fill.c \
-				srcs/window/width_sprite.c
+				srcs/window/width_sprite.c \
+				srcs/window/init_raycast_sprites.c \
+				srcs/window/vertical_stripe_sprite_screen.c
 
 ############################	Variables	####################################
 
@@ -89,8 +90,6 @@ CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 #-g3 -fsanitize=address
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
 OBJS		= $(SRCS:.c=.o)
-
-#OBJS_DIR= ./objs_dir
 
 INCLUDE		= ./printf
 
@@ -103,18 +102,9 @@ RM 			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
-				# Llama al Makefile que esta en la ruta ./printf
 				make -C $(INCLUDE)
-				# Llama al Makefile que esta en la ruta ./minilibx_opengl
 				make -C $(INCLUDE2)
-				# Compila usando los flags, las librerías y todos los archivos objeto para finalmente generar el programa
 				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
-				# Borra el directorio si existiera. Se hace porque si existe da problemas
-#				rm -Rf ./objs_dir
-				# Crea el directorio objs_dir donde guardara todos los objetos generados
-#				mkdir objs_dir
-				# Mueve todos los objetos generados al directorio que creamos en el paso anterior
-#				mv $(OBJS) $(OBJS_DIR)
 
 ###############################################################################
 
