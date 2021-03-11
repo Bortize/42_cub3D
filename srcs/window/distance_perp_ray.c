@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 20:34:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 20:58:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:21:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	distance_perp_ray(t_raycast *rcast, t_player *p)
 {
-	if(rcast->side <= 1)
+	if (rcast->side <= 1)
 		rcast->perpwalldist = (rcast->mapx - p->posx + (1 - rcast->stepx) / 2)
 		/ rcast->raydirx;
 	else

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 16:40:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:32:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:15:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	set_plan_position(t_cub3d *cub, double x, double y)
 		cub->p.posy = y;
 }
 
-void move_forward(t_cub3d *cub)
+void	move_forward(t_cub3d *cub)
 {
 	double	pos_x;
 	double	pos_y;
-	double  speed;
+	double	speed;
 
 	speed = MV_SPEED * cub->ctrl.forward;
 	pos_x = cub->p.posx + cub->p.dirx * speed;
@@ -36,7 +36,7 @@ void	move_sideways(t_cub3d *cub)
 {
 	double	pos_x;
 	double	pos_y;
-	double  speed;
+	double	speed;
 
 	speed = MV_SPEED * cub->ctrl.sideways;
 	pos_x = cub->p.posx - cub->p.diry * speed;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_calculations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 01:45:10 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 02:11:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:44:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	texture_calculations(t_raycast *rcast, t_player *p)
 		rcast->wallx = p->posy + rcast->perpwalldist * rcast->raydiry;
 	else
 		rcast->wallx = p->posx + rcast->perpwalldist * rcast->raydirx;
-			rcast->wallx -= (floor)(rcast->wallx);
+	rcast->wallx -= (floor)(rcast->wallx);
 }

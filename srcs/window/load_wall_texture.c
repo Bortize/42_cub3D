@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:01:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:32:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:16:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 inline static void	file_to_image(t_cub3d *cub)
 {
 	cub->tex.walls[0].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
-		cub->map.no,&cub->tex.walls[0].width, &cub->tex.walls[0].height);
+		cub->map.no, &cub->tex.walls[0].width, &cub->tex.walls[0].height);
 	cub->tex.walls[1].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
 		cub->map.so, &cub->tex.walls[1].width, &cub->tex.walls[1].height);
 	cub->tex.walls[2].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
@@ -44,7 +44,7 @@ inline static void	get_data(t_cub3d *cub)
 		&cub->tex.walls[3].endian);
 }
 
-void	load_wall_texture(t_cub3d *cub)
+void				load_wall_texture(t_cub3d *cub)
 {
 	file_to_image(cub);
 	get_data(cub);

@@ -1,13 +1,12 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.mlx.c                                        :+:      :+:    :+:   */
+/*   start_mlx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 21:56:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/05 14:46:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/11 13:47:07 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/11 13:47:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +19,8 @@ void	start_mlx(t_cub3d *cub)
 	ft_printf("resolution %i %i\n", cub->map.width, cub->map.height);
 	cub->mlx.win = mlx_new_window(cub->mlx.init, cub->map.width,
 		cub->map.height, "cub3D");
-	cub->mlx.img = mlx_new_image(cub->mlx.init, cub->map.width, cub->map.height);
+	cub->mlx.img = mlx_new_image(cub->mlx.init, cub->map.width,
+		cub->map.height);
 	cub->mlx.addr = mlx_get_data_addr(cub->mlx.img, &cub->mlx.bpp,
 		&cub->mlx.line_len, &cub->mlx.endian);
 }

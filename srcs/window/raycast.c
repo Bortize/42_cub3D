@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 07:00:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 12:19:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:14:34 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,13 @@ inline void	draw_sprites(t_cub3d *cub)
 		init_raycast_sprites(cub, drwspr);
 		sprite_low_hight_pixel_fill(&cub->map, &cub->spr);
 		width_sprite(&cub->map, &cub->spr);
-
-		//loop through every vertical stripe of the sprite on screen
 		drwspr.stripe = cub->spr.drawstartx;
 		vertical_stripe_sprite_screen(cub, drwspr);
-	drwspr.i++;
+		drwspr.i++;
 	}
 }
 
-void raycast_init(t_cub3d *cub)
+void		raycast_init(t_cub3d *cub)
 {
 	int x;
 
@@ -62,7 +60,6 @@ void raycast_init(t_cub3d *cub)
 	{
 		raycast(cub, x);
 		draws_sky_floor(cub, x);
-//		init_sprites(cub, x);
 		x++;
 	}
 	sort_sprites(cub);

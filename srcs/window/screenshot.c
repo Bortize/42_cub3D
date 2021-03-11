@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 13:35:42 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 13:43:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:12:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ static void			bmp_pixels(t_cub3d *cub, int fd)
 	}
 }
 
-int	screenshot(t_cub3d *cub)
+int					screenshot(t_cub3d *cub)
 {
 	static unsigned char	bmp[54];
-	int							fd;
+	int						fd;
 
 	if ((fd = open("screenshot.bmp", O_WRONLY | O_CREAT, 0666)) < 0)
 		return (0);

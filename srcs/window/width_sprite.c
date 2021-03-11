@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   width_sprite.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 02:33:31 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 02:56:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:40:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 void	width_sprite(t_parse *map, t_rcastsprite *spr)
 {
-		spr->spritewidth = abs((int)(map->height / spr->transformy));
-		spr->drawstartx = -spr->spritewidth / 2 + spr->spritescreenx;
-		if (spr->drawstartx < 0)
-			spr->drawstartx = 0;
-		spr->drawendx = spr->spritewidth / 2 + spr->spritescreenx;
-		if (spr->drawendx >= map->width)
-			spr->drawendx = map->width - 1;
+	spr->spritewidth = abs((int)(map->height / spr->transformy));
+	spr->drawstartx = -spr->spritewidth / 2 + spr->spritescreenx;
+	if (spr->drawstartx < 0)
+		spr->drawstartx = 0;
+	spr->drawendx = spr->spritewidth / 2 + spr->spritescreenx;
+	if (spr->drawendx >= map->width)
+		spr->drawendx = map->width - 1;
 }
