@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_characters_plane.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:06:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 21:36:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		}
 		else
 		{
-			print_error("El plano del mapa contiene valores no permitidos.❌");
+			print_error("El plano del mapa contiene valores no permitidos \n");
 		}
 	}
 }
@@ -61,6 +61,6 @@ void	check_characters_plane(char *str, t_cub3d *cub)
 	}
 	else
 	{
-		print_error("El plano contiene valores NO VALIDOS 🧑‍🎤");
+		print_error("El plano contiene valores NO VALIDOS \n");
 	}
 }

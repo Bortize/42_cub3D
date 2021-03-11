@@ -6,17 +6,17 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 11:57:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 21:40:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CUB3D_H
 # define CUB3D_H
 
+# include "../minilibx_opengl/mlx.h"
 # include "../printf/libft/libft.h"
 # include "../printf/ft_printf.h"
 # include "get_next_line.h"
-# include "../minilibx_opengl/mlx.h"
 # include "keycode_mac.h"
 # include <ctype.h>
 # include <unistd.h>
@@ -106,6 +106,8 @@ typedef struct	s_controls
 
 typedef struct	s_player
 {
+	int			flag_found_player;
+	int			count_found_player;
 	double	posx;
 	double	posy;
 	double	dirx;

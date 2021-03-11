@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   boundary_validation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:37:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 14:39:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 21:26:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 int	boundary_fill(int x, int y, t_cub3d *cub)
 {
-	if ((y < 0 || y > cub->plan.rows_size) && (x < 0 ||
-	x > (int)cub->plan.row_len))
+	if ((y < 0 || y > cub->plan.rows_size)
+	&& (x < 0 || x > (int)cub->plan.row_len))
 		print_error("The plan contains a wall that is not closed");
 	if ((cub->plan.plan_tmp[y][x] == 'f') ||
 	(cub->plan.plan_tmp[y][x] == '1') ||
