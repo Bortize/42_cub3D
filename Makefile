@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/10 21:33:50 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/11 02:45:47 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,8 +75,10 @@ SRCS		=	srcs/main.c \
 				srcs/window/init_raycast.c \
 				srcs/window/distance_perp_ray.c \
 				srcs/window/low_hight_pixel.c \
-#				srcs/window/texture_calculation.c
-
+				srcs/window/texture_calculations.c \
+				srcs/window/increase_draw_texture.c \
+				srcs/window/sprite_low_hight_pixel_fill.c \
+				srcs/window/width_sprite.c
 
 ############################	Variables	####################################
 

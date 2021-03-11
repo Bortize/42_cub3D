@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 21:24:51 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/11 02:55:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,6 +282,9 @@ void	perfom_dda(t_raycast *rcast, t_map *plan);
 void	init_raycast(t_cub3d *cub, int col);
 void	distance_perp_ray(t_raycast *rcast, t_player *p);
 void	low_hight_pixel(t_window *win, t_parse *map);
-void	texture_calculation(t_raycalc *ray, t_cub3d *cub);
+void	texture_calculations(t_raycast *rcast, t_player *p);
+void	increase_draw_texture(t_cub3d *cub, t_raycalc ray, int col);
+void	sprite_low_hight_pixel_fill(t_parse *map, t_rcastsprite *spr);
+void	width_sprite(t_parse *map, t_rcastsprite *spr);
 
 #endif
