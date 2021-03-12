@@ -6,20 +6,20 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/11 19:34:55 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/12 13:28:11 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#########################	Special Targets	####################################
-# Elimina cualquier residuo que se haya podidio generar en la compilacion si algo fallo
+#########################	Special Targets	###################################
+# If the compilation fails, remove any residue generated.
 .DELETE_ON_ERROR:
-# Silencia todas las salidas por pantalla
-#.SILENT:
-# Variable para indicar el nombre de nuestro programa
-#########################	Program Name	####################################
+# Mutes all outputs per screen
+.SILENT:
+#########################	Program Name	###################################
+# Variable to indicate the name of our program
 NAME		= cub3D
 
-#########################	Function Files	####################################
+#########################	Function Files	###################################
 
 SRCS		=	srcs/main.c \
 				srcs/error/print_error.c \
@@ -81,7 +81,7 @@ SRCS		=	srcs/main.c \
 				srcs/window/init_raycast_sprites.c \
 				srcs/window/vertical_stripe_sprite_screen.c
 
-############################	Variables	####################################
+############################	Variables	###################################
 
 CC			= gcc
 
@@ -97,16 +97,17 @@ INCLUDE2	= ./minilibx_opengl
 
 RM 			= rm -rf
 
-##########################	Rules	############################################
+##########################	Rules	###########################################
 
 all:		$(NAME)
 
 $(NAME):	$(INCLUDE) $(OBJS)
 				make -C $(INCLUDE)
 				make -C $(INCLUDE2)
-				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2} -lftprintf -lmlx $(OBJS) -o cub3D
+				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2}\
+					-lftprintf -lmlx $(OBJS) -o cub3D
 
-###############################################################################
+##############################################################################
 
 clean:
 			$(RM) $(OBJS) $(OBJS_DIR) a.out

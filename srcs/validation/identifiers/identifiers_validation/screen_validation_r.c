@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:54:56 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 19:34:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:24:02 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	screen_validation_r(t_cub3d *cub)
 {
-	if (ft_strcmp("R", cub->map.tab[0]) == 0)
-	{
 		int	max_widht;
 		int max_height;
 
+	if (ft_strcmp("R", cub->map.tab[0]) == 0)
+	{
 		cub->map.flag_widht++;
 		cub->map.i++;
 		integer_validation_resolution(cub);
