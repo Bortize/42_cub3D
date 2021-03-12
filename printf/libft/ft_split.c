@@ -6,17 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/31 13:11:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/22 17:51:32 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:41:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 /*
-** Cuenta las palabras de la cadena para saber de cuantas cadenas se va a
-** componer nuestro nuevo array. Lo hacemos porque necesitamos saberlo para
-** reservar memoria para la nueva tabla.
+** Count the words in the string to know how many strings our new array will be
+** composed of. Our new array is going to be composed of. We do this because we
+** need to know this to reserve memory for the new table.
 */
 
 static int	ft_countword(char const *s, char c)
@@ -39,10 +38,10 @@ static int	ft_countword(char const *s, char c)
 }
 
 /*
-** Reserva memoria para copiar en un nuevo puntero los strings que ha ido
-** encontrado la funcon split dentro del string principal. Este string ira
-** dentro de una matriz que contendra todas las cadenas que devuelve la funcion
-** ft_plit
+** Reserves memory to copy into a new pointer the strings found by the split
+** funcon inside the main string. Found by the split function inside the main
+** string. This string will go inside an array that will contain all the strings
+** returned by the functionft_plit
 */
 
 static char	*ft_wordcopy(const char *s, size_t n)
@@ -58,15 +57,15 @@ static char	*ft_wordcopy(const char *s, size_t n)
 }
 
 /*
-** Recorre la cadena que le es pasada por parametro hasta que encuentra el
-** caracter 'c' el cual omite. En ese momento guarda el string que ha encontrado
-** en una matriz y continua leyendo hasta que encuentre el siguiente caracter
-** 'c' para de nuevo guardarlo en la matriz. La funcion devuelve un numero
-** puntureo compuesto por todos los valores que ha encotrado en el string por
-** separado.
+** It traverses the string that is passed as a parameter until it finds the
+** character 'c' which it omits. At that point it saves the string it has found
+** in an array and continues reading until it finds the next character 'c' and
+** saves it again in the array. 'c' and saves it again in the array. The
+** function returns a number number composed of all the values it has found in
+** the string separately.
 */
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -94,4 +93,3 @@ char	**ft_split(char const *s, char c)
 	tab[k] = NULL;
 	return (tab);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 14:29:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 17:44:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:34:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** the difference of the subtraction of its ASCII value. If they are equal, it
 ** returns 0
 */
+
 int					ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	*str1;

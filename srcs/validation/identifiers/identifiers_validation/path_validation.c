@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 11:33:13 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 11:33:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:48:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void		path_validation(char *str)
 		if (str[str_len - i] == extension[extension_len - i])
 			i++;
 		else
-			print_error("PATH file extension \n");
+			print_error("The extension of the file entered is not correct \n");
 	}
 }

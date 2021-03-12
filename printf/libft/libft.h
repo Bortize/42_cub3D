@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:53:15 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/12/13 17:16:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:41:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 typedef struct	s_list
 {
-	void		*content;
-	struct 	s_list	*next;
-}								t_list;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
