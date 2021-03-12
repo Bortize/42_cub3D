@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 21:40:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 20:35:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -299,5 +299,6 @@ void	sprite_low_hight_pixel_fill(t_parse *map, t_rcastsprite *spr);
 void	width_sprite(t_parse *map, t_rcastsprite *spr);
 void	init_raycast_sprites(t_cub3d *cub, t_drawsprites drwspr);
 void	vertical_stripe_sprite_screen(t_cub3d *cub, t_drawsprites drwspr);
+char	**ft_split_map(char const *s, char c, int min_size);
 
 #endif

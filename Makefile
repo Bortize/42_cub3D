@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/12 15:23:37 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/12 20:37:45 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/map/where_player_look.c \
 				srcs/validation/map/boundary_validation/boundary_validation.c \
 				srcs/validation/map/boundary_validation/put_pixel.c \
+				srcs/validation/map/ft_split_map.c \
 				srcs/window/graphic.c \
 				srcs/window/start_mlx.c \
 				srcs/window/load_textures.c \
@@ -85,7 +86,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 -g3 #-fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 -g3 -fsanitize=address
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 
