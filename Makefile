@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/12 20:37:45 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/13 14:59:12 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 # If the compilation fails, remove any residue generated.
 .DELETE_ON_ERROR:
 # Mutes all outputs per screen
-.SILENT:
+#.SILENT:
 #########################	Program Name	###################################
 # Variable to indicate the name of our program
 NAME		= cub3D
@@ -22,6 +22,7 @@ NAME		= cub3D
 #########################	Function Files	###################################
 
 SRCS		=	srcs/main.c \
+				srcs/free_array.c \
 				srcs/error/print_error.c \
 				srcs/validation/read_file/file_reading.c \
 				srcs/validation/read_file/init_structures.c \
@@ -86,7 +87,7 @@ SRCS		=	srcs/main.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -O3 -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -g3 #-fsanitize=address #-O3
 
 MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
 

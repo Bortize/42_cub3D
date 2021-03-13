@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 17:04:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 15:08:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ inline static void	parse(t_cub3d *cub, char *line)
 	{
 		if (cub->map.i < 8)
 			find_identifiers(line, cub);
+		free_array(cub->map.tab);
 		if (cub->map.flag_map_ready == 1)
 		{
 			validate_plan(line, cub);
@@ -42,6 +43,7 @@ int					file_reading(int fd, t_cub3d *cub)
 	i = 0;
 	while (get_next_line(fd, &line))
 		parse(cub, line);
+	printf("%s \n", line);
 	if (cub->p.flag_found_player == 0)
 		print_error("Not found player in the map \n");
 	if (cub->p.count_found_player > 1)

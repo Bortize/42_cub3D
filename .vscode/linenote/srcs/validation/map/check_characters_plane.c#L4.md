@@ -25,16 +25,16 @@
 ````
 void	check_characters_plane(char *str, t_cub3d *cub)
 {
-//	ft_printf("congrats, estas leyendo el plano \n");
-//	ft_printf("Se va a proceder a analizar la línea  🗺️--> %s \n", str);
+//	printf("congrats, estas leyendo el plano \n");
+//	printf("Se va a proceder a analizar la línea  🗺️--> %s \n", str);
 	if (ft_strchr(str, '0') || ft_strchr(str, '1') || ft_strchr(str, '2') ||
 		ft_strchr(str, 'N') || ft_strchr(str, 'S') || ft_strchr(str, 'E') ||
 		ft_strchr(str, 'W') || ft_strchr(str, ' ') || ft_strchr(str, '\t'))
 	{
 		check_values_allowed(str, cub);
-//		ft_printf(" La línea del plano es válida ✅\n");
+//		printf(" La línea del plano es válida ✅\n");
 		cub->plan.rows_size++;
-//		ft_printf("Número de líneas leídas: %i \n", cub->plan.rows_size);
+//		printf("Número de líneas leídas: %i \n", cub->plan.rows_size);
 	}
 	else
 	{

@@ -7,7 +7,7 @@ int	boundary_fill(int x, int y, t_cub3d *cub)
 	(cub->plan.plan_tmp[y][x] == '1') ||
 	(cub->plan.plan_tmp[y][x] == '2'))
 	{
-		ft_printf("🚫 The value cannot be changed \n");
+		printf("🚫 The value cannot be changed \n");
 	}
 	else
 	{

@@ -41,7 +41,7 @@ Aquí validamos esta parte comprobando que los argumentos sean igual a 2 y compr
 ```c
 	else if (argc == 2 && file_validation(argv[1]) == 1)
 	{
-		ft_printf("Mapa introducido --> %s \n\n", argv[1]);
+		printf("Mapa introducido --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
 		file_reading(fd, &cub);
 	}

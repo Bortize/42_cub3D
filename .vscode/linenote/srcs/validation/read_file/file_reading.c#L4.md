@@ -12,7 +12,7 @@ int	file_reading(int fd, t_cub3d *cub)
 	{
 		if (line[0] != '\0')
 		{
-//			ft_printf("\nGNL has read this line 📖 --> %s \n", line);
+//			printf("\nGNL has read this line 📖 --> %s \n", line);
 				if (cub->map.i < 8)
 					find_identifiers(line, cub);
 				if (cub->map.flag_map_ready == 1)
@@ -31,6 +31,6 @@ int	file_reading(int fd, t_cub3d *cub)
 	if (cub->plan.values_ok == 0)
 		assigning_plane_values(cub);
 //	while (i < cub->plan.rows_size)// pinta el plano una vez tratado por el algoritmo floodfill. BORRAR
-//		ft_printf("🌎 %s \n", cub->plan.plan[i++]);// pinta el plano. BORRAR
+//		printf("🌎 %s \n", cub->plan.plan[i++]);// pinta el plano. BORRAR
 	return (0);
 }

@@ -12,6 +12,7 @@
 		"vector": "c",
 		"string": "c",
 		"iosfwd": "c",
-		"mlx.h": "c"
+		"mlx.h": "c",
+		"stdarg.h": "c"
 	}
 }

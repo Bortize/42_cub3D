@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:01:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 09:49:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 10:22:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ inline static void	file_to_image(t_cub3d *cub)
 		cub->map.ea, &cub->tex.walls[3].width, &cub->tex.walls[3].height);
 	i = 0;
 	while (i < 4)
+	{
 		if (!cub->tex.walls[i++].img_tex)
 			print_error("Some wall texture(s) failed to load");
-
+	}
 }
 
 inline static void	get_data(t_cub3d *cub)

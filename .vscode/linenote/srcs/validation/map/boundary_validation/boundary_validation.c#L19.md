@@ -5,7 +5,7 @@ int	boundary_fill(int x, int y, int fill_value, int boundary_value, t_cub3d *cub
 		print_error("El plano contiene un muro que no esta cerrado");
 	if ((cub->plan.plan_tmp[y][x] == 'f') || (cub->plan.plan_tmp[y][x] == '1') || (cub->plan.plan_tmp[y][x] == '2'))
 	{
-		ft_printf("🚫 El valor no puede modificarse \n");
+		printf("🚫 El valor no puede modificarse \n");
 	}
 	else
 	{

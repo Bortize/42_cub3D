@@ -13,15 +13,15 @@ int	file_validation(char *str)
 	{
 		if (str[str_len - i] == extension[extension_len - i])
 		{
-			ft_printf("El char %c coincide\n", str[str_len - i]);
+			printf("El char %c coincide\n", str[str_len - i]);
 			i++;
 		}
 		else
 		{
-			ft_printf("Map file extension ❌  \n");
+			printf("Map file extension ❌  \n");
 			return (-1);
 		}
 	}
-	ft_printf("Map file extension ✅ \n");
+	printf("Map file extension ✅ \n");
 	return (1);
 }

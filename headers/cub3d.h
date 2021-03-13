@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 09:51:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:58:54 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,5 +300,6 @@ void	width_sprite(t_parse *map, t_rcastsprite *spr);
 void	init_raycast_sprites(t_cub3d *cub, t_drawsprites drwspr);
 void	vertical_stripe_sprite_screen(t_cub3d *cub, t_drawsprites drwspr);
 char	**ft_split_map(char const *s, char c, int min_size);
+void	free_array(char **array);
 
 #endif

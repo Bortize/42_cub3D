@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:21:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 12:13:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void	init_structures(t_cub3d *cub)
 {
 	ft_bzero(cub, sizeof(t_cub3d));
-	cub->plan.one_line_plan = "";
+	cub->plan.one_line_plan = ft_strdup("");
 	cub->plan.boundary_value = '1';
 	cub->plan.fill_value = 'f';
 	cub->plan.sprite_value = '2';

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 17:04:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 13:06:25 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	main(int argc, char **argv)
 		cub->bmp_flag = 1;
 	if ((argc == 2 || argc == 3) && file_validation(argv[1]) == 1)
 	{
-		ft_printf("Map introduced --> %s \n\n", argv[1]);
+		printf("Map introduced --> %s \n\n", argv[1]);
 		fd = open(argv[1], O_RDONLY);
 		file_reading(fd, cub);
 	}
 	graphic(cub);
-	ft_printf("\n \n 🚧 LEAKS 🚧 \n \n");
+	printf("\n \n 🚧 LEAKS 🚧 \n \n");
 	system("leaks -fullContent cub3D");
 	return (0);
 }

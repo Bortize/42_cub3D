@@ -6,16 +6,16 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:37:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 20:58:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 10:25:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** Travels around the map starting from the player's position. Use the flooding
-** method up to the limits of the wall. When it finds a valid ground value valid
-** ground value, it fills it with 'f' and moves on.
+** Travels around the map starting from the player's position. Use the
+** flooding method up to the limits of the wall. When it finds a valid ground
+** value valid ground value, it fills it with 'f' and moves on.
 */
 
 int	boundary_fill(int x, int y, t_cub3d *cub)
@@ -25,7 +25,6 @@ int	boundary_fill(int x, int y, t_cub3d *cub)
 		print_error("The plan contains a wall that is not closed");
 	if ((cub->plan.plan_tmp[y][x] == 'f') ||
 	(cub->plan.plan_tmp[y][x] == '1'))
-//	(cub->plan.plan_tmp[y][x] == '2'))
 	{
 		return (1);
 	}

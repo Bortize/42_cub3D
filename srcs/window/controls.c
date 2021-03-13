@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 19:21:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 15:08:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ int	key_press(int keycode, t_cub3d *cub)
 int	key_release(int keycode, t_cub3d *cub)
 {
 	if (keycode == KEY_ESC)
-		print_error("Finishing cub3d");
+	{
+		printf("\n \n 🚧 LEAKS 🚧 \n \n");
+		system("leaks -fullContent cub3D");
+		exit(EXIT_SUCCESS);
+	}
 	if (keycode == KEY_W)
 		cub->ctrl.forward--;
 	if (keycode == KEY_S)

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:57:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 15:20:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 14:59:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		assignment_identifiers_text_colour(t_cub3d *cub)
 {
 	if ((ft_strcmp("NO", cub->map.tab[0]) == 0))
 		texture_validation_no(cub);
+//		free_array(cub->map.tab);
 	if (ft_strcmp("SO", cub->map.tab[0]) == 0)
 		texture_validation_so(cub);
 	if (ft_strcmp("EA", cub->map.tab[0]) == 0)
