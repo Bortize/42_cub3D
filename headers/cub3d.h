@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 20:35:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:51:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,7 @@ typedef struct	s_drawsprites
 	int stripe;
 	int texx;
 	unsigned int color;
-}								t_drawsprites;
+}				t_drawsprites;
 /*
 ** This is the main structure of the program
 */

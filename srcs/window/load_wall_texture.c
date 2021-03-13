@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:01:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 21:03:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:49:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ inline static void	file_to_image(t_cub3d *cub)
 	i = 0;
 	while (i < 4)
 		if (!cub->tex.walls[i++].img_tex)
-			print_error("Ponme una puta textura que exista.");
+			print_error("Some wall texture(s) failed to load");
 
 }
 

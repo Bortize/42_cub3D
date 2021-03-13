@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:59:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/11 13:41:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 09:37:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	vertical_stripe_sprite_screen(t_cub3d *cub, t_drawsprites drwspr)
 {
-	while (drwspr.stripe++ < cub->spr.drawendx)
+	while (drwspr.stripe < cub->spr.drawendx)
 	{
 		drwspr.texx = (int)(256 * (drwspr.stripe - (-cub->spr.spritewidth
 			/ 2 + cub->spr.spritescreenx)) * cub->tex.sprite[0].width
@@ -38,5 +38,6 @@ void	vertical_stripe_sprite_screen(t_cub3d *cub, t_drawsprites drwspr)
 				drwspr.y++;
 			}
 		}
+		drwspr.stripe++;
 	}
 }
