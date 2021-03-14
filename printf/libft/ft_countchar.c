@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 20:35:49 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 20:00:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 21:22:33 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int		ft_countchar(char *str, char c)
 
 	i = 0;
 	u = 0;
-	while (str[i] != '\0' && str[i] == c)
+	while (str[i])
 	{
 		i++;
-		u++;
+		u += (str[i] == c);
 	}
 	return (u);
 }

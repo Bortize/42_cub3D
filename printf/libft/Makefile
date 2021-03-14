@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/04 17:38:10 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/14 20:13:41 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/14 05:32:43 by rnavarre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJBONUS = ${FBONUS:.c=.o}
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

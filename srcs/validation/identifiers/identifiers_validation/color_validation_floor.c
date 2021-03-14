@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:45:54 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 20:27:25 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 21:25:31 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ static int	if_finish_two(t_cub3d *cub)
 {
 	if (cub->map.tab[2] == NULL)
 	{
-		if (ft_countchar(cub->map.tab[1], ',') + 1 > 1)
-			print_error("Too many commas in the ceilling RGB color!");
+		if (ft_countchar(cub->map.tab[1], ',') > 2)
+			print_error("Too many commas in the floor RGB color!");
 		cub->map.flag_floor++;
 		cub->map.i++;
-		if (ft_countchar(cub->map.tab[1], ',') + 1 > 1)
-			print_error("Too many commas in the RGB floor color!");
 		cub->map.tabcf = ft_split(cub->map.tab[1], ',');
 		validation_identifiers_floor(cub);
 		free_array(cub->map.tabcf);

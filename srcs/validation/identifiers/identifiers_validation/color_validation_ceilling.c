@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:42:41 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 20:27:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 21:24:58 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	if_finish_two(t_cub3d *cub)
 {
 	if (cub->map.tab[2] == NULL)
 	{
-		if (ft_countchar(cub->map.tab[1], ',') + 1 > 1)
+		if (ft_countchar(cub->map.tab[1], ',') > 2)
 			print_error("Too many commas in the ceilling RGB color!");
 		cub->map.flag_ceilling++;
 		cub->map.i++;

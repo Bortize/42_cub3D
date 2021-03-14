@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/14 13:44:18 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/14 05:30:54 by rnavarre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ CC				= gcc
 
 INCLUDES		= -Iheaders -I$(FTPRINTF_PATH) -I$(MLX_PATH)
 
-CFLAGS			= -Wall -Wextra -Werror -w $(INCLUDES)
+CFLAGS			= -Wall -Wextra -Werror -w -O3 $(INCLUDES)
 
 OS				= $(shell uname)
 
