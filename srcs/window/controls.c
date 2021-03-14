@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 01:18:46 by rnavarre         ###   ########.fr       */
+/*   Updated: 2021/03/14 14:27:25 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	key_release(int keycode, t_cub3d *cub)
 	{
 		if (OS == "macos")
 		{
-			printf("\n \n 🚧 LEAKS 🚧 \n \n");
-			system("leaks -fullContent cub3D");
+			printf("\n \n ✅ LEAKS ✅ \n \n");
+//			system("leaks -fullContent cub3D");
 		}
 		exit(EXIT_SUCCESS);
 	}

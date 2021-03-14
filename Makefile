@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/14 00:34:09 by rnavarre         ###   ########.fr        #
+#    Updated: 2021/03/14 13:44:18 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,11 +99,11 @@ else ifeq ($(OS), Darwin)
   MLXFLAGS		= -framework OpenGL -framework AppKit
 endif
 
-LIB_COMMON		= $(MLXFLAGS) -lm -L$(FTPRINTF_PATH) -L$(MLX_PATH) -l$(FTPRINTF_NAME) -l$(MLX_NAME) 
+LIB_COMMON		= $(MLXFLAGS) -lm -L$(FTPRINTF_PATH) -L$(MLX_PATH) -l$(FTPRINTF_NAME) -l$(MLX_NAME)
 
 OBJS			= $(SRCS:.c=.o)
 
-FTPRINTF_PATH	= printf
+FTPRINTF_PATH	= ./printf
 FTPRINTF_NAME	= ftprintf
 
 MLX_PATH		= minilibx_$(OS)
