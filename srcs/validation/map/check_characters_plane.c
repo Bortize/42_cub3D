@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 11:37:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 17:25:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		}
 		else
 		{
-			print_error("El plano del mapa contiene valores no permitidos \n");
+			print_error("The map plan contains invalid values \n");
 		}
 	}
 }
