@@ -6,17 +6,20 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/09 13:30:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 02:48:38 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KEYCODE_MAC_H
 # define KEYCODE_MAC_H
 
-# define KEYPRESS 2
-# define KEYRELEASE 3
-# define KEYPRESSMASK (1L<<0)
-# define KEYRELEASEMASK (1L<<1)
+# define KEYPRESS			2
+# define KEYRELEASE			3
+# define KEYPRESSMASK		0
+# define KEYRELEASEMASK		0
+# define WINDOWCLOSE		17
+# define WINDOWCLOSEMASK	0
+# define OS					"macos"
 
 # define KEY_A				0
 # define KEY_S				1
@@ -77,7 +80,7 @@
 # define KEY_SPACEBAR		49
 # define KEY_TILDE			50
 # define KEY_BACKSPACE		51
-# define KEY_ESC					53
+# define KEY_ESC			53
 # define KEY_F17			64
 # define KEY_PAD_DOT		65
 # define KEY_PAD_MULTIPLY	67

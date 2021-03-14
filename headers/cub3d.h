@@ -6,18 +6,22 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:28:33 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 14:58:54 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 00:54:37 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CUB3D_H
 # define CUB3D_H
 
-# include "../minilibx_opengl/mlx.h"
+# include "mlx.h"
 # include "../printf/libft/libft.h"
 # include "../printf/ft_printf.h"
 # include "get_next_line.h"
-# include "keycode_mac.h"
+#ifdef __APPLE__
+#  include "keycode_mac.h"
+#elif __linux__
+#  include "keycode_linux.h"
+#endif
 # include <ctype.h>
 # include <unistd.h>
 # include <stdio.h>

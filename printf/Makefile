@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2021/01/24 20:37:36 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/13 23:38:38 by rnavarre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRCS		=	ft_printf.c \
 
 CC			= @gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -103,5 +103,8 @@ fclean:		clean
 				@$(RM) a.out a.out.dSYM
 
 re:			fclean all
+
+debug:		CFLAGS += -g3 -fsanitize=address
+debug:		$(NAME)
 
 .PHONY:		all clean fclean re

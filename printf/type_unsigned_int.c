@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2021/03/13 13:13:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 21:58:30 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	type_unsigned_int(t_struct *flags)
 	int_counter_unsigned(flags, integer);
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
@@ -40,8 +38,6 @@ void	int_counter_unsigned(t_struct *flags, unsigned int integer)
 	flags->flag_integer_negative = 0;
 	str = itoa_unsigned(integer);
 	flags->count = ft_strlen(str);
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
 	free(str);
 	str = NULL;
 }

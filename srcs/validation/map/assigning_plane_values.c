@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 12:03:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 03:13:53 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	assigning_plane_values(t_cub3d *cub)
 {
-	cub->plan.plan = (char **)calloc(cub->plan.rows_size, sizeof(char *));
+//	cub->plan.plan = (char **)calloc(cub->plan.rows_size, sizeof(char *));
 	cub->plan.values_ok = 1;
 	cub->plan.plan = ft_split_map(cub->plan.one_line_plan, 'p',
 		cub->plan.row_len);
@@ -31,5 +31,5 @@ void	assigning_plane_values(t_cub3d *cub)
 	find_sprites(cub);
 	free(cub->plan.one_line_plan);
 	cub->plan.one_line_plan = NULL;
-	free(cub->plan.plan_tmp);
+	free_array(cub->plan.plan_tmp);
 }

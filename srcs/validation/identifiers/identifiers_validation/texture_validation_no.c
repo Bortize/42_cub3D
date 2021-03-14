@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 14:59:18 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/02/23 14:06:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 03:27:37 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	texture_validation_no(t_cub3d *cub)
 		path_validation(cub->map.tab[1]);
 		cub->map.flag_no++;
 		cub->map.i++;
-		cub->map.no = cub->map.tab[1];
+		cub->map.no = ft_strdup(cub->map.tab[1]);
 	}
 	else
 	{

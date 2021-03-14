@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/13 14:59:12 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/14 00:34:09 by rnavarre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,48 +85,65 @@ SRCS		=	srcs/main.c \
 
 ############################	Variables	###################################
 
-CC			= gcc
+CC				= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -w -Iheaders -g3 #-fsanitize=address #-O3
+INCLUDES		= -Iheaders -I$(FTPRINTF_PATH) -I$(MLX_PATH)
 
-MLXFLAG		= -lmlx -framework OpenGL -framework AppKit -lm
+CFLAGS			= -Wall -Wextra -Werror -w $(INCLUDES)
 
-OBJS		= $(SRCS:.c=.o)
+OS				= $(shell uname)
 
-INCLUDE		= ./printf
+ifeq ($(OS), Linux)
+  MLXFLAGS		= -lX11 -lz -lXext
+else ifeq ($(OS), Darwin)
+  MLXFLAGS		= -framework OpenGL -framework AppKit
+endif
 
-INCLUDE2	= ./minilibx_opengl
+LIB_COMMON		= $(MLXFLAGS) -lm -L$(FTPRINTF_PATH) -L$(MLX_PATH) -l$(FTPRINTF_NAME) -l$(MLX_NAME) 
 
-RM 			= rm -rf
+OBJS			= $(SRCS:.c=.o)
+
+FTPRINTF_PATH	= printf
+FTPRINTF_NAME	= ftprintf
+
+MLX_PATH		= minilibx_$(OS)
+MLX_NAME		= mlx
+
+RM 				= rm -rf
 
 ##########################	Rules	###########################################
 
 all:		$(NAME)
 
-$(NAME):	$(INCLUDE) $(OBJS)
-				make -C $(INCLUDE)
-				make -C $(INCLUDE2)
-				$(CC) $(CFLAGS) $(MLXFLAG) -L${INCLUDE} -L${INCLUDE2}\
-					-lftprintf -lmlx $(OBJS) -o cub3D
+$(NAME):	$(MLX_NAME) $(FTPRINTF_NAME) $(OBJS)
+				$(CC) $(OBJS) -o cub3D $(CFLAGS) $(LIB_COMMON)
 
 ##############################################################################
 
 clean:
-			$(RM) $(OBJS) $(OBJS_DIR) a.out
-			make -C $(INCLUDE) clean
-			make -C $(INCLUDE2) clean
+			$(RM) $(OBJS) $(OBJS_DIR)
+			make -C $(FTPRINTF_PATH) clean
+			make -C $(MLX_PATH) clean
 
 fclean:		clean
-				$(RM) -f $(NAME)
-				make -C $(INCLUDE) fclean
-				$(RM) *.a leaks.txt
+			$(RM) -f $(NAME)
+			make -C $(FTPRINTF_PATH) fclean
+			$(RM) *.a leaks.txt
 
 re:			fclean all
 
-run:	clean
-			make
-			 ./cub3D tester/valid_map_area_000.cub
+$(MLX_NAME):
+			make -C $(MLX_PATH)
+
+$(FTPRINTF_NAME):
+			make -C $(FTPRINTF_PATH)
+
+debug:	CFLAGS += -O0 -g3 -fsanitize=address
+debug:	$(NAME)
+
+run:	$(NAME)
+			./cub3D tester/valid_maps/valid_map_area_001.cub
 
 ##########################	Rules Phony	 #######################################
 
-.PHONY:		all clean flcean re
+.PHONY:		all clean flcean re debug

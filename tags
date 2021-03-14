@@ -1,0 +1,103 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+assigning_plane_values	srcs/validation/map/assigning_plane_values.c	/^void	assigning_plane_values(t_cub3d *cub)$/;"	f
+assignment_identifiers_colours	srcs/validation/identifiers/identifiers_search/assignment_identifiers.c	/^void	assignment_identifiers_colours(t_cub3d *cub)$/;"	f
+assignment_identifiers_resolution	srcs/validation/identifiers/identifiers_search/assignment_identifiers.c	/^void	assignment_identifiers_resolution(t_cub3d *cub)$/;"	f
+assignment_identifiers_text_colour	srcs/validation/identifiers/identifiers_search/assignment_identifiers.c	/^int		assignment_identifiers_text_colour(t_cub3d *cub)$/;"	f
+bmp_header	srcs/window/screenshot.c	/^static	void		bmp_header(t_cub3d *cub, int fd, unsigned char *bmp)$/;"	f	file:
+bmp_pixels	srcs/window/screenshot.c	/^static void			bmp_pixels(t_cub3d *cub, int fd)$/;"	f	file:
+boundary_fill	srcs/validation/map/boundary_validation/boundary_validation.c	/^int	boundary_fill(int x, int y, t_cub3d *cub)$/;"	f
+bubble_sort	srcs/window/sort_sprites.c	/^inline static void	bubble_sort(t_cub3d *cub, int i)$/;"	f	file:
+calc_distance	srcs/window/sort_sprites.c	/^inline static void	calc_distance(t_cub3d *cub, int i)$/;"	f	file:
+check_characters_plane	srcs/validation/map/check_characters_plane.c	/^void	check_characters_plane(char *str, t_cub3d *cub)$/;"	f
+check_identifiers	srcs/validation/identifiers/identifiers_search/check_identifiers.c	/^int	check_identifiers(t_cub3d *cub)$/;"	f
+check_values_allowed	srcs/validation/map/check_characters_plane.c	/^void	check_values_allowed(char *str, t_cub3d *cub)$/;"	f
+color_validation_ceilling	srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c	/^int			color_validation_ceilling(t_cub3d *cub)$/;"	f
+color_validation_floor	srcs/validation/identifiers/identifiers_validation/color_validation_floor.c	/^int			color_validation_floor(t_cub3d *cub)$/;"	f
+del_buff	srcs/validation/read_file/get_next_line.c	/^void	del_buff(char **s)$/;"	f
+distance_perp_ray	srcs/window/distance_perp_ray.c	/^void	distance_perp_ray(t_raycast *rcast, t_player *p)$/;"	f
+draw_sprites	srcs/window/raycast.c	/^inline void	draw_sprites(t_cub3d *cub)$/;"	f
+draws_sky_floor	srcs/window/draw_sky_floor.c	/^void	draws_sky_floor(t_cub3d *cub, int x)$/;"	f
+file_reading	srcs/validation/read_file/file_reading.c	/^int					file_reading(int fd, t_cub3d *cub)$/;"	f
+file_to_image	srcs/window/load_wall_texture.c	/^inline static void	file_to_image(t_cub3d *cub)$/;"	f	file:
+file_validation	srcs/validation/read_file/file_validation.c	/^int	file_validation(char *str)$/;"	f
+find_identifiers	srcs/validation/identifiers/identifiers_search/find_identifiers.c	/^int	find_identifiers(char *str, t_cub3d *cub)$/;"	f
+find_sprites	srcs/validation/map/find_sprites.c	/^void	find_sprites(t_cub3d *cub)$/;"	f
+free_array	srcs/free_array.c	/^void	free_array(char **array)$/;"	f
+ft_countword	srcs/validation/map/ft_split_map.c	/^static int	ft_countword(char const *s, char c)$/;"	f	file:
+ft_split_map	srcs/validation/map/ft_split_map.c	/^char		**ft_split_map(char const *s, char c, int min_size)$/;"	f
+ft_strchr	srcs/validation/read_file/get_next_line_utils.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strjoin	srcs/validation/read_file/get_next_line_utils.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
+ft_strlen	srcs/validation/read_file/get_next_line_utils.c	/^size_t	ft_strlen(const char *s)$/;"	f
+ft_substr	srcs/validation/read_file/get_next_line_utils.c	/^char	*ft_substr(const char *s, unsigned int start, size_t len)$/;"	f
+ft_wordcopy	srcs/validation/map/ft_split_map.c	/^static char	*ft_wordcopy(const char *s, size_t n)$/;"	f	file:
+game	srcs/window/game.c	/^int	game(t_cub3d *cub)$/;"	f
+get_data	srcs/window/load_wall_texture.c	/^inline static void	get_data(t_cub3d *cub)$/;"	f	file:
+get_end_pos	srcs/validation/read_file/get_next_line.c	/^int		get_end_pos(const char *s)$/;"	f
+get_next_line	srcs/validation/read_file/get_next_line.c	/^int		get_next_line(int fd, char **line)$/;"	f
+graphic	srcs/window/graphic.c	/^void	graphic(t_cub3d *cub)$/;"	f
+if_finish_four	srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c	/^static int	if_finish_four(t_cub3d *cub)$/;"	f	file:
+if_finish_four	srcs/validation/identifiers/identifiers_validation/color_validation_floor.c	/^static int	if_finish_four(t_cub3d *cub)$/;"	f	file:
+if_finish_three	srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c	/^static int	if_finish_three(t_cub3d *cub)$/;"	f	file:
+if_finish_three	srcs/validation/identifiers/identifiers_validation/color_validation_floor.c	/^static int	if_finish_three(t_cub3d *cub)$/;"	f	file:
+if_finish_two	srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c	/^static int	if_finish_two(t_cub3d *cub)$/;"	f	file:
+if_finish_two	srcs/validation/identifiers/identifiers_validation/color_validation_floor.c	/^static int	if_finish_two(t_cub3d *cub)$/;"	f	file:
+increase_draw_texture	srcs/window/increase_draw_texture.c	/^void	increase_draw_texture(t_cub3d *cub, t_raycalc ray, int col)$/;"	f
+init_raycast	srcs/window/init_raycast.c	/^void	init_raycast(t_cub3d *cub, int col)$/;"	f
+init_raycast_sprites	srcs/window/init_raycast_sprites.c	/^void	init_raycast_sprites(t_cub3d *cub, t_drawsprites drwspr)$/;"	f
+init_structures	srcs/validation/read_file/init_structures.c	/^void	init_structures(t_cub3d *cub)$/;"	f
+int_char	srcs/window/screenshot.c	/^static	void		int_char(unsigned char *src, int nb)$/;"	f	file:
+integer_validation	srcs/validation/identifiers/identifiers_validation/integer_validation.c	/^int	integer_validation(t_cub3d *cub)$/;"	f
+integer_validation_resolution	srcs/validation/identifiers/identifiers_validation/integer_validation.c	/^int	integer_validation_resolution(t_cub3d *cub)$/;"	f
+integer_validation_size	srcs/validation/identifiers/identifiers_validation/integer_validation_size.c	/^int	integer_validation_size(t_cub3d *cub)$/;"	f
+key_press	srcs/window/controls.c	/^int	key_press(int keycode, t_cub3d *cub)$/;"	f
+key_release	srcs/window/controls.c	/^int	key_release(int keycode, t_cub3d *cub)$/;"	f
+load_sprite_texture	srcs/window/load_sprite_texture.c	/^void	load_sprite_texture(t_cub3d *cub)$/;"	f
+load_textures	srcs/window/load_textures.c	/^void	load_textures(t_cub3d *cub)$/;"	f
+load_wall_texture	srcs/window/load_wall_texture.c	/^void				load_wall_texture(t_cub3d *cub)$/;"	f
+low_hight_pixel	srcs/window/low_hight_pixel.c	/^void	low_hight_pixel(t_window *win, t_parse *map)$/;"	f
+main	srcs/main.c	/^int	main(int argc, char **argv)$/;"	f
+move_forward	srcs/window/movement.c	/^void	move_forward(t_cub3d *cub)$/;"	f
+move_sideways	srcs/window/movement.c	/^void	move_sideways(t_cub3d *cub)$/;"	f
+movement	srcs/window/movement.c	/^void	movement(t_cub3d *cub)$/;"	f
+moving	srcs/window/player_movement.c	/^int	moving(t_cub3d *cub)$/;"	f
+my_mlx_pixel_put	srcs/window/my_mlx_pixel_put.c	/^inline void	my_mlx_pixel_put(t_cub3d *cub, int x, int y, int color)$/;"	f
+painting_sprite	srcs/window/vertical_stripe_sprite_screen.c	/^inline static void	painting_sprite(t_cub3d *cub, t_drawsprites drwspr)$/;"	f	file:
+parse	srcs/validation/read_file/file_reading.c	/^inline static void	parse(t_cub3d *cub, char *line)$/;"	f	file:
+path_validation	srcs/validation/identifiers/identifiers_validation/path_validation.c	/^void		path_validation(char *str)$/;"	f
+perfom_dda	srcs/window/perfom_dda.c	/^void	perfom_dda(t_raycast *rcast, t_map *plan)$/;"	f
+player_start_position	srcs/validation/map/player_start_position.c	/^int	player_start_position(char *str, t_cub3d *cub)$/;"	f
+print_error	srcs/error/print_error.c	/^void	print_error(char *str)$/;"	f
+put_line	srcs/validation/read_file/get_next_line.c	/^int		put_line(char **s, char **line)$/;"	f
+put_pixel	srcs/validation/map/boundary_validation/put_pixel.c	/^char	put_pixel(int x, int y, t_cub3d *cub)$/;"	f
+raycast	srcs/window/raycast.c	/^inline void	raycast(t_cub3d *cub, int col)$/;"	f
+raycast_init	srcs/window/raycast.c	/^void		raycast_init(t_cub3d *cub)$/;"	f
+read_line	srcs/validation/read_file/get_next_line.c	/^int		read_line(char **s, int fd, char **line)$/;"	f
+refresh_screen	srcs/window/refresh_screen.c	/^void	refresh_screen(t_cub3d *cub)$/;"	f
+rotating	srcs/window/player_movement.c	/^int	rotating(t_cub3d *cub)$/;"	f
+rotation	srcs/window/rotation.c	/^void		rotation(t_cub3d *cub)$/;"	f
+save_plane_lines	srcs/validation/map/save_plane_lines.c	/^int     save_plane_lines(char *str, t_cub3d *cub)$/;"	f
+screen_validation_r	srcs/validation/identifiers/identifiers_validation/screen_validation_r.c	/^void	screen_validation_r(t_cub3d *cub)$/;"	f
+screenshot	srcs/window/screenshot.c	/^int					screenshot(t_cub3d *cub)$/;"	f
+set_pixel	srcs/window/set_pixel.c	/^void	set_pixel(t_cub3d *cub, size_t pixel, int color)$/;"	f
+set_plan_position	srcs/window/movement.c	/^void	set_plan_position(t_cub3d *cub, double x, double y)$/;"	f
+sort_sprites	srcs/window/sort_sprites.c	/^void				sort_sprites(t_cub3d *cub)$/;"	f
+sprite_low_hight_pixel_fill	srcs/window/sprite_low_hight_pixel_fill.c	/^void	sprite_low_hight_pixel_fill(t_parse *map, t_rcastsprite *spr)$/;"	f
+start_mlx	srcs/window/start_mlx.c	/^void	start_mlx(t_cub3d *cub)$/;"	f
+step_and_initial_sidedist	srcs/window/step_and_initial_sidedist.c	/^void	step_and_initial_sidedist(t_cub3d *cub)$/;"	f
+texture_calculations	srcs/window/texture_calculations.c	/^void	texture_calculations(t_raycast *rcast, t_player *p)$/;"	f
+texture_validation_ea	srcs/validation/identifiers/identifiers_validation/texture_validation_ea.c	/^void	texture_validation_ea(t_cub3d *cub)$/;"	f
+texture_validation_no	srcs/validation/identifiers/identifiers_validation/texture_validation_no.c	/^void	texture_validation_no(t_cub3d *cub)$/;"	f
+texture_validation_s	srcs/validation/identifiers/identifiers_validation/texture_validation_s.c	/^void	texture_validation_s(t_cub3d *cub)$/;"	f
+texture_validation_so	srcs/validation/identifiers/identifiers_validation/texture_validation_so.c	/^void	texture_validation_so(t_cub3d *cub)$/;"	f
+texture_validation_we	srcs/validation/identifiers/identifiers_validation/texture_validation_we.c	/^void	texture_validation_we(t_cub3d *cub)$/;"	f
+validate_plan	srcs/validation/map/validate_plan.c	/^int		validate_plan(char *str, t_cub3d *cub)$/;"	f
+validation_identifiers_ceilling	srcs/validation/identifiers/identifiers_validation/validation_ceilling_floor.c	/^void	validation_identifiers_ceilling(t_cub3d *cub)$/;"	f
+validation_identifiers_floor	srcs/validation/identifiers/identifiers_validation/validation_ceilling_floor.c	/^void	validation_identifiers_floor(t_cub3d *cub)$/;"	f
+vertical_stripe_sprite_screen	srcs/window/vertical_stripe_sprite_screen.c	/^void				vertical_stripe_sprite_screen(t_cub3d *cub,$/;"	f
+where_player_look	srcs/validation/map/where_player_look.c	/^void	where_player_look(t_cub3d *cub, char c)$/;"	f
+width_sprite	srcs/window/width_sprite.c	/^void	width_sprite(t_parse *map, t_rcastsprite *spr)$/;"	f

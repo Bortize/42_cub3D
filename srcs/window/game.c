@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 20:24:21 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/08 14:08:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 23:01:16 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	game(t_cub3d *cub)
 		raycast_init(cub);
 	}
 	sleep(0);
-	return (0);
+	return (1);
 }

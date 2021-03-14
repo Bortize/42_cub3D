@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:42:41 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 17:03:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 03:54:35 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static int	if_finish_two(t_cub3d *cub)
 		cub->map.i++;
 		cub->map.tabcf = ft_split(cub->map.tab[1], ',');
 		validation_identifiers_ceilling(cub);
+		free_array(cub->map.tabcf);
 		return (1);
 	}
 	return (0);
@@ -37,6 +38,7 @@ static int	if_finish_three(t_cub3d *cub)
 		cub->map.tabcf = ft_split(new, ',');
 		validation_identifiers_ceilling(cub);
 		free(new);
+		free_array(cub->map.tabcf);
 		return (1);
 	}
 	return (0);
@@ -57,6 +59,7 @@ static int	if_finish_four(t_cub3d *cub)
 		free(new);
 		free(new2);
 		validation_identifiers_ceilling(cub);
+		free_array(cub->map.tabcf);
 		return (1);
 	}
 	return (0);

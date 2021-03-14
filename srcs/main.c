@@ -6,11 +6,12 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 14:18:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 13:06:25 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 01:18:53 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <errno.h>
 
 /*
 ** Returns error in case the user passes more arguments than requested. If
@@ -26,18 +27,22 @@ int	main(int argc, char **argv)
 	if (argc < 2 || argc > 3)
 		print_error("You're stupid, you're not even worth to put a file \n");
 	if (!(cub = malloc(sizeof(t_cub3d))))
-		print_error("The asignation to cub faile \n");
+		print_error("The asignation to cub failed \n");
 	init_structures(cub);
 	if (argc == 3 && (ft_strncmp(argv[2], "--save", -1) == 0))
 		cub->bmp_flag = 1;
 	if ((argc == 2 || argc == 3) && file_validation(argv[1]) == 1)
 	{
 		printf("Map introduced --> %s \n\n", argv[1]);
-		fd = open(argv[1], O_RDONLY);
+		if ((fd = open(argv[1], O_RDONLY)) == -1)
+			print_error(strerror(errno));
 		file_reading(fd, cub);
 	}
 	graphic(cub);
-	printf("\n \n 🚧 LEAKS 🚧 \n \n");
-	system("leaks -fullContent cub3D");
+	if (OS == "macos")
+	{
+		printf("\n \n 🚧 LEAKS 🚧 \n \n");
+		system("leaks -fullContent cub3D");
+	}
 	return (0);
 }

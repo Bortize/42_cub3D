@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/13 15:10:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 03:31:20 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int	find_identifiers(char *str, t_cub3d *cub)
 	}
 	if (cub->map.i > 8)
 		print_error("There are too many Identifiers, check your map");
+	free_array(cub->map.tab);
 	return (0);
 }

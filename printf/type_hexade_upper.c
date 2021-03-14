@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 22:14:25 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 13:13:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/13 21:58:38 by rnavarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	type_hexade_upper(t_struct *flags)
 	hexade_countdigits(flags, hexade);
 	if (flags->flag_width)
 		flag_width_integer(flags, hexade);
-	if (hexade < 0)
-		hexade = print_negative(flags, hexade);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
