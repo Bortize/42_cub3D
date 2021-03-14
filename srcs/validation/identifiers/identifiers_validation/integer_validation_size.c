@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 12:20:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/14 20:17:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,18 @@
 
 int	integer_validation_size(t_cub3d *cub)
 {
-	if ((ft_atoi(cub->map.tabcf[0]) > 255) ||
-	(ft_atoi(cub->map.tabcf[1]) > 255) ||
-	(ft_atoi(cub->map.tabcf[2]) > 255))
-		print_error("The color range exceeds the allowed range. Fix it");
+	size_t num;
+
+	num = 0;
+
+	while (num < 3)
+	{
+		if ((cub->map.tabcf[num] == NULL)
+			|| (cub->map.tabcf[num][0] == '-')
+			|| (!(ft_strevery(cub->map.tabcf[num], ft_isdigit)))
+			|| (ft_atoi(cub->map.tabcf[num]) > 255))
+			print_error("The color range exceeds the allowed range. Fix it");
+		num++;
+	}
 	return (0);
 }

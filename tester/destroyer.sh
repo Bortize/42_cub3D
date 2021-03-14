@@ -156,7 +156,7 @@ function processInvalid() {
 			rm -f $out
 			rm -f $valgrind_out
 		else
-			display_leftandright "${RESET}" "" "${BGRN}" "MAP: $file" "[OK]"
+			display_leftandright "${RESET}" "" "${BGRN}" "MAP: $file" "MAP: $RET" "[OK]"
 			rm -f $out
 			rm -f $valgrind_out
 		fi
@@ -220,7 +220,7 @@ function processValid() {
 			rm -f $out
 			rm -f $valgrind_out
 		else
-			display_leftandright "${RESET}" "" "${BGRN}" "MAP: $file" "[OK]"
+			display_leftandright "${RESET}" "" "${BGRN}" "MAP: $file" "$RET" "[OK]"
 			rm -f $out
 			rm -f $valgrind_out
 		fi

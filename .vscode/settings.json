@@ -13,6 +13,7 @@
 		"string": "c",
 		"iosfwd": "c",
 		"mlx.h": "c",
-		"stdarg.h": "c"
+		"stdarg.h": "c",
+		"ratio": "c"
 	}
 }
