@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:34:27 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 18:26:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 void	check_values_allowed(char *str, t_cub3d *cub)
 {
 	cub->plan.i = 0;
+	if (str[0] == '\0' && cub->map.start_map)
+		cub->map.end_map = 1;
 	while (str[cub->plan.i] != '\0')
 	{
 		if ((str[cub->plan.i] == '0') || (str[cub->plan.i] == '1') ||
@@ -31,10 +33,13 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 		(str[cub->plan.i] == 'W') || (str[cub->plan.i] == ' ') ||
 		(str[cub->plan.i] == '\t'))
 		{
+			if (cub->map.end_map)
+				print_error("Empty lines not allowed in map.\n");
 			if (str[cub->plan.i] == '2')
 				cub->map.count_sprites++;
 			player_start_position(str, cub);
 			cub->plan.i++;
+			cub->map.start_map = 1;
 		}
 		else
 		{
@@ -52,7 +57,8 @@ void	check_values_allowed(char *str, t_cub3d *cub)
 
 void	check_characters_plane(char *str, t_cub3d *cub)
 {
-	if (ft_strchr(str, '0') || ft_strchr(str, '1') || ft_strchr(str, '2') ||
+	if (!*str ||
+		ft_strchr(str, '0') || ft_strchr(str, '1') || ft_strchr(str, '2') ||
 		ft_strchr(str, 'N') || ft_strchr(str, 'S') || ft_strchr(str, 'E') ||
 		ft_strchr(str, 'W') || ft_strchr(str, ' ') || ft_strchr(str, '\t'))
 	{
