@@ -1,2 +1,5 @@
 *.DS_Store
 *.o
+*.a
+cub3D
+./new-tester

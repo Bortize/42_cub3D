@@ -1,0 +1,89 @@
+Xlib:  extension "MIT-SHM" missing on display "172.26.112.1:0.0".
+sh: 1: leaks: not found
+
+=================================================================
+==8964==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 176 byte(s) in 7 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad7589e in ft_split_plus (/home/bgomez-r/42cursus/borja/cub3D+0x1689e)
+    #2 0x559bfad68fe9 in find_identifiers srcs/validation/identifiers/identifiers_search/find_identifiers.c:23
+    #3 0x559bfad67a96 in parse srcs/validation/read_file/file_reading.c:20
+    #4 0x559bfad67c61 in file_reading srcs/validation/read_file/file_reading.c:45
+    #5 0x559bfad6787c in main srcs/main.c:39
+    #6 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad7544f in ft_split (/home/bgomez-r/42cursus/borja/cub3D+0x1644f)
+    #2 0x559bfad6b62c in if_finish_two srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c:21
+    #3 0x559bfad6bb3b in color_validation_ceilling srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c:69
+    #4 0x559bfad6990f in assignment_identifiers_colours srcs/validation/identifiers/identifiers_search/assignment_identifiers.c:37
+    #5 0x559bfad69b7a in assignment_identifiers_text_colour srcs/validation/identifiers/identifiers_search/assignment_identifiers.c:61
+    #6 0x559bfad690a8 in find_identifiers srcs/validation/identifiers/identifiers_search/find_identifiers.c:27
+    #7 0x559bfad67a96 in parse srcs/validation/read_file/file_reading.c:20
+    #8 0x559bfad67c61 in file_reading srcs/validation/read_file/file_reading.c:45
+    #9 0x559bfad6787c in main srcs/main.c:39
+    #10 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f6e42719518 in calloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9518)
+    #1 0x559bfad6c414 in assigning_plane_values srcs/validation/map/assigning_plane_values.c:23
+    #2 0x559bfad67e95 in file_reading srcs/validation/read_file/file_reading.c:55
+    #3 0x559bfad6787c in main srcs/main.c:39
+    #4 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Direct leak of 28 byte(s) in 4 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad6e157 in ft_wordcopy srcs/validation/map/ft_split_map.c:51
+    #2 0x559bfad6e36d in ft_split_map srcs/validation/map/ft_split_map.c:90
+    #3 0x559bfad6c5ab in assigning_plane_values srcs/validation/map/assigning_plane_values.c:27
+    #4 0x559bfad67e95 in file_reading srcs/validation/read_file/file_reading.c:55
+    #5 0x559bfad6787c in main srcs/main.c:39
+    #6 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad68b03 in ft_substr srcs/validation/read_file/get_next_line_utils.c:70
+    #2 0x559bfad68279 in put_line srcs/validation/read_file/get_next_line.c:42
+    #3 0x559bfad68936 in get_next_line srcs/validation/read_file/get_next_line.c:91
+    #4 0x559bfad67c75 in file_reading srcs/validation/read_file/file_reading.c:44
+    #5 0x559bfad6787c in main srcs/main.c:39
+    #6 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad68b03 in ft_substr srcs/validation/read_file/get_next_line_utils.c:70
+    #2 0x559bfad683e9 in put_line srcs/validation/read_file/get_next_line.c:50
+    #3 0x559bfad68821 in read_line srcs/validation/read_file/get_next_line.c:81
+    #4 0x559bfad6894d in get_next_line srcs/validation/read_file/get_next_line.c:93
+    #5 0x559bfad67c75 in file_reading srcs/validation/read_file/file_reading.c:44
+    #6 0x559bfad6787c in main srcs/main.c:39
+    #7 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 39 byte(s) in 10 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad75800 in ft_wordcopy (/home/bgomez-r/42cursus/borja/cub3D+0x16800)
+    #2 0x559bfad75971 in ft_split_plus (/home/bgomez-r/42cursus/borja/cub3D+0x16971)
+    #3 0x559bfad68fe9 in find_identifiers srcs/validation/identifiers/identifiers_search/find_identifiers.c:23
+    #4 0x559bfad67a96 in parse srcs/validation/read_file/file_reading.c:20
+    #5 0x559bfad67c61 in file_reading srcs/validation/read_file/file_reading.c:45
+    #6 0x559bfad6787c in main srcs/main.c:39
+    #7 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 12 byte(s) in 3 object(s) allocated from:
+    #0 0x7f6e42719330 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.5+0xe9330)
+    #1 0x559bfad753ba in ft_wordcopy (/home/bgomez-r/42cursus/borja/cub3D+0x163ba)
+    #2 0x559bfad754f8 in ft_split (/home/bgomez-r/42cursus/borja/cub3D+0x164f8)
+    #3 0x559bfad6b62c in if_finish_two srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c:21
+    #4 0x559bfad6bb3b in color_validation_ceilling srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c:69
+    #5 0x559bfad6990f in assignment_identifiers_colours srcs/validation/identifiers/identifiers_search/assignment_identifiers.c:37
+    #6 0x559bfad69b7a in assignment_identifiers_text_colour srcs/validation/identifiers/identifiers_search/assignment_identifiers.c:61
+    #7 0x559bfad690a8 in find_identifiers srcs/validation/identifiers/identifiers_search/find_identifiers.c:27
+    #8 0x559bfad67a96 in parse srcs/validation/read_file/file_reading.c:20
+    #9 0x559bfad67c61 in file_reading srcs/validation/read_file/file_reading.c:45
+    #10 0x559bfad6787c in main srcs/main.c:39
+    #11 0x7f6e41d9f09a in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 321 byte(s) leaked in 28 allocation(s).
+make: *** [Makefile:132: run] Error 1

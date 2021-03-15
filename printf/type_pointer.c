@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 12:23:51 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 01:28:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	type_pointer(t_struct *flags)
 		flag_width_pointer(flags, pointer);
 	write(1, "0x", 2);
 	flags->len += 2;
-	if (pointer < 0)
-		pointer = print_negative(flags, pointer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)

@@ -6,13 +6,19 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/31 13:11:17 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/01/03 19:21:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:41:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_countword(char const *s, char c)
+/*
+** Count the words in the string to know how many strings our new array will be
+** composed of. Our new array is going to be composed of. We do this because we
+** need to know this to reserve memory for the new table.
+*/
+
+static int	ft_countword(char const *s, char c)
 {
 	unsigned int	i;
 	int				words;
@@ -31,25 +37,14 @@ static int			ft_countword(char const *s, char c)
 	return (words);
 }
 
-static char			*ft_strncpy(char *dst, const char *src, size_t n)
-{
-	size_t	i;
+/*
+** Reserves memory to copy into a new pointer the strings found by the split
+** funcon inside the main string. Found by the split function inside the main
+** string. This string will go inside an array that will contain all the strings
+** returned by the functionft_plit
+*/
 
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
-}
-
-static char			*ft_wordcopy(const char *s, size_t n)
+static char	*ft_wordcopy(const char *s, size_t n)
 {
 	char	*str;
 
@@ -61,7 +56,16 @@ static char			*ft_wordcopy(const char *s, size_t n)
 	return (str);
 }
 
-char				**ft_split(char const *s, char c)
+/*
+** It traverses the string that is passed as a parameter until it finds the
+** character 'c' which it omits. At that point it saves the string it has found
+** in an array and continues reading until it finds the next character 'c' and
+** saves it again in the array. 'c' and saves it again in the array. The
+** function returns a number number composed of all the values it has found in
+** the string separately.
+*/
+
+char		**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -72,7 +76,7 @@ char				**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	k = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c)) + 1)))
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1))))
 		return (NULL);
 	while (s[i])
 	{

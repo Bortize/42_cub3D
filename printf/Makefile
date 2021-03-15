@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/12/06 17:06:02 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/15 00:30:47 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRCS		=	ft_printf.c \
 
 CC			= @gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -O3
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -81,8 +81,9 @@ RM			= rm -rf
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(INCLUDE)
+$(NAME):	$(INCLUDE) $(OBJS)
 				@$(CC) $(CFLAGS) -c $(SRCS)
+				# Llama al Makefile que esta en la ruta ./libft
 				@make -C $(INCLUDE)
 				@echo "\n	LIBRERIA GENERADA ✅ 👉 libft.a \n"
 				@cp libft/libft.a ./
@@ -102,5 +103,8 @@ fclean:		clean
 				@$(RM) a.out a.out.dSYM
 
 re:			fclean all
+
+debug:		CFLAGS += -g3 -fsanitize=address
+debug:		$(NAME)
 
 .PHONY:		all clean fclean re
