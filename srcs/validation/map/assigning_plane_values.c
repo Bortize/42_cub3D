@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 20:30:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 21:21:28 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	assigning_plane_values(t_cub3d *cub)
 		cub->plan.row_len);
 	cub->plan.plan_tmp = ft_split_map(cub->plan.one_line_plan, 'p',
 		cub->plan.row_len);
-	ft_printf("lineas %i", cub->plan.rows_size);
 	boundary_fill(cub->plan.player_init_position_x,
 	cub->plan.player_init_position_y, cub);
 	find_sprites(cub);

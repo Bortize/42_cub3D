@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 20:38:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 21:21:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ void	check_characters_plane(char *str, t_cub3d *cub)
 		check_values_allowed(str, cub);
 		if (cub->map.start_map && !cub->map.end_map)
 			cub->plan.rows_size++;
-
-		//cub->plan.rows_size++;
 	}
 	else
 	{
