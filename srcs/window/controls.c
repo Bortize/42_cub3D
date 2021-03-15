@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:44:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 01:31:51 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 01:41:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	key_release(int keycode, t_cub3d *cub)
 		if (OS == "macos")
 		{
 			printf("\n \n ✅ LEAKS ✅ \n \n");
-			system("leaks -fullContent cub3D");
 		}
 		exit(EXIT_SUCCESS);
 	}

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 00:50:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:51:02 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 01:39:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 		cub->bmp_flag = 1;
 	if ((argc == 2 || argc == 3) && file_validation(argv[1]) == 1)
 	{
-		printf("Map introduced --> %s \n\n", argv[1]);
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 			print_error(strerror(errno));
 		file_reading(fd, cub);

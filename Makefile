@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/15 01:13:12 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/15 01:41:02 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,7 +139,7 @@ $(MLX_NAME):
 $(FTPRINTF_NAME):
 			make -C $(FTPRINTF_PATH)
 
-debug:	CFLAGS += -O0 -g3 #-fsanitize=address
+debug:	CFLAGS += -O3 -g3 #-fsanitize=address system("leaks -fullContent cub3D");
 debug:	$(NAME)
 
 run:	$(NAME)
