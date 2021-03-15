@@ -1,8 +1,0 @@
-R 1080 720
-NO ./resources/wolftex/textures/xpm/greystone.xpm
-SO ./resources/wolftex/textures/xpm/redbrick.xpm
-EA ./resources/wolftex/textures/xpm/wood.xpm
-WE ./resources/wolftex/textures/xpm/wood.xpm
-S ./resources/wolftex/textures/xpm/barrel.xpm
-C 255,200,160
-F 122,122,122
