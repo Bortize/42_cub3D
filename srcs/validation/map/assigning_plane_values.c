@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   assigning_plane_values.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 14:45:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 13:49:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 01:18:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
 /*
 **  Reserves memory for an array that will hold all the lines read from the
@@ -20,7 +20,6 @@
 
 void	assigning_plane_values(t_cub3d *cub)
 {
-//	cub->plan.plan = (char **)calloc(cub->plan.rows_size, sizeof(char *));
 	cub->plan.values_ok = 1;
 	cub->plan.plan = ft_split_map(cub->plan.one_line_plan, 'p',
 		cub->plan.row_len);

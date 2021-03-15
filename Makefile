@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/14 05:30:54 by rnavarre         ###   ########.fr        #
+#    Updated: 2021/03/15 01:13:12 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS		=	srcs/main.c \
 				srcs/validation/identifiers/identifiers_validation/texture_validation_s.c \
 				srcs/validation/identifiers/identifiers_validation/color_validation_ceilling.c \
 				srcs/validation/identifiers/identifiers_validation/color_validation_floor.c \
+				srcs/validation/identifiers/identifiers_validation/check_error_identifier.c \
 				srcs/validation/map/save_plane_lines.c \
 				srcs/validation/map/assigning_plane_values.c \
 				srcs/validation/map/check_characters_plane.c \
@@ -138,7 +139,7 @@ $(MLX_NAME):
 $(FTPRINTF_NAME):
 			make -C $(FTPRINTF_PATH)
 
-debug:	CFLAGS += -O0 -g3 -fsanitize=address
+debug:	CFLAGS += -O0 -g3 #-fsanitize=address
 debug:	$(NAME)
 
 run:	$(NAME)

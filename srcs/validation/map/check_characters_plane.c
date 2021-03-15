@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 19:46:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 17:25:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 00:34:27 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	check_characters_plane(char *str, t_cub3d *cub)
 	}
 	else
 	{
-		print_error("El plano contiene valores NO VALIDOS \n");
+		print_error("The map plan contains invalid values \n");
 	}
 }

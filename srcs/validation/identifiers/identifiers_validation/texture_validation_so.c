@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_validation_so.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:04:24 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 13:49:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 00:34:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	texture_validation_so(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("El fichero '.cub' contiene identificadores "
-			"duplicados. \nPor favor, introduzca un fichero válido");
+		print_error("The '.cub' file contains identifiers "
+			"duplicates. \n Please enter a valid file.");
 	}
 }

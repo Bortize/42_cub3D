@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 20:17:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 00:56:34 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	integer_validation_size(t_cub3d *cub)
 	size_t num;
 
 	num = 0;
-
 	while (num < 3)
 	{
 		if ((cub->map.tabcf[num] == NULL)

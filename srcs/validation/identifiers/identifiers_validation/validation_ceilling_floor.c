@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 12:00:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 18:19:22 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 00:34:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	validation_identifiers_ceilling(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("Hay demasiados valores en el identificador");
+		print_error("There are too many values in the identifier");
 	}
 	cub->map.ceilling_conv = ((256 * 256) * cub->map.ceilling[0] +
 	256 * cub->map.ceilling[1] + cub->map.ceilling[2]);
@@ -48,7 +48,7 @@ void	validation_identifiers_floor(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("Hay demasiados valores en el identificador");
+		print_error("There are too many values in the identifier");
 	}
 	cub->map.floor_conv = ((256 * 256) * cub->map.floor[0] +
 	256 * cub->map.floor[1] + cub->map.floor[2]);

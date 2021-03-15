@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_identifiers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/14 13:49:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 01:10:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	find_identifiers(char *str, t_cub3d *cub)
 	if ((cub->map.tab = ft_split_plus(str, ' ', '\t')))
 	{
 		check_identifiers(cub);
+		if (cub->map.tab[1] == NULL)
+			print_error("Some of the identifiers have no value");
 		if (cub->map.tab[2] == NULL)
 			assignment_identifiers_text_colour(cub);
 		else if (cub->map.tab[3] == NULL)
@@ -35,15 +37,7 @@ int	find_identifiers(char *str, t_cub3d *cub)
 		else
 			print_error("There are too many values in the identifier");
 	}
-	if (cub->map.flag_widht > 1 || cub->map.flag_no > 1 ||
-	cub->map.flag_so > 1 || cub->map.flag_ea > 1 ||
-	cub->map.flag_we > 1 || cub->map.flag_s > 1 ||
-	cub->map.flag_ceilling > 1 || cub->map.flag_floor > 1)
-	{
-		print_error("The map contains repeated identifiers");
-	}
-	if (cub->map.i > 8)
-		print_error("There are too many Identifiers, check your map");
+	check_error_identifier(cub);
 	free_array(cub->map.tab);
 	return (0);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_structures.c                                  :+:      :+:    :+:   */
+/*   check_error_identifier.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 12:52:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:49:10 by bgomez-r         ###   ########.fr       */
+/*   Created: 2021/03/15 01:05:20 by bgomez-r          #+#    #+#             */
+/*   Updated: 2021/03/15 01:16:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-/*
-** It initializes all the variables of the structure to allow us to start
-** working with them. It also eliminates the basuara value that they could
-** contain at the time of their declaration.
-*/
-
-void	init_structures(t_cub3d *cub)
+void	check_error_identifier(t_cub3d *cub)
 {
-	ft_bzero(cub, sizeof(t_cub3d));
-	cub->plan.one_line_plan = ft_strdup("");
-	cub->plan.boundary_value = '1';
-	cub->plan.fill_value = 'f';
-	cub->plan.sprite_value = '2';
+	if (cub->map.flag_widht > 1 || cub->map.flag_no > 1 ||
+	cub->map.flag_so > 1 || cub->map.flag_ea > 1 ||
+	cub->map.flag_we > 1 || cub->map.flag_s > 1 ||
+	cub->map.flag_ceilling > 1 || cub->map.flag_floor > 1)
+	{
+		print_error("The map contains repeated identifiers");
+	}
+	if (cub->map.i > 8)
+		print_error("There are too many Identifiers, check your map");
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 18:48:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 00:55:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ inline static void	parse(t_cub3d *cub, char *line)
 		if (cub->map.i == 8)
 			cub->map.flag_map_ready = 1;
 	}
-//	free_array(cub->map.tab);
 }
 
 /*
