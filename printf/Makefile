@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2021/03/15 00:30:47 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/15 13:16:08 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DELETE_ON_ERROR:
 
-.SILENT:
+#.SILENT:
 
 NAME		=	libftprintf.a
 
@@ -85,13 +85,13 @@ $(NAME):	$(INCLUDE) $(OBJS)
 				@$(CC) $(CFLAGS) -c $(SRCS)
 				# Llama al Makefile que esta en la ruta ./libft
 				@make -C $(INCLUDE)
-				@echo "\n	LIBRERIA GENERADA ✅ 👉 libft.a \n"
+				@echo "\n	LIBRERIA GENERADA libft.a \n"
 				@cp libft/libft.a ./
 				@mv libft.a $(NAME)
 				@$(AR) $(NAME) $(OBJS)
-				@echo "\n	LIBRERIA GENERADA (libft+printf) ✅ 👉 libftprintf.a \n"
+				@echo "\n	LIBRERIA GENERADA (libft+printf) libftprintf.a \n"
 				@ranlib $(NAME)
-				@echo "\n	GENERANDO INDEX ✅ 👉 libftprintf.a \n"
+				@echo "\n	GENERANDO INDEX libftprintf.a \n"
 
 clean:
 			$(RM) $(OBJS)

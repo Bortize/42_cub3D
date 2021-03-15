@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:42:41 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:33:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:12:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	if_finish_two(t_cub3d *cub)
 	if (cub->map.tab[2] == NULL)
 	{
 		if (ft_countchar(cub->map.tab[1], ',') > 2)
-			print_error("Too many commas in the ceilling RGB color!");
+			print_error("Too many commas in the ceilling RGB color! \n");
 		cub->map.flag_ceilling++;
 		cub->map.i++;
 		cub->map.tabcf = ft_split(cub->map.tab[1], ',');
@@ -35,7 +35,7 @@ static int	if_finish_three(t_cub3d *cub)
 	if (cub->map.tab[3] == NULL)
 	{
 		if (ft_countchar(cub->map.tab[2], ',') + 1 > 1)
-			print_error("Too many commas in the ceilling RGB color!");
+			print_error("Too many commas in the ceilling RGB color! \n");
 		cub->map.flag_ceilling++;
 		cub->map.i++;
 		new = ft_strjoin(cub->map.tab[0], cub->map.tab[1]);
@@ -57,7 +57,7 @@ static int	if_finish_four(t_cub3d *cub)
 	if (cub->map.tab[4] == NULL)
 	{
 		if (ft_countchar(cub->map.tab[3], ',') + 1 > 1)
-			print_error("Too many commas in the ceilling RGB color!");
+			print_error("Too many commas in the ceilling RGB color! \n");
 		cub->map.flag_ceilling++;
 		cub->map.i++;
 		new = ft_strjoin(cub->map.tab[1], cub->map.tab[2]);

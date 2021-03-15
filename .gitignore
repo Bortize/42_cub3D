@@ -5,3 +5,5 @@
 *.txt
 cub3D
 new-tester
+.vscode
+assets

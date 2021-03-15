@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/27 13:28:42 by bgomez-r          #+#    #+#              #
-#    Updated: 2021/03/15 01:41:02 by bgomez-r         ###   ########.fr        #
+#    Updated: 2021/03/15 13:27:10 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,19 +104,21 @@ LIB_COMMON		= $(MLXFLAGS) -lm -L$(FTPRINTF_PATH) -L$(MLX_PATH) -l$(FTPRINTF_NAME
 
 OBJS			= $(SRCS:.c=.o)
 
-FTPRINTF_PATH	= ./printf
+FTPRINTF_PATH	= printf
 FTPRINTF_NAME	= ftprintf
+FTPRINTF_FILE	= $(FTPRINTF_PATH)/lib$(FTPRINTF_NAME).a
 
 MLX_PATH		= minilibx_$(OS)
 MLX_NAME		= mlx
+MLX_FILE		= $(MLX_PATH)/lib$(MLX_NAME).a
 
-RM 				= rm -rf
+RM				= rm -rf
 
 ##########################	Rules	###########################################
 
 all:		$(NAME)
 
-$(NAME):	$(MLX_NAME) $(FTPRINTF_NAME) $(OBJS)
+$(NAME):	$(OBJS) $(FTPRINTF_FILE) $(MLX_FILE)
 				$(CC) $(OBJS) -o cub3D $(CFLAGS) $(LIB_COMMON)
 
 ##############################################################################
@@ -133,10 +135,10 @@ fclean:		clean
 
 re:			fclean all
 
-$(MLX_NAME):
+$(MLX_FILE):
 			make -C $(MLX_PATH)
 
-$(FTPRINTF_NAME):
+$(FTPRINTF_FILE):
 			make -C $(FTPRINTF_PATH)
 
 debug:	CFLAGS += -O3 -g3 #-fsanitize=address system("leaks -fullContent cub3D");

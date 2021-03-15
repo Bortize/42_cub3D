@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 18:04:22 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/10 12:03:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:16:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_identifiers(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("One of the identifiers introduced is NOT VALID");
+		print_error("One of the identifiers introduced is not valid \n");
 	}
 	return (0);
 }

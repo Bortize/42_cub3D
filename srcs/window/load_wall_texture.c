@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:01:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/13 10:22:00 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 13:31:07 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ inline static void	file_to_image(t_cub3d *cub)
 {
 	int i;
 
-	cub->tex.walls[0].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
-		cub->map.no, &cub->tex.walls[0].width, &cub->tex.walls[0].height);
-	cub->tex.walls[1].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
-		cub->map.so, &cub->tex.walls[1].width, &cub->tex.walls[1].height);
 	cub->tex.walls[2].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
-		cub->map.we, &cub->tex.walls[2].width, &cub->tex.walls[2].height);
+		cub->map.no, &cub->tex.walls[0].width, &cub->tex.walls[0].height);
 	cub->tex.walls[3].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
+		cub->map.so, &cub->tex.walls[1].width, &cub->tex.walls[1].height);
+	cub->tex.walls[1].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
+		cub->map.we, &cub->tex.walls[2].width, &cub->tex.walls[2].height);
+	cub->tex.walls[0].img_tex = mlx_xpm_file_to_image(cub->mlx.init,
 		cub->map.ea, &cub->tex.walls[3].width, &cub->tex.walls[3].height);
 	i = 0;
 	while (i < 4)
 	{
 		if (!cub->tex.walls[i++].img_tex)
-			print_error("Some wall texture(s) failed to load");
+			print_error("Some wall texture's failed to load \n");
 	}
 }
 

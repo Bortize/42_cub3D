@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/12 15:52:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:20:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	integer_validation_resolution(t_cub3d *cub)
 		{
 			if (ft_isdigit(cub->map.tab[i][j]) == 0)
 				print_error("Some resolution data contains non-numeric values."
-					" Fix it and run the program again");
+					" Fix it and run the program again \n");
 			j++;
 		}
 		i++;

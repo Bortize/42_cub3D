@@ -1,13 +1,14 @@
-C 255,222,162
-R 1080 900
-NO ./tester/wolftex/textures/xpm/greystone.xpm
-SO ./tester/wolftex/textures/xpm/redbrick.xpm
-EA ./tester/wolftex/textures/xpm/wood.xpm
-WE ./tester/wolftex/textures/xpm/pillar.xpm
-S ./tester/wolftex/textures/xpm/barrel.xpm
-F 122,122,122
+R 1920 1080
+NO ./textures/greystone.xpm
+SO ./textures/redbrick.xpm
+EA ./textures/wood.xpm
+WE ./textures/pillar.xpm
+S ./textures/barrel.xpm
+C 25,222,162
+F 122,22,122
 
-111111
-1N0001
-102001
-111111
+11111111
+10000001
+10N00111
+10000101
+11111111
