@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycode_linux.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 13:49:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 11:31:27 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # define KEYPRESS			2
 # define KEYRELEASE 		3
-# define KEYPRESSMASK		(1L<<0)
-# define KEYRELEASEMASK		(1L<<1)
+# define KEYPRESSMASK		0
+# define KEYRELEASEMASK		3
 # define WINDOWCLOSE		17
-# define WINDOWCLOSEMASK	(1L << 17)
+# define WINDOWCLOSEMASK	0x20000
 # define OS					"linux"
 
 # define KEY_A				97
