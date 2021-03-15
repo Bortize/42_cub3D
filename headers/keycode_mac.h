@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycode_mac.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 12:01:20 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/14 13:49:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 11:48:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,22 +139,26 @@
 # define KEY_CAPSLOCK		272
 # define KEY_FN				279
 
-#define MV_SPEED			0.085
-#define ROT_SPEED			0.099
-#define AMB_LIGHT			7
-
-// Colors
-#define WHITE				0x00FFFFFF
-#define RED					0x00FF0000
-#define GREEN				0x0000FF7F
-#define BLUE				0x000000FF
-#define YELLOW				0x00FFC431
-#define PURPLE				0x001D032E
-#define CIAN				0x002CFAE1
+# define MV_SPEED			0.085
+# define ROT_SPEED			0.099
+# define AMB_LIGHT			7
 
 /*
-** Definimos los valores de las direcciones de los rayos
+** Colors
 */
+
+# define WHITE				0x00FFFFFF
+# define RED					0x00FF0000
+# define GREEN				0x0000FF7F
+# define BLUE				0x000000FF
+# define YELLOW				0x00FFC431
+# define PURPLE				0x001D032E
+# define CIAN				0x002CFAE1
+
+/*
+** Define the values of the ray directions
+*/
+
 # define NORTH 0
 # define SOUTH 1
 # define EAST 2

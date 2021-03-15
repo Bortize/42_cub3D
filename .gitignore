@@ -1,5 +1,7 @@
 *.DS_Store
 *.o
 *.a
+*.log
+*.txt
 cub3D
-./new-tester
+new-tester
