@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 18:20:37 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 20:22:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ inline static void	parse(t_cub3d *cub, char *line)
 //	{
 		if (cub->map.i < 8)
 			find_identifiers(line, cub);
-		if (cub->map.flag_config_ready == 1)
+		else if (cub->map.i == 8)
 		{
 			validate_plan(line, cub);
 			save_plane_lines(line, cub);
 		}
-		if (cub->map.i == 8)
-			cub->map.flag_config_ready = 1;
 //	}
 }
 
