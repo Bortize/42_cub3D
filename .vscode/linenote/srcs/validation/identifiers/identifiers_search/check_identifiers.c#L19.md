@@ -1,1 +1,0 @@
-Comprueba si la posicion [0] del array devuelto en ft_split_plus despues de eliminar espacios y tabulacinoes es igual a alguno de los identificadores validos por el subject. En caso de no serlo, gestiona el error y se termina el programa.

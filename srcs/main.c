@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 00:50:35 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 01:39:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:43:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ int	main(int argc, char **argv)
 	if (!(cub = malloc(sizeof(t_cub3d))))
 		print_error("The asignation to cub failed \n");
 	init_structures(cub);
-	if (argc == 3 && (ft_strncmp(argv[2], "--save", -1) == 0))
+	if (argc == 3)
+	{
+		if (ft_strncmp(argv[2], "--save", -1))
+			print_error("Invalid argument.\n");
 		cub->bmp_flag = 1;
+	}
 	if ((argc == 2 || argc == 3) && file_validation(argv[1]) == 1)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
@@ -38,10 +42,5 @@ int	main(int argc, char **argv)
 		file_reading(fd, cub);
 	}
 	graphic(cub);
-	if (OS == "macos")
-	{
-		printf("\n \n 🚧 LEAKS 🚧 \n \n");
-		system("leaks -fullContent cub3D");
-	}
 	return (0);
 }

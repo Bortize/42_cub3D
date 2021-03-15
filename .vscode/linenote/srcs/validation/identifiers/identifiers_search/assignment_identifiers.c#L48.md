@@ -1,8 +1,0 @@
-Cada identificador debe de tratarse de una manera diferente. No es lo mismo los datos que tenemos que guardar y tratar de la resolución como los de las texturas, asi como los de los colores del cielo y el suelo.
-
-Por lo tanto, para poder trabajar el identificador de la manera correcta, lo primero que tenemos que hacer es averiguar que identificador contiene la linea que hemos obtenido por el GNL en cada iteración del while. Es cierto que anteriormente en la funcion check_identifiers hemos comprobado los identificadores, pero lo hemos hecho a modo de saco, como si metieramos la mano en un saco lleno de bolas y nos preguntaran si todas son redondas, desde luego podriamos decir que si, pero no sabiramos decir cual es cual. Asi que ahora es la tarea que nos ocupa.
-
-La funcion ft_strcmp compara 2 valores 'char' que se le pasan por parametro indicando si son iguales o no.
-Sabiend esto, le paso como primer parametro el string del identificador que quiero tratar y como segundo parametro el valor de la posicion [0] que devuelve ft_split_plus, que seria el valor del identificaor. Bien, la funcion ft_strcmp compara si los 2 valores son iguales en valor ASCII, lo que quiere decir que si comparasemos por ejemplo dos letras 'A' 'A' lo que hace la funcion es restar sus valores ascii (65 - 65). Si el resultado es igual a cero, estamos ante la seguridad de que esa linea contiene el identificaor indicado y se procede a analizar su contenido con la funcion que contiene la condicion.
-
-Si el resultado es distindo de cero, los valores comparados no son iguales y saltaria a comprobar si pertene a otro identificador. sencillo verdad?
