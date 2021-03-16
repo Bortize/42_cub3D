@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:11:23 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:34:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:04:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	texture_validation_we(t_cub3d *cub)
 	else
 	{
 		print_error("The '.cub' file contains identifiers "
-			"duplicates. \n Please enter a valid file.");
+			"duplicates. \n Please enter a valid file\n");
 	}
 }

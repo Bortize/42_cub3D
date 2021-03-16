@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 15:08:26 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 00:56:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:13:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	texture_validation_ea(t_cub3d *cub)
 	}
 	else
 	{
-		print_error("The '.cub' file contains duplicate identifiers."
-			" \nPlease enter a valid file");
+		print_error("The '.cub' file contains duplicate identifiers\n");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:27:48 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 12:20:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:05:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	integer_validation(t_cub3d *cub)
 			if (ft_isdigit(cub->map.tabcf[i][j]) == 1)
 				return (0);
 			else
-				print_error("Some colors contain non-numeric values");
+				print_error("Some colors contain non-numeric values\n");
 			j++;
 		}
 		i++;

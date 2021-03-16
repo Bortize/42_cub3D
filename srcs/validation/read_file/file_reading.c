@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/15 21:22:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:46:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int					file_reading(int fd, t_cub3d *cub)
 		parse(cub, line);
 		free(line);
 	}
+	parse(cub, line);
 	free(line);
 	if (cub->p.flag_found_player == 0)
 		print_error("Not found player in the map \n");
