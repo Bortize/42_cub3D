@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 19:02:55 by bortize           #+#    #+#             */
-/*   Updated: 2021/03/16 16:03:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/17 14:33:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 int	find_identifiers(char *str, t_cub3d *cub)
 {
-	if (!*str)
-		return (0);
+//	if (!*str)
+//		return (0);
 	if ((cub->map.tab = ft_split_plus(str, ' ', '\t')))
 	{
 		check_identifiers(cub);
