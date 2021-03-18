@@ -23,6 +23,6 @@ make re
 
 Finally, to open the sale and move on to the game, run:
 ```bash
-./cub3D /maps/map.cub
+./cub3D maps/map.cub
 ```
 <br>
