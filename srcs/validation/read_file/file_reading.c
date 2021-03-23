@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 18:55:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2021/03/16 15:46:15 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2021/03/20 02:49:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ inline static void	parse(t_cub3d *cub, char *line)
 }
 
 /*
-** Read the .map file line by line to identify if it contains the values to be
-** collected
+** Read the .map file line by line to identify if it
+** contains the values to be collected
 */
 
 int					file_reading(int fd, t_cub3d *cub)

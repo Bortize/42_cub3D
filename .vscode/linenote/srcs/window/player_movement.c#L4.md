@@ -1,0 +1,1 @@
+Estas funciones, incluyen en el return, el valor de los flags en caso de que hayan sido activadas. Por lo tanto, las funciones seran verdaderas, siepre y cuando se modifique el valor de la variable que contienen.
