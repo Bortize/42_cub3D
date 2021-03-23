@@ -1,4 +1,5 @@
 # 42_cub3D
+![cub3D.png](./resources/score.png)
 
 The cub3D is a project belonging to the 42 programming campus and the whole network.
 
