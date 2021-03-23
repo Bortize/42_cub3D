@@ -27,3 +27,12 @@ Finally, to open the sale and move on to the game, run:
 ./cub3D maps/map.cub
 ```
 <br>
+
+To access the commenting code, you must switch to the documentary branch with the following command
+ ```bash
+ git checkout documentary
+ ```
+
+ Download the Linenote vscode extension, and enjoy walking through the code, along with its explanation.
+
+![cub3D.png](./resources/line_note_extension.png)
