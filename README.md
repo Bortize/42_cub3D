@@ -30,7 +30,7 @@ Finally, to open the sale and move on to the game, run:
 
 To access the commenting code, you must switch to the documentary branch with the following command
  ```bash
- git checkout documentary
+ git checkout documentation
  ```
 
  Download the Linenote vscode extension, and enjoy walking through the code, along with its explanation.
